@@ -1,0 +1,27 @@
+<div class="modal-component" [ngClass]="{noModalBg: !modalBackground}">
+  <div
+    class="modal__canvas"
+    ccClickOutside
+    [apply]="clickOutside"
+    [exceptions]="clickOutsideExceptions"
+    (clickOutside)="close.emit()">
+    <div class="modal__content">
+      <div class="content__header" *ngIf="title || closeButton" [ngClass]="{noBg: !titleBackground}">
+        <div class="header__left mda-fs__22" [ngClass]="titleAddClass">{{title}}</div>
+        <div class="header__right">
+          <i
+            class="mda-icon icon-cross mda-fs__18 modal__close"
+            *ngIf="closeButton"
+            (click)="close.emit()"
+            title="Close">
+          </i>
+        </div>
+      </div>
+      <div
+        class="content__body"
+        [ngStyle]="{'padding-top': (!titleBackground) ? '0' : '20px', 'box-sizing': (!titleBackground) ? 'content-box' : 'border-box'}">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

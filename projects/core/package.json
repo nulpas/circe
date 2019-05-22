@@ -1,0 +1,12 @@
+{
+  "name": "@lunaeme/circe-core",
+  "version": "0.0.4",
+  "peerDependencies": {
+    "@angular/common": "^7.2.15",
+    "@angular/core": "^7.2.15",
+    "@angular/platform-browser": "^7.2.15",
+    "@angular/platform-browser-dynamic": "^7.2.15",
+    "@lunaeme/medea": "^0.1.7",
+    "lodash": "^4.17.11"
+  }
+}

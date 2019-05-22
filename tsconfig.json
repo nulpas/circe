@@ -24,6 +24,18 @@
       ],
       "modal/*": [
         "dist/modal/*"
+      ],
+      "core": [
+        "dist/core"
+      ],
+      "core/*": [
+        "dist/core/*"
+      ],
+      "click-outside": [
+        "dist/click-outside"
+      ],
+      "click-outside/*": [
+        "dist/click-outside/*"
       ]
     }
   }

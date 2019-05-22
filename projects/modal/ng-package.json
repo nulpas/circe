@@ -3,5 +3,9 @@
   "dest": "../../dist/modal",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@lunaeme/circe-core",
+    "@lunaeme/circe-click-outside"
+  ]
 }
