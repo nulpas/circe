@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "modal": [
+        "dist/modal"
+      ],
+      "modal/*": [
+        "dist/modal/*"
+      ]
+    }
   }
 }

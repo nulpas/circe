@@ -134,6 +134,41 @@
           }
         }
       }
+    },
+    "modal": {
+      "root": "projects/modal",
+      "sourceRoot": "projects/modal/src",
+      "projectType": "library",
+      "prefix": "cc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/modal/tsconfig.lib.json",
+            "project": "projects/modal/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/modal/src/test.ts",
+            "tsConfig": "projects/modal/tsconfig.spec.json",
+            "karmaConfig": "projects/modal/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/modal/tsconfig.lib.json",
+              "projects/modal/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "circe"
