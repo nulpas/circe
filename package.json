@@ -1,14 +1,31 @@
 {
   "name": "circe",
-  "version": "0.0.0-beta.02",
+  "version": "0.0.0-beta.03",
+  "description": "Angular Components library",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open --port 4444",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nulpas/circe.git"
+  },
+  "keywords": [
+    "angular",
+    "components",
+    "library",
+    "collection"
+  ],
+  "author": "Nul Pàs <manu@lunaeme.com> (https://github.com/nulpas)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nulpas/circe/issues"
+  },
+  "homepage": "https://github.com/nulpas/circe#readme",
   "dependencies": {
     "@angular/animations": "~7.2.15",
     "@angular/common": "~7.2.15",

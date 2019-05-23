@@ -1,24 +1,80 @@
-# Modal
+# Circe :: Angular Modal Component
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+Modal layer for use through <ng-content> tag.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project modal` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project modal`.
-> Note: Don't forget to add `--project modal` or else it will be added to the default project in your `angular.json` file. 
+Run `npm install @lunaeme/circe-modal` or `yarn add @lunaeme/circe-modal`.
 
-## Build
+## Use
 
-Run `ng build modal` to build the project. The build artifacts will be stored in the `dist/` directory.
+You need to import `ModalModule` into your module `imports` section.
 
-## Publishing
+Then use this way:
 
-After building your library with `ng build modal`, go to the dist folder `cd dist/modal` and run `npm publish`.
+```
+<cc-modal [title]="'My Content'">
+  Your content here
+</cc-modal>
+```
 
-## Running unit tests
+## Inputs
 
-Run `ng test modal` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+@Input() title: string;
+· Set title on top bar.
 
-## Further help
+@Input() titleClass: string;
+· If you need to apply any css class on title.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+@Input() titleBackground: boolean;
+· If you want to set background color (gray) on title bar.
+
+@Input() closeButton: boolean;
+· If you want to have close icon button on title bar.
+
+@Input() modalBackground: boolean;
+· If you want to set transparency layer around modal window.
+
+@Input() clickOutside: boolean = false;
+· If you want modal window closes by clicking outside.
+
+@Input() clickOutsideExceptions: Array<string> = [];
+· Array of DOM id's over which the modal window will not close.
+
+@Input() fixed: string;
+· String that set the size of modal window.
+  If it is not set, the window will automatically take the size of the content.
+  This will take the following values:
+
+  ## Set modal to 250px width and 250px height:
+  <cc-modal [title]="'My Content'" [fixed]="'250px'">
+    Your content here
+  </cc-modal>
+
+  ## Set modal to 50% width and 50% height:
+  <cc-modal [title]="'My Content'" [fixed]="'50%'">
+    Your content here
+  </cc-modal>
+  
+  ## Set modal to 400px width and 250px height:
+  <cc-modal [title]="'My Content'" [fixed]="'250px 400px'">
+    Your content here
+  </cc-modal>
+
+  ## Set modal to 70% width and 40% height:
+  <cc-modal [title]="'My Content'" [fixed]="'40% 70%'">
+    Your content here
+  </cc-modal>
+```
+
+## Outputs
+
+```
+@Output() close: EventEmitter<boolean> = new EventEmitter();
+· Event that triggers the closing of the modal window.
+```
+
+## Repo
+
+<https://github.com/nulpas/circe/tree/master/projects/modal>
