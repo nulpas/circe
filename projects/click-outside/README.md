@@ -32,7 +32,7 @@ Then use this way:
   DEFAULT: true 
 
 @Input() exceptions: Array<string> = [];
-· Array of outside DOM id's which clicking over they the clickOutside event is not emitted.
+· Array composed by external DOM id's that by clicking on them, the clickOutside event is not emitted.
   DEFAULT: []
 ```
 
