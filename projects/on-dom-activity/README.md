@@ -6,7 +6,9 @@ The `$event` emitted is the DOM element (HTMLElement type) where the directive w
 
 ## Installation
 
-Run `npm install @lunaeme/circe-on-dom-activity` or `yarn add @lunaeme/circe-on-dom-activity`.
+Run `npm install @lunaeme/circe-on-dom-activity` or
+ 
+run `yarn add @lunaeme/circe-on-dom-activity`.
 
 ## Use
 

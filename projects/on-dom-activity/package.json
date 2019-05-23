@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-on-dom-activity",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Circe :: Angular On Dom Activity Directive",
   "repository": {
     "type": "git",

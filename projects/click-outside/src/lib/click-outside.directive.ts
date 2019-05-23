@@ -5,9 +5,9 @@ import { Directive, ElementRef, EventEmitter, HostListener, Input, Output } from
 })
 
 export class ClickOutsideDirective {
-  @Input() apply: boolean = false;
+  @Input() apply: boolean = true;
   @Input() exceptions: Array<string> = [];
-  @Output() clickOutside: EventEmitter<void> = new EventEmitter();
+  @Output() clickOutside: EventEmitter<undefined> = new EventEmitter();
 
   private readonly _element: HTMLElement;
 

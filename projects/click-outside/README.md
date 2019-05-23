@@ -1,24 +1,48 @@
-# ClickOutside
+# Circe :: Angular Click Outside Directive
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+Directive that emits event when clicking outside of the element where directive applies.
 
-## Code scaffolding
+The `$event` emitted is `undefined`.
 
-Run `ng generate component component-name --project click-outside` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project click-outside`.
-> Note: Don't forget to add `--project click-outside` or else it will be added to the default project in your `angular.json` file. 
+## Installation
 
-## Build
+Run `npm install @lunaeme/circe-click-outside` or
 
-Run `ng build click-outside` to build the project. The build artifacts will be stored in the `dist/` directory.
+run `yarn add @lunaeme/circe-click-outside`.
 
-## Publishing
+## Use
 
-After building your library with `ng build click-outside`, go to the dist folder `cd dist/click-outside` and run `npm publish`.
+You need to import `ClickOutsideModule` into your module `imports` section.
 
-## Running unit tests
+Then use this way:
 
-Run `ng test click-outside` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+<div
+  ccClickOutside
+  (clickOutside)="clickOutsideActionMethod()">
+  Some content...
+</div>
+```
 
-## Further help
+## Inputs
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+@Input() apply: boolean = true;
+· You can dcide through this boolean input if directive works or not.
+  DEFAULT: true 
+
+@Input() exceptions: Array<string> = [];
+· Array of outside DOM id's which clicking over they the clickOutside event is not emitted.
+  DEFAULT: []
+```
+
+## Outputs
+
+```
+@Output() clickOutside: EventEmitter<undefined> = new EventEmitter();
+· Emits event when clicking outside of the element where directive applies.
+```
+
+## Repo
+
+<https://github.com/nulpas/circe/tree/master/projects/click-outside>
