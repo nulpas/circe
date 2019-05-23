@@ -36,6 +36,12 @@
       ],
       "click-outside/*": [
         "dist/click-outside/*"
+      ],
+      "on-dom-activity": [
+        "dist/on-dom-activity"
+      ],
+      "on-dom-activity/*": [
+        "dist/on-dom-activity/*"
       ]
     }
   }
