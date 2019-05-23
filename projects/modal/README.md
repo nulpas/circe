@@ -1,6 +1,6 @@
 # Circe :: Angular Modal Component
 
-Modal layer for use through <ng-content> tag.
+Modal layer for use through `<ng-content>` tag.
 
 ## Installation
 
