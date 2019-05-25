@@ -1,6 +1,24 @@
 {
   "name": "@lunaeme/circe-core",
-  "version": "0.0.4",
+  "version": "0.1.0",
+  "description": "Circe :: Angular Core Services and Tools",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nulpas/circe.git"
+  },
+  "keywords": [
+    "circe",
+    "angular",
+    "services",
+    "core",
+    "tools"
+  ],
+  "author": "Nul Pàs <manu@lunaeme.com> (https://github.com/nulpas)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nulpas/circe/issues"
+  },
+  "homepage": "https://github.com/nulpas/circe/tree/master/projects/core#readme",
   "peerDependencies": {
     "@angular/common": "^7.2.15",
     "@angular/core": "^7.2.15",

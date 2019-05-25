@@ -6,14 +6,13 @@ import { startCase as _startCase } from 'lodash';
 
   constructor() {}
 
-  public static getValueFromDotedKey(object: any, dotedKey: string, separator?: string): any {
+  public static getValueFromMultiLevelObject(object: any, key: string, separator?: string): any {
     const _separator = separator || '.';
-
-    if (object[dotedKey] !== undefined) {
-      return object[dotedKey];
+    if (object[key] !== undefined) {
+      return object[key];
     }
     try {
-      return dotedKey.split(_separator).reduce((obj, index) => {
+      return key.split(_separator).reduce((obj: any, index: any) => {
         return obj[index];
       }, object);
     } catch (e) {
@@ -35,6 +34,28 @@ import { startCase as _startCase } from 'lodash';
     do {
       _timeOut = (Date.now() - _now >= milliseconds);
     } while (!_timeOut);
+  }
+
+  /**
+   * @deprecated
+   */
+  public static getValueFromDotedKey(object: any, dotedKey: string, separator?: string): any {
+    const _separator = separator || '.';
+
+    if (object[dotedKey] !== undefined) {
+      return object[dotedKey];
+    }
+    try {
+      return dotedKey.split(_separator).reduce((obj, index) => {
+        return obj[index];
+      }, object);
+    } catch (e) {
+      if (e instanceof TypeError) {
+        return undefined;
+      } else {
+        throw e;
+      }
+    }
   }
 
   public identifier(index: number, item: any): any {
