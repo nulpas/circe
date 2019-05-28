@@ -5,6 +5,7 @@ Several css spinner elements width optional marquee texts.
 ## Installation
 
 Run `npm install @lunaeme/circe-spinner` or
+
 run `yarn add @lunaeme/circe-spinner`.
 
 ## Use
