@@ -1,4 +1,4 @@
-@import '../../../../src/core.styles';
+@import '~@lunaeme/circe-core/styles/component.styles';
 
 .modal-component {
   @include createFlexBox(row, center, center, nowrap);

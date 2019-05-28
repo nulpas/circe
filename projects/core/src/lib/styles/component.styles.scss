@@ -1,0 +1,259 @@
+@import 'app.mixins';
+
+HTML {
+  BODY#medea-tpl, BODY.medea-tpl, #medea-tpl__layer, .medea-tpl__layer,
+  BODY#mda-stratio-tpl, BODY.mda-stratio-tpl, #mda-stratio-tpl__layer, .mda-stratio-tpl__layer {
+    BUTTON.mda-button {
+      cursor: pointer;
+      background-color: #128bdd;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      &:hover {
+        background-color: #0979c4;
+      }
+      &:active {
+        background-color: #0766a6;
+      }
+      &.disabled {
+        background-color: #ededed;
+        color: #cbcbcb;
+        cursor: default;
+      }
+      SPAN {
+        font-size: 15px;
+        line-height: 15px;
+        margin-left: 10px;
+        vertical-align: middle;
+      }
+      I {
+        line-height: 15px;
+        vertical-align: middle;
+        font-size: 18px;
+      }
+    }
+
+    I.mda-icon-button {
+      color: #777777;
+      cursor: pointer;
+      &:hover {
+        color: #333333;
+      }
+      &:active {
+        color: #777777;
+      }
+      &.disabled {
+        color: #ededed;
+        cursor: default;
+      }
+    }
+
+    TEXTAREA.mda-textarea {
+      width: 300px;
+      min-width: 300px;
+      height: 100px;
+      min-height: 100px;
+      padding: 5px 10px;
+      border: 1px solid #b5b5b5;
+      border-radius: 4px;
+      resize: vertical;
+      &.disabled {
+        background-color: #f0f0f0;
+        color: #cbcbcb;
+        border-color: #d1d1d1;
+        cursor: default;
+      }
+      &.error {
+        border-color: red;
+      }
+    }
+
+    INPUT[type=checkbox] {
+      display:none;
+      & + LABEL {
+        @include createFlexBox(row, center, normal, nowrap);
+        color: #111111;
+        cursor: pointer;
+        font-size: 14px;
+        &:hover:before {
+          color: #128bdd;
+        }
+        &:before {
+          font-family: 'Stratio Icon', Symbol, sans-serif;
+          font-size: 16px;
+          display: inline-block;
+          content: "\e9a8";
+          letter-spacing: 8px;
+          color: #b5b5b5;
+        }
+        &.disabled {
+          color: #cfcfcf;
+          cursor: default;
+          &:hover:before {
+            color: #cfcfcf;
+          }
+          &:before {
+            color: #cfcfcf;
+          }
+        }
+      }
+      &:checked + LABEL {
+        &:before {
+          content: "\e9bf";
+          color: #128bdd;
+        }
+        &.disabled:before {
+          color: #cfcfcf;
+        }
+      }
+    }
+
+    INPUT[type=radio] {
+      display: none;
+      & + LABEL {
+        @include createFlexBox(row, center, normal, nowrap);
+        color: #111111;
+        cursor: pointer;
+        font-size: 14px;
+        &:hover:before {
+          color: #128bdd;
+        }
+        &:before {
+          font-family: 'Stratio Icon', Symbol, sans-serif;
+          font-size: 16px;
+          display: inline-block;
+          content: "\e9c1";
+          letter-spacing: 8px;
+          color: #b5b5b5;
+        }
+      }
+      &:checked + LABEL:before {
+        content: "\e9c0";
+        color: #128bdd;
+      }
+    }
+
+    DIV.mda-select {
+      border: 1px solid #b5b5b5;
+      border-radius: 4px;
+      overflow: hidden;
+      width: fit-content;
+      position: relative;
+      display: block;
+      &.mda-select__simple {
+        border: 0;
+        border-radius: 0;
+        &.disabled {
+          &:after {
+            color: #d1d1d1;
+            padding-right: 0;
+            width: fit-content;
+            min-width: fit-content;
+          }
+          & > SELECT {
+            cursor: default;
+            background-color: transparent;
+          }
+        }
+        &.error {
+          &:after {
+            color: red;
+          }
+          & > SELECT {
+            color: red;
+          }
+        }
+      }
+      &:after {
+        font-family: 'Stratio Icon', Symbol, sans-serif;
+        content: '\e63f';
+        color: #555555;
+        padding: 5px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        text-align: center;
+        width: 30px;
+        min-width: 30px;
+        height: 100%;
+        min-height: 100%;
+        pointer-events: none;
+        box-sizing: border-box;
+      }
+      & > SELECT {
+        width: 100%;
+        min-width: 100%;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
+        padding: 5px 40px 5px 10px;
+        border: 0;
+        background-color: white;
+        &::-ms-expand {
+          display: none;
+        }
+      }
+      &.disabled {
+        border-color: #d1d1d1;
+        &:after {
+          color: #d1d1d1;
+        }
+        & > SELECT {
+          cursor: default;
+          background-color: #f0f0f0;
+          color: #cbcbcb;
+        }
+      }
+      &.error {
+        border-color: red;
+      }
+    }
+
+    LABEL.mda-label {
+      display: block;
+      color: #999999;
+      &.error {
+        color: red;
+      }
+    }
+
+    INPUT.mda-input {
+      width: 300px;
+      min-width: 300px;
+      padding: 5px 10px;
+      border: 1px solid #b5b5b5;
+      border-radius: 4px;
+      &.disabled {
+        background-color: #f0f0f0;
+        color: #cbcbcb;
+        border-color: #d1d1d1;
+        cursor: default;
+      }
+      &.error {
+        border-color: red;
+      }
+    }
+
+    DIV.mda-input__search {
+      display:inline-block;
+      position: relative;
+      &:after {
+        font-family: 'Stratio Icon', Symbol, sans-serif;
+        content: '\e036';
+        position: absolute;
+        color: #555555;
+        top: 5px;
+        right: 6px;
+      }
+      & > INPUT.mda-input {
+        width: 280px;
+        min-width: 280px;
+        padding-right: 30px;
+      }
+    }
+  }
+}

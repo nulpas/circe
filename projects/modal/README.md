@@ -4,7 +4,9 @@ Modal layer for use through `<ng-content>` tag.
 
 ## Installation
 
-Run `npm install @lunaeme/circe-modal` or `yarn add @lunaeme/circe-modal`.
+Run `npm install @lunaeme/circe-modal` or
+
+run`yarn add @lunaeme/circe-modal`.
 
 ## Use
 
