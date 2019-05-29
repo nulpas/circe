@@ -16,7 +16,7 @@ You need to import `ClickOutsideModule` into your module `imports` section.
 
 Then use this way:
 
-```
+```html
 <div
   ccClickOutside
   (clickOutside)="clickOutsideActionMethod()">
@@ -26,22 +26,28 @@ Then use this way:
 
 ## Inputs
 
-```
-@Input() apply: boolean = true;
-· You can dcide through this boolean input if directive works or not.
-  DEFAULT: true 
+>```typescript
+> @Input() apply: boolean = true;
+>```
+You can dcide through this boolean input if directive works or not.
 
-@Input() exceptions: Array<string> = [];
-· Array composed by external DOM id's that by clicking on them, the clickOutside event is not emitted.
-  DEFAULT: []
-```
+DEFAULT: true 
+
+
+&nbsp;
+>```typescript
+> @Input() exceptions: Array<string> = [];
+>```
+Array composed by external DOM id's that by clicking on them, the clickOutside event is not emitted.
+
+DEFAULT: []
 
 ## Outputs
 
-```
+```typescript
 @Output() clickOutside: EventEmitter<undefined> = new EventEmitter();
-· Emits event when clicking outside of the element where directive applies.
 ```
+Emits event when clicking outside of the element where directive applies.
 
 ## Repo
 

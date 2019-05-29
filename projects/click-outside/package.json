@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-click-outside",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "Circe :: Angular Click Outside Directive",
   "repository": {
     "type": "git",
