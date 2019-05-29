@@ -16,7 +16,7 @@ You need to import `OnDomActivityModule` into your module `imports` section.
 
 Then use this way:
 
-```
+```html
 <div
   ccOnDomActivity
   (comeToDom)="comeToDomActionMethod($event)"
@@ -31,13 +31,17 @@ No inputs defined.
 
 ## Outputs
 
-```
+```typescript
 @Output() comeToDom: EventEmitter<HTMLElement> = new EventEmitter();
-· Emits DOM element object when it appears on DOM.
-
-@Output() goesFromDom: EventEmitter<HTMLElement> = new EventEmitter();
-· Emits DOM element object when it is destroyed from DOM.
 ```
+Emits DOM element object when it appears on DOM.
+
+
+&nbsp;
+```typescript
+@Output() goesFromDom: EventEmitter<HTMLElement> = new EventEmitter();
+```
+Emits DOM element object when it is destroyed from DOM.
 
 ## Repo
 
