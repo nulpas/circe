@@ -239,7 +239,7 @@ Then you can use methods through dependency injection. Some methods are availabl
 
 Set of methods to make box model task easy:
 
-> ```
+> ```typescript
 > public readCssUnits(expression: string): ProcessedUnitObject
 > ```
 > This method transforms unit string `ex. '20px'` into an object
