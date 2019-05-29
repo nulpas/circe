@@ -4,6 +4,10 @@ Directive that emits event when clicking outside of the element where directive 
 
 The `$event` emitted is `undefined`.
 
+## Compatibility
+
+Angular v.7.2.15
+
 ## Installation
 
 Run `npm install @lunaeme/circe-click-outside` or
