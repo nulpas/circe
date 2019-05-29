@@ -2,6 +2,10 @@
 
 Modal layer for use through `<ng-content>` tag.
 
+## Compatibility
+
+Angular v.7.2.15
+
 ## Installation
 
 Run `npm install @lunaeme/circe-modal` or
