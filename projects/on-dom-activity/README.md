@@ -35,16 +35,16 @@ No inputs defined.
 
 ## Outputs
 
-```typescript
-@Output() comeToDom: EventEmitter<HTMLElement> = new EventEmitter();
-```
+>```typescript
+> @Output() comeToDom: EventEmitter<HTMLElement> = new EventEmitter();
+>```
 Emits DOM element object when it appears on DOM.
 
 
 &nbsp;
-```typescript
-@Output() goesFromDom: EventEmitter<HTMLElement> = new EventEmitter();
-```
+>```typescript
+> @Output() goesFromDom: EventEmitter<HTMLElement> = new EventEmitter();
+>```
 Emits DOM element object when it is destroyed from DOM.
 
 ## Repo

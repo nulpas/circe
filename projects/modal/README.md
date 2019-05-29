@@ -110,9 +110,9 @@ This will take the following values:
 
 ## Outputs
 
-```typescript
-@Output() close: EventEmitter<boolean> = new EventEmitter();
-```
+>```typescript
+> @Output() close: EventEmitter<boolean> = new EventEmitter();
+>```
 Event that triggers the closing of the modal window.
 
 ## Repo

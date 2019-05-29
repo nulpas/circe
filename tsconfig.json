@@ -48,6 +48,12 @@
       ],
       "spinner/*": [
         "dist/spinner/*"
+      ],
+      "table": [
+        "dist/table"
+      ],
+      "table/*": [
+        "dist/table/*"
       ]
     }
   }

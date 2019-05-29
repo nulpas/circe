@@ -48,9 +48,9 @@ DEFAULT: []
 
 ## Outputs
 
-```typescript
-@Output() clickOutside: EventEmitter<undefined> = new EventEmitter();
-```
+>```typescript
+> @Output() clickOutside: EventEmitter<undefined> = new EventEmitter();
+>```
 Emits event when clicking outside of the element where directive applies.
 
 ## Repo

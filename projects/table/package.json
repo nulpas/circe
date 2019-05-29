@@ -1,7 +1,7 @@
 {
-  "name": "@lunaeme/circe-modal",
-  "version": "0.1.10",
-  "description": "Circe :: Angular Modal Component",
+  "name": "@lunaeme/circe-table",
+  "version": "0.1.2",
+  "description": "Circe :: Angular Table Component",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nulpas/circe.git"
@@ -10,23 +10,26 @@
     "circe",
     "angular",
     "component",
-    "modal",
-    "window"
+    "table",
+    "data"
   ],
   "author": "Nul Pàs <manu@lunaeme.com> (https://github.com/nulpas)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nulpas/circe/issues"
   },
-  "homepage": "https://github.com/nulpas/circe/tree/master/projects/modal#readme",
+  "homepage": "https://github.com/nulpas/circe/tree/master/projects/table#readme",
   "peerDependencies": {
     "@angular/common": "^7.2.15",
     "@angular/core": "^7.2.15",
     "@angular/platform-browser": "^7.2.15",
-    "@angular/platform-browser-dynamic": "^7.2.15"
+    "@angular/platform-browser-dynamic": "^7.2.15",
+    "rxjs": "~6.5.2"
   },
   "dependencies": {
-    "@lunaeme/circe-click-outside": "^0.1.5",
-    "@lunaeme/circe-core": "^0.2.7"
+    "@lunaeme/circe-core": "^0.2.7",
+    "@lunaeme/circe-spinner": "^0.1.6",
+    "lodash": "^4.17.11",
+    "ngx-order-pipe": "^2.0.2"
   }
 }

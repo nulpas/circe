@@ -1,0 +1,258 @@
+@import '~@lunaeme/circe-core/styles/stratio.styles';
+@import '~@lunaeme/circe-core/styles/component.styles';
+
+.mda.table {
+  width: 100%;
+  .table__container {
+    display: grid;
+    grid-row-gap: 0;
+    .table__row {
+      display: grid;
+      background-color: white;
+      border-top: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e5e5e5;
+      margin-top: -2px;
+      &:hover {
+        background-color: #e7f3fb;
+      }
+      &.dropdown {
+        display: block;
+        border: none;
+        .table__cell {
+          @include createFlexBox(column, normal, normal, nowrap);
+          margin-top: 0;
+          background-color: #f3f6f8;
+          // border: 1px solid #e5e5e5;
+          .dropdown__row {
+            @include createFlexBox(row, normal, normal, nowrap);
+            margin-top: 20px;
+            &:first-child {
+              margin-top: 0;
+            }
+            &.controls {
+              justify-content: flex-end;
+              BUTTON {
+                cursor: pointer;
+                background-color: #aab7c4;
+                padding: 5px 20px;
+                border: 2px solid #aab7c4;
+                border-radius: 5px;
+                color: white;
+                &:hover {
+                  background-color: #8898a7;
+                  border-color: #8898a7;
+                }
+                &:active {
+                  background-color: #666666;
+                  border-color: #777777;
+                }
+              }
+            }
+            .dropdown__column {
+              width: 100%;
+              &:last-child {
+                margin-left: 15%;
+              }
+              &.alone {
+                margin: 0 0 20px 0;
+              }
+              .content__row {
+                @include createFlexBox(row, normal, space-between, nowrap);
+                padding: 10px 0;
+                border-bottom: 1px solid #d8d8d8;
+                &:first-child {
+                  padding-top: 0;
+                }
+                .row__label {
+                  color: #616161;
+                }
+                .row__value {
+                  color: #111111;
+                  font-weight: bold;
+                  &.complex {
+                    cursor: pointer;
+                    SPAN {
+                      vertical-align: middle;
+                      line-height: 15px;
+                      font-weight: bold;
+                      I {
+                        vertical-align: bottom;
+                        margin: 0 0 2px 5px;
+                        font-size: 16px;
+                      }
+                    }
+                  }
+                }
+                &.complex {
+                  display: block;
+                  .row__complex {
+                    margin-bottom: 30px;
+                    &:last-child {
+                      margin: 0;
+                    }
+                    .complex__content {
+                      @include createFlexBox(row, normal, normal, nowrap);
+                      margin-left: 5%;
+                      SPAN {
+                        padding: 2px;
+                        &.complex__label {
+                          color: #535353;
+                        }
+                        &.complex__value {
+                          font-weight: bold;
+                          color: #111111;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &.header {
+        background-color: #ededed;
+        border: none;
+        &.clear {
+          background-color: transparent;
+          .table__cell {
+            SPAN {
+              font-weight: normal;
+              color: #6c6e71;
+            }
+          }
+        }
+        &.clear__bolder {
+          background-color: transparent;
+          .table__cell {
+            SPAN {
+              font-weight: bolder;
+            }
+          }
+        }
+        .table__cell {
+          &.selection {
+            I {
+              margin: 0 4px;
+              cursor: pointer;
+              color: #b5b5b5;
+              &:hover {
+                color: #128bdd;
+              }
+              &.selected {
+                color: #128bdd;
+              }
+            }
+          }
+          INPUT {
+            cursor: pointer;
+          }
+          SPAN {
+            font-weight: bold;
+            vertical-align: middle;
+            line-height: 15px;
+            I.order {
+              vertical-align: bottom;
+              margin-bottom: 2px;
+              font-size: 16px;
+            }
+          }
+          .order {
+            cursor: pointer;
+          }
+        }
+      }
+      .table__cell {
+        @include createFlexBox(row, center, normal, nowrap);
+        padding: 15px 10px;
+        & > SPAN {
+          padding: 2px 0;
+          &.color-label {
+            min-width: 100px;
+            padding: 3px 35px;
+            text-align: center;
+          }
+        }
+        I.deco {
+          margin-right: 5px;
+          color: #aab7c4;
+          vertical-align: middle;
+        }
+        &.radio {
+          I {
+            margin: 0 4px;
+            color: #b5b5b5;
+            cursor: pointer;
+            &:hover {
+              color: #128bdd;
+            }
+            &.selected {
+              color: #128bdd;
+            }
+          }
+        }
+        &.selection {
+          I {
+            margin: 0 4px;
+            color: #b5b5b5;
+            cursor: pointer;
+            &:hover {
+              color: #128bdd;
+            }
+            &.selected {
+              color: #128bdd;
+            }
+          }
+        }
+        INPUT {
+          cursor: pointer;
+        }
+        .help {
+          cursor: help;
+        }
+        &.dropdown {
+          I {
+            cursor: pointer;
+            font-size: 15px;
+            &.open {
+              color: #cccccc;
+              &:hover {
+                color: black;
+              }
+            }
+            &.close {
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+  .table__error {
+    padding: 60px 0;
+    text-align: center;
+    .icon-alert {
+      display: block;
+      color: red;
+      font-size: 6rem;
+    }
+    .error__title {
+      margin-top: 30px;
+      color: red;
+    }
+    .error__text {
+      color: red;
+    }
+  }
+  .table__loading {
+    @include createFlexBox(column, center, center, nowrap);
+    margin: 20px 0 50px 0;
+    width: 100%;
+    height: 300px;
+    .loading__text {
+      margin-top: 40px;
+      color: #6c6c6c;
+    }
+  }
+}
