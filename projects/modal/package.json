@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-modal",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Circe :: Angular Modal Component",
   "repository": {
     "type": "git",
@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "@lunaeme/circe-click-outside": "^0.1.5",
-    "@lunaeme/circe-core": "^0.2.7"
+    "@lunaeme/circe-core": "^0.2.8"
   }
 }

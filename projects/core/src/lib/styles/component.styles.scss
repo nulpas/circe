@@ -107,6 +107,78 @@ HTML {
           color: #cfcfcf;
         }
       }
+      &.mda-switch {
+        & + LABEL {
+          position: relative;
+          padding-left: 56px;
+          height: 23px;
+          &:before{
+            content: '';
+            width: 45px;
+            height: 25px;
+            background-color: #cbcbcb;
+            position: absolute;
+            border-radius: 20px;
+            top: 0;
+            left: 0;
+          }
+          &:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: white;
+            top: 10%;
+            left: 3px;
+            cursor: pointer;
+            transition: left 150ms ease-in-out;
+          }
+          .mda-switch__icon {
+            opacity: 0;
+            z-index: 1;
+            font-size: 14px;
+            color: #cfcfcf;
+            transition: opacity 100ms ease-in-out;
+            &:before {
+              top: -6px;
+              margin-left: -50px
+            }
+          }
+        }
+        &:checked + LABEL {
+          &:before {
+            background-color: #128bde;
+          }
+          &:after {
+            left: 22px;
+          }
+        }
+        &.disabled + LABEL {
+          &:before{
+            opacity: .5;
+          }
+        }
+        &.disabled:checked + LABEL {
+          .mda-switch__icon {
+            opacity: 1;
+            &:before {
+              left: 5px;
+              color: white;
+            }
+          }
+        }
+        &.disabled:not(:checked) + LABEL {
+          .mda-switch__icon {
+            opacity: 1;
+            margin-left: 20px;
+            position: absolute;
+            &:before {
+              color: white;
+            }
+          }
+        }
+      }
     }
 
     INPUT[type=radio] {

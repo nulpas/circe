@@ -100,13 +100,33 @@ Then you can use some native DOM components cool styled.
 >
 > **SubClasses:** 'disabled'
 >
+> **SubComponent:** 'mda-switch', 'mda-switch__icon'
+>
 > **Example:**
 > ```html
+> <!-- ###### CHECKBOX ###### -->
 > <input id="check" type="checkbox">
 > <label class="mda-label" for="check">Some text</label>
 >
 > <input id="check" type="checkbox" disabled class="disabled">
+> <label class="mda-label disabled" for="check">Some text</label>
+>
+>
+> <!-- ###### CHECKBOX SWITCH ###### -->
+> <input id="check" type="checkbox" class="mda-switch">
 > <label class="mda-label" for="check">Some text</label>
+>
+> <input id="check" type="checkbox" class="mda-switch">
+> <label class="mda-label" for="check">
+>   <i class="mda-switch__icon some_icon_classes"></i>
+>   Some text
+> </label>
+>
+> <input id="check" type="checkbox" disabled class="mda-switch disabled">
+> <label class="mda-label disabled" for="check">
+>   <i class="mda-switch__icon some_icon_classes"></i>
+>   Some text
+> </label>
 > ```
 
 
