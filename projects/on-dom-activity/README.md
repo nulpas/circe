@@ -4,6 +4,10 @@ Directive that emits event when component appears on DOM and emits other event w
 
 The `$event` emitted is the DOM element (HTMLElement type) where the directive works.
 
+## Compatibility
+
+Angular v.7.2.15
+
 ## Installation
 
 Run `npm install @lunaeme/circe-on-dom-activity` or
