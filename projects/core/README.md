@@ -250,7 +250,7 @@ Set of methods to make box model task easy:
  
  
 &nbsp;
-> ```
+> ```typescript
 > public processSizeString(sizeString: string): SizeObject
 > ```
 > This method transforms size string `ex. '20px 50px'` into an object
@@ -261,7 +261,7 @@ Set of methods to make box model task easy:
 
 
 &nbsp;
-> ```
+> ```typescript
 > public getElement(element: string | SelectDomElementObject): Element
 > ```
 > Receives string or SelectDomElementObject:
@@ -274,7 +274,7 @@ Set of methods to make box model task easy:
 
 
 &nbsp;
-> ```
+> ```typescript
 > public getBoxModel(elementId: ElementId, boxModelType?: BoxModelType): BoxModelSwapObject
 > ```
 > Receives ElementId complex data and returns analysis object about box model of this ElementId.
@@ -303,21 +303,21 @@ Set of methods to make box model task easy:
 
 Set of methods about DOM events handlers:
 
-> ```
+> ```typescript
 > public preventNeededEvent(event: Event, immediatePropagation?: boolean): void
 > ```
 > This method receives any kind of DOM Event and boolean parameter which indicates if method applies `event.stopPropagation()` or `event.stopImmediatePropagation()`.
 
 
 &nbsp;
-> ```
+> ```typescript
 > public preventNoNeededEvent(event: Event, immediatePropagation?: boolean): void
 > ```
 > This method works in the same way than the previous one and also executes `event.preventDefault()` method.
 
 
 &nbsp;
-> ```
+> ```typescript
 > public scrollTop(element?: SelectDomElementObject): void
 > ```
 > Moves vertical scroll of the element given to top. Element has the form of SelectDomElementObject:
@@ -338,7 +338,7 @@ Set of methods about DOM events handlers:
 
 Several help methods:
 
-> ```
+> ```typescript
 > public static getValueFromMultiLevelObject(object: any, key: string, separator?: string): any
 > ```
 > This method uses a reducer to check inside the multi-level `object` given and finds the value for `key` given.
@@ -348,7 +348,7 @@ Several help methods:
 > If `separator` is not given, default separator will be the dot character: `.`
 >
 > Example:
-> ```
+> ```typescript
 > const person = {
 >   name: 'John Black',
 >   age: 43,
@@ -372,21 +372,21 @@ Several help methods:
 
 
 &nbsp;
-> ```
+> ```typescript
 > public static formatString(string: string): string
 > ```
 > Transforms string into start case string.
 
 
 &nbsp;
-> ```
+> ```typescript
 > public static waitFor(milliseconds: number): void
 > ```
 > Stops the execution flow during `milliseconds` given.
 
 
 &nbsp;
-> ```
+> ```typescript
 > public identifier(index: number, item: any): any
 > ```
 > This method is for use in `trackBy` in *ngFor directives.
