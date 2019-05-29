@@ -1,6 +1,10 @@
 # Circe :: Angular Core Services and Tools
 
-Some help services and generic types.
+Some help services, generic types and component styles.
+
+## Compatibility
+
+Angular v.7.2.15
 
 ## Installation
 
@@ -8,7 +12,222 @@ Run `npm install @lunaeme/circe-core` or
 
 run `yarn add @lunaeme/circe-core`.
 
-## Use
+## Component Style Use
+
+You need to import component SASS file at the top of your SASS file as follows:
+
+```
+@import '~@lunaeme/circe-core/styles/component.styles.scss';
+```
+
+Then you can use some native DOM components cool styled.
+
+## Available Component Styles
+
+&nbsp;
+#### LABEL
+
+> **Class:** 'mda-label'
+>
+> **SubClasses:** 'error'
+>
+> **Example:**
+> ```html
+> <label class="mda-label">Some Text</label>
+>
+> <label class="mda-label error">Some Text</label>
+> ```
+
+
+&nbsp;
+#### BUTTON
+
+> **Class:** 'mda-button'
+>
+> **SubClasses:** 'disabled'
+>
+> **Example:**
+> ```html
+> <button class="mda-button">
+>   Some Text
+> </button>
+>
+> <button class="mda-button disabled">
+>   Some Text
+> </button>
+> ```
+
+
+&nbsp;
+#### ICON BUTTON
+
+> **Class:** 'mda-icon-button'
+>
+> **SubClasses:** 'disabled'
+>
+> **Example:**
+> ```html
+> <i class="mda-icon-button">some_icon</i>
+>
+> <i class="mda-icon-button disabled some_icon_classes"></i>
+> ```
+
+
+&nbsp;
+#### TEXTAREA
+
+> **Class:** 'mda-textarea'
+>
+> **SubClasses:** 'disabled', 'error'
+>
+> **Example:**
+> ```html
+> <label class="mda-label" for="text">Some Text</label>
+> <textarea id="text" class="mda-textarea">Some content...</textarea>
+>
+> <label class="mda-label" for="text">Some Text</label>
+> <textarea id="text" disabled class="mda-textarea disabled">Some content...</textarea>
+>
+> <label class="mda-label error" for="text">Some Text</label>
+> <textarea id="text" class="mda-textarea error">Some content...</textarea>
+> ```
+
+
+&nbsp;
+#### INPUT CHECKBOX
+
+> **Class:** NO CLASS
+>
+> **SubClasses:** 'disabled'
+>
+> **Example:**
+> ```html
+> <input id="check" type="checkbox">
+> <label class="mda-label" for="check">Some text</label>
+>
+> <input id="check" type="checkbox" disabled class="disabled">
+> <label class="mda-label" for="check">Some text</label>
+> ```
+
+
+&nbsp;
+#### INPUT RADIO
+
+> **Class:** NO CLASS
+>
+> **SubClasses:** NONE
+>
+> **Example:**
+> ```html
+> <input id="option01" type="radio">
+> <label class="mda-label" for="option01">Some text</label>
+> ```
+
+
+&nbsp;
+#### SELECT
+
+> **Class:** 'mda-select'
+>
+> **SubClasses:** 'mda-select__simple', 'disabled', 'error'
+>
+> **Example:**
+> ```html
+> <label class="mda-label" for="selector03">Some text</label>
+> <div class="mda-select">
+>   <select id="selector03">
+>     <option value="1">Option Text 01</option>
+>     <option value="2">Option Text 02</option>
+>   </select>
+> </div>
+>
+> <label class="mda-label" for="selector05">Some text</label>
+> <div class="mda-select mda-select__simple">
+>   <select id="selector05">
+>     <option value="1">Option Text 01</option>
+>     <option value="2">Option Text 02</option>
+>   </select>
+> </div>
+>
+> <label class="mda-label" for="selector06">Some text</label>
+> <div class="mda-select disabled">
+>   <select id="selector06" disabled>
+>     <option value="1">Option Text 01</option>
+>     <option value="2">Option Text 02</option>
+>   </select>
+> </div>
+>
+> <label class="mda-label error" for="selector08">Some text</label>
+> <div class="mda-select error">
+>   <select id="selector08">
+>     <option value="1">Option Text 01</option>
+>     <option value="2">Option Text 02</option>
+>   </select>
+> </div>
+>
+> <label class="mda-label error" for="selector12">Some text</label>
+> <div class="mda-select mda-select__simple error">
+>   <select id="selector12">
+>     <option value="1">Option Text 01</option>
+>     <option value="2">Option Text 02</option>
+>   </select>
+> </div>
+> ```
+
+
+&nbsp;
+#### INPUT TEXT, INPUT NUMBER, INPUT PASSWORD
+
+> **Class:** 'mda-input'
+>
+> **SubClasses:** 'disabled', 'error'
+>
+> **Example:**
+> ```html
+> <label class="mda-label" for="input23">Some text</label>
+> <input id="input23" class="mda-input" type="text">
+>
+> <label class="mda-label" for="input25">Some text</label>
+> <input id="input25" class="mda-input disabled" disabled type="number">
+>
+> <label class="mda-label error" for="input26">Some text</label>
+> <input id="input26" class="mda-input error" type="password">
+> ```
+
+
+&nbsp;
+#### INPUT SEARCH (Icon inside)
+
+> **Class:** 'mda-input__search'
+>
+> **SubClasses:** NONE
+>
+> **Example:**
+> ```html
+> <label class="mda-label" for="inputSearch">Some text</label>
+> <div class="mda-input__search">
+>   <input id="inputSearch" class="mda-input" type="text">
+> </div>
+> ```
+
+## Mixins Library
+
+By importing `components.styles.scss` file, you have some mixins available.
+
+You can also directly import the mixins library, as follows:
+
+```
+@import '~@lunaeme/circe-core/styles/app.mixins.scss';
+```
+
+## Available Mixins
+
+>```
+> @mixin createFlexBox($flexDirection, $alignItems, $justifyContent, $wrapMode) {
+>```
+> Mixin for apply flex properties to container.
+
+## Services Use
 
 You need to declare `BoxModelService`, `EventsService` and/or `ToolService` providers into your module `providers` section.
 
