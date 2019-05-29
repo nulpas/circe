@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-core",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Circe :: Angular Core Services and Tools",
   "scripts": {
     "prepublishOnly": "cp -R ../../projects/core/src/lib/styles ./"

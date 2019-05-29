@@ -16,7 +16,7 @@ run `yarn add @lunaeme/circe-core`.
 
 You need to import component SASS file at the top of your SASS file as follows:
 
-```
+```scss
 @import '~@lunaeme/circe-core/styles/component.styles.scss';
 ```
 
@@ -216,14 +216,14 @@ By importing `components.styles.scss` file, you have some mixins available.
 
 You can also directly import the mixins library, as follows:
 
-```
+```scss
 @import '~@lunaeme/circe-core/styles/app.mixins.scss';
 ```
 
 ## Available Mixins
 
->```
-> @mixin createFlexBox($flexDirection, $alignItems, $justifyContent, $wrapMode) {
+>```scss
+> @mixin createFlexBox($flexDirection, $alignItems, $justifyContent, $wrapMode)
 >```
 > Mixin for apply flex properties to container.
 
