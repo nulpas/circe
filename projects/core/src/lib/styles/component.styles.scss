@@ -76,6 +76,8 @@ HTML {
         color: #111111;
         cursor: pointer;
         font-size: 14px;
+        width: fit-content;
+        max-width: fit-content;
         &:hover:before {
           color: #128bdd;
         }
@@ -111,6 +113,8 @@ HTML {
         & + LABEL {
           position: relative;
           padding-left: 56px;
+          width: fit-content;
+          max-width: fit-content;
           height: 23px;
           &:before{
             content: '';
