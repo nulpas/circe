@@ -9,19 +9,10 @@ import {
   Output,
   SimpleChanges
 } from '@angular/core';
-import {
-  DataConfig,
-  DropdownRowContent,
-  IconActionObject,
-  SelectionTypeDataObject,
-  TableConfig,
-  WithAddsObject,
-  IconActionEvent
-} from './table.types';
+import { DataConfig, DropdownRowContent, IconActionObject, TableConfig, WithAddsObject, IconActionEvent } from './table.types';
 import { EventsService, ToolService } from '@lunaeme/circe-core';
 import { OrderPipe } from 'ngx-order-pipe';
 import { BehaviorSubject } from 'rxjs';
-import { isEqual as _isEqual } from 'lodash';
 
 @Component({
   selector: 'cc-table',
@@ -33,29 +24,31 @@ import { isEqual as _isEqual } from 'lodash';
 export class TableComponent implements OnInit, OnDestroy, OnChanges {
   @Input() dataSet: Array<any>;
   @Input() config: TableConfig;
-  @Input() set radioColumns(value: any) {
-    this.radioColumnsInside = value;
-  }
   @Input() set checkboxColumns(value: Array<any>) {
     this.checkboxColumnsInside = value;
   }
-  @Input() selectColumnsInput: any;
-  @Input() createSelectColumnsInput: boolean = true;
+  @Input() set radioColumns(value: any) {
+    this.radioColumnsInside = value;
+  }
+  @Input() set selectColumns(value: any) {
+    this.selectColumnsInside = value;
+  }
   @Input() textOnUndefined: string | Array<string>;
   @Input() textOnNull: Array<string>;
   @Input() errorMessages: string;
-  @Output() selectColumns: EventEmitter<any> = new EventEmitter();
-  @Output() createSelectColumns: EventEmitter<boolean> = new EventEmitter();
-  @Output() radioColumnsChange: EventEmitter<any> = new EventEmitter();
+
   @Output() checkboxColumnsChange: EventEmitter<Array<any>> = new EventEmitter();
+  @Output() radioColumnsChange: EventEmitter<any> = new EventEmitter();
+  @Output() selectColumnsChange: EventEmitter<any> = new EventEmitter();
   @Output() iconAction: EventEmitter<IconActionEvent> = new EventEmitter();
 
   public getValueFromDotedKey: (a: any, b: DataConfig) => any;
   public objectKeys = Object.keys;
+
   public columnsTemplate: string;
-  public radioColumnsInside: any = {};
   public checkboxColumnsInside: Array<any> = [];
-  public selectColumnsInside: any = {};
+  public radioColumnsInside: any = {};
+  public selectColumnsInside: any = null;
   public viewSelector: BehaviorSubject<Array<boolean>> = new BehaviorSubject([]);
 
   public showTextOnUndefined$: BehaviorSubject<string> = new BehaviorSubject('');
@@ -86,50 +79,26 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.dataSet) {
-      if (changes.dataSet.currentValue && changes.dataSet.currentValue.length) {
-        if (this.createSelectColumnsInput && this.config && Object.keys(this.config).length) {
-          this.config.tableData.forEach((config: DataConfig) => {
-            if (config.type === 'select') {
-              (this.selectColumnsInside[config.param] as any) = {};
-              this.dataSet.forEach((row: any) => {
-                this.selectColumnsInside[config.param][row[config.sourceOptions.selectKeyIdentification]] = ({
-                  key: row[config.sourceOptions.selectKeyIdentification],
-                  selection: row[config.sourceOptions.default.param],
-                  selectionSource: row[config.sourceOptions.param].map((e: string) => {
-                    const _auxValue: string = (e === 'Auto') ? 'AUTO' : ToolService.formatString(e).toUpperCase();
-                    return { key: e, value: _auxValue };
-                  })
-                } as SelectionTypeDataObject);
-              });
-            }
-          });
+    if (changes.dataSet && changes.dataSet.currentValue && changes.dataSet.currentValue.length && !this.selectColumnsInside) {
+      this.selectColumnsInside = {};
+      this.config.tableData.forEach((e: DataConfig) => {
+        if (e.type === 'select') {
+          this.selectColumnsInside[e.param] = {};
         }
-      }
+      });
     }
     if (changes.config && Object.keys(changes.config).length) {
       this.columnsTemplate = this.setColumnsTemplate();
     }
-    if (changes.selectColumnsInput && changes.selectColumnsInput.currentValue) {
-      this.selectColumnsInside = changes.selectColumnsInput.currentValue;
-      this.createSelectColumnsInput = false;
-      this.createSelectColumns.emit(this.createSelectColumnsInput);
-    }
-    if (changes.createSelectColumnsInput && changes.createSelectColumnsInput.currentValue) {
-      this.createSelectColumnsInput = changes.createSelectColumnsInput.currentValue;
-      this.createSelectColumns.emit(this.createSelectColumnsInput);
-    }
   }
 
-  public hideSelectors(event: any) {
-    (event as MouseEvent).stopPropagation();
+  public hideSelectors() {
     if (this.config.selection) {
       this.viewSelector.next(this.viewSelector.getValue().map(() => false));
     }
   }
 
-  public showSelector(event: any, index: number) {
-    (event as MouseEvent).stopPropagation();
+  public showSelector(index: number) {
     if (this.config.selection) {
       const _aux: Array<boolean> = this.viewSelector.getValue();
       _aux[index] = true;
@@ -151,36 +120,43 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
 
   public radioAction(row: any, configCell: DataConfig): void {
     this.radioColumnsInside[configCell.id] = row[configCell.selection];
-    // this.radioColumns.emit(this.radioColumnsInside);
     this.radioColumnsChange.emit(this.radioColumnsInside);
   }
 
-  public selectionAction(event: any, row: any): void {
-    (event as MouseEvent).stopPropagation();
-    const _selectElement: any = (this.config.selection.fieldToSelect) ?
-      row[this.config.selection.fieldToSelect] :
-      row;
-    if (this.checkboxColumnsInside.indexOf(_selectElement) > -1) {
-      this.checkboxColumnsInside.splice(this.checkboxColumnsInside.indexOf(_selectElement), 1);
+  public selectionAction(row: any): void {
+    const _fieldToCompare: string = (this.config.selection.fieldToSelect) ?
+      this.config.selection.fieldToSelect : this.config.selection.fieldToCompare;
+    if (this.checkboxColumnsInside.filter((e: any) => e[_fieldToCompare] === row[_fieldToCompare]).length) {
+      this.checkboxColumnsInside.splice(
+        this.checkboxColumnsInside.map(e => e[_fieldToCompare]).indexOf(row[_fieldToCompare]),
+        1
+      );
     } else {
-      this.checkboxColumnsInside.push(_selectElement);
+      const _elementToSelect: any = (this.config.selection.fieldToSelect) ? row[this.config.selection.fieldToSelect] : row ;
+      this.checkboxColumnsInside.push(_elementToSelect);
     }
     this.checkboxColumnsChange.emit(this.checkboxColumnsInside);
   }
 
   public selectColumnAction(row: any, configCell: DataConfig, event: any): void {
     const _selectedValue: string = ((event as MouseEvent).target as HTMLFormElement).value;
-    const _column: string = configCell.param;
-    const _field: string = row[configCell.sourceOptions.selectKeyIdentification];
-    this.selectColumnsInside[_column][_field].selection = _selectedValue;
-    this.selectColumns.emit(this.selectColumnsInside);
+    const _identification: string = row[configCell.selectOptions.selectKeyIdentification];
+    this.selectColumnsInside[configCell.param][_identification] = {};
+    configCell.selectOptions.fieldsForEvent.forEach((e: string) => {
+      this.selectColumnsInside[configCell.param][_identification][e] = (e === configCell.selectOptions.value) ? _selectedValue : row[e];
+    });
+    this.selectColumnsChange.emit(this.selectColumnsInside);
   }
 
   public checkSelection(objectToCheck: any): boolean {
     const _toCheck: any = (this.config.selection.fieldToSelect) ?
       objectToCheck[this.config.selection.fieldToSelect] :
-      objectToCheck;
-    return !!(this.checkboxColumnsInside && this.checkboxColumnsInside.filter(e => _isEqual(e, _toCheck)).length);
+      objectToCheck[this.config.selection.fieldToCompare];
+
+    return !!(this.checkboxColumnsInside && this.checkboxColumnsInside.filter(e => {
+      const _compare: string = (typeof e === 'string') ? e : e[this.config.selection.fieldToCompare];
+      return (_compare === _toCheck);
+    }).length);
   }
 
   public selectionAll(): void {

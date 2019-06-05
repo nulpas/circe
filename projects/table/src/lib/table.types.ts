@@ -1,6 +1,3 @@
-import { StandardKeyValueObject } from '@lunaeme/circe-core';
-
-
 export interface TableConfig {
   title: string;
   tableData: Array<DataConfig>;
@@ -16,11 +13,11 @@ export interface DataConfig {
   param: string;
   icon?: string;
   type?: 'radio' | 'select' | 'iconAction';
+  selectOptions?: SelectOptions;
   colorLabel?: boolean;
   colorLabelParam?: string;
   colorLabelMap?: any;
   iconAction?: IconActionObject;
-  sourceOptions?: SelectSourceOptions;
   selection?: string;
   rounded?: boolean;
   noOrder?: boolean;
@@ -46,17 +43,12 @@ export interface IconActionEvent {
   element: any;
 }
 
-export interface SelectSourceOptions {
+export interface SelectOptions {
   selectKeyIdentification: string;
-  param?: string;
-  endPoint?: string;
-  list?: Array<any>;
-  default?: DefaultSelectSourceOptions;
-}
-
-export interface DefaultSelectSourceOptions {
-  defined?: any;
-  param?: string;
+  fieldsForEvent: Array<string>;
+  value: string;
+  defaultValue: string;
+  options: string;
 }
 
 export interface DropdownRowConfig {
@@ -73,6 +65,7 @@ export interface DropdownRowContent {
 }
 
 export interface SelectionObject {
+  fieldToCompare: string;
   selectAll?: boolean;
   fieldToSelect?: string;
 }
@@ -80,15 +73,4 @@ export interface SelectionObject {
 export interface WithAddsObject {
   dropdown: number;
   selection: number;
-}
-
-export interface ColumnSelectTypeDataObject {
-  field: string;
-  selections: Array<SelectionTypeDataObject>;
-}
-
-export interface SelectionTypeDataObject {
-  key: string | number;
-  selection: string | object;
-  selectionSource: Array<StandardKeyValueObject>;
 }

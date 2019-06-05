@@ -39,20 +39,6 @@ Then use this way:
 
 &nbsp;
 >```typescript
-> @Input() selectColumnsInput: any;
->```
---
-
-
-&nbsp;
->```typescript
-> @Input() createSelectColumnsInput: boolean = true;
->```
---
-
-
-&nbsp;
->```typescript
 > @Input() textOnUndefined: string | Array<string>;
 >```
 --
@@ -74,14 +60,7 @@ Then use this way:
 ## Outputs
 
 >```typescript
-> @Output() selectColumns: EventEmitter<any> = new EventEmitter();
->```
---
-
-
-&nbsp;
->```typescript
-> @Output() createSelectColumns: EventEmitter<boolean> = new EventEmitter();
+> @Output() checkboxColumnsChange: EventEmitter<Array<any>> = new EventEmitter();
 >```
 --
 
@@ -95,7 +74,7 @@ Then use this way:
 
 &nbsp;
 >```typescript
-> @Output() checkboxColumnsChange: EventEmitter<Array<any>> = new EventEmitter();
+> @Output() selectColumnsChange: EventEmitter<any> = new EventEmitter();
 >```
 --
 
@@ -109,6 +88,13 @@ Then use this way:
 ## Two Way Data binding
 
 >```typescript
+> @Input() set checkboxColumns(value: Array<any>)
+>```
+--
+
+
+&nbsp;
+>```typescript
 > @Input() set radioColumns(value: any)
 >```
 --
@@ -116,7 +102,7 @@ Then use this way:
 
 &nbsp;
 >```typescript
-> @Input() set checkboxColumns(value: Array<any>)
+> @Input() set selectColumns(value: any)
 >```
 --
 

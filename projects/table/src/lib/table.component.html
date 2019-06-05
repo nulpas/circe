@@ -33,14 +33,14 @@
       <div
         class="table__row"
         [ngStyle]="{'grid-template-columns': columnsTemplate}"
-        (mouseenter)="ev.preventNoNeededEvent($event); showSelector($event, i);"
-        (mouseleave)="ev.preventNoNeededEvent($event); hideSelectors($event);">
+        (mouseenter)="ev.preventNoNeededEvent($event); showSelector(i);"
+        (mouseleave)="ev.preventNoNeededEvent($event); hideSelectors();">
         <div class="table__cell selection" *ngIf="config.selection">
           <i
             class="mda-icon mda-fs__15"
             *ngIf="checkSelection(row) || viewSelector.getValue()[i]"
             [ngClass]="(checkSelection(row)) ? 'icon-square-check selected' : 'icon-checkbox'"
-            (click)="selectionAction($event, row)">
+            (click)="ev.preventNoNeededEvent($event); selectionAction(row);">
           </i>
         </div>
         <div
@@ -64,10 +64,12 @@
                 class="mda-fs__14"
                 (change)="ev.preventNoNeededEvent($event); selectColumnAction(row, cell, $event);">
                 <option
-                  *ngFor="let option of selectColumnsInside[cell.param][row[cell.sourceOptions.selectKeyIdentification]].selectionSource; trackBy: tools.identifier;"
-                  [value]="option.key"
-                  [selected]="option.key === selectColumnsInside[cell.param][row[cell.sourceOptions.selectKeyIdentification]].selection">
-                  {{option.value}}
+                  *ngFor="let option of row[cell.selectOptions.options]; trackBy: tools.identifier;"
+                  [value]="option.key || option"
+                  [selected]="(selectColumnsInside[cell.param] && selectColumnsInside[cell.param][row[cell.selectOptions.selectKeyIdentification]]) ?
+                    selectColumnsInside[cell.param][row[cell.selectOptions.selectKeyIdentification]][cell.selectOptions.value] === (option.key || option) :
+                    row[cell.selectOptions.value] === (option.key || option)">
+                  {{option.value || option}}
                 </option>
               </select>
             </div>
