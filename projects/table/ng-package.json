@@ -7,7 +7,6 @@
   "whitelistedNonPeerDependencies": [
     "@lunaeme/circe-core",
     "@lunaeme/circe-spinner",
-    "lodash",
     "ngx-order-pipe"
   ]
 }

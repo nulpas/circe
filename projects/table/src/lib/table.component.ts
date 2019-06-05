@@ -126,9 +126,19 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   public selectionAction(row: any): void {
     const _fieldToCompare: string = (this.config.selection.fieldToSelect) ?
       this.config.selection.fieldToSelect : this.config.selection.fieldToCompare;
-    if (this.checkboxColumnsInside.filter((e: any) => e[_fieldToCompare] === row[_fieldToCompare]).length) {
+
+    const _isSelectedPreviously: boolean = !!this.checkboxColumnsInside.filter((e: any) => {
+      const _compare: string = (typeof e === 'string') ? e : e[_fieldToCompare];
+      return _compare === row[_fieldToCompare];
+    }).length;
+
+    if (_isSelectedPreviously) {
       this.checkboxColumnsInside.splice(
-        this.checkboxColumnsInside.map(e => e[_fieldToCompare]).indexOf(row[_fieldToCompare]),
+        this.checkboxColumnsInside
+          .map(e => {
+            return (typeof e === 'string') ? e : e[_fieldToCompare];
+          })
+          .indexOf(row[_fieldToCompare]),
         1
       );
     } else {
