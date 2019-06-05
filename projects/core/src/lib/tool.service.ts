@@ -2,6 +2,22 @@ import { Injectable } from '@angular/core';
 import { startCase as _startCase } from 'lodash';
 
 @Injectable() export class ToolService {
+  public static readonly PATTERNS = {
+    FLOAT: {
+      GREATER_THAN_0_LOWER_THAN_1: '^(0|0+(\.[0-9]{1,2})|1*)$',
+      GREATER_THAN_0COMMA1_LOWER_THAN_1: '^(0+(\.[1-9]{1,2})|1*)$',
+    },
+    NUMBER: '^(0|[1-9][0-9]*)$'
+  };
+  public static readonly VALIDATION_MESSAGES = {
+    GREATER_THAN_0_LOWER_THAN_1: 'Field value must be between 0 and 1',
+    GREATER_THAN_0COMMA1_LOWER_THAN_1: 'Field value must be between 0.1 and 1',
+    NUMBER: 'Field must be numeric',
+    REQUIRED: 'Required value',
+    MINIMUM_0: 'Minimum value must be 0',
+    MINIMUM_1: 'Minimum value must be 1',
+    MINIMUM_2: 'Minimum value must be 2',
+  };
   public months: Array<string> = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   constructor() {}

@@ -356,8 +356,40 @@ Set of methods about DOM events handlers:
 &nbsp;
 #### ToolService
 
-Several help methods:
+Several help parameters and methods:
 
+> ```typescript
+> public static readonly PATTERNS = {
+>   FLOAT: {
+>     GREATER_THAN_0_LOWER_THAN_1: '^(0|0+(\.[0-9]{1,2})|1*)$',
+>     GREATER_THAN_0COMMA1_LOWER_THAN_1: '^(0+(\.[1-9]{1,2})|1*)$',
+>   },
+>   NUMBER: '^(0|[1-9][0-9]*)$'
+> };
+> ```
+> Static parameter width some predefined regular expressions to use as patterns.
+
+
+&nbsp;
+> ```typescript
+> public months: Array<string> = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+> ```
+> Array parameter defining three letters months to use in several dates use.
+
+
+> ```typescript
+> public static readonly PATTERNS = {
+>   FLOAT: {
+>     GREATER_THAN_0_LOWER_THAN_1: '^(0|0+(\.[0-9]{1,2})|1*)$',
+>     GREATER_THAN_0COMMA1_LOWER_THAN_1: '^(0+(\.[1-9]{1,2})|1*)$',
+>   },
+>   NUMBER: '^(0|[1-9][0-9]*)$'
+> };
+> ```
+> Static parameter width some predefined regular expressions to use as patterns.
+
+
+&nbsp;
 > ```typescript
 > public static getValueFromMultiLevelObject(object: any, key: string, separator?: string): any
 > ```
