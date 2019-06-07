@@ -121,6 +121,9 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   public radioAction(row: any, configCell: DataConfig): void {
     this.radioColumnsInside[configCell.id] = row[configCell.selection];
     this.radioColumnsChange.emit(this.radioColumnsInside);
+    if (configCell.specialBehavior && configCell.specialBehavior.uncheckSelection && this.config.selection && this.checkSelection(row)) {
+      this.selectionAction(row);
+    }
   }
 
   public selectionAction(row: any): void {
@@ -144,6 +147,16 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     } else {
       const _elementToSelect: any = (this.config.selection.fieldToSelect) ? row[this.config.selection.fieldToSelect] : row ;
       this.checkboxColumnsInside.push(_elementToSelect);
+
+      if (this.config.selection && this.config.selection.uncheckRadio) {
+        const _radioColumn: Array<DataConfig> = this.config.tableData
+          .filter((e: DataConfig) => e.id === this.config.selection.uncheckRadioId);
+        const _radioExists: boolean = !!(_radioColumn.length && _radioColumn.length === 1);
+        if (_radioExists && this.radioColumnsInside[_radioColumn[0].id] === row[_radioColumn[0].selection]) {
+          this.radioColumnsInside[_radioColumn[0].id] = '';
+          this.radioColumnsChange.emit(this.radioColumnsInside);
+        }
+      }
     }
     this.checkboxColumnsChange.emit(this.checkboxColumnsInside);
   }

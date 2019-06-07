@@ -166,6 +166,13 @@
       .table__cell {
         @include createFlexBox(row, center, normal, nowrap);
         padding: 15px 10px;
+        I.icon-info3 {
+          cursor: help;
+          color: #777777;
+        }
+        SPAN.if-no-show__content {
+          color: #333333;
+        }
         & > SPAN {
           padding: 2px 0;
           &.color-label {
@@ -204,6 +211,9 @@
               color: #128bdd;
             }
           }
+        }
+        &.soft__selection {
+          opacity: .4;
         }
         INPUT {
           cursor: pointer;
