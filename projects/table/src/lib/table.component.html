@@ -142,7 +142,7 @@
             [title]="getValueFromDotedKey(row, cell.param)">
             {{getValueFromDotedKey(row, cell).toFixed(2)}}
           </span>
-          <span class="mda-fs__14" *ngIf="!cell.type && !row[cell.param]">-</span>
+          <span class="mda-fs__14" *ngIf="!cell.type && (row[cell.param] === null || row[cell.param] === undefined)">-</span>
         </div>
         <div class="table__cell dropdown" *ngIf="config.dropdownRow">
           <i
