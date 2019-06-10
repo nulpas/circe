@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-table",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Circe :: Angular Table Component",
   "repository": {
     "type": "git",

@@ -139,7 +139,7 @@
               color: (cell.colorLabel) ? cell.colorLabelMap[row[cell.colorLabelParam]].color : '#333333',
               'background-color': (cell.colorLabel) ? cell.colorLabelMap[row[cell.colorLabelParam]].bkColor : 'transparent'
             }"
-            *ngIf="row[cell.param] !== null && row[cell.param] !== undefined && !cell.specialBehavior && !cell.rounded">
+            *ngIf="row[cell.param] !== null && row[cell.param] !== undefined && !cell.specialBehavior && !cell.rounded && !cell.type">
             {{getValueFromDotedKey(row, cell)}}
           </span>
           <span
@@ -149,7 +149,7 @@
               color: (cell.colorLabel) ? cell.colorLabelMap[row[cell.colorLabelParam]].color : '#333333',
               'background-color': (cell.colorLabel) ? cell.colorLabelMap[row[cell.colorLabelParam]].bkColor : 'transparent'
             }"
-            *ngIf="row[cell.param] !== null && row[cell.param] !== undefined && !cell.specialBehavior && cell.rounded"
+            *ngIf="row[cell.param] !== null && row[cell.param] !== undefined && !cell.specialBehavior && cell.rounded && !cell.type"
             [title]="getValueFromDotedKey(row, cell.param)">
             {{getValueFromDotedKey(row, cell).toFixed(2)}}
           </span>
