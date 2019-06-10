@@ -53,6 +53,20 @@ Then use this way:
 
 &nbsp;
 >```typescript
+> @Input() spinnerForUndefinedState: SpinnerType;
+>```
+--
+
+
+&nbsp;
+>```typescript
+> @Input() spinnerForNullState: SpinnerType;
+>```
+--
+
+
+&nbsp;
+>```typescript
 > @Input() errorMessages: string;
 >```
 --

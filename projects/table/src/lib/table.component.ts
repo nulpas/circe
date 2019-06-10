@@ -9,10 +9,19 @@ import {
   Output,
   SimpleChanges
 } from '@angular/core';
-import { DataConfig, DropdownRowContent, IconActionObject, TableConfig, WithAddsObject, IconActionEvent } from './table.types';
+import {
+  DataConfig,
+  DropdownRowContent,
+  TableConfig,
+  WithAddsObject,
+  ActionEvent,
+  ActionRow,
+  IconActionRow
+} from './table.types';
 import { EventsService, ToolService } from '@lunaeme/circe-core';
 import { OrderPipe } from 'ngx-order-pipe';
 import { BehaviorSubject } from 'rxjs';
+import { SpinnerType } from '@lunaeme/circe-spinner';
 
 @Component({
   selector: 'cc-table',
@@ -35,12 +44,14 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   }
   @Input() textOnUndefined: string | Array<string>;
   @Input() textOnNull: Array<string>;
+  @Input() spinnerForUndefinedState: SpinnerType;
+  @Input() spinnerForNullState: SpinnerType;
   @Input() errorMessages: string;
 
   @Output() checkboxColumnsChange: EventEmitter<Array<any>> = new EventEmitter();
   @Output() radioColumnsChange: EventEmitter<any> = new EventEmitter();
   @Output() selectColumnsChange: EventEmitter<any> = new EventEmitter();
-  @Output() iconAction: EventEmitter<IconActionEvent> = new EventEmitter();
+  @Output() action: EventEmitter<ActionEvent> = new EventEmitter();
 
   public getValueFromDotedKey: (a: any, b: DataConfig) => any;
   public objectKeys = Object.keys;
@@ -121,7 +132,10 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
   public radioAction(row: any, configCell: DataConfig): void {
     this.radioColumnsInside[configCell.id] = row[configCell.selection];
     this.radioColumnsChange.emit(this.radioColumnsInside);
-    if (configCell.specialBehavior && configCell.specialBehavior.uncheckSelection && this.config.selection && this.checkSelection(row)) {
+    if (
+      configCell.specialBehavior && configCell.specialBehavior.type === 'radio' && configCell.specialBehavior.uncheckSelection &&
+      this.config.selection && this.checkSelection(row)
+    ) {
       this.selectionAction(row);
     }
   }
@@ -316,8 +330,8 @@ export class TableComponent implements OnInit, OnDestroy, OnChanges {
     return !Object.keys(paramValue).length;
   }
 
-  public doIconAction(iconAction: IconActionObject, element: any): void {
-    this.iconAction.emit({ type: iconAction.type, element });
+  public doAction(action: ActionRow | IconActionRow, element: any): void {
+    this.action.emit({ type: action.action, element });
   }
 
   ngOnDestroy(): void {

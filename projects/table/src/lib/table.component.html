@@ -78,30 +78,41 @@
               </select>
             </div>
           </ng-container>
-          <div *ngIf="cell.type && cell.type === 'iconAction'">
+          <div *ngIf="cell.specialBehavior && cell.specialBehavior.type === 'action'">
+            <span
+              class="action__text mda-fs__14"
+              title="Open asset"
+              *ngIf="!cell.specialBehavior.icon"
+              (click)="ev.preventNoNeededEvent($event); doAction(cell.specialBehavior, row);">
+              {{getValueFromDotedKey(row, cell)}}
+            </span>
             <i
-              class="mda-icon-button {{cell.iconAction.icon}} {{(cell.iconAction.size) ? cell.iconAction.size : 'mda-fs__16'}}"
+              class="mda-icon-button {{cell.specialBehavior.icon}} {{(cell.specialBehavior.size) ? cell.specialBehavior.size : 'mda-fs__16'}}"
               *ngIf="(
-                !cell.toShowCondition ||
-                (cell.toShowCondition.name === 'selection' && cell.toShowCondition.status && checkSelection(row)) ||
-                (cell.toShowCondition.name === 'selection' && !cell.toShowCondition.status && !checkSelection(row)) ||
-                (cell.toShowCondition.name === 'rowDataSimple'&& !cell.toShowCondition.isDifferent && row[cell.toShowCondition.param] === cell.toShowCondition.value) ||
-                (cell.toShowCondition.name === 'rowDataSimple'&& cell.toShowCondition.isDifferent && row[cell.toShowCondition.param] !== cell.toShowCondition.value) ||
-                (cell.toShowCondition.name === 'customCondition' && cell.toShowCondition.condition(row))
+                cell.specialBehavior.icon && (
+                  !cell.toShowCondition ||
+                  (cell.toShowCondition.name === 'selection' && cell.toShowCondition.status && checkSelection(row)) ||
+                  (cell.toShowCondition.name === 'selection' && !cell.toShowCondition.status && !checkSelection(row)) ||
+                  (cell.toShowCondition.name === 'rowDataSimple'&& !cell.toShowCondition.isDifferent && row[cell.toShowCondition.param] === cell.toShowCondition.value) ||
+                  (cell.toShowCondition.name === 'rowDataSimple'&& cell.toShowCondition.isDifferent && row[cell.toShowCondition.param] !== cell.toShowCondition.value) ||
+                  (cell.toShowCondition.name === 'customCondition' && cell.toShowCondition.condition(row))
+                )
               )"
               [title]="cell.label"
-              [ngClass]="(cell.iconAction.iconClass) ? cell.iconAction.iconClass : 'mda-icon'"
-              (click)="ev.preventNoNeededEvent($event); doIconAction(cell.iconAction, row)"></i>
+              [ngClass]="(cell.specialBehavior.iconClass) ? cell.specialBehavior.iconClass : 'mda-icon'"
+              (click)="ev.preventNoNeededEvent($event); doAction(cell.specialBehavior, row)"></i>
             <i
-              class="mda-icon icon-info3 {{(cell.iconAction && cell.iconAction.size) ? cell.iconAction.size : 'mda-fs__16'}}"
+              class="mda-icon icon-info3 {{(cell.specialBehavior.size) ? cell.specialBehavior.size : 'mda-fs__16'}}"
               *ngIf="(
-                (cell.toShowCondition && cell.toShowCondition.ifNoShow && cell.toShowCondition.ifNoShow.icon) &&
-                (
-                  (cell.toShowCondition.name === 'selection' && cell.toShowCondition.status && !checkSelection(row)) ||
-                  (cell.toShowCondition.name === 'selection' && !cell.toShowCondition.status && checkSelection(row)) ||
-                  (cell.toShowCondition.name === 'rowDataSimple' && !cell.toShowCondition.isDifferent && row[cell.toShowCondition.param] !== cell.toShowCondition.value) ||
-                  (cell.toShowCondition.name === 'rowDataSimple' && cell.toShowCondition.isDifferent && row[cell.toShowCondition.param] === cell.toShowCondition.value) ||
-                  (cell.toShowCondition.name === 'customCondition' && !cell.toShowCondition.condition(row))
+                cell.specialBehavior.icon && (
+                  (cell.toShowCondition && cell.toShowCondition.ifNoShow && cell.toShowCondition.ifNoShow.icon) &&
+                  (
+                    (cell.toShowCondition.name === 'selection' && cell.toShowCondition.status && !checkSelection(row)) ||
+                    (cell.toShowCondition.name === 'selection' && !cell.toShowCondition.status && checkSelection(row)) ||
+                    (cell.toShowCondition.name === 'rowDataSimple' && !cell.toShowCondition.isDifferent && row[cell.toShowCondition.param] !== cell.toShowCondition.value) ||
+                    (cell.toShowCondition.name === 'rowDataSimple' && cell.toShowCondition.isDifferent && row[cell.toShowCondition.param] === cell.toShowCondition.value) ||
+                    (cell.toShowCondition.name === 'customCondition' && !cell.toShowCondition.condition(row))
+                  )
                 )
               )"
               [title]="cell.toShowCondition.ifNoShow.phrase"></i>
@@ -128,7 +139,7 @@
               color: (cell.colorLabel) ? cell.colorLabelMap[row[cell.colorLabelParam]].color : '#333333',
               'background-color': (cell.colorLabel) ? cell.colorLabelMap[row[cell.colorLabelParam]].bkColor : 'transparent'
             }"
-            *ngIf="row[cell.param] && !cell.type && !cell.rounded">
+            *ngIf="row[cell.param] !== null && row[cell.param] !== undefined && !cell.specialBehavior && !cell.rounded">
             {{getValueFromDotedKey(row, cell)}}
           </span>
           <span
@@ -138,11 +149,11 @@
               color: (cell.colorLabel) ? cell.colorLabelMap[row[cell.colorLabelParam]].color : '#333333',
               'background-color': (cell.colorLabel) ? cell.colorLabelMap[row[cell.colorLabelParam]].bkColor : 'transparent'
             }"
-            *ngIf="row[cell.param] && !cell.type && cell.rounded"
+            *ngIf="row[cell.param] !== null && row[cell.param] !== undefined && !cell.specialBehavior && cell.rounded"
             [title]="getValueFromDotedKey(row, cell.param)">
             {{getValueFromDotedKey(row, cell).toFixed(2)}}
           </span>
-          <span class="mda-fs__14" *ngIf="!cell.type && (row[cell.param] === null || row[cell.param] === undefined)">-</span>
+          <span class="mda-fs__14" *ngIf="!cell.type && !cell.specialBehavior && (row[cell.param] === null || row[cell.param] === undefined)">-</span>
         </div>
         <div class="table__cell dropdown" *ngIf="config.dropdownRow">
           <i
@@ -233,10 +244,15 @@
   </div>
 
   <div class="table__loading" *ngIf="!dataSet">
-    <cc-spinner *ngIf="dataSet === null" [textMarquee]="textOnNull"></cc-spinner>
+    <cc-spinner
+      *ngIf="dataSet === null"
+      [type]="(spinnerForNullState) ? spinnerForNullState : 'default'"
+      [textMarquee]="textOnNull">
+    </cc-spinner>
+
     <cc-spinner
       *ngIf="dataSet === undefined"
-      [type]="'cube-grid'"
+      [type]="(spinnerForUndefinedState) ? spinnerForUndefinedState : 'cube-grid'"
       [textMarquee]="textOnUndefined">
     </cc-spinner>
   </div>

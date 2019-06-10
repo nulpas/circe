@@ -1,3 +1,5 @@
+export type Action = 'edit' | 'delete' | 'open';
+
 export interface TableConfig {
   title: string;
   tableData: Array<DataConfig>;
@@ -12,13 +14,14 @@ export interface DataConfig {
   label: string;
   param: string;
   icon?: string;
-  type?: 'radio' | 'select' | 'iconAction';
-  specialBehavior?: RadioButtonRow;
+  type?: 'radio' | 'select' | 'action';
+  specialBehavior?: RadioButtonRow | ActionRow | IconActionRow;
+
   selectOptions?: SelectOptions;
   colorLabel?: boolean;
   colorLabelParam?: string;
   colorLabelMap?: any;
-  iconAction?: IconActionObject;
+  iconAction?: IconActionRow;
   selection?: string;
   rounded?: boolean;
   noOrder?: boolean;
@@ -32,7 +35,22 @@ export interface DataConfig {
 
 export interface RadioButtonRow {
   type: 'radio';
-  uncheckSelection: boolean;
+  uncheckSelection?: boolean;
+}
+
+export interface ActionRow {
+  type: 'action';
+  action: Action;
+}
+export interface IconActionRow extends ActionRow {
+  icon: string;
+  iconClass?: string;
+  size?: 'mda-fs__14' | 'mda-fs__15' | 'mda-fs__16' | 'mda-fs__18';
+}
+
+export interface ActionEvent {
+  type: Action;
+  element: any;
 }
 
 export interface IfRowData {
@@ -62,18 +80,6 @@ export interface IfNoShow {
 
 export interface IsComplexArrayObject {
   complexParam: string;
-}
-
-export interface IconActionObject {
-  type: IconAction;
-  icon: string;
-  iconClass?: string;
-  size?: 'mda-fs__14' | 'mda-fs__15' | 'mda-fs__16' | 'mda-fs__18';
-}
-export type IconAction = 'edit' | 'delete';
-export interface IconActionEvent {
-  type: IconAction;
-  element: any;
 }
 
 export interface SelectOptions {
