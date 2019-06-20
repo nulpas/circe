@@ -9,7 +9,7 @@ import {
   OnInit,
   Output
 } from '@angular/core';
-import { BoxModelService, BoxModelSwapObject, SizeObject } from '@lunaeme/circe-core';
+import { BoxModelService, BoxModelSwapObject, EventsService, SizeObject } from '@lunaeme/circe-core';
 
 @Component({
   selector: 'cc-modal',
@@ -33,7 +33,7 @@ export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private readonly _element: HTMLElement;
 
-  constructor(private _el: ElementRef, private _bm: BoxModelService) {
+  constructor(public ev: EventsService, private _el: ElementRef, private _bm: BoxModelService) {
     this._element = _el.nativeElement;
   }
 

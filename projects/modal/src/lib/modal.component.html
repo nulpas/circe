@@ -12,7 +12,7 @@
           <i
             class="mda-icon icon-cross mda-fs__18 modal__close"
             *ngIf="closeButton"
-            (click)="close.emit()"
+            (click)="ev.preventNoNeededEvent($event); close.emit();"
             title="Close">
           </i>
         </div>

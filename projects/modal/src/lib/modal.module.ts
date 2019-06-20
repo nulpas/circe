@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ModalComponent } from './modal.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { BoxModelService } from '@lunaeme/circe-core';
+import { BoxModelService, EventsService } from '@lunaeme/circe-core';
 import { ClickOutsideModule } from '@lunaeme/circe-click-outside';
 
 @NgModule({
@@ -16,7 +16,8 @@ import { ClickOutsideModule } from '@lunaeme/circe-click-outside';
     ClickOutsideModule
   ],
   providers: [
-    BoxModelService
+    BoxModelService,
+    EventsService
   ]
 })
 
