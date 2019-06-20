@@ -1,4 +1,5 @@
 import { Directive, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { EventsService } from '@lunaeme/circe-core';
 
 @Directive({
   selector: '[ccClickOutside]'
@@ -11,13 +12,15 @@ export class ClickOutsideDirective {
 
   private readonly _element: HTMLElement;
 
-  @HostListener('document:click', ['$event.target']) onMouseEnter(targetElement: HTMLElement) {
-    if (this.apply && !this._element.contains(targetElement) && (this.exceptions.indexOf(targetElement.id) < 0)) {
+  @HostListener('document:click', ['$event']) onMouseEnter(event: Event) {
+    this._ev.preventNoNeededEvent(event);
+    const _eventTarget: HTMLElement = event.target as HTMLElement;
+    if (this.apply && !this._element.contains(_eventTarget) && (this.exceptions.indexOf(_eventTarget.id) < 0)) {
       this.clickOutside.emit();
     }
   }
 
-  constructor(private _el: ElementRef) {
+  constructor(private _el: ElementRef, private _ev: EventsService) {
     this._element = this._el.nativeElement;
   }
 }

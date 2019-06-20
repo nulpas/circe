@@ -4,7 +4,7 @@ export interface TableConfig {
   title: string;
   tableData: Array<DataConfig>;
   showHeader?: boolean;
-  headerStyle?: string;
+  headerStyle?: 'default' | 'clear' | 'clear__bold' | 'white';
   dropdownRow?: DropdownRowConfig;
   selection?: SelectionObject;
 }
