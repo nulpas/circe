@@ -1,43 +1,89 @@
-#dropdown, .dropdown {
-  position: absolute;
-  width: fit-content;
-  min-width: fit-content;
-  z-index: 25;
-  background-color: white;
-  padding: 8px;
-  border: 1px solid white;
-  border-radius: 5px;
-  box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
-  margin-bottom: 10px;
+@import '~@lunaeme/circe-core/styles/stratio.styles';
 
-  .suggestion {
-    padding: 5px;
-    border: 1px solid white;
-    B {
-      font-weight: bold;
+.mda.dropdown {
+  position: absolute;
+  width: var(--d-width-default);
+  min-width: var(--d-width-default);
+  left: var(--d-left-default);
+  right: var(--d-right-default);
+  z-index: var(--d-z-index);
+  color: var(--d-color);
+  background-color: var(--d-bg-color);
+  border-top: var(--d-border-top);
+  border-right: var(--d-border-right);
+  border-bottom: var(--d-border-bottom);
+  border-left: var(--d-border-left);
+  border-top-left-radius: var(--d-border-radius-top-left);
+  border-top-right-radius: var(--d-border-radius-top-right);
+  border-bottom-right-radius: var(--d-border-radius-bottom-right);
+  border-bottom-left-radius: var(--d-border-radius-bottom-left);
+  box-sizing: border-box;
+  padding: var(--d-padding);
+  margin-top: var(--d-margin);
+  box-shadow: var(--d-box-shadow);
+  font-size: var(--d-font-size);
+  line-height: var(--d-line-height);
+  margin-bottom: 10px;
+  .dropdown__option {
+    border-top-left-radius: var(--d-option-border-radius-top-left);
+    border-top-right-radius: var(--d-option-border-radius-top-right);
+    border-bottom-right-radius: var(--d-option-border-radius-bottom-right);
+    border-bottom-left-radius: var(--d-option-border-radius-bottom-left);
+    padding: var(--d-option-padding);
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    &.dropdown__option--selected {
+      background-color: var(--d-option-hover-bg-color);
+      color: var(--d-option-hover-color);
+    }
+    & > I {
+      font-size: var(--d-option-icon-size);
+      margin-right: var(--d-option-spacing-icon);
+    }
+    & > SPAN {
+      font-size: inherit;
+      line-height: inherit;
+      color: inherit;
     }
   }
-  .suggestion--selected {
-    background-color: #37b4e4;
-    border: 1px solid #37b4e4;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-  }
-
-
-
-  &.menu-style {
-    padding: 15px 25px;
-
-    .suggestion {
-      SPAN {
-        font-size: 0.875rem;
+  &.menu {
+    width: var(--d-menu-width-default);
+    min-width: var(--d-menu-width-default);
+    left: var(--d-menu-left-default);
+    right: var(--d-menu-right-default);
+    z-index: var(--d-menu-z-index);
+    color: var(--d-menu-color);
+    background-color: var(--d-menu-bg-color);
+    border-top: var(--d-menu-border-top);
+    border-right: var(--d-menu-border-right);
+    border-bottom: var(--d-menu-border-bottom);
+    border-left: var(--d-menu-border-left);
+    border-top-left-radius: var(--d-menu-border-radius-top-left);
+    border-top-right-radius: var(--d-menu-border-radius-top-right);
+    border-bottom-right-radius: var(--d-menu-border-radius-bottom-right);
+    border-bottom-left-radius: var(--d-menu-border-radius-bottom-left);
+    padding: var(--d-menu-padding);
+    margin-top: var(--d-menu-margin);
+    box-shadow: var(--d-menu-box-shadow);
+    font-size: var(--d-menu-font-size);
+    line-height: var(--d-menu-line-height);
+    .dropdown__option {
+      border-top-left-radius: var(--d-menu-option-border-radius-top-left);
+      border-top-right-radius: var(--d-menu-option-border-radius-top-right);
+      border-bottom-right-radius: var(--d-menu-option-border-radius-bottom-right);
+      border-bottom-left-radius: var(--d-menu-option-border-radius-bottom-left);
+      padding: var(--d-menu-option-padding);
+      &.dropdown__option--selected {
+        background-color: var(--d-menu-option-hover-bg-color);
+        color: var(--d-menu-option-hover-color);
       }
-
-      I {
-        font-size: 14px;
-        margin-right: 7px;
+      & > I {
+        font-size: var(--d-menu-option-icon-size);
+        margin-right: var(--d-menu-option-spacing-icon);
       }
     }
   }

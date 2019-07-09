@@ -2,7 +2,11 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/dropdown",
   "lib": {
-    "entryFile": "src/public-api.ts"
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "@lunaeme/circe-click-outside": "@lunaeme/circe-click-outside",
+      "@lunaeme/circe-core": "@lunaeme/circe-core"
+    }
   },
   "whitelistedNonPeerDependencies": [
     "@lunaeme/circe-click-outside",

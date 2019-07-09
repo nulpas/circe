@@ -1,5 +1,12 @@
 import { Injectable } from '@angular/core';
-import { domElementTypeConstants, SelectDomElementObject, SelectDomElementObjectType } from './_types/data.types';
+import {
+  SelectDomElementHash,
+  SelectDomElementHashType,
+  SelectDomElementHashTypeDefinition,
+  selectDomElementHashTypeDefinitionConstants,
+  SelectDomElementHashDefinition,
+  selectDomElementHashDefinitionConstants
+} from './_types/data.types';
 
 export interface SizeObject {
   with: ProcessedUnitObject;
@@ -11,13 +18,7 @@ export interface ProcessedUnitObject {
   unit: string;
 }
 
-export interface SelectDomObjectParams {
-  name: 'name';
-  type: 'type';
-  shadowElement: 'shadowElement';
-}
-
-export type ElementIdSimple = string | SelectDomElementObject | Element;
+export type ElementIdSimple = string | SelectDomElementHash | Element;
 export type ElementId = ElementIdSimple | Array<ElementIdSimple>;
 
 export type BoxModelType = 'horizontal' | 'vertical';
@@ -51,12 +52,14 @@ export const boxModelTypeConstants = {
 };
 
 @Injectable() export class BoxModelService {
+  private readonly _selectDomElementTypeConstants: SelectDomElementHashTypeDefinition;
+  private readonly _selectDomElementConstants: SelectDomElementHashDefinition;
+
   private readonly _defaultBoxModelType: BoxModelType;
-  private readonly _defaultSelectDomType: SelectDomElementObjectType;
+  private readonly _defaultSelectDomType: SelectDomElementHashType;
   private readonly _defaultComputedStylePropertyProcessed: boolean;
 
   private readonly _allowCssUnits: Array<string>;
-  private readonly _selectDomElementParams: SelectDomObjectParams;
   private readonly _additionHorizontalInsideClasses: Array<string>;
   private readonly _additionHorizontalOutsideClasses: Array<string>;
   private readonly _additionVerticalInsideClasses: Array<string>;
@@ -66,12 +69,14 @@ export const boxModelTypeConstants = {
   private readonly _fontSizeRule: SpecialRuleObject;
 
   constructor() {
+    this._selectDomElementTypeConstants = selectDomElementHashTypeDefinitionConstants;
+    this._selectDomElementConstants = selectDomElementHashDefinitionConstants;
+
     this._defaultBoxModelType = boxModelTypeConstants.VERTICAL;
-    this._defaultSelectDomType = domElementTypeConstants.CLASS;
+    this._defaultSelectDomType = this._selectDomElementTypeConstants.CLASS;
     this._defaultComputedStylePropertyProcessed = false;
 
     this._allowCssUnits = ['px', '%'];
-    this._selectDomElementParams = { name: 'name', type: 'type', shadowElement: 'shadowElement' };
     this._additionHorizontalInsideClasses = ['padding-left', 'padding-right', 'border-left-width', 'border-right-width'];
     this._additionHorizontalOutsideClasses = ['margin-left', 'margin-right'];
     this._additionVerticalInsideClasses = ['padding-top', 'padding-bottom', 'border-top-width', 'border-bottom-width'];
@@ -81,13 +86,13 @@ export const boxModelTypeConstants = {
     this._fontSizeRule = { applyOnElements: ['i'], boxModelType: boxModelTypeConstants.HORIZONTAL };
   }
 
-  private _isSelectDomElementObject(param: any): param is SelectDomElementObject {
+  private _isSelectDomElementObject(param: any): param is SelectDomElementHash {
     const _hasTwoParameters: boolean = (
       Object.keys(param).length === 2 &&
-      this._selectDomElementParams.name in param &&
-      this._selectDomElementParams.type in param
+      this._selectDomElementConstants.NAME in param &&
+      this._selectDomElementConstants.TYPE in param
     );
-    const _hasThreeParameters: boolean = (Object.keys(param).length === 3 && this._selectDomElementParams.shadowElement in param);
+    const _hasThreeParameters: boolean = (Object.keys(param).length === 3 && this._selectDomElementConstants.SHADOW_ELEMENT in param);
     return (_hasTwoParameters || _hasThreeParameters);
   }
 
@@ -106,7 +111,7 @@ export const boxModelTypeConstants = {
         } else if (this._isNativeDomElement(e)) {
           _auxArgument.push(e);
         } else {
-          throw new TypeError(`Element ${e} in Array is not SelectDomElementObject type.`);
+          throw new TypeError(`Element ${e} in Array is not SelectDomElementHash type.`);
         }
       });
     } else if (typeof elementId === 'string') {
@@ -116,7 +121,7 @@ export const boxModelTypeConstants = {
     } else if (this._isNativeDomElement(elementId)) {
       _auxArgument.push(elementId);
     } else {
-      throw new TypeError(`Argument ${elementId} is not SelectDomElementObject type.`);
+      throw new TypeError(`Argument ${elementId} is not SelectDomElementHash type.`);
     }
     return _auxArgument;
   }
@@ -211,18 +216,18 @@ export const boxModelTypeConstants = {
     return (_output.with && _output.height) ? _output : null;
   }
 
-  public getElement(element: string | SelectDomElementObject): Element {
-    const _element: SelectDomElementObject = (typeof element === 'string') ?
+  public getElement(element: string | SelectDomElementHash): Element {
+    const _element: SelectDomElementHash = (typeof element === 'string') ?
       { name: element, type: this._defaultSelectDomType } :
       element;
     let _output: Element;
-    const _shadowElement: Element | Document = (this._selectDomElementParams.shadowElement in _element) ?
+    const _shadowElement: Element | Document = (this._selectDomElementConstants.SHADOW_ELEMENT in _element) ?
       _element.shadowElement : document;
-    if (_element.type === domElementTypeConstants.CLASS) {
+    if (_element.type === this._selectDomElementTypeConstants.CLASS) {
       _output = _shadowElement.getElementsByClassName(_element.name).item(0);
-    } else if (_element.type === domElementTypeConstants.TAG) {
+    } else if (_element.type === this._selectDomElementTypeConstants.TAG) {
       _output = _shadowElement.getElementsByTagName(_element.name).item(0);
-    } else if (_element.type === domElementTypeConstants.ID) {
+    } else if (_element.type === this._selectDomElementTypeConstants.ID) {
       _output = document.getElementById(_element.name);
     }
     return _output;

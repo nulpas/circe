@@ -1,12 +1,21 @@
 import { Injectable } from '@angular/core';
-import { SelectDomElementObject } from './_types/data.types';
+import {
+  SelectDomElementHash,
+  SelectDomElementHashTypeDefinition,
+  selectDomElementHashTypeDefinitionConstants
+} from './_types/data.types';
 
 @Injectable() export class EventsService {
+  private readonly _selectDomElementHashTypeConstants: SelectDomElementHashTypeDefinition;
+
   private readonly _defaultEventImmediatePropagation: boolean;
-  private readonly _defaultSelectDomElement: SelectDomElementObject = { type: 'tag', name: 'main' };
+  private readonly _defaultSelectDomElement: SelectDomElementHash;
 
   constructor() {
+    this._selectDomElementHashTypeConstants = selectDomElementHashTypeDefinitionConstants;
+
     this._defaultEventImmediatePropagation = true;
+    this._defaultSelectDomElement = { type: this._selectDomElementHashTypeConstants.TAG, name: 'main' };
   }
 
   public preventNeededEvent(event: Event, immediatePropagation?: boolean): void {
@@ -24,14 +33,14 @@ import { SelectDomElementObject } from './_types/data.types';
     event.preventDefault();
   }
 
-  public scrollTop(element?: SelectDomElementObject): void {
-    const _element: SelectDomElementObject = element || this._defaultSelectDomElement;
+  public scrollTop(element?: SelectDomElementHash): void {
+    const _element: SelectDomElementHash = element || this._defaultSelectDomElement;
     let _target: Element = null;
-    if (_element.type === 'tag') {
+    if (_element.type === this._selectDomElementHashTypeConstants.TAG) {
       _target = document.getElementsByTagName(_element.name).item(0);
-    } else if (_element.type === 'class') {
+    } else if (_element.type === this._selectDomElementHashTypeConstants.CLASS) {
       _target = document.getElementsByClassName(_element.name).item(0);
-    } else if (_element.type === 'id') {
+    } else if (_element.type === this._selectDomElementHashTypeConstants.ID) {
       _target = document.getElementById(_element.name);
     }
     if (_target) {

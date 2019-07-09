@@ -1,28 +1,32 @@
 <div
-  id="dropdown"
-  class="dropdown"
-  #dropdown
-  [ngClass]="{'menu-style': menuStyle}"
+  class="medea-tpl__layer mda dropdown"
+  [ngClass]="{menu: isMenu}"
+  [ngStyle]="{
+    width: (width) ? width : 'var(--d-width-default)',
+    'min-width': (width) ? width : 'var(--d-width-default)',
+    left: (isMenu && left) ? left : 'var(--d-left-default)',
+    right: (isMenu && right) ? right : 'var(--d-right-default)'
+  }"
   (mouseenter)="ev.preventNoNeededEvent($event); mouseGlobalAction($event);"
   (mouseout)="ev.preventNoNeededEvent($event); mouseGlobalAction($event);"
-  ccClickOutside (clickOutside)="clickOutside()">
+  ccClickOutside (clickOutside)="closeDropdown.emit()">
   <div
-    class="suggestion"
+    class="dropdown__option"
     tabindex="1"
-    *ngFor="let suggestion of options; trackBy: tools.identifier; let i = index"
-    (click)="optionSelected.emit(suggestion)"
+    *ngFor="let option of optionsInside; trackBy: tools.identifier"
+    (mousedown)="ev.preventNoNeededEvent($event); optionSelected.emit(option);"
     (mouseenter)="ev.preventNoNeededEvent($event); mouseEnterAction($event);"
     (mousemove)="ev.preventNoNeededEvent($event); mouseEnterAction($event);"
     (mouseout)="ev.preventNoNeededEvent($event); mouseOutAction($event);">
-
     <i
-      class="{{iconTypeClass}} {{suggestion.iconClass}}"
-      [ngStyle]="{color: suggestion.iconColor}"
-      *ngIf="suggestion.iconClass">
-    </i>
-
+      *ngIf="option.icon"
+      class="{{(option.icon.iconFontClass) ? option.icon.iconFontClass : 'mda-icon'}} {{option.icon.class}}"
+      [attr.data-style-temp]="'color: ' + (option.icon.color || 'inherit')"
+      [ngStyle]="{color: (option.icon.color) ? option.icon.color : 'inherit'}"></i>
     <span
-      [ngStyle]="{color: suggestion.fontColor}"
-      >{{suggestion.value || suggestion.key}}</span>
+      [attr.data-style-temp]="'color: ' + (option.color || 'inherit')"
+      [ngStyle]="{color: (option.color) ? option.color : 'inherit'}">
+      {{option.label}}
+    </span>
   </div>
 </div>
