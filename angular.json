@@ -344,6 +344,76 @@
           }
         }
       }
+    },
+    "input-select": {
+      "root": "projects/input-select",
+      "sourceRoot": "projects/input-select/src",
+      "projectType": "library",
+      "prefix": "cc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/input-select/tsconfig.lib.json",
+            "project": "projects/input-select/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/input-select/src/test.ts",
+            "tsConfig": "projects/input-select/tsconfig.spec.json",
+            "karmaConfig": "projects/input-select/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/input-select/tsconfig.lib.json",
+              "projects/input-select/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "dropdown": {
+      "root": "projects/dropdown",
+      "sourceRoot": "projects/dropdown/src",
+      "projectType": "library",
+      "prefix": "cc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/dropdown/tsconfig.lib.json",
+            "project": "projects/dropdown/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dropdown/src/test.ts",
+            "tsConfig": "projects/dropdown/tsconfig.spec.json",
+            "karmaConfig": "projects/dropdown/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/dropdown/tsconfig.lib.json",
+              "projects/dropdown/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "circe"

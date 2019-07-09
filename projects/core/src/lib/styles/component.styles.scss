@@ -1,335 +1,333 @@
 @import 'app.mixins';
 
-HTML {
-  BODY#medea-tpl, BODY.medea-tpl, #medea-tpl__layer, .medea-tpl__layer,
-  BODY#mda-stratio-tpl, BODY.mda-stratio-tpl, #mda-stratio-tpl__layer, .mda-stratio-tpl__layer {
-    BUTTON.mda-button {
-      cursor: pointer;
-      background-color: #128bdd;
-      padding: 8px 20px;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      &:hover {
-        background-color: #0979c4;
-      }
-      &:active {
-        background-color: #0766a6;
-      }
-      &.disabled {
-        background-color: #ededed;
-        color: #cbcbcb;
-        cursor: default;
-      }
-      SPAN {
-        font-size: 15px;
-        line-height: 15px;
-        margin-left: 10px;
-        vertical-align: middle;
-      }
-      I {
-        line-height: 15px;
-        vertical-align: middle;
-        font-size: 18px;
-      }
+*#medea-tpl, *.medea-tpl, *#medea-tpl__layer, *.medea-tpl__layer,
+*#mda-stratio-tpl, *.mda-stratio-tpl, *#mda-stratio-tpl__layer, *.mda-stratio-tpl__layer {
+  BUTTON.mda-button {
+    cursor: pointer;
+    background-color: #128bdd;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    &:hover {
+      background-color: #0979c4;
     }
+    &:active {
+      background-color: #0766a6;
+    }
+    &.disabled {
+      background-color: #ededed;
+      color: #cbcbcb;
+      cursor: default;
+    }
+    SPAN {
+      font-size: 15px;
+      line-height: 15px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    I {
+      line-height: 15px;
+      vertical-align: middle;
+      font-size: 18px;
+    }
+  }
 
-    I.mda-icon-button {
+  I.mda-icon-button {
+    color: #777777;
+    cursor: pointer;
+    &:hover {
+      color: #333333;
+    }
+    &:active {
       color: #777777;
+    }
+    &.disabled {
+      color: #ededed;
+      cursor: default;
+    }
+  }
+
+  TEXTAREA.mda-textarea {
+    width: 300px;
+    min-width: 300px;
+    height: 100px;
+    min-height: 100px;
+    padding: 5px 10px;
+    border: 1px solid #b5b5b5;
+    border-radius: 4px;
+    resize: vertical;
+    &.disabled {
+      background-color: #f0f0f0;
+      color: #cbcbcb;
+      border-color: #d1d1d1;
+      cursor: default;
+    }
+    &.error {
+      border-color: red;
+    }
+  }
+
+  INPUT[type=checkbox] {
+    display:none;
+    & + LABEL {
+      @include createFlexBox(row, center, normal, nowrap);
+      color: #111111;
       cursor: pointer;
-      &:hover {
-        color: #333333;
+      font-size: 14px;
+      width: fit-content;
+      max-width: fit-content;
+      &:hover:before {
+        color: #128bdd;
       }
-      &:active {
-        color: #777777;
+      &:before {
+        font-family: 'Stratio Icon', Symbol, sans-serif;
+        font-size: 16px;
+        display: inline-block;
+        content: "\e9a8";
+        letter-spacing: 8px;
+        color: #b5b5b5;
       }
       &.disabled {
-        color: #ededed;
+        color: #cfcfcf;
         cursor: default;
-      }
-    }
-
-    TEXTAREA.mda-textarea {
-      width: 300px;
-      min-width: 300px;
-      height: 100px;
-      min-height: 100px;
-      padding: 5px 10px;
-      border: 1px solid #b5b5b5;
-      border-radius: 4px;
-      resize: vertical;
-      &.disabled {
-        background-color: #f0f0f0;
-        color: #cbcbcb;
-        border-color: #d1d1d1;
-        cursor: default;
-      }
-      &.error {
-        border-color: red;
-      }
-    }
-
-    INPUT[type=checkbox] {
-      display:none;
-      & + LABEL {
-        @include createFlexBox(row, center, normal, nowrap);
-        color: #111111;
-        cursor: pointer;
-        font-size: 14px;
-        width: fit-content;
-        max-width: fit-content;
         &:hover:before {
-          color: #128bdd;
+          color: #cfcfcf;
         }
         &:before {
-          font-family: 'Stratio Icon', Symbol, sans-serif;
-          font-size: 16px;
-          display: inline-block;
-          content: "\e9a8";
-          letter-spacing: 8px;
-          color: #b5b5b5;
-        }
-        &.disabled {
           color: #cfcfcf;
-          cursor: default;
-          &:hover:before {
-            color: #cfcfcf;
-          }
+        }
+      }
+    }
+    &:checked + LABEL {
+      &:before {
+        content: "\e9bf";
+        color: #128bdd;
+      }
+      &.disabled:before {
+        color: #cfcfcf;
+      }
+    }
+    &.mda-switch {
+      & + LABEL {
+        position: relative;
+        padding-left: 56px;
+        width: fit-content;
+        max-width: fit-content;
+        height: 23px;
+        &:before{
+          content: '';
+          width: 45px;
+          height: 25px;
+          background-color: #cbcbcb;
+          position: absolute;
+          border-radius: 20px;
+          top: 0;
+          left: 0;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          border-radius: 100%;
+          background-color: white;
+          top: 10%;
+          left: 3px;
+          cursor: pointer;
+          transition: left 150ms ease-in-out;
+        }
+        .mda-switch__icon {
+          opacity: 0;
+          z-index: 1;
+          font-size: 14px;
+          color: #cfcfcf;
+          transition: opacity 100ms ease-in-out;
           &:before {
-            color: #cfcfcf;
+            top: -6px;
+            margin-left: -50px
           }
         }
       }
       &:checked + LABEL {
         &:before {
-          content: "\e9bf";
-          color: #128bdd;
+          background-color: #128bde;
         }
-        &.disabled:before {
-          color: #cfcfcf;
+        &:after {
+          left: 22px;
         }
       }
-      &.mda-switch {
-        & + LABEL {
-          position: relative;
-          padding-left: 56px;
-          width: fit-content;
-          max-width: fit-content;
-          height: 23px;
-          &:before{
-            content: '';
-            width: 45px;
-            height: 25px;
-            background-color: #cbcbcb;
-            position: absolute;
-            border-radius: 20px;
-            top: 0;
-            left: 0;
-          }
-          &:after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 100%;
-            background-color: white;
-            top: 10%;
-            left: 3px;
-            cursor: pointer;
-            transition: left 150ms ease-in-out;
-          }
-          .mda-switch__icon {
-            opacity: 0;
-            z-index: 1;
-            font-size: 14px;
-            color: #cfcfcf;
-            transition: opacity 100ms ease-in-out;
-            &:before {
-              top: -6px;
-              margin-left: -50px
-            }
-          }
+      &.disabled + LABEL {
+        &:before{
+          opacity: .5;
         }
-        &:checked + LABEL {
+      }
+      &.disabled:checked + LABEL {
+        .mda-switch__icon {
+          opacity: 1;
           &:before {
-            background-color: #128bde;
-          }
-          &:after {
-            left: 22px;
+            left: 5px;
+            color: white;
           }
         }
-        &.disabled + LABEL {
-          &:before{
-            opacity: .5;
-          }
-        }
-        &.disabled:checked + LABEL {
-          .mda-switch__icon {
-            opacity: 1;
-            &:before {
-              left: 5px;
-              color: white;
-            }
-          }
-        }
-        &.disabled:not(:checked) + LABEL {
-          .mda-switch__icon {
-            opacity: 1;
-            margin-left: 20px;
-            position: absolute;
-            &:before {
-              color: white;
-            }
+      }
+      &.disabled:not(:checked) + LABEL {
+        .mda-switch__icon {
+          opacity: 1;
+          margin-left: 20px;
+          position: absolute;
+          &:before {
+            color: white;
           }
         }
       }
     }
+  }
 
-    INPUT[type=radio] {
-      display: none;
-      & + LABEL {
-        @include createFlexBox(row, center, normal, nowrap);
-        color: #111111;
-        cursor: pointer;
-        font-size: 14px;
-        &:hover:before {
-          color: #128bdd;
-        }
-        &:before {
-          font-family: 'Stratio Icon', Symbol, sans-serif;
-          font-size: 16px;
-          display: inline-block;
-          content: "\e9c1";
-          letter-spacing: 8px;
-          color: #b5b5b5;
-        }
-      }
-      &:checked + LABEL:before {
-        content: "\e9c0";
+  INPUT[type=radio] {
+    display: none;
+    & + LABEL {
+      @include createFlexBox(row, center, normal, nowrap);
+      color: #111111;
+      cursor: pointer;
+      font-size: 14px;
+      &:hover:before {
         color: #128bdd;
       }
-    }
-
-    DIV.mda-select {
-      border: 1px solid #b5b5b5;
-      border-radius: 4px;
-      overflow: hidden;
-      width: fit-content;
-      position: relative;
-      display: block;
-      &.mda-select__simple {
-        border: 0;
-        border-radius: 0;
-        &.disabled {
-          &:after {
-            color: #d1d1d1;
-            padding-right: 0;
-            width: fit-content;
-            min-width: fit-content;
-          }
-          & > SELECT {
-            cursor: default;
-            background-color: transparent;
-          }
-        }
-        &.error {
-          &:after {
-            color: red;
-          }
-          & > SELECT {
-            color: red;
-          }
-        }
-      }
-      &:after {
+      &:before {
         font-family: 'Stratio Icon', Symbol, sans-serif;
-        content: '\e63f';
-        color: #555555;
-        padding: 5px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 1;
-        text-align: center;
-        width: 30px;
-        min-width: 30px;
-        height: 100%;
-        min-height: 100%;
-        pointer-events: none;
-        box-sizing: border-box;
+        font-size: 16px;
+        display: inline-block;
+        content: "\e9c1";
+        letter-spacing: 8px;
+        color: #b5b5b5;
       }
-      & > SELECT {
-        width: 100%;
-        min-width: 100%;
-        cursor: pointer;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        text-indent: 1px;
-        text-overflow: '';
-        padding: 5px 40px 5px 10px;
-        border: 0;
-        background-color: white;
-        &::-ms-expand {
-          display: none;
-        }
-      }
+    }
+    &:checked + LABEL:before {
+      content: "\e9c0";
+      color: #128bdd;
+    }
+  }
+
+  DIV.mda-select {
+    border: 1px solid #b5b5b5;
+    border-radius: 4px;
+    overflow: hidden;
+    width: fit-content;
+    position: relative;
+    display: block;
+    &.mda-select__simple {
+      border: 0;
+      border-radius: 0;
       &.disabled {
-        border-color: #d1d1d1;
         &:after {
           color: #d1d1d1;
+          padding-right: 0;
+          width: fit-content;
+          min-width: fit-content;
         }
         & > SELECT {
           cursor: default;
-          background-color: #f0f0f0;
-          color: #cbcbcb;
+          background-color: transparent;
         }
       }
       &.error {
-        border-color: red;
+        &:after {
+          color: red;
+        }
+        & > SELECT {
+          color: red;
+        }
       }
     }
-
-    LABEL.mda-label {
-      display: block;
-      color: #999999;
-      &.error {
-        color: red;
+    &:after {
+      font-family: 'Stratio Icon', Symbol, sans-serif;
+      content: '\e63f';
+      color: #555555;
+      padding: 5px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+      text-align: center;
+      width: 30px;
+      min-width: 30px;
+      height: 100%;
+      min-height: 100%;
+      pointer-events: none;
+      box-sizing: border-box;
+    }
+    & > SELECT {
+      width: 100%;
+      min-width: 100%;
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
+      padding: 5px 40px 5px 10px;
+      border: 0;
+      background-color: white;
+      &::-ms-expand {
+        display: none;
       }
     }
-
-    INPUT.mda-input {
-      width: 300px;
-      min-width: 300px;
-      padding: 5px 10px;
-      border: 1px solid #b5b5b5;
-      border-radius: 4px;
-      &.disabled {
+    &.disabled {
+      border-color: #d1d1d1;
+      &:after {
+        color: #d1d1d1;
+      }
+      & > SELECT {
+        cursor: default;
         background-color: #f0f0f0;
         color: #cbcbcb;
-        border-color: #d1d1d1;
-        cursor: default;
-      }
-      &.error {
-        border-color: red;
       }
     }
+    &.error {
+      border-color: red;
+    }
+  }
 
-    DIV.mda-input__search {
-      display:inline-block;
-      position: relative;
-      &:after {
-        font-family: 'Stratio Icon', Symbol, sans-serif;
-        content: '\e036';
-        position: absolute;
-        color: #555555;
-        top: 5px;
-        right: 6px;
-      }
-      & > INPUT.mda-input {
-        width: 280px;
-        min-width: 280px;
-        padding-right: 30px;
-      }
+  LABEL.mda-label {
+    display: block;
+    color: #999999;
+    &.error {
+      color: red;
+    }
+  }
+
+  INPUT.mda-input {
+    width: 300px;
+    min-width: 300px;
+    padding: 5px 10px;
+    border: 1px solid #b5b5b5;
+    border-radius: 4px;
+    &.disabled {
+      background-color: #f0f0f0;
+      color: #cbcbcb;
+      border-color: #d1d1d1;
+      cursor: default;
+    }
+    &.error {
+      border-color: red;
+    }
+  }
+
+  DIV.mda-input__search {
+    display:inline-block;
+    position: relative;
+    &:after {
+      font-family: 'Stratio Icon', Symbol, sans-serif;
+      content: '\e036';
+      position: absolute;
+      color: #555555;
+      top: 5px;
+      right: 6px;
+    }
+    & > INPUT.mda-input {
+      width: 280px;
+      min-width: 280px;
+      padding-right: 30px;
     }
   }
 }

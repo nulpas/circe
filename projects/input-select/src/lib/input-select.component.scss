@@ -1,0 +1,66 @@
+@import '~@lunaeme/circe-core/styles/app.mixins';
+
+.mda.input-select {
+  position: relative;
+  .input-select__parent {
+    @include createFlexBox(row, center, center, nowrap);
+    width: fit-content;
+    min-width: fit-content;
+    border: 1px solid #b5b5b5;
+    border-radius: 4px;
+    .input-select__content {
+      @include createFlexBox(row, center, center, nowrap);
+      width: fit-content;
+      min-width: fit-content;
+      position: relative;
+      & > INPUT {
+        width: 100%;
+        padding: 5px 8px;
+        margin: 0 2px;
+        border: 0;
+      }
+      & > .input-select__remove {
+        border-right: 1px solid #b5b5b5;
+        & > I {
+          margin-right: 10px;
+          cursor: pointer;
+        }
+      }
+      &.no-remove {
+        & > INPUT {
+          padding-right: 35px;
+        }
+      }
+    }
+    .input-select__arrow {
+      //width: 50px;
+      //min-width: 50px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+    &.error {
+      border-color: red;
+    }
+    &.disabled {
+      border-color: #d1d1d1;
+      background-color: #f0f0f0;
+      .input-select__content {
+        & > INPUT {
+          background-color: #f0f0f0;
+          color: #cbcbcb;
+        }
+        & > .input-select__remove {
+          border-color: #d1d1d1;
+          & > I {
+            color: #cbcbcb;
+            cursor: default;
+          }
+        }
+      }
+      .input-select__arrow {
+        cursor: default;
+        color: #cbcbcb;
+      }
+    }
+  }
+}

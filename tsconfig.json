@@ -54,6 +54,18 @@
       ],
       "table/*": [
         "dist/table/*"
+      ],
+      "input-select": [
+        "dist/input-select"
+      ],
+      "input-select/*": [
+        "dist/input-select/*"
+      ],
+      "dropdown": [
+        "dist/dropdown"
+      ],
+      "dropdown/*": [
+        "dist/dropdown/*"
       ]
     }
   }

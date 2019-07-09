@@ -3,7 +3,7 @@
     <div
       class="table__row header"
       *ngIf="config.showHeader"
-      [ngClass]="{clear: (config.headerStyle === 'clear'), clear__bolder: (config.headerStyle === 'clear__bolder')}"
+      [ngClass]="{clear: (config.headerStyle === 'clear'), clear__bolder: (config.headerStyle === 'clear__bold')}"
       [ngStyle]="{'grid-template-columns': columnsTemplate}">
       <div class="table__cell selection" *ngIf="config.selection">
         <i

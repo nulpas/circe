@@ -1,0 +1,28 @@
+<div
+  id="dropdown"
+  class="dropdown"
+  #dropdown
+  [ngClass]="{'menu-style': menuStyle}"
+  (mouseenter)="ev.preventNoNeededEvent($event); mouseGlobalAction($event);"
+  (mouseout)="ev.preventNoNeededEvent($event); mouseGlobalAction($event);"
+  ccClickOutside (clickOutside)="clickOutside()">
+  <div
+    class="suggestion"
+    tabindex="1"
+    *ngFor="let suggestion of options; trackBy: tools.identifier; let i = index"
+    (click)="optionSelected.emit(suggestion)"
+    (mouseenter)="ev.preventNoNeededEvent($event); mouseEnterAction($event);"
+    (mousemove)="ev.preventNoNeededEvent($event); mouseEnterAction($event);"
+    (mouseout)="ev.preventNoNeededEvent($event); mouseOutAction($event);">
+
+    <i
+      class="{{iconTypeClass}} {{suggestion.iconClass}}"
+      [ngStyle]="{color: suggestion.iconColor}"
+      *ngIf="suggestion.iconClass">
+    </i>
+
+    <span
+      [ngStyle]="{color: suggestion.fontColor}"
+      >{{suggestion.value || suggestion.key}}</span>
+  </div>
+</div>

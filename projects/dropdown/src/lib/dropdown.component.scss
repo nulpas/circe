@@ -1,0 +1,44 @@
+#dropdown, .dropdown {
+  position: absolute;
+  width: fit-content;
+  min-width: fit-content;
+  z-index: 25;
+  background-color: white;
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+  margin-bottom: 10px;
+
+  .suggestion {
+    padding: 5px;
+    border: 1px solid white;
+    B {
+      font-weight: bold;
+    }
+  }
+  .suggestion--selected {
+    background-color: #37b4e4;
+    border: 1px solid #37b4e4;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+
+
+
+  &.menu-style {
+    padding: 15px 25px;
+
+    .suggestion {
+      SPAN {
+        font-size: 0.875rem;
+      }
+
+      I {
+        font-size: 14px;
+        margin-right: 7px;
+      }
+    }
+  }
+}

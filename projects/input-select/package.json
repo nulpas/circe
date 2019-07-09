@@ -1,7 +1,7 @@
 {
-  "name": "@lunaeme/circe-modal",
-  "version": "0.1.15",
-  "description": "Circe :: Angular Modal Component",
+  "name": "@lunaeme/circe-input-select",
+  "version": "0.1.1",
+  "description": "Circe :: Angular Input-Select Component",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nulpas/circe.git"
@@ -10,15 +10,15 @@
     "circe",
     "angular",
     "component",
-    "modal",
-    "window"
+    "dropdown",
+    "menu"
   ],
   "author": "Nul Pàs <manu@lunaeme.com> (https://github.com/nulpas)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nulpas/circe/issues"
   },
-  "homepage": "https://github.com/nulpas/circe/tree/master/projects/modal#readme",
+  "homepage": "https://github.com/nulpas/circe/tree/master/projects/input-select#readme",
   "peerDependencies": {
     "@angular/common": "^7.2.15",
     "@angular/core": "^7.2.15",
@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@lunaeme/circe-click-outside": "^0.1.7",
-    "@lunaeme/circe-core": "^0.2.11"
+    "@lunaeme/circe-core": "^0.2.11",
+    "@lunaeme/circe-dropdown": "^0.1.3"
   }
 }
