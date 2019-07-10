@@ -414,6 +414,41 @@
           }
         }
       }
+    },
+    "keyboard-events-emitter": {
+      "root": "projects/keyboard-events-emitter",
+      "sourceRoot": "projects/keyboard-events-emitter/src",
+      "projectType": "library",
+      "prefix": "cc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/keyboard-events-emitter/tsconfig.lib.json",
+            "project": "projects/keyboard-events-emitter/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/keyboard-events-emitter/src/test.ts",
+            "tsConfig": "projects/keyboard-events-emitter/tsconfig.spec.json",
+            "karmaConfig": "projects/keyboard-events-emitter/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/keyboard-events-emitter/tsconfig.lib.json",
+              "projects/keyboard-events-emitter/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "circe"

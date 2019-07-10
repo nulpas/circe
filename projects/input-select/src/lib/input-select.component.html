@@ -1,36 +1,38 @@
-<div class="mda input-select">
-  <div
-    class="input-select__parent"
-    [ngClass]="{error: control.errors, disabled: control.disabled}"
-    [ngStyle]="{width: (width) ? width : 'fit-content'}">
-    <div id="test" class="input-select__content" [ngClass]="{'no-remove': !control.value}">
-      <label for="input-select"></label>
-      <input
-        id="input-select"
-        class="shadow-input"
-        type="text"
-        autocomplete="off"
-        [ngClass]="fontTextClass"
-        [formControl]="control"
-        (click)="ev.preventNoNeededEvent($event); showOptions();">
-      <div class="input-select__remove" *ngIf="(control.value).toString().length">
-        <i
-          class="mda-icon icon-cross mda-fs__16"
-          title="Remove value"
-          (click)="ev.preventNoNeededEvent($event); deleteInput();"></i>
-      </div>
-    </div>
-    <div class="input-select__arrow" (click)="ev.preventNoNeededEvent($event); showOptions();">
-      <i class="mda-icon icon-arrow2_down mda-fs__16"></i>
-    </div>
+<div
+  class="medea-tpl__layer mda input-select"
+  [ngClass]="{error: control.errors, disabled: control.disabled, arrow: showControl, remove: removeValue}"
+  [ngStyle]="{
+    width: (width) ? width : 'var(--is-width-default)',
+    'min-width': (width) ? width : 'var(--is-width-default)'
+  }"
+  ccDropdownEvents [(showDropdown)]="dropdownOptions" [dropdownActionsDisabled]="control.disabled"
+  ccKeyboardEventsEmitter
+  [keysToEmit]="keysToManageDropdown"
+  [keysToSpecialAction]="keysToShowDropdown"
+  [keyEmitDisabled]="control.disabled"
+  (keyboardEvent)="dropdownKeyboardEvent.next($event)"
+  (specialAction)="showDropdown()">
+  <label for="input-select"></label>
+  <input
+    id="input-select"
+    type="text"
+    autocomplete="off"
+    [ngClass]="{remove: showRemoveValue}"
+    [formControl]="control"
+    ccDropdownEvents [(showDropdown)]="dropdownOptions" [dropdownActionsDisabled]="control.disabled">
+  <div class="input-select__remove" *ngIf="showRemoveValue">
+    <i
+      class="mda-icon icon-cross"
+      title="Remove value"
+      (click)="ev.preventNoNeededEvent($event); deleteValue();"></i>
   </div>
-
-  <cc-dropdown
-    *ngIf="showDropdown"
-    [options]="options"
-    [referenceElement]="element.children.item(0).children.item(0)"
-    [referenceElementApply]="true"
-    (optionSelected)="selectOption($event)"
-    (dropdownClickOutside)="showOptions()">
-  </cc-dropdown>
 </div>
+
+<cc-dropdown
+  *ngIf="dropdownOptions"
+  [options]="options"
+  [config]="{width: width, elementReference: elementReference}"
+  [keyboardControl]="dropdownKeyboardEvent"
+  (optionSelected)="selectOption($event);"
+  (closeDropdown)="hideDropdown()">
+</cc-dropdown>

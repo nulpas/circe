@@ -2,11 +2,18 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/input-select",
   "lib": {
-    "entryFile": "src/public-api.ts"
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "@lunaeme/circe-click-outside": "@lunaeme/circe-click-outside",
+      "@lunaeme/circe-core": "@lunaeme/circe-core",
+      "@lunaeme/circe-dropdown": "@lunaeme/circe-dropdown",
+      "@lunaeme/circe-keyboard-events-emitter": "@lunaeme/circe-keyboard-events-emitter"
+    }
   },
   "whitelistedNonPeerDependencies": [
     "@lunaeme/circe-core",
     "@lunaeme/circe-click-outside",
-    "@lunaeme/circe-dropdown"
+    "@lunaeme/circe-dropdown",
+    "@lunaeme/circe-keyboard-events-emitter"
   ]
 }

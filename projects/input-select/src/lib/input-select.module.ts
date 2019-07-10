@@ -4,7 +4,7 @@ import { InputSelectComponent } from './input-select.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BoxModelService, EventsService } from '@lunaeme/circe-core';
 import { DropdownModule } from '@lunaeme/circe-dropdown';
-import { ClickOutsideModule } from '@lunaeme/circe-click-outside';
+import { KeyboardEventsEmitterModule } from '@lunaeme/circe-keyboard-events-emitter';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { ClickOutsideModule } from '@lunaeme/circe-click-outside';
     CommonModule,
     ReactiveFormsModule,
     DropdownModule,
-    ClickOutsideModule
+    KeyboardEventsEmitterModule
   ],
   providers: [
     EventsService,

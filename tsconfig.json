@@ -66,6 +66,12 @@
       ],
       "dropdown/*": [
         "dist/dropdown/*"
+      ],
+      "keyboard-events-emitter": [
+        "dist/keyboard-events-emitter"
+      ],
+      "keyboard-events-emitter/*": [
+        "dist/keyboard-events-emitter/*"
       ]
     }
   }
