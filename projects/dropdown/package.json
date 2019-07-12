@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-dropdown",
-  "version": "0.1.4",
+  "version": "0.1.8",
   "description": "Circe :: Angular Dropdown Component",
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
     "@angular/platform-browser-dynamic": ">=7.2.15"
   },
   "dependencies": {
-    "@lunaeme/circe-click-outside": "^0.1.9",
-    "@lunaeme/circe-core": "^0.2.23"
+    "@lunaeme/circe-click-outside": "^0.1.10",
+    "@lunaeme/circe-core": "^0.2.26"
   }
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { DropdownComponent } from './dropdown.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { EventsService, ToolService } from '@lunaeme/circe-core';
+import { BoxModelService, EventsService, ToolService } from '@lunaeme/circe-core';
 import { DropdownEventsDirective } from './dropdown-events.directive';
 import { ClickOutsideModule } from '@lunaeme/circe-click-outside';
 
@@ -20,7 +20,8 @@ import { ClickOutsideModule } from '@lunaeme/circe-click-outside';
   ],
   providers: [
     ToolService,
-    EventsService
+    EventsService,
+    BoxModelService
   ]
 })
 export class DropdownModule {}

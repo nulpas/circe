@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-keyboard-events-emitter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Circe :: Angular Keyboard-Events-Emitter Directive",
   "repository": {
     "type": "git",
@@ -27,6 +27,6 @@
     "@angular/platform-browser-dynamic": ">=7.2.15"
   },
   "dependencies": {
-    "@lunaeme/circe-core": "^0.2.23"
+    "@lunaeme/circe-core": "^0.2.26"
   }
 }

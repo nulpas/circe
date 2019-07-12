@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-core",
-  "version": "0.2.23",
+  "version": "0.2.26",
   "description": "Circe :: Angular Core Services and Tools",
   "scripts": {
     "prepublishOnly": "cp -R ../../projects/core/src/lib/styles ./"
@@ -29,7 +29,7 @@
     "@angular/platform-browser-dynamic": ">=7.2.15"
   },
   "dependencies": {
-    "@lunaeme/medea": "^0.1.11",
+    "@lunaeme/medea": "^0.1.14",
     "lodash": "^4.17.11"
   }
 }

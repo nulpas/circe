@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-input-select",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Circe :: Angular Input-Select Component",
   "repository": {
     "type": "git",
@@ -27,9 +27,9 @@
     "@angular/platform-browser-dynamic": ">=7.2.15"
   },
   "dependencies": {
-    "@lunaeme/circe-click-outside": "^0.1.9",
-    "@lunaeme/circe-core": "^0.2.23",
-    "@lunaeme/circe-dropdown": "^0.1.4",
-    "@lunaeme/circe-keyboard-events-emitter": "^0.1.0"
+    "@lunaeme/circe-click-outside": "^0.1.10",
+    "@lunaeme/circe-core": "^0.2.26",
+    "@lunaeme/circe-dropdown": "^0.1.8",
+    "@lunaeme/circe-keyboard-events-emitter": "^0.1.1"
   }
 }
