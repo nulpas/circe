@@ -1,5 +1,15 @@
 /**
  * @description
+ * Common data structures:
+ */
+export type SimpleData = string | number | boolean;
+export interface StandardKeyObject {
+  [key: string]: Array<SimpleData> | SimpleData;
+}
+export type Standard2LevelArray = Array<SimpleData | Array<SimpleData>>;
+
+/**
+ * @description
  * Interface for use typical key/value object type.
  */
 export interface StandardKeyValue {
@@ -22,6 +32,7 @@ export interface SelectDomElementHash {
 }
 
 /**
+ * @description
  * Interface and variable to define SelectDomElementHash types.
  */
 export interface SelectDomElementHashTypeDefinition {
@@ -36,6 +47,7 @@ export const selectDomElementHashTypeDefinitionConstants: SelectDomElementHashTy
 };
 
 /**
+ * @description
  * Interface and variable to define SelectDomElementHash params.
  */
 export interface SelectDomElementHashDefinition {
@@ -50,6 +62,7 @@ export const selectDomElementHashDefinitionConstants: SelectDomElementHashDefini
 };
 
 /**
+ * @description
  * Interfaces for definition of options inputs in several components.
  */
 export interface OptionForSelect {

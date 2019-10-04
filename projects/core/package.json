@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-core",
-  "version": "0.2.26",
+  "version": "0.3.0",
   "description": "Circe :: Angular Core Services and Tools",
   "scripts": {
     "prepublishOnly": "cp -R ../../projects/core/src/lib/styles ./"
@@ -23,13 +23,12 @@
   },
   "homepage": "https://github.com/nulpas/circe/tree/master/projects/core#readme",
   "peerDependencies": {
-    "@angular/common": ">=7.2.15",
-    "@angular/core": ">=7.2.15",
-    "@angular/platform-browser": ">=7.2.15",
-    "@angular/platform-browser-dynamic": ">=7.2.15"
+    "@angular/common": ">=8.2.9",
+    "@angular/core": ">=8.2.9",
+    "@angular/platform-browser": ">=8.2.9",
+    "@angular/platform-browser-dynamic": ">=8.2.9"
   },
   "dependencies": {
-    "@lunaeme/medea": "^0.1.14",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.15"
   }
 }

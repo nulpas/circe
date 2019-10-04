@@ -1,23 +1,8 @@
 import { Injectable } from '@angular/core';
 import { startCase as _startCase } from 'lodash';
+import { SimpleData } from './_types/data.types';
 
 @Injectable() export class ToolService {
-  public static readonly PATTERNS = {
-    FLOAT: {
-      GREATER_THAN_0_LOWER_THAN_1: '^(0|0+(\.[0-9]{1,2})|1*)$',
-      GREATER_THAN_0COMMA1_LOWER_THAN_1: '^(0+(\.[1-9]{1,2})|1*)$',
-    },
-    NUMBER: '^(0|[1-9][0-9]*)$'
-  };
-  public static readonly VALIDATION_MESSAGES = {
-    GREATER_THAN_0_LOWER_THAN_1: 'Field value must be between 0 and 1',
-    GREATER_THAN_0COMMA1_LOWER_THAN_1: 'Field value must be between 0.1 and 1',
-    NUMBER: 'Field must be numeric',
-    REQUIRED: 'Required value',
-    MINIMUM_0: 'Minimum value must be 0',
-    MINIMUM_1: 'Minimum value must be 1',
-    MINIMUM_2: 'Minimum value must be 2',
-  };
   public months: Array<string> = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   constructor() {}
@@ -40,8 +25,25 @@ import { startCase as _startCase } from 'lodash';
     }
   }
 
+  public static setValueInMultiLevelObject(object: any, key: string, value: any, separator?: string): any {
+    const _separator: string = separator || '.';
+    return  key.split(_separator).reduce((o: any, i: string) => {
+      if (o && typeof o[i] === 'object') {
+        return o[i];
+      }
+      if (o && i in o) {
+        o[i] = value;
+        return o;
+      }
+    }, object);
+  }
+
   public static formatString(string: string): string {
-    return _startCase(string);
+    if (isNaN(Number(string))) {
+      return _startCase(string);
+    } else {
+      return string;
+    }
   }
 
   public static waitFor(milliseconds: number): void {
@@ -50,6 +52,15 @@ import { startCase as _startCase } from 'lodash';
     do {
       _timeOut = (Date.now() - _now >= milliseconds);
     } while (!_timeOut);
+  }
+
+  public static repeatedValuesInArray(values: Array<SimpleData>, unique?: boolean): Array<SimpleData> {
+    const _unique: boolean = unique || true;
+    let _output: Array<SimpleData> = values.filter((e: SimpleData, i: number) => values.indexOf(e) !== i);
+    if (_unique) {
+      _output = Array.from(new Set(_output));
+    }
+    return _output;
   }
 
   /**
@@ -75,8 +86,8 @@ import { startCase as _startCase } from 'lodash';
   }
 
   public identifier(index: number, item: any): any {
-    let _output: any = index;
-    ['code', 'id', 'param', 'key'].forEach(e => {
+    let _output: any = (typeof item === 'string') ? item : index;
+    ['code', 'id', 'param', 'key'].forEach((e: string) => {
       if (item.hasOwnProperty(e)) {
         _output = item[e];
         return;

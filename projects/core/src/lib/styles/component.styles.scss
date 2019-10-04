@@ -294,6 +294,9 @@
     &.error {
       color: red;
     }
+    &.disabled {
+      color: #cbcbcb;
+    }
   }
 
   INPUT.mda-input {
