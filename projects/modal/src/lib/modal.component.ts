@@ -26,6 +26,7 @@ export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() clickOutside: boolean = false;
   @Input() clickOutsideExceptions: Array<string> = [];
   @Input() fixed: string;
+  @Input() noPadding: boolean;
   @Output() close: EventEmitter<boolean> = new EventEmitter();
 
   public titleAddClass: any;

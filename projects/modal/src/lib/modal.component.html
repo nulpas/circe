@@ -19,7 +19,10 @@
       </div>
       <div
         class="content__body"
-        [ngStyle]="{'padding-top': (!titleBackground) ? '0' : '20px', 'box-sizing': (!titleBackground) ? 'content-box' : 'border-box'}">
+        [ngStyle]="{
+          padding: (noPadding) ? '0' : (!titleBackground) ? '0 20px 20px 20px' : '20px',
+          'box-sizing': (!titleBackground) ? 'content-box' : 'border-box'
+        }">
         <ng-content></ng-content>
       </div>
     </div>
