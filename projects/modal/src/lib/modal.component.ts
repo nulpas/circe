@@ -39,9 +39,13 @@ export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
   private _adjustContentBody(): void {
     const _modalContentBody: Element = this._bm.getElement('content__body');
     if (this._element.contains(_modalContentBody)) {
-      const _contentHeader: BoxModelSwapObject = this._bm.getBoxModel('content__header');
       const _contentBody: BoxModelSwapObject = this._bm.getBoxModel('content__body');
-      const _cssCalcHeight: string = `calc(100% - ${_contentHeader.boxModelAggregated}px + ${_contentBody.boxModelAdditions}px)`;
+      let _headerAggregated: number = 0;
+      if (this.title || this.closeButton) {
+        const _contentHeader: BoxModelSwapObject = this._bm.getBoxModel('content__header');
+        _headerAggregated = _contentHeader.boxModelAggregated;
+      }
+      const _cssCalcHeight: string = `calc(100% - ${_headerAggregated}px + ${_contentBody.boxModelAdditions}px)`;
       (_modalContentBody as HTMLElement).style.height = _cssCalcHeight;
       (_modalContentBody as HTMLElement).style.minHeight = _cssCalcHeight;
     }
