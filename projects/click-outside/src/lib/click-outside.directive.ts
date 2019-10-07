@@ -4,7 +4,6 @@ import { EventsService } from '@lunaeme/circe-core';
 @Directive({
   selector: '[ccClickOutside]'
 })
-
 export class ClickOutsideDirective {
   @Input() apply: boolean = true;
   @Input() exceptions: Array<string> = [];

@@ -17,7 +17,6 @@ import { BoxModelService, BoxModelSwapObject, EventsService, SizeObject } from '
   styleUrls: ['./modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-
 export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() title: string;
   @Input() titleClass: string;
@@ -79,7 +78,6 @@ export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
           (_modalCanvas as HTMLElement).style.minWidth = _modalCanvasMaxWidth + 'px';
         }
         if (_modalCanvasRect.height > _modalCanvasMaxHeight) {
-          console.log('shot', _modalCanvasRect.height, _modalCanvasMaxHeight);
           (_modalCanvas as HTMLElement).style.height = _modalCanvasMaxHeight + 'px';
           (_modalCanvas as HTMLElement).style.minHeight = _modalCanvasMaxHeight + 'px';
         }

@@ -1,5 +1,4 @@
-@import '~@lunaeme/circe-core/styles/stratio.styles';
-@import '~@lunaeme/circe-core/styles/component.styles';
+@import '~@lunaeme/circe-core/styles/app.mixins';
 
 .modal-component {
   @include createFlexBox(row, center, center, nowrap);

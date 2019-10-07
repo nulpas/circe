@@ -13,5 +13,4 @@ import { EventsService } from '@lunaeme/circe-core';
     EventsService
   ]
 })
-
 export class ClickOutsideModule {}
