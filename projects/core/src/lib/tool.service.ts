@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
-import { startCase as _startCase } from 'lodash';
-import { SimpleData } from './_types/data.types';
+import { startCase as _startCase, camelCase as _camelCase, kebabCase as _kebabCase } from 'lodash';
+import { SimpleData, StringTransformMethods, stringTransformMethodsConstants, StringTransformMethodsConstants } from './_types/data.types';
 
 @Injectable() export class ToolService {
   public months: Array<string> = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  public stringTransformTypes: StringTransformMethodsConstants;
 
-  constructor() {}
+  constructor() {
+    this.stringTransformTypes = stringTransformMethodsConstants;
+  }
 
   public static getValueFromMultiLevelObject(object: any, key: string, separator?: string): any {
     const _separator = separator || '.';
@@ -36,14 +39,6 @@ import { SimpleData } from './_types/data.types';
         return o;
       }
     }, object);
-  }
-
-  public static formatString(string: string): string {
-    if (isNaN(Number(string))) {
-      return _startCase(string);
-    } else {
-      return string;
-    }
   }
 
   public static waitFor(milliseconds: number): void {
@@ -85,6 +80,17 @@ import { SimpleData } from './_types/data.types';
     }
   }
 
+  /**
+   * @deprecated
+   */
+  public static formatString(string: string): string {
+    if (isNaN(Number(string))) {
+      return _startCase(string);
+    } else {
+      return string;
+    }
+  }
+
   public identifier(index: number, item: any): any {
     let _output: any = (typeof item === 'string') ? item : index;
     ['code', 'id', 'param', 'key'].forEach((e: string) => {
@@ -93,6 +99,25 @@ import { SimpleData } from './_types/data.types';
         return;
       }
     });
+    return _output;
+  }
+
+  public stringTransform(string: string, transformType?: StringTransformMethods): string {
+    const _transformType: StringTransformMethods = transformType || this.stringTransformTypes.START;
+    let _output: string = string;
+    if (isNaN(Number(string))) {
+      switch (_transformType) {
+        case this.stringTransformTypes.START:
+          _output = _startCase(string);
+          break;
+        case this.stringTransformTypes.CAMEL:
+          _output = _camelCase(string);
+          break;
+        case this.stringTransformTypes.KEBAB:
+          _output = _kebabCase(string);
+          break;
+      }
+    }
     return _output;
   }
 }

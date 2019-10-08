@@ -19,6 +19,25 @@ export interface StandardKeyValue {
 
 /**
  * @description
+ * Definitions for string transforms methods.
+ */
+export type StringTransformMethodStart = 'start';
+export type StringTransformMethodCamel = 'camel';
+export type StringTransformMethodKebab = 'kebab';
+export type StringTransformMethods = StringTransformMethodStart | StringTransformMethodCamel | StringTransformMethodKebab;
+export interface StringTransformMethodsConstants {
+  START: StringTransformMethodStart;
+  CAMEL: StringTransformMethodCamel;
+  KEBAB: StringTransformMethodKebab;
+}
+export const stringTransformMethodsConstants: StringTransformMethodsConstants = {
+  START: 'start',
+  CAMEL: 'camel',
+  KEBAB: 'kebab'
+};
+
+/**
+ * @description
  * Object definition to get element from dom using BoxModel core service methods.
  */
 export type SelectDomElementHashTypeClass = 'class';
