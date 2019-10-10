@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-click-outside",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Circe :: Angular Click Outside Directive",
   "repository": {
     "type": "git",
@@ -20,12 +20,12 @@
   },
   "homepage": "https://github.com/nulpas/circe/tree/master/projects/click-outside#readme",
   "peerDependencies": {
-    "@angular/common": ">=8.2.9",
-    "@angular/core": ">=8.2.9",
-    "@angular/platform-browser": ">=8.2.9",
-    "@angular/platform-browser-dynamic": ">=8.2.9"
+    "@angular/common": ">=8.2.10",
+    "@angular/core": ">=8.2.10",
+    "@angular/platform-browser": ">=8.2.10",
+    "@angular/platform-browser-dynamic": ">=8.2.10"
   },
   "dependencies": {
-    "@lunaeme/circe-core": "^0.3.2"
+    "@lunaeme/circe-core": "^0.3.3"
   }
 }
