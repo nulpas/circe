@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-color-schema',
+  templateUrl: './color-schema.component.html',
+  styleUrls: ['./color-schema.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class ColorSchemaComponent implements OnInit, OnDestroy {
   constructor() {}
 
   ngOnInit(): void {}

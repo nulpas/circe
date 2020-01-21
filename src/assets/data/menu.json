@@ -1,0 +1,29 @@
+[
+  {
+    "id": "foundation",
+    "name": "Foundation",
+    "options": [
+      {
+        "id": "color-schema",
+        "name": "Color Schema",
+        "location": ["/", "color-schema"]
+      },
+      {
+        "id": "typography",
+        "name": "Typography",
+        "location": ["/", "typography"]
+      }
+    ]
+  },
+  {
+    "id": "bricks",
+    "name": "Bricks",
+    "options": [
+      {
+        "id": "input",
+        "name": "Input",
+        "location": ["/", "input"]
+      }
+    ]
+  }
+]

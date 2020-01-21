@@ -77,14 +77,15 @@
       font-size: 14px;
       width: fit-content;
       max-width: fit-content;
+      white-space: nowrap;
       &:hover:before {
         color: #128bdd;
       }
       &:before {
-        font-family: 'Stratio Icon', Symbol, sans-serif;
+        font-family: 'Stratio Icon', 'ico_stratio', Symbol, sans-serif;
         font-size: 16px;
         display: inline-block;
-        content: "\e9a8";
+        content: '\e9a8';
         letter-spacing: 8px;
         color: #b5b5b5;
       }
@@ -101,7 +102,7 @@
     }
     &:checked + LABEL {
       &:before {
-        content: "\e9bf";
+        content: '\e9bf';
         color: #128bdd;
       }
       &.disabled:before {
@@ -195,16 +196,16 @@
         color: #128bdd;
       }
       &:before {
-        font-family: 'Stratio Icon', Symbol, sans-serif;
+        font-family: 'Stratio Icon', 'ico_stratio', Symbol, sans-serif;
         font-size: 16px;
         display: inline-block;
-        content: "\e9c1";
+        content: '\e9c1';
         letter-spacing: 8px;
         color: #b5b5b5;
       }
     }
     &:checked + LABEL:before {
-      content: "\e9c0";
+      content: '\e9c0';
       color: #128bdd;
     }
   }
@@ -241,7 +242,7 @@
       }
     }
     &:after {
-      font-family: 'Stratio Icon', Symbol, sans-serif;
+      font-family: 'Stratio Icon', 'ico_stratio', Symbol, sans-serif;
       content: '\e63f';
       color: #555555;
       padding: 5px;
@@ -321,7 +322,7 @@
     display:inline-block;
     position: relative;
     &:after {
-      font-family: 'Stratio Icon', Symbol, sans-serif;
+      font-family: 'Stratio Icon', 'ico_stratio', Symbol, sans-serif;
       content: '\e036';
       position: absolute;
       color: #555555;

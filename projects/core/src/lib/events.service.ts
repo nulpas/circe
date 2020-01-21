@@ -30,7 +30,9 @@ import {
   public preventNoNeededEvent(event: Event, immediatePropagation?: boolean): void {
     const _immediate: boolean = immediatePropagation || this._defaultEventImmediatePropagation;
     this.preventNeededEvent(event, _immediate);
-    event.preventDefault();
+    if (event.cancelable) {
+      event.preventDefault();
+    }
   }
 
   public scrollTop(element?: SelectDomElementHash): void {

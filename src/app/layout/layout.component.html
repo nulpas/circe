@@ -1,0 +1,18 @@
+<app-header [product]="'Design'"></app-header>
+<div class="main">
+  <nav class="sidebar">
+    <section class="sidebar__content">
+      <div class="menu__group mda--bold" *ngFor="let group of menu; trackBy: tools.identifier;">
+        {{group.name}}
+        <a
+          class="menu__option"
+          *ngFor="let option of group.options; trackBy: tools.identifier;"
+          [ngClass]="{selected: option.id === optionSelected}"
+          [routerLink]="option.location">
+          {{option.name}}
+        </a>
+      </div>
+    </section>
+  </nav>
+  <section class="content"><ng-content></ng-content></section>
+</div>

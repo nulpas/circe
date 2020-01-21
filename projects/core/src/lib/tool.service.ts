@@ -58,6 +58,13 @@ import { SimpleData, StringTransformMethods, stringTransformMethodsConstants, St
     return _output;
   }
 
+  public static checkLastChar(string: string, char: string): string {
+    if (string && string[string.length - 1] !== char) {
+      return `${string}${char}`;
+    }
+    return string;
+  }
+
   /**
    * @deprecated
    */

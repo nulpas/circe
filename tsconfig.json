@@ -25,11 +25,11 @@
       "modal/*": [
         "dist/modal/*"
       ],
-      "core": [
-        "dist/core"
+      "@core": [
+        "projects/core/src/lib"
       ],
-      "core/*": [
-        "dist/core/*"
+      "@core/*": [
+        "projects/core/src/lib/*"
       ],
       "click-outside": [
         "dist/click-outside"
