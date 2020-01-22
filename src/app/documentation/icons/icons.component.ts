@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss'],
+  selector: 'app-icons',
+  templateUrl: './icons.component.html',
+  styleUrls: ['./icons.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LayoutComponent implements OnInit, OnDestroy {
+export class IconsComponent implements OnInit, OnDestroy {
   constructor() {}
 
   ngOnInit(): void {}

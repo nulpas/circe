@@ -1,0 +1,19 @@
+@import '~@lunaeme/medea/dist/sass/mixins';
+
+:host {
+  H2 {
+    margin-top: 25px;
+  }
+  P {
+    margin-bottom: 20px;
+  }
+  .color-type {
+    @include createFlexBox(row, normal, normal, wrap);
+    app-color-sample {
+      margin: 0 60px 30px 0;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

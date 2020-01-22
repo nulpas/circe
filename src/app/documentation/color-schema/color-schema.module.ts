@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { ColorSchemaComponent } from './color-schema.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { LayoutModule } from '../layout/layout.module';
+import { CommonModule } from '@angular/common';
+import { ColorSampleModule } from '../../color-sample/color-sample.module';
 
 @NgModule({
   declarations: [ColorSchemaComponent],
   imports: [
-    BrowserModule,
-    LayoutModule
+    CommonModule,
+    ColorSampleModule
   ]
 })
 export class ColorSchemaModule {}

@@ -1,0 +1,77 @@
+@import '~@lunaeme/medea/dist/sass/mixins';
+
+:host {
+  .typo-list--2 {
+    @include createFlexBox(row, normal, normal, nowrap);
+    margin-bottom: 20px;
+    padding-right: 100px;
+    &:first-of-type {
+      margin-top: 45px;
+    }
+    .concept {
+      width: 18%;
+      &:not(.header) {
+        color: var(--mda-color-space-40);
+      }
+    }
+    .value {
+      width: 82%;
+    }
+  }
+  .typo-list--3 {
+    @include createFlexBox(row, center, normal, nowrap);
+    margin-bottom: 20px;
+    padding-right: 100px;
+    .concept {
+      width: 18%;
+      &:not(.header) {
+        color: var(--mda-color-space-40);
+      }
+    }
+    .value {
+      width: 18%;
+    }
+    .sample {
+      width: 64%;
+    }
+  }
+  .typo-list--5 {
+    @include createFlexBox(row, center, normal, nowrap);
+    margin-bottom: 20px;
+    padding-right: 100px;
+    .concept {
+      width: 18%;
+      &:not(.header) {
+        color: var(--mda-color-space-40);
+      }
+    }
+    .value, .value-2 {
+      width: 10%;
+    }
+    .sample {
+      width: 20%;
+    }
+    .sample-2 {
+      width: 42%;
+    }
+  }
+  H2 {
+    &:first-of-type {
+      padding-top: 20px;
+      border-top: 1px solid var(--mda-color-neutral-20);
+    }
+  }
+  .special-headers {
+    H1 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    H2 {
+      padding: 0;
+      border: none;
+    }
+    H1, H2, H3, H4, H5, H6 {
+      margin: 0;
+    }
+  }
+}

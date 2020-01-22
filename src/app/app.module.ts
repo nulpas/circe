@@ -6,7 +6,8 @@ import { HomeModule } from './+home/home.module';
 import { ConfigService } from './_config/config.service';
 import { INITIALIZER } from './_config/initializer.config';
 import { HttpClientModule } from '@angular/common/http';
-import { ColorSchemaModule } from './+color-schema/color-schema.module';
+import { DocumentationModule } from './documentation/documentation.module';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +16,7 @@ import { ColorSchemaModule } from './+color-schema/color-schema.module';
     AppRoutingModule,
     HttpClientModule,
     HomeModule,
-    ColorSchemaModule
+    DocumentationModule
   ],
   providers: [
     ConfigService,

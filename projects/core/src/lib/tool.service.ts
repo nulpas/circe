@@ -65,6 +65,17 @@ import { SimpleData, StringTransformMethods, stringTransformMethodsConstants, St
     return string;
   }
 
+  public static hexToRgb(hex: string): Array<number> {
+    return hex
+      .replace(
+        /^#?([a-f\d])([a-f\d])([a-f\d])$/i,
+        (m: string, r: string, g: string, b: string) => '#' + r + r + g + g + b + b
+      )
+      .substring(1)
+      .match(/.{2}/g)
+      .map((e: string) => parseInt(e, 16));
+  }
+
   /**
    * @deprecated
    */

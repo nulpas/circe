@@ -6,12 +6,17 @@
       {
         "id": "color-schema",
         "name": "Color Schema",
-        "location": ["/", "color-schema"]
+        "location": ["color-schema"]
       },
       {
         "id": "typography",
         "name": "Typography",
-        "location": ["/", "typography"]
+        "location": ["typography"]
+      },
+      {
+        "id": "icons",
+        "name": "Icons",
+        "location": ["icons"]
       }
     ]
   },
@@ -22,7 +27,7 @@
       {
         "id": "input",
         "name": "Input",
-        "location": ["/", "input"]
+        "location": ["input"]
       }
     ]
   }
