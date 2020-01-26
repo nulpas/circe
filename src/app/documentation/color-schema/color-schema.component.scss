@@ -1,6 +1,11 @@
 @import '~@lunaeme/medea/dist/sass/mixins';
+@import '../../../mixins';
 
 :host {
+  display: block;
+  padding: 25px 35px;
+  box-sizing: border-box;
+  @include scrollInElement();
   H2 {
     margin-top: 25px;
   }

@@ -71,7 +71,7 @@
   INPUT[type=checkbox] {
     display:none;
     & + LABEL {
-      @include createFlexBox(row, center, normal, nowrap);
+      @include createFlexBox__DELETE(row, center, normal, nowrap);
       color: #111111;
       cursor: pointer;
       font-size: 14px;
@@ -188,7 +188,7 @@
   INPUT[type=radio] {
     display: none;
     & + LABEL {
-      @include createFlexBox(row, center, normal, nowrap);
+      @include createFlexBox__DELETE(grow, center, normal, nowrap);
       color: #111111;
       cursor: pointer;
       font-size: 14px;

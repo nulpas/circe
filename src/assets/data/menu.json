@@ -21,8 +21,8 @@
     ]
   },
   {
-    "id": "bricks",
-    "name": "Bricks",
+    "id": "forms",
+    "name": "Forms",
     "options": [
       {
         "id": "input",

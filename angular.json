@@ -449,6 +449,41 @@
           }
         }
       }
+    },
+    "grid-columns": {
+      "projectType": "library",
+      "root": "projects/grid-columns",
+      "sourceRoot": "projects/grid-columns/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/grid-columns/tsconfig.lib.json",
+            "project": "projects/grid-columns/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/grid-columns/src/test.ts",
+            "tsConfig": "projects/grid-columns/tsconfig.spec.json",
+            "karmaConfig": "projects/grid-columns/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/grid-columns/tsconfig.lib.json",
+              "projects/grid-columns/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "circe"

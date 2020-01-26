@@ -72,6 +72,12 @@
       ],
       "keyboard-events-emitter/*": [
         "dist/keyboard-events-emitter/*"
+      ],
+      "@grid-columns": [
+        "dist/grid-columns"
+      ],
+      "@grid-columns/*": [
+        "dist/grid-columns/*"
       ]
     }
   }

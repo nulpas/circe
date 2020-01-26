@@ -49,13 +49,16 @@ import { SimpleData, StringTransformMethods, stringTransformMethodsConstants, St
     } while (!_timeOut);
   }
 
+  /**
+   * repeatedValuesInArray
+   * @description
+   * This method returns an array of uniques values if parameter "unique" is true; or returns
+   * an array of ONLY repeated values (unique values are discarded) if unique is false.
+   * Default value por parameter unique is true.
+   */
   public static repeatedValuesInArray(values: Array<SimpleData>, unique?: boolean): Array<SimpleData> {
-    const _unique: boolean = unique || true;
-    let _output: Array<SimpleData> = values.filter((e: SimpleData, i: number) => values.indexOf(e) !== i);
-    if (_unique) {
-      _output = Array.from(new Set(_output));
-    }
-    return _output;
+    const _unique: boolean = (unique === undefined) ? true : unique;
+    return (_unique) ? Array.from(new Set(values)) : values.filter((e: SimpleData, i: number) => values.indexOf(e) !== i);
   }
 
   public static checkLastChar(string: string, char: string): string {
@@ -66,14 +69,22 @@ import { SimpleData, StringTransformMethods, stringTransformMethodsConstants, St
   }
 
   public static hexToRgb(hex: string): Array<number> {
-    return hex
+    const _output: Array<string> = hex
       .replace(
         /^#?([a-f\d])([a-f\d])([a-f\d])$/i,
         (m: string, r: string, g: string, b: string) => '#' + r + r + g + g + b + b
       )
       .substring(1)
-      .match(/.{2}/g)
-      .map((e: string) => parseInt(e, 16));
+      .match(/.{2}/g);
+    return _output.map((e: string) => parseInt(e, 16));
+  }
+
+  public static rgbToHex(r: number, g: number, b: number): string {
+    const _output: Array<string> = [r, g, b].map((e: number) => {
+      const _hex: string = e.toString(16);
+      return (_hex.length === 1) ? `0${_hex}` : _hex;
+    });
+    return _output.join('');
   }
 
   /**

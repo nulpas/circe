@@ -4,7 +4,7 @@ Some help services, generic types and component styles.
 
 ## Compatibility
 
-Angular v.7.2.15
+Angular v.8.2.14
 
 ## Installation
 

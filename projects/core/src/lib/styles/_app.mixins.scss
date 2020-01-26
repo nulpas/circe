@@ -1,6 +1,6 @@
 //## Mixin for apply flex properties to container.
 //## PARAMETERS: flex-direction, align-items, justify-content, flex-wrap
-@mixin createFlexBox($flexDirection, $alignItems, $justifyContent, $wrapMode) {
+@mixin createFlexBox__DELETE($flexDirection, $alignItems, $justifyContent, $wrapMode) {
   display: flex;
   display: -webkit-flex;
   display: -ms-flexbox;

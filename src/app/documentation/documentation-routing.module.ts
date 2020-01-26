@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ColorSchemaComponent } from './color-schema/color-schema.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
+import { InputComponent } from './input/input.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'icons',
     component: IconsComponent
+  },
+  {
+    path: 'input',
+    component: InputComponent
   },
   {
     path: '**',

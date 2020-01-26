@@ -1,5 +1,5 @@
 :host {
-  .documentation-sidebar, .documentation-content {
+  .documentation-sidebar {
     position: absolute;
     overflow-y: scroll;
     top: 50px;
@@ -30,8 +30,10 @@
     }
   }
   .documentation-content {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
     left: 18%;
     right: 0;
-    padding: 25px 35px;
   }
 }

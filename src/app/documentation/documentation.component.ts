@@ -6,7 +6,6 @@ import { DataService } from '../_services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { OrderPipe } from '@core/external.elements';
 import { takeUntil } from 'rxjs/operators';
-import {EventsService} from '@core/events.service';
 
 @Component({
   selector: 'app-documentation',
@@ -27,8 +26,7 @@ export class DocumentationComponent implements OnInit, OnDestroy {
     private _data: DataService,
     private _cd: ChangeDetectorRef,
     private _route: ActivatedRoute,
-    private _order: OrderPipe,
-    private _ev: EventsService
+    private _order: OrderPipe
   ) {
     this.toSelectOption$.pipe(
       takeUntil(this._componentDestroyed$)
@@ -49,11 +47,6 @@ export class DocumentationComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {}
-
-  public loadRouterOutlet() {
-    this.toSelectOption$.next(undefined);
-    this._ev.scrollTop({ type: 'class', name: 'documentation-content' });
-  }
 
   ngOnDestroy(): void {
     this._componentDestroyed$.next();

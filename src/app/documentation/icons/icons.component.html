@@ -1,1 +1,22 @@
-icons works!
+<section class="icons-header" [ngClass]="{sticky: showStickyBox}">
+  <h1>Icons</h1>
+  <span>{{totalIcons}}</span>
+  <div class="icons-search">
+    <label for="icons-search"></label>
+    <input id="icons-search" type="text">
+  </div>
+</section>
+<section class="icons-content" *ngIf="sections && sections.length" ccGridColumns [numberOfColumns]="2">
+  <section class="icons-container" *ngFor="let section of sections; trackBy: tools.identifier;">
+    <h2>{{section.name}}</h2>
+    <div class="icons-set">
+      <div class="icons-unity" *ngFor="let icon of icons[section.id]; trackBy: tools.identifier;">
+        <i
+          class="mda-icon"
+          [ngClass]="icon.code"
+          [title]="icon.code"></i>
+        <span class="icon-code mda-font--12">{{icon.code}}</span>
+      </div>
+    </div>
+  </section>
+</section>

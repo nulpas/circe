@@ -1,6 +1,11 @@
 @import '~@lunaeme/medea/dist/sass/mixins';
+@import '../../../mixins';
 
 :host {
+  display: block;
+  padding: 25px 35px;
+  box-sizing: border-box;
+  @include scrollInElement();
   .typo-list--2 {
     @include createFlexBox(row, normal, normal, nowrap);
     margin-bottom: 20px;

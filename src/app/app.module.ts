@@ -7,6 +7,7 @@ import { ConfigService } from './_config/config.service';
 import { INITIALIZER } from './_config/initializer.config';
 import { HttpClientModule } from '@angular/common/http';
 import { DocumentationModule } from './documentation/documentation.module';
+import { HeaderModule } from './header/header.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { DocumentationModule } from './documentation/documentation.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    HeaderModule,
     HomeModule,
     DocumentationModule
   ],

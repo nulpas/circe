@@ -1,3 +1,49 @@
-:host {
+@import '~@lunaeme/medea/dist/sass/mixins';
+@import '../../../mixins';
 
+:host {
+  display: block;
+  box-sizing: border-box;
+  @include scrollInElement();
+  .icons-header {
+    @include createFlexBox(row, center, space-between, nowrap);
+    position: sticky;
+    top: 0;
+    padding: 5px 35px;
+    margin: 20px 0;
+    z-index: 1;
+    background-color: var(--mda-color-neutral-full);
+    border: 1px solid var(--mda-color-neutral-full);
+    &.sticky {
+      border-bottom: 1px solid var(--mda-color-neutral-20);
+      transition: all .6s ease-in-out;
+    }
+    H1 {
+      margin: 0;
+    }
+  }
+  .icons-content {
+    padding: 0 35px 25px 35px;
+    .icons-container {
+      .icons-set {
+        @include createFlexBox(row, normal, normal, wrap);
+        padding-top: 20px;
+        border-top: 1px solid var(--mda-color-neutral-20);
+        .icons-unity {
+          @include createFlexBox(row, center, normal, nowrap);
+          // width: 12%;
+          // margin: 0 20px 30px 20px;
+          width: 27%;
+          margin: 0 30px 30px 0;
+          I.mda-icon {
+            font-size: 24px;
+            margin-right: 10px;
+          }
+          .icon-code {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
 }

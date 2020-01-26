@@ -6,11 +6,10 @@ import { RouterModule } from '@angular/router';
 import { OrderModule } from '@core/external.elements';
 import { DataService } from '../_services/data.service';
 import { ToolService } from '@core/tool.service';
-import { LayoutModule } from '../layout/layout.module';
 import { DocumentationRoutingModule } from './documentation-routing.module';
 import { TypographyModule } from './typography/typography.module';
-import { EventsService } from '@core/events.service';
 import { IconsModule } from './icons/icons.module';
+import { InputModule } from './input/input.module';
 
 @NgModule({
   declarations: [DocumentationComponent],
@@ -19,15 +18,14 @@ import { IconsModule } from './icons/icons.module';
     DocumentationRoutingModule,
     RouterModule,
     OrderModule,
-    LayoutModule,
     ColorSchemaModule,
     TypographyModule,
-    IconsModule
+    IconsModule,
+    InputModule
   ],
   providers: [
     DataService,
-    ToolService,
-    EventsService
+    ToolService
   ]
 })
 export class DocumentationModule {}

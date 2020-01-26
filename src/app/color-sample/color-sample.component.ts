@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {ToolService} from '@core/tool.service';
+import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ToolService } from '@core/tool.service';
 
 @Component({
   selector: 'app-color-sample',
@@ -25,7 +25,6 @@ export class ColorSampleComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.colorRgb = `rgb(${ToolService.hexToRgb(this.colorHex).join(', ')})`;
-    console.log(this.colorRgb);
   }
 
   ngOnDestroy(): void {}

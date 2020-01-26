@@ -1,7 +1,0 @@
-@import '~@lunaeme/medea/dist/sass/mixins';
-
-:host {
-  .main {
-    @include createFlexBox(row, normal, normal, nowrap);
-  }
-}

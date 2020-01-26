@@ -1,0 +1,89 @@
+{
+  "isIconSections": true,
+  "iconSections": [
+    {
+      "id": "actions",
+      "name": "Actions"
+    },
+    {
+      "id": "arrows",
+      "name": "Arrows & Navigation"
+    },
+    {
+      "id": "brand",
+      "name": "Brand & Technology"
+    },
+    {
+      "id": "audiovisual",
+      "name": "Audiovisual"
+    },
+    {
+      "id": "data",
+      "name": "Data"
+    },
+    {
+      "id": "file",
+      "name": "File"
+    },
+    {
+      "id": "image",
+      "name": "Image"
+    },
+    {
+      "id": "graphics",
+      "name": "Graphics"
+    },
+    {
+      "id": "device",
+      "name": "Device"
+    },
+    {
+      "id": "notification",
+      "name": "Notification"
+    },
+    {
+      "id": "toggle",
+      "name": "Toggle"
+    },
+    {
+      "id": "pointers",
+      "name": "Pointers"
+    },
+    {
+      "id": "assets",
+      "name": "Assets"
+    },
+    {
+      "id": "maps",
+      "name": "Maps"
+    },
+    {
+      "id": "misc",
+      "name": "Miscellaneous"
+    },
+    {
+      "id": "communication",
+      "name": "Communication"
+    },
+    {
+      "id": "edition",
+      "name": "Edition"
+    },
+    {
+      "id": "chars",
+      "name": "Chars"
+    },
+    {
+      "id": "controls",
+      "name": "Controls"
+    },
+    {
+      "id": "r",
+      "name": "z-Repeated"
+    },
+    {
+      "id": "d",
+      "name": "z-Discarded"
+    }
+  ]
+}

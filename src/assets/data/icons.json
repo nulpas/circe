@@ -1,0 +1,2387 @@
+[
+  {
+    "code": "icon-recommend",
+    "content": "e9f0",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-functions",
+    "content": "e9ee",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-connection",
+    "content": "e9eb",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-foreign-key",
+    "content": "e9e6",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-primary-key",
+    "content": "e9ec",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-automl",
+    "content": "e9ed",
+    "sections": ["assets"]
+  },
+  {
+    "code": "icon-Ml-trainer",
+    "content": "e9e7",
+    "sections": ["assets"]
+  },
+  {
+    "code": "icon-ml-model",
+    "content": "e9e8",
+    "sections": ["assets"]
+  },
+  {
+    "code": "icon-streaming1",
+    "content": "e9e9",
+    "sections": ["assets"]
+  },
+  {
+    "code": "icon-batch",
+    "content": "e9ea",
+    "sections": ["assets"]
+  },
+  {
+    "code": "icon-dashboards",
+    "content": "e9d0",
+    "sections": ["assets"]
+  },
+  {
+    "code": "icon-streaming",
+    "content": "e9d1",
+    "sections": ["assets"]
+  },
+  {
+    "code": "icon-notebooks",
+    "content": "e9d2",
+    "sections": ["assets"]
+  },
+  {
+    "code": "icon-project",
+    "content": "e9d3",
+    "sections": ["assets"]
+  },
+  {
+    "code": "icon-operational",
+    "content": "e9d4",
+    "sections": ["assets"]
+  },
+  {
+    "code": "icon-instant",
+    "content": "e9d5",
+    "sections": ["assets"]
+  },
+  {
+    "code": "icon-pivot",
+    "content": "e9e2",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-insert-literal",
+    "content": "e9cc",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-partial-info",
+    "content": "e9cd",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-left-padding",
+    "content": "e9ce",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-mask",
+    "content": "e9cf",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-radio-checked",
+    "content": "e9c0",
+    "sections": ["toggle"]
+  },
+  {
+    "code": "icon-radio",
+    "content": "e9c1",
+    "sections": ["toggle"]
+  },
+  {
+    "code": "icon-view",
+    "content": "e000",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-eye",
+    "content": "e000",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-eye2",
+    "content": "e000",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-eye-off",
+    "content": "e91e",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-bell",
+    "content": "e604",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-bell-off",
+    "content": "e907",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-camera",
+    "content": "e017",
+    "sections": ["audiovisual"]
+  },
+  {
+    "code": "icon-camera-off",
+    "content": "e909",
+    "sections": ["audiovisual"]
+  },
+  {
+    "code": "icon-mic-off",
+    "content": "e929",
+    "sections": ["audiovisual"]
+  },
+  {
+    "code": "icon-volume",
+    "content": "e098",
+    "sections": ["audiovisual"]
+  },
+  {
+    "code": "icon-mute",
+    "content": "e099",
+    "sections": ["audiovisual"]
+  },
+  {
+    "code": "icon-video",
+    "content": "e018",
+    "sections": ["audiovisual"]
+  },
+  {
+    "code": "icon-sun",
+    "content": "e064",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-loader",
+    "content": "e105",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-battery",
+    "content": "e073",
+    "sections": ["device"]
+  },
+  {
+    "code": "icon-transmission",
+    "content": "e940",
+    "sections": ["device"]
+  },
+  {
+    "code": "icon-signal",
+    "content": "e011",
+    "sections": ["device"]
+  },
+  {
+    "code": "icon-image",
+    "content": "e010",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-target",
+    "content": "e012",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-clock",
+    "content": "e014",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-timer",
+    "content": "e61e",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-alarm",
+    "content": "e99b",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-watch",
+    "content": "e015",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-sand-clock",
+    "content": "e617",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-calendar",
+    "content": "e639",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-calendar2",
+    "content": "e639",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-printer",
+    "content": "e020",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-air-play",
+    "content": "e016",
+    "sections": ["device"]
+  },
+  {
+    "code": "icon-monitor",
+    "content": "e021",
+    "sections": ["device"]
+  },
+  {
+    "code": "icon-desktop",
+    "content": "e021",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-laptop",
+    "content": "e973",
+    "sections": ["device"]
+  },
+  {
+    "code": "icon-book2",
+    "content": "e030",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-book1",
+    "content": "e611",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-xml",
+    "content": "e969",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-code",
+    "content": "e949",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-json",
+    "content": "e96a",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-jsonPath",
+    "content": "e9b1",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-json-path",
+    "content": "e9b1",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-solid-folder",
+    "content": "e925",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-folder",
+    "content": "e059",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-move-to-folder",
+    "content": "e9b0",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-folder-executions",
+    "content": "e9de",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-file",
+    "content": "e124",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-filesystem",
+    "content": "e95e",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-csv",
+    "content": "e9af",
+    "sections": ["brand", "file"]
+  },
+  {
+    "code": "icon-debug-data",
+    "content": "e9bb",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-view-debug",
+    "content": "e9bb",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-file-debug",
+    "content": "e9bb",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-csv2",
+    "content": "e647",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-Excel",
+    "content": "e963",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-print",
+    "content": "e64a",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-dictionary",
+    "content": "e9c3",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-structured-data",
+    "content": "e9dc",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-catalog",
+    "content": "e9e3",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-file-add",
+    "content": "e125",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-file-subtract",
+    "content": "e126",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-stack",
+    "content": "e032",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-stack-2",
+    "content": "e033",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-copy",
+    "content": "e910",
+    "sections": ["edition"]
+  },
+  {
+    "code": "icon-drop-duplicates",
+    "content": "e908",
+    "sections": ["edition"]
+  },
+  {
+    "code": "icon-union",
+    "content": "e9b4",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-join",
+    "content": "e9b4",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-intersection",
+    "content": "e9ae",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-copy2",
+    "content": "e61c",
+    "sections": ["d"]
+  },
+  {
+    "code": "icon-paper",
+    "content": "e034",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-paper-stack",
+    "content": "e035",
+    "sections": ["file"]
+  },
+  {
+    "code": "icon-clipboard",
+    "content": "e013",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-report",
+    "content": "e618",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-policy2",
+    "content": "e961",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-policy-2",
+    "content": "e961",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-scissors",
+    "content": "e9c7",
+    "sections": ["image", "edition"]
+  },
+  {
+    "code": "icon-edit",
+    "content": "e63c",
+    "sections": ["edition"]
+  },
+  {
+    "code": "icon-edit-2",
+    "content": "e91c",
+    "sections": ["edition"]
+  },
+  {
+    "code": "icon-edit-3",
+    "content": "e91d",
+    "sections": ["edition"]
+  },
+  {
+    "code": "icon-search",
+    "content": "e036",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-zoom-in",
+    "content": "e037",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-zoom-out",
+    "content": "e038",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-circle-plus",
+    "content": "e040",
+    "sections": ["controls", "toggle"]
+  },
+  {
+    "code": "icon-circle-minus",
+    "content": "e041",
+    "sections": ["controls", "toggle"]
+  },
+  {
+    "code": "icon-circle-check2",
+    "content": "e042",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-circle-check-2",
+    "content": "e042",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-circle-check",
+    "content": "e048",
+    "sections": ["d"]
+  },
+  {
+    "code": "icon-circle-cross",
+    "content": "e043",
+    "sections": ["controls", "toggle"]
+  },
+  {
+    "code": "icon-check-circle",
+    "content": "e90a",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-check-square",
+    "content": "e90b",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-marquee",
+    "content": "e082",
+    "sections": ["toggle"]
+  },
+  {
+    "code": "icon-marquee-plus",
+    "content": "e083",
+    "sections": ["toggle"]
+  },
+  {
+    "code": "icon-marquee-minus",
+    "content": "e084",
+    "sections": ["toggle"]
+  },
+  {
+    "code": "icon-checkbox",
+    "content": "e9a8",
+    "sections": ["toggle"]
+  },
+  {
+    "code": "icon-square-plus",
+    "content": "e044",
+    "sections": ["toggle", "controls"]
+  },
+  {
+    "code": "icon-square-minus",
+    "content": "e045",
+    "sections": ["toggle", "controls"]
+  },
+  {
+    "code": "icon-square-cross",
+    "content": "e047",
+    "sections": ["toggle", "controls"]
+  },
+  {
+    "code": "icon-square-chevron-down",
+    "content": "e9be",
+    "sections": ["arrows", "controls"]
+  },
+  {
+    "code": "icon-square-unchecked",
+    "content": "e9e5",
+    "sections": ["toggle"]
+  },
+  {
+    "code": "icon-square-check",
+    "content": "e9bf",
+    "sections": ["toggle"]
+  },
+  {
+    "code": "icon-square-check-minus",
+    "content": "e9d8",
+    "sections": ["toggle"]
+  },
+  {
+    "code": "icon-check2",
+    "content": "e64c",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-check",
+    "content": "e116",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-cross",
+    "content": "e117",
+    "sections": ["controls", "chars"]
+  },
+  {
+    "code": "icon-plus",
+    "content": "e114",
+    "sections": ["controls", "chars"]
+  },
+  {
+    "code": "icon-minus",
+    "content": "e115",
+    "sections": ["controls", "chars"]
+  },
+  {
+    "code": "icon-percent",
+    "content": "e92b",
+    "sections": ["chars"]
+  },
+  {
+    "code": "icon-sql",
+    "content": "e9e4",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-init-nulls",
+    "content": "e919",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-clear-nulls",
+    "content": "e922",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-case-letter",
+    "content": "e9c4",
+    "sections": ["edition"]
+  },
+  {
+    "code": "icon-if",
+    "content": "e9c5",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-case",
+    "content": "e9e1",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-formatter",
+    "content": "e9dd",
+    "sections": ["edition"]
+  },
+  {
+    "code": "icon-comma-delimiter",
+    "content": "e9c6",
+    "sections": ["chars"]
+  },
+  {
+    "code": "icon-integrity",
+    "content": "e9cb",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-sql-builder",
+    "content": "e932",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-inner-join",
+    "content": "e935",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-left-join",
+    "content": "e93f",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-left-only-join",
+    "content": "e965",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-right-join",
+    "content": "e991",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-right-only-join",
+    "content": "e9b8",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-full-join",
+    "content": "e9b9",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-rewind",
+    "content": "e92f",
+    "sections": ["audiovisual", "arrows"]
+  },
+  {
+    "code": "icon-pause",
+    "content": "e053",
+    "sections": ["audiovisual"]
+  },
+  {
+    "code": "icon-fast-forward",
+    "content": "e91f",
+    "sections": ["audiovisual", "arrows"]
+  },
+  {
+    "code": "icon-record",
+    "content": "e049",
+    "sections": ["audiovisual"]
+  },
+  {
+    "code": "icon-skip-back",
+    "content": "e050",
+    "sections": ["audiovisual", "arrows"]
+  },
+  {
+    "code": "icon-rewind-2",
+    "content": "e051",
+    "sections": ["audiovisual", "arrows"]
+  },
+  {
+    "code": "icon-play",
+    "content": "e052",
+    "sections": ["audiovisual", "arrows"]
+  },
+  {
+    "code": "icon-fast-forward-2",
+    "content": "e055",
+    "sections": ["audiovisual", "arrows"]
+  },
+  {
+    "code": "icon-skip-forward",
+    "content": "e056",
+    "sections": ["audiovisual", "arrows"]
+  },
+  {
+    "code": "icon-stop",
+    "content": "e054",
+    "sections": ["audiovisual"]
+  },
+  {
+    "code": "icon-decision",
+    "content": "e9bc",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-cloud",
+    "content": "e065",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-cloud-updown",
+    "content": "e97e",
+    "sections": ["arrows", "data"]
+  },
+  {
+    "code": "icon-cloud-upload",
+    "content": "e066",
+    "sections": ["arrows", "data"]
+  },
+  {
+    "code": "icon-cloud-download",
+    "content": "e067",
+    "sections": ["arrows", "data"]
+  },
+  {
+    "code": "icon-upload",
+    "content": "e068",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-download",
+    "content": "e069",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-export",
+    "content": "e128",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-import",
+    "content": "e61f",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-persist",
+    "content": "e9b2",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-install",
+    "content": "e972",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-inbox-2",
+    "content": "e122",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-inbox2",
+    "content": "e122",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-outbox",
+    "content": "e123",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-exit",
+    "content": "e962",
+    "sections": ["arrows", "controls"]
+  },
+  {
+    "code": "icon-logout",
+    "content": "e62e",
+    "sections": ["arrows", "controls"]
+  },
+  {
+    "code": "icon-login",
+    "content": "e630",
+    "sections": ["arrows", "controls"]
+  },
+  {
+    "code": "icon-esc",
+    "content": "e089",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-exit2",
+    "content": "e95a",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-exit-2",
+    "content": "e95a",
+    "sections": ["arrows", "controls"]
+  },
+  {
+    "code": "icon-switch",
+    "content": "e994",
+    "sections": ["device"]
+  },
+  {
+    "code": "icon-position",
+    "content": "e61b",
+    "sections": ["maps"]
+  },
+  {
+    "code": "icon-map",
+    "content": "e072",
+    "sections": ["maps"]
+  },
+  {
+    "code": "icon-layout",
+    "content": "e004",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-content-right",
+    "content": "e100",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-content-left",
+    "content": "e101",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-grid",
+    "content": "e102",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-grid4",
+    "content": "e103",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-grid-2",
+    "content": "e103",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-table-view",
+    "content": "e9c2",
+    "sections": ["arrows", "controls"]
+  },
+  {
+    "code": "icon-columns",
+    "content": "e104",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-rename-column",
+    "content": "e923",
+    "sections": ["edition", "controls"]
+  },
+  {
+    "code": "icon-trim",
+    "content": "e9c8",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-ban",
+    "content": "e107",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-forbidden",
+    "content": "e107",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-delete",
+    "content": "e119",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-trash",
+    "content": "e945",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-share",
+    "content": "e081",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-plane",
+    "content": "e609",
+    "sections": ["communication"]
+  },
+  {
+    "code": "icon-location",
+    "content": "e070",
+    "sections": ["maps", "arrows"]
+  },
+  {
+    "code": "icon-box2",
+    "content": "e995",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-box-2",
+    "content": "e995",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-inbox",
+    "content": "e121",
+    "sections": ["communication"]
+  },
+  {
+    "code": "icon-archive",
+    "content": "e121",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-mail",
+    "content": "e002",
+    "sections": ["communication"]
+  },
+  {
+    "code": "icon-paper-clip",
+    "content": "e001",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-link-2",
+    "content": "e924",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-unlink-2",
+    "content": "e9d9",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-link",
+    "content": "e005",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-unlink",
+    "content": "e9da",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-anchor",
+    "content": "e077",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-bold",
+    "content": "e652",
+    "sections": ["edition"]
+  },
+  {
+    "code": "icon-list",
+    "content": "e629",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-toggle",
+    "content": "e003",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-ribbon",
+    "content": "e009",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-settings",
+    "content": "e60f",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-cog",
+    "content": "e023",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-cogs",
+    "content": "e943",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-settings2",
+    "content": "e619",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-settings-2",
+    "content": "e619",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-tool",
+    "content": "e60c",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-rocket",
+    "content": "e610",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-layers",
+    "content": "e031",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-unstack",
+    "content": "e9db",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-pin",
+    "content": "e612",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-alert",
+    "content": "e613",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-circle-alert",
+    "content": "e9ba",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-info2",
+    "content": "e614",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-info-2",
+    "content": "e614",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-info3",
+    "content": "e606",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-info-3",
+    "content": "e606",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-info1",
+    "content": "e615",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-info",
+    "content": "e615",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-help2",
+    "content": "e638",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-help-2",
+    "content": "e638",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-help1",
+    "content": "e127",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-help",
+    "content": "e127",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-bulb",
+    "content": "e971",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-filter",
+    "content": "e616",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-datetime",
+    "content": "e64d",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-facets2",
+    "content": "e99f",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-facets-2",
+    "content": "e99f",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-order",
+    "content": "e635",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-dot",
+    "content": "e622",
+    "sections": ["toggle"]
+  },
+  {
+    "code": "icon-waiting",
+    "content": "e62c",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-ellipsis",
+    "content": "e62c",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-actions",
+    "content": "e631",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-internal",
+    "content": "e980",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-grid2",
+    "content": "e95b",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-grid-5",
+    "content": "e95b",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-drag",
+    "content": "e93c",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-group",
+    "content": "e96b",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-grid3",
+    "content": "e626",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-grid-3",
+    "content": "e626",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-fragments",
+    "content": "e62b",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-disc",
+    "content": "e019",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-dot_selected",
+    "content": "e632",
+    "sections": ["toggle"]
+  },
+  {
+    "code": "icon-stratio_small",
+    "content": "e633",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-stratio_standard",
+    "content": "e634",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-nodes",
+    "content": "e63a",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-arrow2_up",
+    "content": "e608",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow2_down",
+    "content": "e63f",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow2_left",
+    "content": "e63e",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow2_right",
+    "content": "e605",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow3_up",
+    "content": "e640",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow3_down",
+    "content": "e641",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow4_up",
+    "content": "e61a",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow4_down",
+    "content": "e625",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow4_left",
+    "content": "e9bd",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow",
+    "content": "e9ef",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-right",
+    "content": "e9ef",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-arrow-up",
+    "content": "e096",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow-down",
+    "content": "e097",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow-left",
+    "content": "e094",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow-right",
+    "content": "e095",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-reply",
+    "content": "e039",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-back2",
+    "content": "e99a",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-chevrons-down",
+    "content": "e90c",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-chevrons-left",
+    "content": "e90d",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-chevrons-right",
+    "content": "e90e",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow-down-left",
+    "content": "e900",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow-down-right",
+    "content": "e901",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow-up-left",
+    "content": "e902",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow-up-right",
+    "content": "e903",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-corner-down-left",
+    "content": "e911",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-corner-down-right",
+    "content": "e912",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-corner-left-down",
+    "content": "e913",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-corner-left-up",
+    "content": "e914",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-corner-right-down",
+    "content": "e915",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-corner-right-up",
+    "content": "e916",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-corner-up-left",
+    "content": "e917",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-corner-up-right",
+    "content": "e918",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-arrow3_middle",
+    "content": "e642",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-centric",
+    "content": "e987",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-scalable",
+    "content": "e988",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-maximize2",
+    "content": "e112",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-minimize2",
+    "content": "e113",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-in_out1",
+    "content": "e98a",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-move",
+    "content": "e118",
+    "sections": ["edition"]
+  },
+  {
+    "code": "icon-a-b",
+    "content": "e96c",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-type",
+    "content": "e64f",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-history",
+    "content": "e95f",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-rotate-ccw",
+    "content": "e930",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-reload2",
+    "content": "e930",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-back",
+    "content": "e930",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-rotate-cw",
+    "content": "e931",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-reload1",
+    "content": "e931",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-refresh-ccw",
+    "content": "e92c",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-reload",
+    "content": "e92c",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-refresh",
+    "content": "e92c",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-refresh-cw",
+    "content": "e92d",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-repeat2",
+    "content": "e92d",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-restart",
+    "content": "e92d",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-shuffle",
+    "content": "e057",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-repeat",
+    "content": "e92e",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-in_out2",
+    "content": "e990",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-merge",
+    "content": "e98b",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-channel",
+    "content": "e98c",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-flow",
+    "content": "e942",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-tube",
+    "content": "e964",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-event",
+    "content": "e97f",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-option",
+    "content": "e97d",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-window",
+    "content": "e9b5",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-input",
+    "content": "e98d",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-output",
+    "content": "e98e",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-menu2",
+    "content": "e643",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-menu",
+    "content": "e120",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-dots",
+    "content": "e651",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-activity",
+    "content": "e603",
+    "sections": ["graphics"]
+  },
+  {
+    "code": "icon-spider",
+    "content": "e982",
+    "sections": ["graphics"]
+  },
+  {
+    "code": "icon-area-chart",
+    "content": "e63b",
+    "sections": ["graphics"]
+  },
+  {
+    "code": "icon-bar-graph-2",
+    "content": "e091",
+    "sections": ["graphics"]
+  },
+  {
+    "code": "icon-bar-graph",
+    "content": "e090",
+    "sections": ["graphics"]
+  },
+  {
+    "code": "icon-bar-chart-2",
+    "content": "e905",
+    "sections": ["graphics"]
+  },
+  {
+    "code": "icon-bar-chart",
+    "content": "e906",
+    "sections": ["graphics"]
+  },
+  {
+    "code": "icon-graph",
+    "content": "e981",
+    "sections": ["graphics"]
+  },
+  {
+    "code": "icon-pie-graph",
+    "content": "e092",
+    "sections": ["graphics"]
+  },
+  {
+    "code": "icon-trending-down",
+    "content": "e933",
+    "sections": ["graphics"]
+  },
+  {
+    "code": "icon-trending-up",
+    "content": "e934",
+    "sections": ["graphics"]
+  },
+  {
+    "code": "icon-line",
+    "content": "e93b",
+    "sections": ["graphics"]
+  },
+  {
+    "code": "icon-repartition",
+    "content": "e9ad",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-expand",
+    "content": "e110",
+    "sections": ["edition"]
+  },
+  {
+    "code": "icon-contract",
+    "content": "e111",
+    "sections": ["edition"]
+  },
+  {
+    "code": "icon-maximize",
+    "content": "e926",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-minimize",
+    "content": "e92a",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-select",
+    "content": "e9b3",
+    "sections": ["d"]
+  },
+  {
+    "code": "icon-crop",
+    "content": "e91b",
+    "sections": ["edition"]
+  },
+  {
+    "code": "icon-scale",
+    "content": "e989",
+    "sections": ["edition"]
+  },
+  {
+    "code": "icon-pointer",
+    "content": "e946",
+    "sections": ["pointers"]
+  },
+  {
+    "code": "icon-hand_ponting",
+    "content": "e986",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-hand_click",
+    "content": "e97b",
+    "sections": ["pointers"]
+  },
+  {
+    "code": "icon-message-circle",
+    "content": "e927",
+    "sections": ["communication"]
+  },
+  {
+    "code": "icon-no-comment",
+    "content": "e9d7",
+    "sections": ["communication"]
+  },
+  {
+    "code": "icon-message-square",
+    "content": "e928",
+    "sections": ["communication"]
+  },
+  {
+    "code": "icon-speech-bubble",
+    "content": "e076",
+    "sections": ["communication"]
+  },
+  {
+    "code": "icon-user",
+    "content": "e939",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-head",
+    "content": "e939",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-user-minus",
+    "content": "e936",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-user-plus",
+    "content": "e937",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-user-x",
+    "content": "e938",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-users",
+    "content": "e93a",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-irc",
+    "content": "e94b",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-at-sign",
+    "content": "e904",
+    "sections": ["chars"]
+  },
+  {
+    "code": "icon-jdbc",
+    "content": "e602",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-http",
+    "content": "e94c",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-globe",
+    "content": "e078",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-policy",
+    "content": "e960",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-shield",
+    "content": "e60e",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-lock",
+    "content": "e976",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-lock2",
+    "content": "e976",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-unlock",
+    "content": "e977",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-unlock2",
+    "content": "e977",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-key",
+    "content": "e984",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-arangodb",
+    "content": "e9d6",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-mongodb",
+    "content": "e623",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-solr",
+    "content": "e966",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-redis",
+    "content": "e64b",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-parquet",
+    "content": "e649",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-flume",
+    "content": "e646",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-kafka",
+    "content": "e645",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-kafkadirect",
+    "content": "e648",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-diamond",
+    "content": "e947",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-spool",
+    "content": "e94f",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-rest",
+    "content": "e951",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-sequence",
+    "content": "e950",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-jms",
+    "content": "e948",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-thrift",
+    "content": "e954",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-syslog",
+    "content": "e955",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-hbase",
+    "content": "e956",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-druid",
+    "content": "e957",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-hive",
+    "content": "e958",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-snmp",
+    "content": "e952",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-scribe",
+    "content": "e953",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-mesos",
+    "content": "e95c",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-kite",
+    "content": "e959",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-zookeeper",
+    "content": "e95d",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-netcat",
+    "content": "e94a",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-github",
+    "content": "e920",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-github2",
+    "content": "e967",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-postgres",
+    "content": "e9a5",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-postgres-xl",
+    "content": "e9df",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-elasticsearch",
+    "content": "e624",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-hdfs",
+    "content": "e93e",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-codepen",
+    "content": "e90f",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-ignite",
+    "content": "e9e0",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-docker",
+    "content": "e968",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-rabbitmq",
+    "content": "e636",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-cassandra",
+    "content": "e62f",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-avro",
+    "content": "e93d",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-modules",
+    "content": "e96d",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-credit-card",
+    "content": "e91a",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-bag",
+    "content": "e106",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-basket",
+    "content": "e996",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-tag_right",
+    "content": "e08a",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-tag_left",
+    "content": "e085",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-transport",
+    "content": "e628",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-speed",
+    "content": "e999",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-dashboard",
+    "content": "e60b",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-facets",
+    "content": "e99e",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-hand_thumbup",
+    "content": "e96f",
+    "sections": ["image", "notification"]
+  },
+  {
+    "code": "icon-heart",
+    "content": "e024",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-star2",
+    "content": "e997",
+    "sections": ["image", "notification"]
+  },
+  {
+    "code": "icon-star",
+    "content": "e093",
+    "sections": ["image", "notification"]
+  },
+  {
+    "code": "icon-linkedin",
+    "content": "e9a2",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-twitter",
+    "content": "e637",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-youtube",
+    "content": "e9a3",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-slideshare",
+    "content": "e9a4",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-command",
+    "content": "e087",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-alt",
+    "content": "e088",
+    "sections": ["controls"]
+  },
+  {
+    "code": "icon-home",
+    "content": "e9a7",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-home2",
+    "content": "e9a7",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-planet",
+    "content": "e9a9",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-machine_learning",
+    "content": "e9aa",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-drop",
+    "content": "e063",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-moon",
+    "content": "e061",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-thermometer",
+    "content": "e062",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-umbrella",
+    "content": "e060",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-fire",
+    "content": "e983",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-stress",
+    "content": "e94e",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-omni",
+    "content": "e9a0",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-deepweb",
+    "content": "e9a1",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-coffe",
+    "content": "e944",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-chip2",
+    "content": "e62a",
+    "sections": ["device"]
+  },
+  {
+    "code": "icon-chip3",
+    "content": "e62a",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-chip1",
+    "content": "e62d",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-cpu",
+    "content": "e62d",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-chip",
+    "content": "e62d",
+    "sections": ["device"]
+  },
+  {
+    "code": "icon-server",
+    "content": "e974",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-cpu2",
+    "content": "e627",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-socket",
+    "content": "e644",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-websocket",
+    "content": "e650",
+    "sections": ["brand"]
+  },
+  {
+    "code": "icon-plug",
+    "content": "e97a",
+    "sections": ["device"]
+  },
+  {
+    "code": "icon-pause2",
+    "content": "e970",
+    "sections": ["audiovisual"]
+  },
+  {
+    "code": "icon-storage",
+    "content": "e607",
+    "sections": ["data"]
+  },
+  {
+    "code": "icon-mobile",
+    "content": "e978",
+    "sections": ["device"]
+  },
+  {
+    "code": "icon-compass",
+    "content": "e60d",
+    "sections": ["maps"]
+  },
+  {
+    "code": "icon-rudder",
+    "content": "e9ac",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-robot",
+    "content": "e9ab",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-smiley",
+    "content": "e96e",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-pacman",
+    "content": "e97c",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-astronaut",
+    "content": "e9b6",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-hide",
+    "content": "e99d",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-infinite",
+    "content": "e992",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-hash",
+    "content": "e921",
+    "sections": ["chars"]
+  },
+  {
+    "code": "icon-atom",
+    "content": "e993",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-debug",
+    "content": "e9b7",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-loto",
+    "content": "e998",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-location-2",
+    "content": "e071",
+    "sections": ["maps"]
+  },
+  {
+    "code": "icon-Interceptor",
+    "content": "e98f",
+    "sections": ["device"]
+  },
+  {
+    "code": "icon-briefcase",
+    "content": "e075",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-puzzle",
+    "content": "e60a",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-direction",
+    "content": "e621",
+    "sections": ["maps"]
+  },
+  {
+    "code": "icon-flag",
+    "content": "e108",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-ribbon2",
+    "content": "e94d",
+    "sections": ["notification"]
+  },
+  {
+    "code": "icon-cup",
+    "content": "e61d",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-pingpong",
+    "content": "e985",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-evolution",
+    "content": "e975",
+    "sections": ["misc"]
+  },
+  {
+    "code": "icon-bike",
+    "content": "e9a6",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-car",
+    "content": "e99c",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-intelligence",
+    "content": "e979",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-box",
+    "content": "e079",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-lego",
+    "content": "e941",
+    "sections": ["image"]
+  },
+  {
+    "code": "icon-rotate-ccw1",
+    "content": "e9c9",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-reload21",
+    "content": "e9c9",
+    "sections": ["r"]
+  },
+  {
+    "code": "icon-back1",
+    "content": "e9c9",
+    "sections": ["arrows"]
+  },
+  {
+    "code": "icon-xdata",
+    "content": "e9ca",
+    "sections": ["brand"]
+  }
+]

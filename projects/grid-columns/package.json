@@ -1,10 +1,7 @@
 {
-  "name": "@lunaeme/circe-core",
-  "version": "0.3.7",
-  "description": "Circe :: Angular Core Services and Tools",
-  "scripts": {
-    "prepublishOnly": "cp -R ../../projects/core/src/lib/styles ./"
-  },
+  "name": "@lunaeme/circe-grid-columns",
+  "version": "0.0.1",
+  "description": "Circe :: Angular Grid-Columns Directive",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nulpas/circe.git"
@@ -12,16 +9,16 @@
   "keywords": [
     "circe",
     "angular",
-    "services",
-    "core",
-    "tools"
+    "directive",
+    "grid",
+    "column"
   ],
   "author": "Nul Pàs <manu@lunaeme.com> (https://github.com/nulpas)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nulpas/circe/issues"
   },
-  "homepage": "https://github.com/nulpas/circe/tree/master/projects/core#readme",
+  "homepage": "https://github.com/nulpas/circe/tree/master/projects/grid-columns#readme",
   "peerDependencies": {
     "@angular/common": "~8.2.14",
     "@angular/core": "~8.2.14",
@@ -29,7 +26,6 @@
     "@angular/platform-browser-dynamic": "~8.2.14"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
-    "ngx-order-pipe": "^2.0.4"
+    "@lunaeme/circe-core": "^0.3.7"
   }
 }
