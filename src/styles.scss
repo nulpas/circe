@@ -10,6 +10,8 @@ HTML {
     padding: 0;
 
     &.medea-tpl {
+      --mda-component-width: 300px;
+
       H1 {
         font-weight: lighter;
         font-size: 2.5rem;

@@ -1,18 +1,13 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/core",
+  "dest": "../../dist/form-behavior",
   "lib": {
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
-      "lodash": "lodash",
-      "ngx-order-pipe": "ngx-order-pipe",
-      "uuid": "uuid"
+      "@lunaeme/circe-core": "@lunaeme/circe-core"
     }
   },
-  "keepLifecycleScripts": true,
   "whitelistedNonPeerDependencies": [
-    "lodash",
-    "ngx-order-pipe",
-    "uuid"
+    "@lunaeme/circe-core"
   ]
 }

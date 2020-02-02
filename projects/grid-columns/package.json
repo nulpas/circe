@@ -26,6 +26,6 @@
     "@angular/platform-browser-dynamic": "~8.2.14"
   },
   "dependencies": {
-    "@lunaeme/circe-core": "^0.3.7"
+    "@lunaeme/circe-core": "^0.3.8"
   }
 }

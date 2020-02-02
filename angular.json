@@ -244,7 +244,7 @@
       "root": "projects/on-dom-activity",
       "sourceRoot": "projects/on-dom-activity/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "cc",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -454,7 +454,7 @@
       "projectType": "library",
       "root": "projects/grid-columns",
       "sourceRoot": "projects/grid-columns/src",
-      "prefix": "lib",
+      "prefix": "cc",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -477,6 +477,41 @@
             "tsConfig": [
               "projects/grid-columns/tsconfig.lib.json",
               "projects/grid-columns/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "form-behavior": {
+      "projectType": "library",
+      "root": "projects/form-behavior",
+      "sourceRoot": "projects/form-behavior/src",
+      "prefix": "cc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/form-behavior/tsconfig.lib.json",
+            "project": "projects/form-behavior/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/form-behavior/src/test.ts",
+            "tsConfig": "projects/form-behavior/tsconfig.spec.json",
+            "karmaConfig": "projects/form-behavior/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/form-behavior/tsconfig.lib.json",
+              "projects/form-behavior/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

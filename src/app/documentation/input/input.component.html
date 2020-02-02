@@ -1,1 +1,90 @@
 <h1>Input</h1>
+<span class="mda-font--18">Inputs enable the user to interact with and input data. Use when the application requires long-form content from the user.</span>
+
+<h2>Design and Behavior</h2>
+<p>
+  Inputs can be text inputs, area inputs and tag inputs. Using one on another depends on the length of the data the user
+  can introduce. As well depends on the type of data in case of the input tags. Text inputs are a free form
+  input where the user can type anything. Text inputs are for short amounts of data, while area inputs are for long
+  amounts of text. We should anticipate which one is the most suitable option for each case. The user in area inputs can
+  make the area bigger dragging the input area from the bottom right.
+</p>
+
+<h2>Demo</h2>
+<section class="input-demo">
+  <section class="input-demo__stage">
+    <label *ngIf="inputLabel.value" class="mda-label" for="input-test">{{label}}</label>
+    <input
+      id="input-test"
+      type="text"
+      class="mda-input"
+      placeholder="Placeholder"
+      [ngClass]="{
+        'mda-input--search': inputIconRight.value === 2,
+        'mda-input--user': inputIconRight.value === 3,
+        'mda-input--email': inputIconRight.value === 4,
+        'mda-input--password': inputIconRight.value === 5,
+        'mda-input--small': inputSize.value === 2
+      }"
+      [formControl]="input"
+      ccFormBehavior [report]="helperText" [error]="errorMessage" [render]="true">
+  </section>
+  <section class="input-demo__controls">
+    <h4>Size</h4>
+    <input id="size-standard" type="radio" name="size" [value]="1" [formControl]="inputSize">
+    <label for="size-standard">Standard</label>
+
+    <input id="size-small" type="radio" name="size" [value]="2" [formControl]="inputSize">
+    <label for="size-small">Small</label>
+
+    <h4>Icon Right</h4>
+    <input id="icon-right-none" type="radio" name="icon-right" [value]="1" [formControl]="inputIconRight">
+    <label for="icon-right-none">None</label>
+
+    <input id="icon-right-search" type="radio" name="icon-right" [value]="2" [formControl]="inputIconRight">
+    <label for="icon-right-search">Search</label>
+
+    <input id="icon-right-user" type="radio" name="icon-right" [value]="3" [formControl]="inputIconRight">
+    <label for="icon-right-user">User</label>
+
+    <input id="icon-right-email" type="radio" name="icon-right" [value]="4" [formControl]="inputIconRight">
+    <label for="icon-right-email">e-Mail</label>
+
+    <input id="icon-right-password" type="radio" name="icon-right" [value]="5" [formControl]="inputIconRight">
+    <label for="icon-right-password">Password</label>
+
+    <h4>Options</h4>
+    <input id="icon-option-label" type="checkbox" name="option-label" [formControl]="inputLabel">
+    <label for="icon-option-label">Label</label>
+
+    <input id="icon-option-disabled" type="checkbox" name="option-disabled" [formControl]="inputDisabled">
+    <label for="icon-option-disabled">Disabled</label>
+
+    <input id="icon-option-helper-text" type="checkbox" name="option-helper-text" [formControl]="inputHelperText">
+    <label for="icon-option-helper-text">Helper / Error text</label>
+  </section>
+</section>
+
+<h2>Usage and Best Practices</h2>
+<p>
+  Inputs have many states, and can have specific validation rules fot the introduced data. Therefore if the validation
+  rules are not met an error message will appear. The user should allways know if specific rules are applied to that
+  input that’s why we should put clear hints about what the user should introduce.
+</p>
+<p>
+  By default, the inputs have a label and a placeholder text that shows or an example of the text that it should be
+  introduced or a call to action text. The label should be a clear statement of what the user is asked to respond on
+  the input field.
+</p>
+<p>
+  When the user clicks on an input, the on focus state starts, the input gets blue and a blinking cursor appears at the
+  beggining of the input so the user know is there. While the user doesn’t write anything the placeholder text
+  remains. If the user starts to write, the placeholder disappears. If the user deletes the content, the placeholder
+  appears again.
+</p>
+<p>
+  If the input has validation rules, they should be clearly explained in the hint text that area which appears
+  immediately under the input and never disappears. When the user writes on this kind of inputs, an error message
+  should appear only when the validation rules are not met and the user clicks outside the input. In that case an error
+  message appears explaining why the validation has failed immediately under the hint text.
+</p>

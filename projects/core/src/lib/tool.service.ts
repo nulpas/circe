@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { startCase as _startCase, camelCase as _camelCase, kebabCase as _kebabCase } from 'lodash';
 import { SimpleData, StringTransformMethods, stringTransformMethodsConstants, StringTransformMethodsConstants } from './_types/data.types';
+import { v4 } from 'uuid';
 
 @Injectable() export class ToolService {
   public months: Array<string> = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -85,6 +86,15 @@ import { SimpleData, StringTransformMethods, stringTransformMethodsConstants, St
       return (_hex.length === 1) ? `0${_hex}` : _hex;
     });
     return _output.join('');
+  }
+
+  /**
+   * generateUuid
+   * @description
+   * Generates a new uuid using uuid dependency.
+   */
+  public static generateUuid(): string {
+    return v4();
   }
 
   /**

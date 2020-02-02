@@ -3,7 +3,11 @@
   <span>{{totalIcons}}</span>
   <div class="icons-search">
     <label for="icons-search"></label>
-    <input id="icons-search" type="text">
+    <input
+      id="icons-search"
+      class="mda-input mda-input--search mda-input--small"
+      placeholder="Search Icons"
+      ccFormBehavior>
   </div>
 </section>
 <section class="icons-content" *ngIf="sections && sections.length" ccGridColumns [numberOfColumns]="2">

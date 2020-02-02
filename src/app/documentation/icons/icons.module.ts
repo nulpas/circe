@@ -5,13 +5,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DataService } from '../../_services/data.service';
 import { ToolService } from '@core/tool.service';
 import { OrderModule } from '@core/external.elements';
-import { GridColumnsModule } from '../../../../projects/grid-columns/src/lib/grid-columns.module';
+import { GridColumnsModule } from '@grid-columns/grid-columns.module';
+import {FormBehaviorModule} from '@form-behavior/form-behavior.module';
 
 @NgModule({
   declarations: [IconsComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FormBehaviorModule,
     OrderModule,
     GridColumnsModule
   ],

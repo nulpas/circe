@@ -74,10 +74,16 @@
         "dist/keyboard-events-emitter/*"
       ],
       "@grid-columns": [
-        "dist/grid-columns"
+        "projects/grid-columns/src/lib"
       ],
       "@grid-columns/*": [
-        "dist/grid-columns/*"
+        "projects/grid-columns/src/lib/*"
+      ],
+      "@form-behavior": [
+        "projects/form-behavior/src/lib"
+      ],
+      "@form-behavior/*": [
+        "projects/form-behavior/src/lib/*"
       ]
     }
   }
