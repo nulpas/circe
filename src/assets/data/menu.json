@@ -32,8 +32,8 @@
     ]
   },
   {
-    "id": "forms",
-    "name": "Forms",
+    "id": "components",
+    "name": "Components",
     "options": [
       {
         "id": "input",
