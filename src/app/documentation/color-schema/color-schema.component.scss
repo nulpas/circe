@@ -9,8 +9,9 @@
   H2 {
     margin-top: 25px;
   }
-  P {
-    margin-bottom: 20px;
+  P, .subtitle {
+    display: block;
+    padding-right: 20%;
   }
   .color-type {
     @include createFlexBox(row, normal, normal, wrap);

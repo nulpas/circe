@@ -1,3 +1,4 @@
+@import '~@lunaeme/medea/dist/sass/mixins';
 @import '../../../mixins';
 
 :host {
@@ -5,4 +6,25 @@
   padding: 25px 35px;
   box-sizing: border-box;
   @include scrollInElement();
+  .principles {
+    @include createFlexBox(row, normal, space-between, wrap);
+    padding-right: 15%;
+    .principle__unit {
+      width: 46%;
+      HR {
+        width: 40%;
+        border: none;
+        border-top: 1px solid var(--mda-color-space-20);
+        margin: 12px 0;
+      }
+    }
+  }
+
+  H2 {
+    margin: 36px 0 0 0;
+  }
+  P, .subtitle {
+    display: block;
+    padding-right: 20%;
+  }
 }
