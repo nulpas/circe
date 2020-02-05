@@ -7,7 +7,13 @@ import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  constructor() {}
+  importantIllustrationSrc: string;
+  stratioNameImage: string;
+
+  constructor() {
+    this.importantIllustrationSrc = 'assets/home-illustration.svg';
+    this.stratioNameImage = 'assets/stratio.svg';
+  }
 
   ngOnInit(): void {}
 

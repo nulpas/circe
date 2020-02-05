@@ -4,6 +4,17 @@
     "name": "Foundation",
     "options": [
       {
+        "id": "principles",
+        "name": "Principles",
+        "location": ["principles"]
+      }
+    ]
+  },
+  {
+    "id": "theme",
+    "name": "Theme",
+    "options": [
+      {
         "id": "color-schema",
         "name": "Color Schema",
         "location": ["color-schema"]
@@ -33,6 +44,11 @@
         "id": "radio",
         "name": "Radio Button",
         "location": ["radio"]
+      },
+      {
+        "id": "checkbox",
+        "name": "Checkbox",
+        "location": ["checkbox"]
       }
     ]
   }

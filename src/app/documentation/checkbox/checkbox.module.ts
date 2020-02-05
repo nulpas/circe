@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RadioComponent } from './radio.component';
+import { CheckboxComponent } from './checkbox.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [RadioComponent],
+  declarations: [CheckboxComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule
   ]
 })
-export class RadioModule {}
+export class CheckboxModule {}

@@ -1,0 +1,8 @@
+@import '../../../mixins';
+
+:host {
+  display: block;
+  padding: 25px 35px;
+  box-sizing: border-box;
+  @include scrollInElement();
+}

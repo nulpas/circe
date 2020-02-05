@@ -11,6 +11,9 @@ import { TypographyModule } from './typography/typography.module';
 import { IconsModule } from './icons/icons.module';
 import { InputModule } from './input/input.module';
 import { RadioModule } from './radio/radio.module';
+import { CheckboxModule } from './checkbox/checkbox.module';
+import { HeaderModule } from '../header/header.module';
+import { PrinciplesModule } from './principles/principles.module';
 
 @NgModule({
   declarations: [DocumentationComponent],
@@ -18,12 +21,15 @@ import { RadioModule } from './radio/radio.module';
     CommonModule,
     DocumentationRoutingModule,
     RouterModule,
+    HeaderModule,
     OrderModule,
     ColorSchemaModule,
     TypographyModule,
     IconsModule,
     InputModule,
-    RadioModule
+    RadioModule,
+    CheckboxModule,
+    PrinciplesModule
   ],
   providers: [
     DataService,

@@ -32,5 +32,8 @@
         margin-top: 0;
       }
     }
+    INPUT[type=checkbox] + LABEL {
+      --mda-radio-display: block;
+    }
   }
 }

@@ -1,40 +1,106 @@
-<a href="documentation">DOCUMENTATION</a><br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
-home works!<br><br>
+<section class="background"></section>
+<header>
+  <a [routerLink]="['/', 'home']">
+    <i class="mda-icon icon-stratio_standard"></i>
+    <div class="product mda-font--extra-light mda-font--24">Design</div>
+  </a>
+</header>
+<main>
+  <section class="banner-header">
+    <h1>Stratio Design</h1>
+    <p class="mda-font--16">
+      Discovering and providing reusable and consistent UI components to help developers and designers to rise the best
+      experience on Stratio products.
+    </p>
+  </section>
+  <section class="basics">
+    <div class="concept">
+      <div class="concept__title mda-font--16">PRINCIPLES</div>
+      <hr>
+      When the design is intuitive, users can focus on what to do, not on how to do it. Move across Stratio products
+      like at home.
+      <a [routerLink]="['/', 'documentation', 'principles']">Learn</a>
+    </div>
+    <div class="concept">
+      <div class="concept__title mda-font--16">THEME</div>
+      <hr>
+      Space Blue is the theme that makes up the Stratio products to focus the user on the content, removing unneeded
+      distractions.
+      <a [routerLink]="['/', 'documentation', 'color-schema']">Overview</a>
+    </div>
+    <div class="concept">
+      <div class="concept__title mda-font--16">COMPONENTS</div>
+      <hr>
+      Boost productivity and consistency with a modern UI toolkit capable of being adapted to each project thanks to its
+      theming capabilities.
+      <a [routerLink]="['/', 'documentation', 'input']">Browse components</a>
+    </div>
+    <div class="concept">
+      <div class="concept__title mda-font--16">FRAMEWORK</div>
+      <hr>
+      An angular-based toolkit that takes the best of what Google's framework offer with dozens of components and
+      directives ready-to-use.
+    </div>
+  </section>
+  <section class="important">
+    <div class="important__text">
+      <h2 class="mda-font--24">From data-centric to user-centric</h2>
+      <p class="mda-font--16">
+        Stratio has a big challenge: democratize access to the most complex technologies for business people with no
+        specific technical education. With that goal in mind, we design a system as little design as possible, focused on
+        the essentials. This approach let us guide the users subtly across the use of our products, in a natural way, so
+        that they can focus their mind on what they want to do, not how to do it.
+      </p>
+    </div>
+    <div class="important__image">
+      <img [src]="importantIllustrationSrc" alt="From data-centric to user-centric">
+    </div>
+  </section>
+  <section class="how">
+    <h2>How do we get it done</h2>
+    <div class="concepts">
+      <div class="concept__unit">
+        <i class="mda-icon icon-astronaut"></i>
+        <div class="text">
+          Angular-based UI toolkit
+          <span>
+            A set of top-notch components and directives for the most used frontend framework worldwide.
+          </span>
+        </div>
+      </div>
+      <div class="concept__unit">
+        <i class="mda-icon icon-centric"></i>
+        <div class="text">
+          Empower your design team
+          <span>
+            Let your designers work on the graphic details while your developers work on functionality.
+          </span>
+        </div>
+      </div>
+      <div class="concept__unit">
+        <i class="mda-icon icon-bulb"></i>
+        <div class="text">
+          Customization without compilation
+          <span>
+            Make some graphic adjusts or change your whole look-and-feel with no compilation needed.
+          </span>
+        </div>
+      </div>
+      <div class="concept__unit">
+        <i class="mda-icon icon-scissors"></i>
+        <div class="text">
+          Accessible by default
+          <span>
+            All the components and directives on Egeo include WAI-ARIA and keyboard-only behavior.
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <a [routerLink]="['/', 'home']">
+    <i class="mda-icon icon-stratio_standard"></i>
+    <img class="brand" [src]="stratioNameImage" alt="Stratio Big Data">
+  </a>
+</footer>
