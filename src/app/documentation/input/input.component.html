@@ -12,7 +12,7 @@
 
 <h2>Demo</h2>
 <section class="input-demo">
-  <section class="input-demo__stage">
+  <section class="demo__stage">
     <label *ngIf="inputLabel.value" class="mda-label" for="input-test">{{label}}</label>
     <input
       id="input-test"
@@ -29,7 +29,7 @@
       [formControl]="input"
       ccFormBehavior [report]="helperText" [error]="errorMessage" [render]="true">
   </section>
-  <section class="input-demo__controls">
+  <section class="demo__controls">
     <h4>Size</h4>
     <input id="size-standard" type="radio" name="size" [value]="1" [formControl]="inputSize">
     <label for="size-standard">Standard</label>

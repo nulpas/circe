@@ -10,6 +10,7 @@ import { DocumentationRoutingModule } from './documentation-routing.module';
 import { TypographyModule } from './typography/typography.module';
 import { IconsModule } from './icons/icons.module';
 import { InputModule } from './input/input.module';
+import { RadioModule } from './radio/radio.module';
 
 @NgModule({
   declarations: [DocumentationComponent],
@@ -21,7 +22,8 @@ import { InputModule } from './input/input.module';
     ColorSchemaModule,
     TypographyModule,
     IconsModule,
-    InputModule
+    InputModule,
+    RadioModule
   ],
   providers: [
     DataService,

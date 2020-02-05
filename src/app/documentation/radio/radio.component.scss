@@ -5,13 +5,20 @@
   padding: 25px 35px;
   box-sizing: border-box;
   @include scrollInElement();
+
+  INPUT[type=radio] + LABEL {
+    &.disposition-vertical {
+      --mda-radio-display: block;
+    }
+  }
+
   H2 {
     margin-top: 36px;
   }
   P {
     padding-right: 20%;
   }
-  .input-demo {
+  .radio-demo {
     @include demoElement();
   }
 }

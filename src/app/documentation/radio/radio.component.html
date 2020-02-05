@@ -1,0 +1,74 @@
+<h1>Radio Button</h1>
+<span class="mda-font--18">
+  Radio buttons are used when a list of two or more options are mutually exclusive, meaning the user must select only
+  one option.
+</span>
+
+<h2>Design & Behavior</h2>
+<p>
+  Radio Buttons can have four styles and have a label on the right side.
+</p>
+
+<h2>Demo</h2>
+<section class="radio-demo">
+  <section class="demo__stage">
+    <label class="mda-label" *ngIf="radioTitleLabel.value">Group of Options Label</label>
+
+    <input id="demo-option-1" type="radio" name="options" [value]="1" [formControl]="radio">
+    <label for="demo-option-1" [ngClass]="{'disposition-vertical': radioDistribution.value === 2}">
+      {{(radioLabel.value) ? 'Option 1' : ''}}
+    </label>
+
+    <input id="demo-option-2" type="radio" name="options" [value]="2" [formControl]="radio">
+    <label for="demo-option-2" [ngClass]="{'disposition-vertical': radioDistribution.value === 2}">
+      {{(radioLabel.value) ? 'Option 2' : ''}}
+    </label>
+
+    <input id="demo-option-3" type="radio" name="options" [value]="3" [formControl]="radio">
+    <label for="demo-option-3" [ngClass]="{'disposition-vertical': radioDistribution.value === 2}">
+      {{(radioLabel.value) ? 'Option 3' : ''}}
+    </label>
+  </section>
+  <section class="demo__controls">
+    <h4>Disposition</h4>
+    <input id="radio-horizontal" type="radio" name="disposition" [value]="1" [formControl]="radioDistribution">
+    <label for="radio-horizontal">Horizontal</label>
+
+    <input id="radio-vertical" type="radio" name="disposition" [value]="2" [formControl]="radioDistribution">
+    <label for="radio-vertical">Vertical</label>
+
+    <h4>Options</h4>
+    <input id="radio-title-label" type="checkbox" name="option-title-label" [formControl]="radioTitleLabel">
+    <label for="radio-title-label">Title Label</label>
+
+    <input id="radio-label" type="checkbox" name="option-label" [formControl]="radioLabel">
+    <label for="radio-label">Label</label>
+
+    <input id="radio-disabled" type="checkbox" name="option-disabled" [formControl]="radioDisabled">
+    <label for="radio-disabled">Disabled</label>
+  </section>
+</section>
+
+<h2>Usage and Best Practices</h2>
+<p>
+  If necessary, a heading can accompany a set of Radio Buttons to provide further clarity for the user. Use
+  sentence-style capitalization (only the first word in a phrase and any proper nouns capitalized).
+</p>
+<p>
+  Always use a clear and concise label for Radio Buttons. Be explicit about the action that will follow if the Radio
+  Button is selected. Labels appear to the right of Radio Buttons. Use sentence-style capitalization (only the first
+  word in a phrase and any proper nouns capitalized) and no more than three words.
+</p>
+<p>
+  A set of Radio Buttons should default to having one option selected. Never display them without a default selection.
+</p>
+<p>
+  Use radio buttons when you want users to see all available options and the list of options is small. For mutually
+  exclusive options, consider a checkbox or toggle switch.
+</p>
+<p>
+  Radio buttons are best for six or fewer options.
+</p>
+<p>
+  For more than six options, consider a Select box, which prompts users to disclose the options.
+</p>

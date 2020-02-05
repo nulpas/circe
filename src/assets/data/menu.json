@@ -28,6 +28,11 @@
         "id": "input",
         "name": "Input",
         "location": ["input"]
+      },
+      {
+        "id": "radio",
+        "name": "Radio Button",
+        "location": ["radio"]
       }
     ]
   }
