@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './+home/home.component';
 import { DocumentationComponent } from './documentation/documentation.component';
+import { LoginComponent } from './+login/login.component';
+import { SessionGuard } from './_guards/session.guard';
 
 
 const routes: Routes = [
@@ -11,8 +13,13 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [SessionGuard]
   },
   {
     path: 'documentation',
@@ -28,6 +35,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { enableTracing: false })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [SessionGuard]
 })
 export class AppRoutingModule {}

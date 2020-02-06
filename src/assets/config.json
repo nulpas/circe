@@ -1,4 +1,4 @@
 {
-  "BASE_API_URL__MAIN": "",
+  "BASE_API_URL__MAIN": "http://api-circe.lunaeme.com/",
   "BASE_API_URL__SECONDARY": "/assets/data/"
 }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { ConfigService } from '../_config/config.service';
-import { environment } from '../../environments/environment';
+import { ConfigService } from '../../_config/config.service';
+import { environment } from '../../../environments/environment';
 import { catchError } from 'rxjs/operators';
 import { ToolService } from '@core/tool.service';
 
@@ -26,7 +26,7 @@ export interface ApiConfigFile {
    * @description
    * EndPoints for DEVELOPMENT use. PRODUCTION endPoints are in assets/config.json file.
    */
-  public readonly baseMainEndPoint: string = '';
+  public readonly baseMainEndPoint: string = 'http://api-circe.lunaeme.com/';
   public readonly baseSecondaryEndPoint: string = '/assets/data';
 
   private readonly _forceToPro: boolean = false;

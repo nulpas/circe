@@ -26,3 +26,19 @@ export interface Icon {
   content: string;
   sections: Array<string>;
 }
+
+export interface CheckToken {
+  status: boolean;
+}
+
+export interface Login {
+  token: string;
+}
+
+export interface ResponseError {
+  value: string;
+  msg: string;
+  param: string;
+  location: string;
+  code: number;
+}

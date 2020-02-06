@@ -7,6 +7,7 @@ import { InputComponent } from './input/input.component';
 import { RadioComponent } from './radio/radio.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { PrinciplesComponent } from './principles/principles.component';
+import { SessionGuard } from '../_guards/session.guard';
 
 const routes: Routes = [
   {
@@ -16,31 +17,38 @@ const routes: Routes = [
   },
   {
     path: 'color-schema',
-    component: ColorSchemaComponent
+    component: ColorSchemaComponent,
+    canActivate: [SessionGuard]
   },
   {
     path: 'typography',
-    component: TypographyComponent
+    component: TypographyComponent,
+    canActivate: [SessionGuard]
   },
   {
     path: 'icons',
-    component: IconsComponent
+    component: IconsComponent,
+    canActivate: [SessionGuard]
   },
   {
     path: 'input',
-    component: InputComponent
+    component: InputComponent,
+    canActivate: [SessionGuard]
   },
   {
     path: 'radio',
-    component: RadioComponent
+    component: RadioComponent,
+    canActivate: [SessionGuard]
   },
   {
     path: 'checkbox',
-    component: CheckboxComponent
+    component: CheckboxComponent,
+    canActivate: [SessionGuard]
   },
   {
     path: 'principles',
-    component: PrinciplesComponent
+    component: PrinciplesComponent,
+    canActivate: [SessionGuard]
   },
   {
     path: '**',
@@ -51,6 +59,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [SessionGuard]
 })
 export class DocumentationRoutingModule {}

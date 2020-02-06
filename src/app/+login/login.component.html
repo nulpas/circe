@@ -1,0 +1,51 @@
+<section class="background"></section>
+<header>
+  <a [routerLink]="['/', 'home']">
+    <i class="mda-icon icon-stratio_standard"></i>
+    <div class="product mda-font--extra-light mda-font--24">Design</div>
+  </a>
+</header>
+<main>
+  <section class="banner-login">
+    <div class="banner-login__title">
+      <h1>Stratio Design</h1>
+      <p class="mda-font--16">
+        The beginning of everything.
+      </p>
+    </div>
+    <div class="banner-login__controls">
+      <form [formGroup]="login">
+        <label class="mda-label" for="sds-login-user"></label>
+        <input
+          id="sds-login-user"
+          class="mda-input mda-input--email"
+          placeholder="User"
+          formControlName="email"
+          (keypress)="keyHandler($event)"
+          ccFormBehavior
+          [render]="true"
+          [error]="errorMessage">
+
+        <label class="mda-label" for="sds-login-password"></label>
+        <input
+          id="sds-login-password"
+          class="mda-input mda-input--password"
+          placeholder="Password"
+          formControlName="password"
+          (keypress)="keyHandler($event)"
+          ccFormBehavior>
+      </form>
+      <div class="validations">
+        <div class="message mda-font-12" *ngFor="let message of validationErrors; trackBy: tools.identifier;">
+          {{message['msg']}}
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <a [routerLink]="['/', 'home']">
+    <i class="mda-icon icon-stratio_standard"></i>
+    <img class="brand" [src]="stratioNameImage" alt="Stratio Big Data">
+  </a>
+</footer>

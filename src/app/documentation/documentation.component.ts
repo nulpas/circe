@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnIni
 import { MenuGroup, MenuOption } from '../_types/response.types';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { ToolService } from '@core/tool.service';
-import { DataService } from '../_services/data.service';
+import { DataService } from '../_services/data/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { OrderPipe } from '@core/external.elements';
 import { takeUntil } from 'rxjs/operators';

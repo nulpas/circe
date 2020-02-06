@@ -1,0 +1,47 @@
+@import '~@lunaeme/medea/dist/sass/mixins';
+@import '../../mixins';
+@import '../../variables';
+
+:host {
+  .background {
+    @include backgroundLayer(200px);
+  }
+  HEADER {
+    @include appHeader();
+  }
+  MAIN {
+    --mda-component-width: 400px;
+    box-sizing: border-box;
+    height: calc(80% - 50px);
+    max-height: calc(80% - 50px);
+    min-height: 510px;
+    position: relative;
+    padding: 200px 0 24px 0;
+    .banner-login {
+      @include createFlexBox(row, normal, space-between, wrap);
+      padding: 0 128px;
+      .banner-login__title {
+        width: 58%;
+        H1 {
+          font-size: 3.8rem;
+          margin-bottom: 20px;
+        }
+      }
+      .banner-login__controls {
+        width: 38%;
+        .mda-component:first-of-type {
+          margin: 24px 0;
+        }
+        .validations {
+          margin-top: 24px;
+          .message {
+            color: var(--mda-color-critical);
+          }
+        }
+      }
+    }
+  }
+  FOOTER {
+    @include appFooter(20%);
+  }
+}

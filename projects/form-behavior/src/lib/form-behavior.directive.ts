@@ -27,6 +27,7 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
   public touched: boolean;
 
   private _isAngularForm: boolean;
+  private _component: HTMLElement;
   private _label: HTMLElement;
   private _wrapper: HTMLElement;
   private _report: HTMLElement;
@@ -36,7 +37,7 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
   private readonly _element: FormBehaviorTargetElement;
   private readonly _success: boolean;
   private _elementRules: Rule;
-  private _elementOriginalType: string;
+  private readonly _elementOriginalType: string;
 
   private _disabled$: Subject<boolean> = new Subject();
   private _componentDestroyed$: Subject<undefined> = new Subject();
@@ -45,7 +46,7 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
     this._element = this._el.nativeElement;
     this._success = this._getSuccessElement();
     if (this._success) {
-      this._elementOriginalType = this._element.getAttribute('type');
+      this._elementOriginalType = this._element.getAttribute('type') || 'text';
 
       fromEvent(this._element, 'input').pipe(
         takeUntil(this._componentDestroyed$)
@@ -170,6 +171,20 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
         this._report = this._wrapper.nextElementSibling as HTMLElement;
       }
     }
+
+    this._component = this._renderer.createElement('div');
+    this._renderer.addClass(this._component, 'mda-component');
+    const _globalParent: HTMLElement = (this._wrapper) ? this._wrapper.parentElement : this._element.parentElement;
+    if (this._label) {
+      this._renderer.appendChild(this._component, this._label);
+    }
+    (this._wrapper) ?
+      this._renderer.appendChild(this._component, this._wrapper) :
+      this._renderer.appendChild(this._component, this._element);
+    if (this._report) {
+      this._renderer.appendChild(this._component, this._report);
+    }
+    this._renderer.appendChild(_globalParent, this._component);
   }
 
   private _labelForceBehavior(type: LabelForceType): void {
@@ -222,11 +237,10 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
     // ###### Report
     const _subText: string = this.error || this.report;
     if (!this._report && _subText) {
-      const _parent: HTMLElement = (this._wrapper) ? this._wrapper.parentElement : this._element.parentElement;
       this._report = this._renderer.createElement('span');
       this._renderer.addClass(this._report, this._elementRules.report.main);
       this._renderer.appendChild(this._report, this._renderer.createText(_subText));
-      this._renderer.appendChild(_parent, this._report);
+      this._renderer.appendChild(this._component, this._report);
     }
 
     // ###### Wrap
@@ -237,27 +251,24 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
         .filter((className: string) => className.includes(this._elementRules.main));
       const _wrapStatuses: Array<ClassEvent> = elementStatuses
         .filter((className: ClassEvent) => this._element.classList.contains(className));
-      const _containerWrapperExists: boolean = this._elementRules.wrappers.tags
-        .some((tag: string) => this._element.parentElement.tagName === tag);
+      const _containerWrapperExists: boolean = this._checkWrapper(this._element.parentElement);
       if (_containerWrapperExists) {
         this._wrapper = this._element.parentElement;
         this._renderer.removeAttribute(this._wrapper, 'class');
+        this._renderer.addClass(this._wrapper, 'mda-wrapper');
         for (const className of [..._wrapClasses, ..._wrapStatuses]) {
           this._renderer.addClass(this._wrapper, className);
         }
       } else {
-        const _parentElement: HTMLElement = this._element.parentElement;
         this._wrapper = this._renderer.createElement('span');
+        this._renderer.addClass(this._wrapper, 'mda-wrapper');
         for (const className of [..._wrapClasses, ..._wrapStatuses]) {
           this._renderer.addClass(this._wrapper, className);
         }
-        if (this._report) {
-          this._renderer.removeChild(this._report.parentElement, this._report);
-        }
-        this._renderer.appendChild(_parentElement, this._wrapper);
+        this._renderer.appendChild(this._component, this._wrapper);
         this._renderer.appendChild(this._wrapper, this._element);
         if (this._report) {
-          this._renderer.appendChild(_parentElement, this._report);
+          this._renderer.appendChild(this._component, this._report);
         }
       }
     } else if (this._wrapper && !_hasWrapperClass) {
@@ -344,7 +355,6 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
   }
 
   private _renderDirective(): void {
-    this._getAssociateElements();
     this._normalizeElements();
     const _classes: Array<string> = Array.from(this._element.classList);
     this._isAngularForm = _classes.some((c: string) => c.includes('ng-'));
@@ -385,7 +395,8 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
     if (changes) {
       if (changes.error) {
         if (!this._reportContent) {
-          const _reportContentTag: string = (this._report) ? this._report.textContent : '';
+          let _reportContentTag: string = (this._report) ? this._report.textContent : '';
+          _reportContentTag = (this.report) ? _reportContentTag : '';
           this._reportContent = this.report || _reportContentTag || '';
         }
         if (changes.error.currentValue && this._report) {
@@ -405,6 +416,7 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
 
   ngAfterViewInit(): void {
     if (this._success) {
+      this._getAssociateElements();
       this._renderDirective();
     }
   }

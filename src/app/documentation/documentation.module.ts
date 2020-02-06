@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { ColorSchemaModule } from './color-schema/color-schema.module';
 import { RouterModule } from '@angular/router';
 import { OrderModule } from '@core/external.elements';
-import { DataService } from '../_services/data.service';
 import { ToolService } from '@core/tool.service';
 import { DocumentationRoutingModule } from './documentation-routing.module';
 import { TypographyModule } from './typography/typography.module';
@@ -14,6 +13,8 @@ import { RadioModule } from './radio/radio.module';
 import { CheckboxModule } from './checkbox/checkbox.module';
 import { HeaderModule } from '../header/header.module';
 import { PrinciplesModule } from './principles/principles.module';
+import { DataModule } from '../_services/data/data.module';
+import { LoginModule as LoginServicesModule } from '../_services/login/login.module';
 
 @NgModule({
   declarations: [DocumentationComponent],
@@ -29,11 +30,10 @@ import { PrinciplesModule } from './principles/principles.module';
     InputModule,
     RadioModule,
     CheckboxModule,
-    PrinciplesModule
+    PrinciplesModule,
+    DataModule.forChild(),
+    LoginServicesModule.forChild()
   ],
-  providers: [
-    DataService,
-    ToolService
-  ]
+  providers: [ToolService]
 })
 export class DocumentationModule {}

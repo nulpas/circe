@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { DataService } from '../../_services/data.service';
+import { DataService } from '../../_services/data/data.service';
 import { takeUntil} from 'rxjs/operators';
 import { concat, Subject } from 'rxjs';
 import { Icon, IconSection, IconSectionsRequest } from '../../_types/response.types';

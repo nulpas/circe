@@ -1,4 +1,5 @@
 @import '~@lunaeme/medea/dist/sass/mixins';
+@import './variables';
 
 //## Mixin for apply common scroll properties to container.
 //## PARAMETERS: void
@@ -36,4 +37,68 @@
       --mda-radio-display: block;
     }
   }
+  @content;
+}
+
+//## Mixin for apply common background layer properties to container.
+//## PARAMETERS: height-of-layer
+@mixin backgroundLayer($height) {
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $height;
+    background: url($backgroundImageUrl) no-repeat top center;
+    background-size: cover;
+  }
+}
+
+//## Mixin for apply common header properties to container.
+//## PARAMETERS: void
+@mixin appHeader() {
+  @include createFlexBox(row, center, normal, nowrap);
+  position: relative;
+  height: 50px;
+  min-height: 50px;
+  padding: 0 25px;
+  A {
+    text-decoration: none;
+    @include createFlexBox(row, center, normal, nowrap);
+    I.icon-stratio_standard {
+      font-size: 22px;
+      color: var(--mda-color-st-blue);
+    }
+  }
+  DIV.product {
+    margin-left: 10px;
+  }
+  @content;
+}
+
+//## Mixin for apply common footer properties to container.
+//## PARAMETERS: height-of-layer
+@mixin appFooter($height) {
+  position: relative;
+  box-sizing: border-box;
+  height: $height;
+  max-height: $height;
+  min-height: 140px;
+  background: url($backgroundImageUrl) no-repeat center center;
+  background-size: cover;
+  padding: calc(#{$height} * 0.15) 128px;
+  A {
+    @include createFlexBox(row, center, normal, nowrap);
+    text-decoration: none;
+    I.icon-stratio_standard {
+      font-size: 22px;
+    }
+    IMG.brand {
+      filter: invert(1);
+      height: 17px;
+      margin-left: 10px;
+    }
+  }
+  @content;
 }

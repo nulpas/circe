@@ -7,6 +7,9 @@ import { ConfigService } from './_config/config.service';
 import { INITIALIZER } from './_config/initializer.config';
 import { HttpClientModule } from '@angular/common/http';
 import { DocumentationModule } from './documentation/documentation.module';
+import { LoginModule } from './+login/login.module';
+import { DataModule } from './_services/data/data.module';
+import { LoginModule as LoginServicesModule } from './_services/login/login.module';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { DocumentationModule } from './documentation/documentation.module';
     AppRoutingModule,
     HttpClientModule,
     HomeModule,
-    DocumentationModule
+    DocumentationModule,
+    LoginModule,
+    DataModule.forChild(),
+    LoginServicesModule.forChild()
   ],
   providers: [
     ConfigService,

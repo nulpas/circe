@@ -49,8 +49,6 @@ export class InputComponent implements OnInit, OnDestroy {
       this.helperText = this._getHelperText(r);
       this._setValidators(r);
       this.input.setValue(this.input.value);
-      console.log('IMPORTANT', this.input.valid);
-      console.log(this.input.pristine, this.input.touched, this.input.invalid);
     });
 
     this.inputDisabled.valueChanges.pipe(
