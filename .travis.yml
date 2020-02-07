@@ -1,0 +1,35 @@
+language: node_js
+
+node_js:
+  - lts/*
+
+jobs:
+  include:
+    - stage: test
+      before_install:
+        - npm i npm yarn -g
+      script:
+        - yarn lint
+    - stage: deploy
+      env:
+        - secure: HRVZTmyLqJ5MjDQBqWrz7QbrMYBR+Zno9i+eYAN8PwMDiD6d8kDO0t45+8XMiiZNukFvSCVTtROVLYnTYxT+/3T3+pG2ZkB7EmuUAb2y7+BxMYeMeMfmslpWUW5sIVuy1LzOLYFw3St8B/5ugyALG8lPBBwklv/Mvi4O/r37NvV5GSyC5CAZevz6KBaSG8lRqlYfDg0y5UpzkkJjXrL+Dn37dthH1OU8gys4UmEnjSskt0K/bRA2SbnyZJowJUNqaP4xMpwBTUXmDMpJoHoL6FQDvtgNtsJAFzBx+YZF0LWEhC6fMGeBpHRRpxsjs5oLLAAQ4+XjoO6kZDZURHvrbggHm50BWiDcl83UL+DVrwVON9pMSvWhwz25SK6nBk/dZJEmpl07ft2i5sJP6PpQYV7wDZg5pVpe5IfRQU5Hh7Fw3vFGXXyAl7qD+yStRdzW2ZJpoZwvfl3/4KQ3bJudofkJ7nnyAiQwxFxz+EjghkgxKLA9se6E2yfu+Ov+6fGnVG9YjvST08InYFbr6BA3vT225g/Eyglr46Ul0p7X8OdaHAg3KDnLMTt+kyDcaklqAeEQARQFtNuMFCHIzLnSsFfLWPUxUVpZABc9RxD5pC1kHQMw0m+ewDNhtKK9AtrUqUmiPfR3KB94hYQBzJMJEEL9RPRgUY9lBpK/ZPbj10w=
+      before_install:
+        - openssl aes-256-cbc -K $encrypted_b247f6f20161_key -iv $encrypted_b247f6f20161_iv -in travis-ci_rsa.enc -out travis-ci_rsa -d
+        - chmod 600 travis-ci_rsa
+        - mv travis-ci_rsa ~/.ssh/id_rsa
+        - mv travis-ci_rsa.pub ~/.ssh/id_rsa.pub
+        - npm i npm yarn -g
+      script:
+        - yarn lint
+      after_success:
+        - ng build --prod
+        - docker login repo.treescale.com --username=nulpas --password=$TREESCALE_PS
+        - docker build -t repo.treescale.com/nulpas/sds-circe:latest .
+        - docker push repo.treescale.com/nulpas/sds-circe:latest
+        - TREESCALE_PS=$TREESCALE_PS bash ./scripts/deploy.sh
+
+stages:
+  - name: test
+    if: "(type = push AND branch != master) OR (type = pull_request AND branch = master)"
+  - name: deploy
+    if: type = push AND branch = master

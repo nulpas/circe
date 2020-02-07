@@ -41,7 +41,9 @@ yarn-error.log
 testem.log
 /typings
 package-lock.json
-yarn.lock
+travis-ci_rsa
+travis-ci
+/**/yarn.lock
 
 # System Files
 .DS_Store
