@@ -954,10 +954,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@lunaeme/medea@^0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@lunaeme/medea/-/medea-0.2.5.tgz#0e4ecc90fca91f9a5d5ff6798a6fba544fc0067c"
-  integrity sha512-pbsyIGDscy5BvYFJszF7oHLdaykmsLlVex/BjAjSGABi6Ui+CANTCYt/FT5Hb0oFc2wkuOz/cvzWg13ksPeWAQ==
+"@lunaeme/medea@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@lunaeme/medea/-/medea-3.0.0.tgz#b51cb3e5f20bd42d93bbed40b3b21d6cb8566c0a"
+  integrity sha512-CKOU7xOOVtsC61GMwXgm77/dyUIZ6jzqeOHkSGDpT2HzNZu3EW+TgYoxYRwZ5cEGdNIbD5DUzkdIvZwiNxSqCw==
 
 "@ngtools/webpack@8.3.25":
   version "8.3.25"
@@ -1279,9 +1279,9 @@ acorn@^7.1.0:
   integrity sha512-kL5CuoXA/dgxlBbVrflsflzQ3PAas7RYZB52NOm/6839iVYJgKMJ3cQJD+t2i5+qFa8h3MDpEOJiS64E8JLnSQ==
 
 adm-zip@^0.4.9:
-  version "0.4.13"
-  resolved "https://registry.yarnpkg.com/adm-zip/-/adm-zip-0.4.13.tgz#597e2f8cc3672151e1307d3e95cddbc75672314a"
-  integrity sha512-fERNJX8sOXfel6qCBCMPvZLzENBEhZTzKqg6vrOW5pvoEaQuJhRU4ndTAh6lHOxn1I6jnz2NHra56ZODM751uw==
+  version "0.4.14"
+  resolved "https://registry.yarnpkg.com/adm-zip/-/adm-zip-0.4.14.tgz#2cf312bcc9f8875df835b0f6040bd89be0a727a9"
+  integrity sha512-/9aQCnQHF+0IiCl0qhXoK7qs//SwYE7zX8lsr/DNk1BRAHYxeLZPL4pguwK29gUEqasYQjqPtEpDRSWEkdHn9g==
 
 after@0.8.2:
   version "0.8.2"
@@ -5539,9 +5539,9 @@ node-pre-gyp@*:
     tar "^4.4.2"
 
 node-releases@^1.1.47:
-  version "1.1.47"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.47.tgz#c59ef739a1fd7ecbd9f0b7cf5b7871e8a8b591e4"
-  integrity sha512-k4xjVPx5FpwBUj0Gw7uvFOTF4Ep8Hok1I6qjwL3pLfwe7Y0REQSAqOwwv9TWBCUtMHxcXfY4PgRLRozcChvTcA==
+  version "1.1.48"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.48.tgz#7f647f0c453a0495bcd64cbd4778c26035c2f03a"
+  integrity sha512-Hr8BbmUl1ujAST0K0snItzEA5zkJTQup8VNTKNfT6Zw8vTJkIiagUPNfxHmgDOyfFYNfKAul40sD0UEYTvwebw==
   dependencies:
     semver "^6.3.0"
 

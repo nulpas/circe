@@ -22,6 +22,7 @@ jobs:
       script:
         - yarn lint
       after_success:
+        - yarn add @lunaeme/circe-core
         - ng build --prod
         - docker login repo.treescale.com --username=nulpas --password=$TREESCALE_PS
         - docker build -t repo.treescale.com/nulpas/sds-circe:latest .
