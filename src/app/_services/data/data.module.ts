@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from './data.service';
 
@@ -6,10 +6,10 @@ import { DataService } from './data.service';
   imports: [CommonModule]
 })
 export class DataModule {
-  public static forChild() {
+  public static forChild(): ModuleWithProviders<DataModule> {
     return {
-      ngModule: DataModule,
-      providers: [DataService]
-    }
-  }
+        ngModule: DataModule,
+        providers: [DataService]
+    };
+}
 }

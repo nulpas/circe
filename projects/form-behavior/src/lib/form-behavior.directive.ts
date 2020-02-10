@@ -10,7 +10,7 @@ import {
   LABEL, LabelForceType, LabelRule, REMOVE,
   REPORT, Rule, WRAPPER
 } from './form-behavior.types';
-import { EventsService, ToolService } from '@lunaeme/circe-core';
+import { ToolService } from '@lunaeme/circe-core';
 import { fromEvent, Subject } from 'rxjs';
 import { distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
@@ -42,7 +42,7 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
   private _disabled$: Subject<boolean> = new Subject();
   private _componentDestroyed$: Subject<undefined> = new Subject();
 
-  constructor(private _el: ElementRef<FormBehaviorTargetElement>, private _renderer: Renderer2, private _ev: EventsService) {
+  constructor(private _el: ElementRef<FormBehaviorTargetElement>, private _renderer: Renderer2) {
     this._element = this._el.nativeElement;
     this._success = this._getSuccessElement();
     if (this._success) {
@@ -51,7 +51,6 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
       fromEvent(this._element, 'input').pipe(
         takeUntil(this._componentDestroyed$)
       ).subscribe((event: Event) => {
-        _ev.preventNoNeededEvent(event);
         if (!this._isAngularForm && this.pristine) {
           this.pristine = false;
         }
@@ -62,7 +61,6 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
       fromEvent(this._element, 'change').pipe(
         takeUntil(this._componentDestroyed$)
       ).subscribe((event: Event) => {
-        _ev.preventNoNeededEvent(event);
         this._getFormStatuses(Array.from(this._element.classList));
         if (!this._isAngularForm && !this.touched) {
           this.touched = true;
@@ -73,7 +71,6 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
       fromEvent(this._element, 'focusin').pipe(
         takeUntil(this._componentDestroyed$)
       ).subscribe((event: FocusEvent) => {
-        _ev.preventNoNeededEvent(event);
         this._getFormStatuses(Array.from(this._element.classList));
         _renderer.addClass(this._element, 'focus');
         this._renderAssociates(LABEL, FOCUSED, ADD);
@@ -84,7 +81,6 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
       fromEvent(this._element, 'focusout').pipe(
         takeUntil(this._componentDestroyed$)
       ).subscribe((event: FocusEvent) => {
-        _ev.preventNoNeededEvent(event);
         _renderer.removeClass(this._element, 'focus');
         this._renderAssociates(LABEL, FOCUSED, REMOVE);
         this._renderAssociates(WRAPPER, FOCUSED, REMOVE);
@@ -377,7 +373,6 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
       fromEvent(this._wrapper, 'click').pipe(
         takeUntil(this._componentDestroyed$)
       ).subscribe((event: MouseEvent) => {
-        this._ev.preventNoNeededEvent(event);
         if (!this._element.disabled && this._checkWrapper(event.target as HTMLElement)) {
           // ## Doing this to set cursor on focus at the end of text:
           const _elementContent: string = this._element.value;

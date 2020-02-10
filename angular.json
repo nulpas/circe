@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/circe",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -54,6 +55,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -146,6 +151,11 @@
           "options": {
             "tsConfig": "projects/modal/tsconfig.lib.json",
             "project": "projects/modal/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/modal/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -181,6 +191,11 @@
           "options": {
             "tsConfig": "projects/core/tsconfig.lib.json",
             "project": "projects/core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/core/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -216,6 +231,11 @@
           "options": {
             "tsConfig": "projects/click-outside/tsconfig.lib.json",
             "project": "projects/click-outside/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/click-outside/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -251,6 +271,11 @@
           "options": {
             "tsConfig": "projects/on-dom-activity/tsconfig.lib.json",
             "project": "projects/on-dom-activity/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/on-dom-activity/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -286,6 +311,11 @@
           "options": {
             "tsConfig": "projects/spinner/tsconfig.lib.json",
             "project": "projects/spinner/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/spinner/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -321,6 +351,11 @@
           "options": {
             "tsConfig": "projects/table/tsconfig.lib.json",
             "project": "projects/table/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/table/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -356,6 +391,11 @@
           "options": {
             "tsConfig": "projects/input-select/tsconfig.lib.json",
             "project": "projects/input-select/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/input-select/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -391,6 +431,11 @@
           "options": {
             "tsConfig": "projects/dropdown/tsconfig.lib.json",
             "project": "projects/dropdown/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/dropdown/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -426,6 +471,11 @@
           "options": {
             "tsConfig": "projects/keyboard-events-emitter/tsconfig.lib.json",
             "project": "projects/keyboard-events-emitter/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/keyboard-events-emitter/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -461,6 +511,11 @@
           "options": {
             "tsConfig": "projects/grid-columns/tsconfig.lib.json",
             "project": "projects/grid-columns/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/grid-columns/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -496,6 +551,11 @@
           "options": {
             "tsConfig": "projects/form-behavior/tsconfig.lib.json",
             "project": "projects/form-behavior/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/form-behavior/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -521,5 +581,8 @@
       }
     }
   },
-  "defaultProject": "circe"
+  "defaultProject": "circe",
+  "cli": {
+    "analytics": false
+  }
 }
