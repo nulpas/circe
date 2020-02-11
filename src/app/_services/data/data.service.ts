@@ -12,7 +12,6 @@ import { LoginElement } from '../../+login/login.types';
   }
 
   public checkToken(): Observable<CheckToken> {
-    console.log('CHECK GUARD');
     return this.apiGet('check', this.baseMainEndPoint);
   }
 

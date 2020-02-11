@@ -292,12 +292,14 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
     }
 
     // ###### TYPE
-    if (this._element.classList.contains('mda-input--email')) {
-      this._renderer.setAttribute(this._element, 'type', 'email');
-    } else if (this._element.classList.contains('mda-input--password')) {
-      this._renderer.setAttribute(this._element, 'type', 'password');
-    } else {
-      this._renderer.setAttribute(this._element, 'type', this._elementOriginalType);
+    if (this._element.tagName === 'INPUT') {
+      if (this._element.classList.contains('mda-input--email')) {
+        this._renderer.setAttribute(this._element, 'type', 'email');
+      } else if (this._element.classList.contains('mda-input--password')) {
+        this._renderer.setAttribute(this._element, 'type', 'password');
+      } else {
+        this._renderer.setAttribute(this._element, 'type', this._elementOriginalType);
+      }
     }
   }
 

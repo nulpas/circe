@@ -38,10 +38,13 @@ export class DocumentationComponent implements OnInit, OnDestroy {
       takeUntil(this._componentDestroyed$)
     ).subscribe((r: Array<MenuGroup>) => {
       this.menu = r;
-      for (const group of r) {
-        this.menuOptions = [...this.menuOptions, ...group.options.map((e: MenuOption) => ({ ...e, parent: group.id }))];
-      }
-      console.log(_order.transform(this.menuOptions, 'name', true));
+
+      // ###### Provisional: Refactor menu array for template
+      // for (const group of r) {
+      //   this.menuOptions = [...this.menuOptions, ...group.options.map((e: MenuOption) => ({ ...e, parent: group.id }))];
+      // }
+      // this.menuOptions = _order.transform(this.menuOptions, 'name');
+
       _cd.markForCheck();
     });
   }

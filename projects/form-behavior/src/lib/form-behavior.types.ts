@@ -108,6 +108,16 @@ export const elementRules: ElementRules = {
     },
     report: reportCommon
   },
+  TEXTAREA: {
+    main: 'mda-textarea',
+    sizes: [],
+    label: labelCommon,
+    wrappers: {
+      tags: [],
+      classes: []
+    },
+    report: reportCommon
+  },
   SELECT: {
     main: 'mda-select',
     sizes: ['mda-select--small'],

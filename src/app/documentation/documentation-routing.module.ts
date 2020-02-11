@@ -8,6 +8,7 @@ import { RadioComponent } from './radio/radio.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { PrinciplesComponent } from './principles/principles.component';
 import { SessionGuard } from '../_guards/session.guard';
+import {TextareaComponent} from './textarea/textarea.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,11 @@ const routes: Routes = [
   {
     path: 'principles',
     component: PrinciplesComponent,
+    canActivate: [SessionGuard]
+  },
+  {
+    path: 'textarea',
+    component: TextareaComponent,
     canActivate: [SessionGuard]
   },
   {

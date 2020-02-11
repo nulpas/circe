@@ -15,6 +15,7 @@ import { HeaderModule } from '../header/header.module';
 import { PrinciplesModule } from './principles/principles.module';
 import { DataModule } from '../_services/data/data.module';
 import { LoginModule as LoginServicesModule } from '../_services/login/login.module';
+import { TextareaModule } from './textarea/textarea.module';
 
 @NgModule({
   declarations: [DocumentationComponent],
@@ -31,6 +32,7 @@ import { LoginModule as LoginServicesModule } from '../_services/login/login.mod
     RadioModule,
     CheckboxModule,
     PrinciplesModule,
+    TextareaModule,
     DataModule.forChild(),
     LoginServicesModule.forChild()
   ],

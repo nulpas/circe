@@ -49,6 +49,11 @@
         "id": "checkbox",
         "name": "Checkbox",
         "location": ["checkbox"]
+      },
+      {
+        "id": "textarea",
+        "name": "Textarea",
+        "location": ["textarea"]
       }
     ]
   }
