@@ -14,20 +14,32 @@
   <section class="demo__stage">
     <label class="mda-label" *ngIf="radioTitleLabel.value">Group of Options Label</label>
 
-    <input id="demo-option-1" type="radio" name="options" [value]="1" [formControl]="radio">
-    <label for="demo-option-1" [ngClass]="{'disposition-vertical': radioDistribution.value === 2}">
-      {{(radioLabel.value) ? 'Option 1' : ''}}
-    </label>
+    <input
+      id="demo-option-1"
+      type="radio"
+      name="options"
+      [ngClass]="{'mda-selection--no-label': !radioLabel.value, 'mda-selection--vertical': radioDistribution.value === 2}"
+      [value]="1"
+      [formControl]="radio">
+    <label for="demo-option-1">Option 1</label>
 
-    <input id="demo-option-2" type="radio" name="options" [value]="2" [formControl]="radio">
-    <label for="demo-option-2" [ngClass]="{'disposition-vertical': radioDistribution.value === 2}">
-      {{(radioLabel.value) ? 'Option 2' : ''}}
-    </label>
+    <input
+      id="demo-option-2"
+      type="radio"
+      name="options"
+      [ngClass]="{'mda-selection--no-label': !radioLabel.value, 'mda-selection--vertical': radioDistribution.value === 2}"
+      [value]="2"
+      [formControl]="radio">
+    <label for="demo-option-2">Option 2</label>
 
-    <input id="demo-option-3" type="radio" name="options" [value]="3" [formControl]="radio">
-    <label for="demo-option-3" [ngClass]="{'disposition-vertical': radioDistribution.value === 2}">
-      {{(radioLabel.value) ? 'Option 3' : ''}}
-    </label>
+    <input
+      id="demo-option-3"
+      type="radio"
+      name="options"
+      [ngClass]="{'mda-selection--no-label': !radioLabel.value, 'mda-selection--vertical': radioDistribution.value === 2}"
+      [value]="3"
+      [formControl]="radio">
+    <label for="demo-option-3">Option 3</label>
   </section>
   <section class="demo__controls">
     <h4>Disposition</h4>
@@ -38,13 +50,28 @@
     <label for="radio-vertical">Vertical</label>
 
     <h4>Options</h4>
-    <input id="radio-title-label" type="checkbox" name="option-title-label" [formControl]="radioTitleLabel">
+    <input
+      id="radio-title-label"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-title-label"
+      [formControl]="radioTitleLabel">
     <label for="radio-title-label">Title Label</label>
 
-    <input id="radio-label" type="checkbox" name="option-label" [formControl]="radioLabel">
+    <input
+      id="radio-label"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-label"
+      [formControl]="radioLabel">
     <label for="radio-label">Label</label>
 
-    <input id="radio-disabled" type="checkbox" name="option-disabled" [formControl]="radioDisabled">
+    <input
+      id="radio-disabled"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-disabled"
+      [formControl]="radioDisabled">
     <label for="radio-disabled">Disabled</label>
   </section>
 </section>

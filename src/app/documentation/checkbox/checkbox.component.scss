@@ -6,12 +6,6 @@
   box-sizing: border-box;
   @include scrollInElement();
 
-  INPUT[type=checkbox] + LABEL {
-    &.disposition-vertical {
-      --mda-radio-display: block;
-    }
-  }
-
   H2 {
     margin-top: 36px;
   }

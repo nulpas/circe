@@ -16,20 +16,32 @@
   <section class="demo__stage">
     <label class="mda-label" *ngIf="checkboxTitleLabel.value">Group of Options Label</label>
 
-    <input id="demo-option-1" type="checkbox" name="options" [value]="1" [formControl]="checkbox">
-    <label for="demo-option-1" [ngClass]="{'disposition-vertical': checkboxDistribution.value === 2}">
-      {{(checkboxLabel.value) ? 'Property 1' : ''}}
-    </label>
+    <input
+      id="demo-option-1"
+      type="checkbox"
+      name="options"
+      [ngClass]="{'mda-selection--no-label': !checkboxLabel.value, 'mda-selection--vertical': checkboxDistribution.value === 2}"
+      [value]="1"
+      [formControl]="checkbox">
+    <label for="demo-option-1">Property 1</label>
 
-    <input id="demo-option-2" type="checkbox" name="options" [value]="2" [formControl]="checkbox">
-    <label for="demo-option-2" [ngClass]="{'disposition-vertical': checkboxDistribution.value === 2}">
-      {{(checkboxLabel.value) ? 'Property 2' : ''}}
-    </label>
+    <input
+      id="demo-option-2"
+      type="checkbox"
+      name="options"
+      [ngClass]="{'mda-selection--no-label': !checkboxLabel.value, 'mda-selection--vertical': checkboxDistribution.value === 2}"
+      [value]="2"
+      [formControl]="checkbox">
+    <label for="demo-option-2">Property 2</label>
 
-    <input id="demo-option-3" type="checkbox" name="options" [value]="3" [formControl]="checkbox">
-    <label for="demo-option-3" [ngClass]="{'disposition-vertical': checkboxDistribution.value === 2}">
-      {{(checkboxLabel.value) ? 'Property 3' : ''}}
-    </label>
+    <input
+      id="demo-option-3"
+      type="checkbox"
+      name="options"
+      [ngClass]="{'mda-selection--no-label': !checkboxLabel.value, 'mda-selection--vertical': checkboxDistribution.value === 2}"
+      [value]="3"
+      [formControl]="checkbox">
+    <label for="demo-option-3">Property 3</label>
   </section>
   <section class="demo__controls">
     <h4>Disposition</h4>
@@ -40,14 +52,28 @@
     <label for="checkbox-vertical">Vertical</label>
 
     <h4>Options</h4>
-    <input id="checkbox-title-label" type="checkbox" name="option-title-label" [formControl]="checkboxTitleLabel">
-    <label for="checkbox-title-label">Title Label</label>
+    <input
+      id="radio-title-label"
+      class="mda-selection--vertical"
+      type="checkbox" name="option-title-label"
+      [formControl]="checkboxTitleLabel">
+    <label for="radio-title-label">Title Label</label>
 
-    <input id="checkbox-label" type="checkbox" name="option-label" [formControl]="checkboxLabel">
-    <label for="checkbox-label">Label</label>
+    <input
+      id="radio-label"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-label"
+      [formControl]="checkboxLabel">
+    <label for="radio-label">Label</label>
 
-    <input id="checkbox-disabled" type="checkbox" name="option-disabled" [formControl]="checkboxDisabled">
-    <label for="checkbox-disabled">Disabled</label>
+    <input
+      id="radio-disabled"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-disabled"
+      [formControl]="checkboxDisabled">
+    <label for="radio-disabled">Disabled</label>
   </section>
 </section>
 

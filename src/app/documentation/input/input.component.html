@@ -54,13 +54,28 @@
     <label for="icon-right-password">Password</label>
 
     <h4>Options</h4>
-    <input id="icon-option-label" type="checkbox" name="option-label" [formControl]="inputLabel">
+    <input
+      id="icon-option-label"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-label"
+      [formControl]="inputLabel">
     <label for="icon-option-label">Label</label>
 
-    <input id="icon-option-disabled" type="checkbox" name="option-disabled" [formControl]="inputDisabled">
+    <input
+      id="icon-option-disabled"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-disabled"
+      [formControl]="inputDisabled">
     <label for="icon-option-disabled">Disabled</label>
 
-    <input id="icon-option-helper-text" type="checkbox" name="option-helper-text" [formControl]="inputHelperText">
+    <input
+      id="icon-option-helper-text"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-helper-text"
+      [formControl]="inputHelperText">
     <label for="icon-option-helper-text">Helper / Error text</label>
   </section>
 </section>

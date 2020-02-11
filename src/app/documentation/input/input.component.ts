@@ -1,8 +1,7 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, Renderer2} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import {invalid} from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: 'app-input',

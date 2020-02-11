@@ -1,6 +1,6 @@
 {
   "name": "circe",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Angular Components library",
   "scripts": {
     "ng": "ng",
@@ -35,7 +35,7 @@
     "@angular/platform-browser": "~9.0.0",
     "@angular/platform-browser-dynamic": "~9.0.0",
     "@angular/router": "~9.0.0",
-    "@lunaeme/medea": "^3.0.0",
+    "@lunaeme/medea": "^3.0.2",
     "core-js": "^3.6.4",
     "lodash": "^4.17.15",
     "rxjs": "~6.5.4",
@@ -57,7 +57,7 @@
     "karma": "~4.4.1",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~2.1.1",
-    "karma-jasmine": "~3.1.0",
+    "karma-jasmine": "~3.1.1",
     "karma-jasmine-html-reporter": "^1.5.2",
     "ng-packagr": "^9.0.0",
     "protractor": "~5.4.3",
