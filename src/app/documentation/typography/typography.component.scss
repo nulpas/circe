@@ -8,11 +8,7 @@
   @include scrollInElement();
   .typo-list--2 {
     @include createFlexBox(row, normal, normal, nowrap);
-    margin-bottom: 20px;
-    padding-right: 100px;
-    &:first-of-type {
-      margin-top: 45px;
-    }
+    padding: 0 80px 20px 0;
     .concept {
       width: 18%;
       &:not(.header) {
@@ -25,8 +21,7 @@
   }
   .typo-list--3 {
     @include createFlexBox(row, center, normal, nowrap);
-    margin-bottom: 20px;
-    padding-right: 100px;
+    padding: 0 80px 20px 0;
     .concept {
       width: 18%;
       &:not(.header) {
@@ -42,8 +37,7 @@
   }
   .typo-list--5 {
     @include createFlexBox(row, center, normal, nowrap);
-    margin-bottom: 20px;
-    padding-right: 100px;
+    padding: 0 80px 20px 0;
     .concept {
       width: 18%;
       &:not(.header) {
@@ -60,10 +54,19 @@
       width: 42%;
     }
   }
-  H2 {
+  .last-item {
+    padding-bottom: 0;
+  }
+  P, .subtitle {
+    display: block;
+    padding-right: 20%;
+  }
+  HR {
+    border: none;
+    border-top: 1px solid var(--mda-color-neutral-20);
+    margin: 20px 0;
     &:first-of-type {
-      padding-top: 20px;
-      border-top: 1px solid var(--mda-color-neutral-20);
+      margin: 40px 0;
     }
   }
   .special-headers {

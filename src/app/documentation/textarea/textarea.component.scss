@@ -6,9 +6,6 @@
   box-sizing: border-box;
   @include scrollInElement();
 
-  H2 {
-    margin-top: 36px;
-  }
   P, .subtitle {
     display: block;
     padding-right: 20%;

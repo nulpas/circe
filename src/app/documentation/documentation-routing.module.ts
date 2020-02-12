@@ -9,6 +9,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
 import { PrinciplesComponent } from './principles/principles.component';
 import { SessionGuard } from '../_guards/session.guard';
 import {TextareaComponent} from './textarea/textarea.component';
+import {UserInterfaceComponent} from './user-interface/user-interface.component';
 
 const routes: Routes = [
   {
@@ -54,6 +55,11 @@ const routes: Routes = [
   {
     path: 'textarea',
     component: TextareaComponent,
+    canActivate: [SessionGuard]
+  },
+  {
+    path: 'user-interface',
+    component: UserInterfaceComponent,
     canActivate: [SessionGuard]
   },
   {

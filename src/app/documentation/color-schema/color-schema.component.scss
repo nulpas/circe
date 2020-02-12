@@ -6,13 +6,15 @@
   padding: 25px 35px;
   box-sizing: border-box;
   @include scrollInElement();
-  H2 {
-    margin-top: 25px;
+
+  H2:not(:first-of-type) {
+    margin-top: 0.476190em;
   }
   P, .subtitle {
     display: block;
     padding-right: 20%;
   }
+
   .color-type {
     @include createFlexBox(row, normal, normal, wrap);
     app-color-sample {

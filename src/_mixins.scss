@@ -19,6 +19,7 @@
 @mixin demoElement() {
   @include createFlexBox(row, normal, normal, wrap);
   padding: 24px 0;
+  margin-top: 14px;
   border-top: 1px solid var(--mda-color-space-20);
   border-bottom: 1px solid var(--mda-color-space-20);
   .demo__stage {

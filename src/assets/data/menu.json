@@ -7,6 +7,11 @@
         "id": "principles",
         "name": "Principles",
         "location": ["principles"]
+      },
+      {
+        "id": "user-interface",
+        "name": "User Interface",
+        "location": ["user-interface"]
       }
     ]
   },
