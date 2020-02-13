@@ -20,10 +20,10 @@
   },
   "homepage": "https://github.com/nulpas/circe/tree/master/projects/form-behavior#readme",
   "peerDependencies": {
-    "@angular/common": "~8.2.14",
-    "@angular/core": "~8.2.14",
-    "@angular/platform-browser": "~8.2.14",
-    "@angular/platform-browser-dynamic": "~8.2.14"
+    "@angular/common": ">=8.2.14",
+    "@angular/core": ">=8.2.14",
+    "@angular/platform-browser": ">=8.2.14",
+    "@angular/platform-browser-dynamic": ">=8.2.14"
   },
   "dependencies": {
     "@lunaeme/circe-core": "^0.3.8"

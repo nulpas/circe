@@ -51,11 +51,15 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
       fromEvent(this._element, 'input').pipe(
         takeUntil(this._componentDestroyed$)
       ).subscribe((event: Event) => {
+
+        console.log('INPUT');
+
         if (!this._isAngularForm && this.pristine) {
           this.pristine = false;
         }
         this._getFormStatuses(Array.from(this._element.classList));
         this._errorFocusBehavior();
+        this._setElementPlaceholder();
       });
 
       fromEvent(this._element, 'change').pipe(
@@ -66,6 +70,7 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
           this.touched = true;
         }
         this._errorFocusBehavior();
+        this._setElementPlaceholder();
       });
 
       fromEvent(this._element, 'focusin').pipe(
@@ -136,6 +141,14 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
   private _checkReport(element: HTMLElement): boolean {
     return this._elementRules.report.tags.some((tag: string) => element.tagName === tag) &&
       this._elementRules.report.classes.some((className: string) => element.classList.contains(className));
+  }
+
+  private _setElementPlaceholder(): void {
+    if (this._elementRules.placeholder && Object.keys(this._elementRules.placeholder).length) {
+      (this._element.value === this._elementRules.placeholder.value) ?
+        this._renderer.addClass(this._element, this._elementRules.placeholder.class) :
+        this._renderer.removeClass(this._element, this._elementRules.placeholder.class);
+    }
   }
 
   private _getSuccessElement(): boolean {
@@ -357,6 +370,7 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
     const _classes: Array<string> = Array.from(this._element.classList);
     this._isAngularForm = _classes.some((c: string) => c.includes('ng-'));
     this._getFormStatuses(_classes);
+    this._setElementPlaceholder();
     this._disabled$.next(this._element.disabled);
     if (!this._element.disabled) {
       if (this.valid) {

@@ -59,6 +59,11 @@
         "id": "textarea",
         "name": "Textarea",
         "location": ["textarea"]
+      },
+      {
+        "id": "select",
+        "name": "Select",
+        "location": ["select"]
       }
     ]
   }
