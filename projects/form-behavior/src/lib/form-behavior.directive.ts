@@ -51,9 +51,6 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
       fromEvent(this._element, 'input').pipe(
         takeUntil(this._componentDestroyed$)
       ).subscribe((event: Event) => {
-
-        console.log('INPUT');
-
         if (!this._isAngularForm && this.pristine) {
           this.pristine = false;
         }

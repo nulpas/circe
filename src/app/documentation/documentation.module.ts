@@ -18,6 +18,7 @@ import { LoginModule as LoginServicesModule } from '../_services/login/login.mod
 import { TextareaModule } from './textarea/textarea.module';
 import { UserInterfaceModule } from './user-interface/user-interface.module';
 import { SelectModule } from './select/select.module';
+import {ButtonModule} from './button/button.module';
 
 @NgModule({
   declarations: [DocumentationComponent],
@@ -37,6 +38,7 @@ import { SelectModule } from './select/select.module';
     TextareaModule,
     UserInterfaceModule,
     SelectModule,
+    ButtonModule,
     DataModule.forChild(),
     LoginServicesModule.forChild()
   ],

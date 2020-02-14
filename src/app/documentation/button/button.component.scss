@@ -6,11 +6,19 @@
   box-sizing: border-box;
   @include scrollInElement();
 
+  H4:first-of-type {
+    margin-top: 1.33em;
+  }
   P, .subtitle {
     display: block;
     padding-right: 20%;
   }
-  .select-demo {
+  .button-demo {
     @include demoElement();
+    .demo__controls {
+      H4:first-of-type {
+        margin-top: 1.33em;
+      }
+    }
   }
 }

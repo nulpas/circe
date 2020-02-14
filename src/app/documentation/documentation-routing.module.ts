@@ -11,6 +11,7 @@ import { SessionGuard } from '../_guards/session.guard';
 import { TextareaComponent } from './textarea/textarea.component';
 import { UserInterfaceComponent } from './user-interface/user-interface.component';
 import { SelectComponent } from './select/select.component';
+import { ButtonComponent } from './button/button.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,11 @@ const routes: Routes = [
   {
     path: 'select',
     component: SelectComponent,
+    canActivate: [SessionGuard]
+  },
+  {
+    path: 'button',
+    component: ButtonComponent,
     canActivate: [SessionGuard]
   },
   {
