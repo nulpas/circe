@@ -33,7 +33,7 @@ export class InputComponent implements OnInit, OnDestroy {
       takeUntil(this._componentDestroy$)
     ).subscribe((value: string) => {
       this.errorMessage = '';
-      if (this.inputIconRight.value === 1 && this.input.invalid) {
+      if (this.inputIconRight.value === 1 && this.input.invalid && this.input.dirty) {
         this.errorMessage = 'Required field. Write something';
       }
       if (this.inputIconRight.value === 4 && this.input.invalid) {

@@ -25,31 +25,41 @@
     <label class="mda-label" *ngIf="checkboxTitleLabel.value">Group of Options Label</label>
 
     <input
+      id="demo-select-all"
+      type="checkbox"
+      name="options-select-all"
+      [ngClass]="{
+        'mda-selection--no-label': !checkboxLabel.value,
+        'mda-selection--vertical': checkboxDistribution.value === 2,
+        'mda-checkbox--indeterminate': !checkAll && !checkNone
+      }"
+      [checked]="(checkAll && !checkNone) || (!checkAll && !checkNone)"
+      [formControl]="checkboxSelectAll">
+    <label for="demo-select-all">Select All</label>
+
+    <input
       id="demo-option-1"
       type="checkbox"
-      name="options"
+      name="options1"
       [ngClass]="{'mda-selection--no-label': !checkboxLabel.value, 'mda-selection--vertical': checkboxDistribution.value === 2}"
-      [value]="1"
-      [formControl]="checkbox">
-    <label for="demo-option-1">Property 1</label>
+      [formControl]="checkbox01">
+    <label for="demo-option-1">State 1</label>
 
     <input
       id="demo-option-2"
       type="checkbox"
-      name="options"
+      name="options2"
       [ngClass]="{'mda-selection--no-label': !checkboxLabel.value, 'mda-selection--vertical': checkboxDistribution.value === 2}"
-      [value]="2"
-      [formControl]="checkbox">
-    <label for="demo-option-2">Property 2</label>
+      [formControl]="checkbox02">
+    <label for="demo-option-2">State 2</label>
 
     <input
       id="demo-option-3"
       type="checkbox"
-      name="options"
+      name="options3"
       [ngClass]="{'mda-selection--no-label': !checkboxLabel.value, 'mda-selection--vertical': checkboxDistribution.value === 2}"
-      [value]="3"
-      [formControl]="checkbox">
-    <label for="demo-option-3">Property 3</label>
+      [formControl]="checkbox03">
+    <label for="demo-option-3">State 3</label>
   </section>
   <section class="demo__controls">
     <h4>Disposition</h4>
