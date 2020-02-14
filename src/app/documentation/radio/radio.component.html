@@ -6,7 +6,17 @@
 
 <h2>Design & Behavior</h2>
 <p>
-  Radio Buttons can have four styles and have a label on the right side.
+  Radio buttons have four states. The default state is the state the control has without any interaction by the user.
+  The Selected one symbolizes when the user selects the option that the radio represents.
+  Finally, the Disabled and Disabled Selected states represent when the radio can't be used for some reason.
+  In the first case the user can't use the radio and it is non-selected.
+  Instead, on the second one, the user also can't use the radio but it is selected.</p>
+<p>
+  A set of Radio buttons can work together as a set, be organized in a horizontal or vertical way.
+  It is possible to assign a unique label for the whole set.
+</p>
+<p>
+  Radio buttons usually go with a Label but, sometimes, it could be useful to use them without it (E.g. inside a table row).
 </p>
 
 <h2>Demo</h2>
@@ -78,24 +88,30 @@
 
 <h2>Usage and Best Practices</h2>
 <p>
-  If necessary, a heading can accompany a set of Radio Buttons to provide further clarity for the user. Use
-  sentence-style capitalization (only the first word in a phrase and any proper nouns capitalized).
+  Below are the good practices that should guide the uses of the component to maintain coherence in the design
+  system and the spirit with which they were sustained.
 </p>
-<p>
-  Always use a clear and concise label for Radio Buttons. Be explicit about the action that will follow if the Radio
-  Button is selected. Labels appear to the right of Radio Buttons. Use sentence-style capitalization (only the first
-  word in a phrase and any proper nouns capitalized) and no more than three words.
-</p>
-<p>
-  A set of Radio Buttons should default to having one option selected. Never display them without a default selection.
-</p>
-<p>
-  Use radio buttons when you want users to see all available options and the list of options is small. For mutually
-  exclusive options, consider a checkbox or toggle switch.
-</p>
-<p>
-  Radio buttons are best for six or fewer options.
-</p>
-<p>
-  For more than six options, consider a Select box, which prompts users to disclose the options.
-</p>
+<ul>
+  <li>
+    If necessary, a heading can accompany a set of Radio Buttons to provide further clarity for the user. Use
+    sentence-style capitalization (only the first word in a phrase and any proper nouns capitalized).
+  </li>
+  <li>
+    Always use a clear and concise label for Radio Buttons. Be explicit about the action that will follow if the Radio
+    Button is selected. Labels appear to the right of Radio Buttons. Use sentence-style capitalization (only the first
+    word in a phrase and any proper nouns capitalized) and, ideally, use no more than three words.
+  </li>
+  <li>
+    A set of Radio Buttons should default to having one option selected. Never display them without a default selection.
+  </li>
+  <li>
+    Use radio buttons when you want users to see all available options and the list of options is small. For mutually
+    exclusive options, consider a checkbox or toggle switch.
+  </li>
+  <li>
+    Radio buttons are best for six or fewer options.
+  </li>
+  <li>
+    For more than six options, consider a Select box, which prompts users to disclose the options.
+  </li>
+</ul>
