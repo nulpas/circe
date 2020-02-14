@@ -1,16 +1,25 @@
-<h1>Input</h1>
+<h1>Input Text</h1>
 <span class="subtitle mda-font--18">
-  Inputs enable the user to interact with and input data. Use when the application requires long-form content from
-  the user.
+  Text Input Text component enables the user to interact with and input data. Use when the application requires long-form content from the user.
 </span>
 
 <h2>Design and Behavior</h2>
+
 <p>
-  Inputs can be text inputs, area inputs and tag inputs. Using one on another depends on the length of the data the user
-  can introduce. As well depends on the type of data in case of the input tags. Text inputs are a free form
-  input where the user can type anything. Text inputs are for short amounts of data, while area inputs are for long
-  amounts of text. We should anticipate which one is the most suitable option for each case. The user in area inputs can
-  make the area bigger dragging the input area from the bottom right.
+  Text inputs are designed to collect short free text from the user. Typical examples of use could be a name or address request.
+</p>
+<p>
+  Inputs allow adding some icons at the right side as a configurable option.
+  These icons can be used to be more visual and explicit about the purpose of the input.
+</p>
+<p>
+  Two height sizes are available to adapt the inputs to different situations.
+  Besides, the Input Text component includes a label and a help text to give some details to the user about
+  tips about how the content must be formatted (E.g. to define limits, non-valid characters, etc.).
+</p>
+<p>
+  The same help text space is used to show error messages when needed.
+  However, if error, the text is red-colored as well as the outline of the text box.
 </p>
 
 <h2>Demo</h2>
@@ -20,7 +29,7 @@
     <input
       id="input-test"
       class="mda-input"
-      placeholder="Placeholder"
+      placeholder="E.g. https://www.mysite.com"
       [ngClass]="{
         'mda-input--search': inputIconRight.value === 2,
         'mda-input--user': inputIconRight.value === 3,
@@ -84,24 +93,46 @@
 
 <h2>Usage and Best Practices</h2>
 <p>
-  Inputs have many states, and can have specific validation rules fot the introduced data. Therefore if the validation
-  rules are not met an error message will appear. The user should allways know if specific rules are applied to that
-  input that’s why we should put clear hints about what the user should introduce.
+  Below are the good practices that should guide the uses of the component to maintain coherence in the design
+  system and the spirit with which they were sustained.
 </p>
-<p>
-  By default, the inputs have a label and a placeholder text that shows or an example of the text that it should be
-  introduced or a call to action text. The label should be a clear statement of what the user is asked to respond on
-  the input field.
-</p>
-<p>
-  When the user clicks on an input, the on focus state starts, the input gets blue and a blinking cursor appears at the
-  beggining of the input so the user know is there. While the user doesn’t write anything the placeholder text
-  remains. If the user starts to write, the placeholder disappears. If the user deletes the content, the placeholder
-  appears again.
-</p>
-<p>
-  If the input has validation rules, they should be clearly explained in the hint text that area which appears
-  immediately under the input and never disappears. When the user writes on this kind of inputs, an error message
-  should appear only when the validation rules are not met and the user clicks outside the input. In that case an error
-  message appears explaining why the validation has failed immediately under the hint text.
-</p>
+<ul>
+  <li>
+    Inputs have many states and can have specific validation rules for the introduced data.
+    Therefore if the validation rules are not met an error message will appear.
+    The user should always know if specific rules are applied to that input that’s why we
+    should put clear hints about what the user should introduce.
+    This means that using the placeholder and the help text, the user should have enough information
+    to fill the field correctly.
+  </li>
+  <li>
+    The placeholder of the Input Text must show to the user a valid example of how it has to format its text.
+    Some samples could be "E.g. 32" (indicates a number), "E.g. my_field" (indicates uppercase and whitespaces are not allowed), etc.
+  </li>
+  <li>
+    By default, the inputs have a label and a placeholder text that shows or an example of the text that it should be
+    introduced or a call to action text. The label should be a clear statement of what the user is asked to respond on
+    the input field. Some samples could be "Disk space (in MB)".
+  </li>
+  <li>
+    If some parts of the text have fixed parts, they must be visible but non-editable by the user.
+    E.g. an URL that must be always https. Ideally, the text input must show the string "https://" at the
+    beginning of the textbox with non-edit options. When the user starts writing, will do after the string.
+  </li>
+  <li>
+    When the user clicks on an input, the on focus state starts, the input gets blue and a blinking cursor appears at the
+    beginning of the input so the user know is there. While the user doesn’t write anything the placeholder text
+    remains. If the user starts to write, the placeholder disappears. If the user deletes the content, the placeholder
+    appears again.
+  </li>
+  <li>
+    If the input has validation rules, they should be clearly explained in the hint text that area which appears
+    immediately under the input and never disappears. Some samples could be "max. 20 chars" or "only words allowed"
+    When the user writes on this kind of inputs, an error message
+    should appear only when the validation rules are not met and the user clicks outside the input. In that case, an error
+    message appears explaining why the validation has failed immediately under the hint text.
+  </li>
+  <li>
+    Never must appear an error message if the user doesn't carry out any action over the Input.
+  </li>
+</ul>
