@@ -1,14 +1,22 @@
 <h1>Checkbox</h1>
 <span class="subtitle mda-font--18">
-  Checkboxes are used when there is a list of options and the user may select multiple options, including all or none.
+  Checkboxes allow the users to select one or more options from a set of them, including all or none.
 </span>
 
 <h2>Design & Behavior</h2>
 <p>
-  Checkboxes have five states. Default state, Checked, Indeterminate, Disabled and Disabled checked.<br>
-  The can be grouped inline or one under another.<br>
-  Checkboxes usually go with a Label, but can go without it in case of Checkboxes go inside a table row. In this case,
-  the Checkbox it’s attached to the whole row.
+  Checkboxes have five states. The default state is the state the control has without any interaction by the user.
+  The Checked one symbolizes when the user selects the option that the checkbox represents.
+  The Indeterminate one means that some items on a group are selected while other ones don't.
+  Finally, the Disabled and Disabled Checked states represent when the checkbox can't be used for some reason.
+  In the first case the user can't use the checkbox and it is non-selected.
+  Instead, on the second one, the user also can't use the checkbox but it is selected.</p>
+<p>
+  A set of checkboxes can work together as a set, be organized in a horizontal or vertical way.
+  It is possible to assign a unique label for the whole set.
+</p>
+<p>
+  Checkboxes usually go with a Label but, sometimes, it could be useful to use them without it (E.g. inside a table row).
 </p>
 
 <h2>Demo</h2>
@@ -79,12 +87,23 @@
 
 <h2>Usage and Best Practices</h2>
 <p>
-  Always use clear and concise labels for Checkboxes. Be explicit about the action that will follow if the Checkbox is
-  selected. Labels appear to the right of Checkboxes.
+  Below are the good practices that should guide the uses of the component to maintain coherence in the design
+  system and the spirit with which they were sustained.
 </p>
-<p>
-  Users should be able to select the checkbox by clicking on the box directly or by clicking on its label.
-</p>
-<p>
-  The default view of a set of Checkboxes is having no option selected.
-</p>
+<ul>
+  <li>
+    Always use clear and concise labels for Checkboxes.
+  </li>
+  <li>
+    Be explicit about the action that will follow if the Checkbox is selected.
+  </li>
+  <li>
+    Labels should appear on the right side of the Checkbox.
+  </li>
+  <li>
+    Users should be able to select the checkbox by clicking on the box directly or by clicking on its label.
+  </li>
+  <li>
+    The default view of a set of Checkboxes is having no option selected.
+  </li>
+</ul>
