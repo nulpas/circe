@@ -12,5 +12,8 @@
   }
   .checkbox-demo {
     @include demoElement();
+    //.demo__stage {
+    //  width: 400px;
+    //}
   }
 }
