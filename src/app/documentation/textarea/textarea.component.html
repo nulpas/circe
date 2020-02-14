@@ -1,14 +1,28 @@
 <h1>Textarea</h1>
 <span class="subtitle mda-font--18">
-  Textarea inputs are used for freeform data entry. They anticipate the user to input more than one sentence or more
+  Textarea inputs are used for long-form free data entry. They anticipate the user to input more than one sentence or more
   than one line of text.
 </span>
 
 <h2>Design & Behavior</h2>
 <p>
-  We show a text area in forms where users need to enter sometimes lengthy data, such as information that may run over
-  to two or more lines. They can be resized by the user and the rest of the content should adapt to this. Text areas
-  can have multiple states depending on the situation. Read only, disabled, on focus state, show error messages, etc.
+  Text areas are designed to collect long free text from the user. Typical examples of use could be a description.
+</p>
+<p>
+  We show a text area on forms where users need to enter sometimes lengthy data, such as information that may run over
+  to two or more lines. They can be resized by the user and the rest of the content should adapt to this.
+</p>
+<p>
+  Two height sizes are available to adapt the inputs to different situations.
+  Besides, the Input Text component includes a label and a help text to give some details to the user about
+  tips about how the content must be formatted (E.g. to define limits, non-valid characters, etc.).
+</p>
+<p>
+  The same help text space is used to show error messages when needed.
+  However, if error, the text is red-colored as well as the outline of the text box.
+</p>
+<p>
+  The textbox is highlighted when has the focus to guide the user visually to the component that owns the action.The textbox is highlighted when it has the focus to guide the user visually to the component that owns the action.
 </p>
 
 <h2>Demo</h2>
@@ -68,7 +82,29 @@
 
 <h2>Usage and Best Practices</h2>
 <p>
-  For accessibility, text labels are required for all text area items. Use clear, concise, consistent labels to guide
-  the user. If the subject is complicated, find words to make it simpler. Each label is left-justified and appears
-  above the text area it describes.
+  Below are the good practices that should guide the uses of the component to maintain coherence in the design
+  system and the spirit with which they were sustained.
 </p>
+<ul>
+  <li>
+    For accessibility, text labels are required for all text area items. Use clear, concise, consistent labels to guide
+    the user. If the subject is complicated, find words to make it simpler. Each label is left-justified and appears
+    above the text area it describes.
+  </li>
+  <li>
+    When the user clicks on an input, the on focus state starts, the input gets blue and a blinking cursor appears at the
+    beginning of the input so the user know is there. While the user doesn’t write anything the placeholder text
+    remains. If the user starts to write, the placeholder disappears. If the user deletes the content, the placeholder
+    appears again.
+  </li>
+  <li>
+    If the input has validation rules, they should be clearly explained in the hint text that area which appears
+    immediately under the input and never disappears. Some samples could be "max. 20 chars" or "only words allowed"
+    When the user writes on this kind of inputs, an error message
+    should appear only when the validation rules are not met and the user clicks outside the input. In that case, an error
+    message appears explaining why the validation has failed immediately under the hint text.
+  </li>
+  <li>
+    Never must appear an error message if the user doesn't carry out any action over the Input.
+  </li>
+</ul>
