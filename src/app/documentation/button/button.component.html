@@ -6,27 +6,38 @@
 
 <h2>Design & Behavior</h2>
 <p>
-  There are multiple button designs that are related with different scenarios. The label buttons are the usual ones
-  with a solid background and a label or a combination of icon and label.
+  There are multiple button designs that are related with different scenarios.
+  We use CTA buttons with a blue solid background to guide the user along the product,
+  remarking with them the principal action of each screen. Only must be one CTA per screen.
 </p>
 <p>
-  The tool buttons has not any text, only icons are permitted and are thought on toolbars.
+  Secondary buttons are used for non-principle actions and could live together with other
+  secondary buttons although is not recommended if possible.
 </p>
 <p>
-  Ths link buttons has the appearance of an HTML link and are thought to secondary actions or scenarios when a more
-  lightweight is needed.
+  Third buttons are usually used
+  for cancel actions on modals although could be used for other purposes.
+</p>
+<p>
+  Critical buttons are used only to remark actions that, dua its criticism, could create serious
+  problems (E.g. delete actions or critical configuration changes).
+</p>
+<p>
+  Each of these four types works with main actions on a screen but on different levels of importance.
+  Ideally, only one of each at most will exist in the same place. Besides, all these types of buttons
+  could be accompanied by an icon after or before the text.
+</p>
+<p>
+  A five type of button exists. This button, unlike the others, is designed to be used multiple times
+  on the same screen (E.g. in a toolbar). These are only-icon buttons.
 </p>
 <p>
   Solid buttons look heavy on purpose. They direct the user’s attention to the primary action the application is
   suggesting that the user take.
 </p>
 <p>
-  Outline buttons provide a lighter weight button style. They are used to indicate a secondary action that compliments
-  a primary action or to reduce visual noise when there are many action of equal importance on the page.
-</p>
-<p>
-  Flat buttons are used in multiple scenarios. They are used as tertiary buttons. They can also be used inline because
-  they are different from content in style and recognizable as buttons alongside content.
+  Outline buttons (and lightgray solid ones) provide a lighter weight button style. They are used to indicate a secondary action visually
+  that compliments a primary action or to reduce visual noise when there are many action of equal importance on the page.
 </p>
 
 <h2>Demo</h2>
@@ -106,5 +117,17 @@
 
 <h2>Usage and Best Practices</h2>
 <p>
-  No text defined.
+  Below are the good practices that should guide the uses of the component to maintain coherence in the design
+  system and the spirit with which they were sustained.
 </p>
+<ul>
+  <li>
+    Never use more than one CTA button at the same time. Each screen must have one only CTA button available.
+    This is to guide the user about the purpose of the screen with no doubts.
+  </li>
+  <li>
+    Critical buttons should be only used when the result of the action could create unexpected or critical issues.
+    Are not related to errors.
+  </li>
+</ul>
+
