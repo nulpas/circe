@@ -1,0 +1,110 @@
+<h1>Button</h1>
+<span class="subtitle mda-font--18">
+  Buttons express what action will occur when the user clicks or touches it. Buttons are used to initialize an action,
+  either in the background or foreground of an experience.
+</span>
+
+<h2>Design & Behavior</h2>
+<p>
+  There are multiple button designs that are related with different scenarios. The label buttons are the usual ones
+  with a solid background and a label or a combination of icon and label.
+</p>
+<p>
+  The tool buttons has not any text, only icons are permitted and are thought on toolbars.
+</p>
+<p>
+  Ths link buttons has the appearance of an HTML link and are thought to secondary actions or scenarios when a more
+  lightweight is needed.
+</p>
+<p>
+  Solid buttons look heavy on purpose. They direct the user’s attention to the primary action the application is
+  suggesting that the user take.
+</p>
+<p>
+  Outline buttons provide a lighter weight button style. They are used to indicate a secondary action that compliments
+  a primary action or to reduce visual noise when there are many action of equal importance on the page.
+</p>
+<p>
+  Flat buttons are used in multiple scenarios. They are used as tertiary buttons. They can also be used inline because
+  they are different from content in style and recognizable as buttons alongside content.
+</p>
+
+<h2>Demo</h2>
+<section class="button-demo">
+  <section class="demo__stage">
+    <button
+      class="mda-button"
+      [ngClass]="{
+        'mda-button--small': buttonSize.value === 2,
+        'mda-button--secondary': buttonType.value === 2,
+        'mda-button--third': buttonType.value === 3,
+        'mda-button--critical': buttonType.value === 4,
+        'mda-button--icon-only': buttonIcon.value && buttonIconType.value === 3
+      }"
+      [disabled]="buttonDisabled.value">
+      <i class="mda-icon icon-cog mda-button--icon-left" *ngIf="buttonIcon.value && buttonIconType.value === 1"></i>
+      <ng-container *ngIf="!buttonIcon.value || buttonIconType.value !== 3">{{buttonText.value}}</ng-container>
+      <i class="mda-icon icon-arrow2_down mda-button--icon-right" *ngIf="buttonIcon.value && buttonIconType.value === 2"></i>
+      <i class="mda-icon icon-waiting" *ngIf="buttonIcon.value && buttonIconType.value === 3"></i>
+    </button>
+  </section>
+  <section class="demo__controls">
+    <div>
+      <label class="mda-label" for="button-text">Button text</label>
+      <input id="button-text" class="mda-input" placeholder="Write something..." [formControl]="buttonText" ccFormBehavior>
+    </div>
+
+    <h4>Size</h4>
+    <input id="size-standard" type="radio" name="size" [value]="1" [formControl]="buttonSize">
+    <label for="size-standard">Standard</label>
+
+    <input id="size-small" type="radio" name="size" [value]="2" [formControl]="buttonSize">
+    <label for="size-small">Small</label>
+
+    <h4>Type</h4>
+    <input id="type-cta" type="radio" name="type" [value]="1" [formControl]="buttonType">
+    <label for="type-cta">CTA (call to action)</label>
+
+    <input id="type-secondary" type="radio" name="type" [value]="2" [formControl]="buttonType">
+    <label for="type-secondary">Secondary</label>
+
+    <input id="type-third" type="radio" name="type" [value]="3" [formControl]="buttonType">
+    <label for="type-third">Third</label>
+
+    <input id="type-critical" type="radio" name="type" [value]="4" [formControl]="buttonType">
+    <label for="type-critical">Critical</label>
+
+    <h4>Options</h4>
+    <input
+      id="icon-option-disabled"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-disabled"
+      [formControl]="buttonDisabled">
+    <label for="icon-option-disabled">Disabled</label>
+    <input
+      id="button-icon"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="button-icon"
+      [formControl]="buttonIcon">
+    <label for="button-icon">Icon</label>
+
+    <ng-container *ngIf="buttonIcon.value">
+      <h4>Icon Type</h4>
+      <input id="icon-type-left" type="radio" name="icon-type" [value]="1" [formControl]="buttonIconType">
+      <label for="icon-type-left">Icon Left</label>
+
+      <input id="icon-type-right" type="radio" name="icon-type" [value]="2" [formControl]="buttonIconType">
+      <label for="icon-type-right">Icon Right</label>
+
+      <input id="icon-only" type="radio" name="icon-type" [value]="3" [formControl]="buttonIconType">
+      <label for="icon-only">Only Icon</label>
+    </ng-container>
+  </section>
+</section>
+
+<h2>Usage and Best Practices</h2>
+<p>
+  No text defined.
+</p>

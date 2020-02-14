@@ -8,8 +8,10 @@ import { RadioComponent } from './radio/radio.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { PrinciplesComponent } from './principles/principles.component';
 import { SessionGuard } from '../_guards/session.guard';
-import {TextareaComponent} from './textarea/textarea.component';
-import {UserInterfaceComponent} from './user-interface/user-interface.component';
+import { TextareaComponent } from './textarea/textarea.component';
+import { UserInterfaceComponent } from './user-interface/user-interface.component';
+import { SelectComponent } from './select/select.component';
+import { ButtonComponent } from './button/button.component';
 
 const routes: Routes = [
   {
@@ -60,6 +62,16 @@ const routes: Routes = [
   {
     path: 'user-interface',
     component: UserInterfaceComponent,
+    canActivate: [SessionGuard]
+  },
+  {
+    path: 'select',
+    component: SelectComponent,
+    canActivate: [SessionGuard]
+  },
+  {
+    path: 'button',
+    component: ButtonComponent,
     canActivate: [SessionGuard]
   },
   {

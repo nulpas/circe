@@ -1,3 +1,5 @@
+import {SimpleData} from '@lunaeme/circe-core';
+
 export type FormBehaviorTargetElement = HTMLInputElement | HTMLSelectElement;
 
 export interface ElementRules {
@@ -6,9 +8,14 @@ export interface ElementRules {
 export interface Rule {
   main: string;
   sizes: Array<string>;
+  placeholder?: PlaceholderRule;
   label: LabelRule;
   wrappers: WrapperRule;
   report?: ReportRule;
+}
+export interface PlaceholderRule {
+  class: string;
+  value: SimpleData;
 }
 export interface LabelRule {
   tag: string;
@@ -121,6 +128,10 @@ export const elementRules: ElementRules = {
   SELECT: {
     main: 'mda-select',
     sizes: ['mda-select--small'],
+    placeholder: {
+      class: 'mda-select--placeholder',
+      value: ''
+    },
     label: {
       ...labelCommon,
       forceToDisabled: ['mda-select--filter']
@@ -128,6 +139,7 @@ export const elementRules: ElementRules = {
     wrappers: {
       tags: ['SPAN', 'DIV'],
       classes: ['mda-select']
-    }
+    },
+    report: reportCommon
   }
 };
