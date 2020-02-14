@@ -1,0 +1,124 @@
+<h1>Select</h1>
+<span class="subtitle mda-font--18">
+  With a select box, users can select one item from a list of values. The selected item is visible when the select
+  box is closed.
+</span>
+
+<h2>Design & Behavior</h2>
+<p>
+  Use a select box for a list of items that a user does not need to see all the time. A common strategy is to combine
+  an input field with a select box so that a user can enter a value and qualify it with a menu item. For example, the
+  user might enter a number in an input field and select the units from the select box.
+</p>
+
+<h2>Demo</h2>
+<section class="select-demo">
+  <section class="demo__stage">
+    <div *ngIf="selectMode.value === 1">
+      <label *ngIf="selectLabel.value" class="mda-label" for="select-standard-test">{{label}}</label>
+      <select
+        id="select-standard-test"
+        class="mda-select"
+        [ngClass]="{'mda-select--small': selectSize.value === 2}"
+        [formControl]="select"
+        ccFormBehavior [report]="helperText" [error]="errorMessage" [render]="true">
+        <option value="" disabled selected>Placeholder</option>
+        <option value="1">Albert Einstein</option>
+        <option value="2">Nikola Tesla</option>
+        <option value="3">Edward Lorenz</option>
+        <option value="4">Niels Bohr</option>
+        <option value="5">Max Planck</option>
+        <option value="6">Erwin Schrödinger</option>
+        <option value="7">Isaac Newton</option>
+      </select>
+    </div>
+    <div *ngIf="selectMode.value === 2">
+      <label class="mda-label" for="select-filter-test"></label>
+      <select
+        id="select-filter-test"
+        class="mda-select mda-select--filter"
+        [formControl]="select"
+        ccFormBehavior [render]="true">
+        <option value="" disabled selected>Placeholder</option>
+        <option value="1">Albert Einstein</option>
+        <option value="2">Nikola Tesla</option>
+        <option value="3">Edward Lorenz</option>
+        <option value="4">Niels Bohr</option>
+        <option value="5">Max Planck</option>
+        <option value="6">Erwin Schrödinger</option>
+        <option value="7">Isaac Newton</option>
+      </select>
+    </div>
+  </section>
+  <section class="demo__controls">
+    <h4>Type</h4>
+    <input id="type-native" type="radio" name="type" [value]="1" [formControl]="selectType">
+    <label for="type-native">Native</label>
+
+    <input id="type-custom" type="radio" name="type" [value]="2" [formControl]="selectType">
+    <label for="type-custom">Custom</label>
+
+    <h4>Mode</h4>
+    <input id="mode-standard" type="radio" name="mode" [value]="1" [formControl]="selectMode">
+    <label for="mode-standard">Standard</label>
+
+    <input id="mode-filter" type="radio" name="mode" [value]="2" [formControl]="selectMode">
+    <label for="mode-filter">Filter</label>
+
+    <ng-container *ngIf="selectMode.value === 1">
+      <h4>Size</h4>
+      <input id="size-normal" type="radio" name="size" [value]="1" [formControl]="selectSize">
+      <label for="size-normal">Normal</label>
+
+      <input id="size-small" type="radio" name="size" [value]="2" [formControl]="selectSize">
+      <label for="size-small">Small</label>
+    </ng-container>
+
+    <h4>Options</h4>
+    <ng-container *ngIf="selectMode.value === 1">
+      <input
+        id="icon-option-label"
+        class="mda-selection--vertical"
+        type="checkbox"
+        name="option-label"
+        [formControl]="selectLabel">
+      <label for="icon-option-label">Label</label>
+    </ng-container>
+
+    <input
+      id="icon-option-disabled"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-disabled"
+      [formControl]="selectDisabled">
+    <label for="icon-option-disabled">Disabled</label>
+
+    <input
+      id="icon-option-required"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-required"
+      [formControl]="selectRequired">
+    <label for="icon-option-required">Required (to check error status)</label>
+
+    <ng-container *ngIf="selectMode.value === 1">
+      <input
+        id="icon-option-helper-text"
+        class="mda-selection--vertical"
+        type="checkbox"
+        name="option-helper-text"
+        [formControl]="selectHelperText">
+      <label for="icon-option-helper-text">Helper / Error text</label>
+    </ng-container>
+  </section>
+</section>
+
+<h2>Usage and Best Practices</h2>
+<p>
+  Don’t confuse a select box with a dropdown menu. Select boxes are for setting options and work best in forms.
+  Dropdown is for presenting actions and most appropriate in a header.
+</p>
+<p>
+  Typically, a select box contains between 3 and 12 items. For fewer than 3 items or to present choices that are always
+  visible, consider a radio button.
+</p>
