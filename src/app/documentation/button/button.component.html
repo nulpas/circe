@@ -60,17 +60,17 @@
     </button>
   </section>
   <section class="demo__controls">
-    <div>
-      <label class="mda-label" for="button-text">Button text</label>
-      <input id="button-text" class="mda-input" placeholder="Write something..." [formControl]="buttonText" ccFormBehavior>
-    </div>
-
     <h4>Size</h4>
     <input id="size-standard" type="radio" name="size" [value]="1" [formControl]="buttonSize">
     <label for="size-standard">Standard</label>
 
     <input id="size-small" type="radio" name="size" [value]="2" [formControl]="buttonSize">
     <label for="size-small">Small</label>
+
+    <div class="button-text">
+      <label class="mda-label" for="button-text">Button text</label>
+      <input id="button-text" class="mda-input" placeholder="Write something..." [formControl]="buttonText" ccFormBehavior>
+    </div>
 
     <h4>Type</h4>
     <input id="type-cta" type="radio" name="type" [value]="1" [formControl]="buttonType">

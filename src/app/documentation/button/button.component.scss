@@ -15,16 +15,8 @@
   }
   .button-demo {
     @include demoElement();
-    .demo__stage {
-      min-width: 200px;
-      width: 200px;
-
-      .mda-button {
-        margin-top: 18px;
-      }
-    }
     .demo__controls {
-      H4:first-of-type {
+      .button-text {
         margin-top: 1.33em;
       }
     }
