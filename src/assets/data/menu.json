@@ -5,7 +5,7 @@
     "options": [
       {
         "id": "principles",
-        "name": "Principles",
+        "name": "Design Principles",
         "location": ["principles"]
       },
       {
@@ -42,7 +42,7 @@
     "options": [
       {
         "id": "input",
-        "name": "Input",
+        "name": "Input Text",
         "location": ["input"]
       },
       {
