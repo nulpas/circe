@@ -87,19 +87,19 @@
 
     <h4>Options</h4>
     <input
-      id="icon-option-disabled"
+      id="option-disabled"
       class="mda-selection--vertical"
       type="checkbox"
       name="option-disabled"
       [formControl]="buttonDisabled">
-    <label for="icon-option-disabled">Disabled</label>
+    <label for="option-disabled">Disabled</label>
     <input
-      id="button-icon"
+      id="option-icon"
       class="mda-selection--vertical"
       type="checkbox"
-      name="button-icon"
+      name="option-icon"
       [formControl]="buttonIcon">
-    <label for="button-icon">Icon</label>
+    <label for="option-icon">Icon</label>
 
     <ng-container *ngIf="buttonIcon.value">
       <h4>Icon Type</h4>
@@ -109,8 +109,8 @@
       <input id="icon-type-right" type="radio" name="icon-type" [value]="2" [formControl]="buttonIconType">
       <label for="icon-type-right">Icon Right</label>
 
-      <input id="icon-only" type="radio" name="icon-type" [value]="3" [formControl]="buttonIconType">
-      <label for="icon-only">Only Icon</label>
+      <input id="icon-type-icon-only" type="radio" name="icon-type" [value]="3" [formControl]="buttonIconType">
+      <label for="icon-type-icon-only">Only Icon</label>
     </ng-container>
   </section>
 </section>

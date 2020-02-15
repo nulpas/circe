@@ -93,38 +93,38 @@
     <h4>Options</h4>
     <ng-container *ngIf="selectMode.value === 1">
       <input
-        id="icon-option-label"
+        id="option-label"
         class="mda-selection--vertical"
         type="checkbox"
         name="option-label"
         [formControl]="selectLabel">
-      <label for="icon-option-label">Label</label>
+      <label for="option-label">Label</label>
     </ng-container>
 
     <input
-      id="icon-option-disabled"
+      id="option-disabled"
       class="mda-selection--vertical"
       type="checkbox"
       name="option-disabled"
       [formControl]="selectDisabled">
-    <label for="icon-option-disabled">Disabled</label>
+    <label for="option-disabled">Disabled</label>
 
     <input
-      id="icon-option-required"
+      id="option-required"
       class="mda-selection--vertical"
       type="checkbox"
       name="option-required"
       [formControl]="selectRequired">
-    <label for="icon-option-required">Required (to check error status)</label>
+    <label for="option-required">Required (to check error status)</label>
 
     <ng-container *ngIf="selectMode.value === 1">
       <input
-        id="icon-option-helper-text"
+        id="option-helper-text"
         class="mda-selection--vertical"
         type="checkbox"
         name="option-helper-text"
         [formControl]="selectHelperText">
-      <label for="icon-option-helper-text">Helper / Error text</label>
+      <label for="option-helper-text">Helper / Error text</label>
     </ng-container>
   </section>
 </section>
