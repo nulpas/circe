@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { takeUntil } from 'rxjs/operators';
-import {merge, Subject} from 'rxjs';
+import { merge, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-checkbox',

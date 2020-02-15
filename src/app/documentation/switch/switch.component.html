@@ -12,66 +12,72 @@
 <h2>Demo</h2>
 <section class="switch-demo">
   <section class="demo__stage">
-    <label class="mda-label" *ngIf="checkboxTitleLabel.value">Group of Options Label</label>
+    <label class="mda-label" *ngIf="switchTitleLabel.value">Group of Options Label</label>
 
     <input
       id="demo-option-1"
       type="checkbox"
       name="options1"
-      class="mda-switch"
-      [ngClass]="{'mda-selection--no-label': !checkboxLabel.value, 'mda-selection--vertical': checkboxDistribution.value === 2}"
-      [formControl]="checkbox01">
+      class="mda-switch mda-switch--right"
+      [ngClass]="{
+        'mda-selection--no-label': !switchLabel.value,
+        'mda-selection--vertical': switchDistribution.value === 2,
+        'mda-switch--right': switchPosition.value === 2
+      }"
+      [formControl]="switch01">
     <label for="demo-option-1">Parameter 1</label>
 
     <input
       id="demo-option-2"
       type="checkbox"
       name="options2"
-      class="mda-switch"
-      [ngClass]="{'mda-selection--no-label': !checkboxLabel.value, 'mda-selection--vertical': checkboxDistribution.value === 2}"
-      [formControl]="checkbox02">
+      class="mda-switch mda-switch--right"
+      [ngClass]="{
+        'mda-selection--no-label': !switchLabel.value,
+        'mda-selection--vertical': switchDistribution.value === 2,
+        'mda-switch--right': switchPosition.value === 2
+      }"
+      [formControl]="switch02">
     <label for="demo-option-2">Parameter 2</label>
-
-    <input
-      id="demo-option-3"
-      type="checkbox"
-      name="options3"
-      class="mda-switch"
-      [ngClass]="{'mda-selection--no-label': !checkboxLabel.value, 'mda-selection--vertical': checkboxDistribution.value === 2}"
-      [formControl]="checkbox03">
-    <label for="demo-option-3">Parameter 3</label>
   </section>
   <section class="demo__controls">
-    <h4>Disposition</h4>
-    <input id="checkbox-horizontal" type="radio" name="disposition" [value]="1" [formControl]="checkboxDistribution">
-    <label for="checkbox-horizontal">Horizontal</label>
+    <h4>Position</h4>
+    <input id="switch-left" type="radio" name="position" [value]="1" [formControl]="switchPosition">
+    <label for="switch-left">Left</label>
 
-    <input id="checkbox-vertical" type="radio" name="disposition" [value]="2" [formControl]="checkboxDistribution">
-    <label for="checkbox-vertical">Vertical</label>
+    <input id="switch-right" type="radio" name="position" [value]="2" [formControl]="switchPosition">
+    <label for="switch-right">Right</label>
+
+    <h4>Disposition</h4>
+    <input id="switch-horizontal" type="radio" name="disposition" [value]="1" [formControl]="switchDistribution">
+    <label for="switch-horizontal">Horizontal</label>
+
+    <input id="switch-vertical" type="radio" name="disposition" [value]="2" [formControl]="switchDistribution">
+    <label for="switch-vertical">Vertical</label>
 
     <h4>Options</h4>
     <input
-      id="radio-title-label"
+      id="switch-title-label"
       class="mda-selection--vertical"
       type="checkbox" name="option-title-label"
-      [formControl]="checkboxTitleLabel">
-    <label for="radio-title-label">Title Label</label>
+      [formControl]="switchTitleLabel">
+    <label for="switch-title-label">Title Label</label>
 
     <input
-      id="radio-label"
+      id="switch-label"
       class="mda-selection--vertical"
       type="checkbox"
       name="option-label"
-      [formControl]="checkboxLabel">
-    <label for="radio-label">Label</label>
+      [formControl]="switchLabel">
+    <label for="switch-label">Label</label>
 
     <input
-      id="radio-disabled"
+      id="switch-disabled"
       class="mda-selection--vertical"
       type="checkbox"
       name="option-disabled"
-      [formControl]="checkboxDisabled">
-    <label for="radio-disabled">Disabled</label>
+      [formControl]="switchDisabled">
+    <label for="switch-disabled">Disabled</label>
   </section>
 </section>
 
