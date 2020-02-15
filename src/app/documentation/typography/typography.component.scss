@@ -9,6 +9,10 @@
   .typo-list--2 {
     @include createFlexBox(row, normal, normal, nowrap);
     padding: 0 80px 20px 0;
+
+    &.last-item {
+      border: 0;
+    }
     .concept {
       width: 18%;
       &:not(.header) {
@@ -21,7 +25,13 @@
   }
   .typo-list--3 {
     @include createFlexBox(row, center, normal, nowrap);
-    padding: 0 80px 20px 0;
+    border-bottom: 1px solid #eaeff5;
+    margin: 0px 80px 10px 0;
+    padding: 0 80px 10px 0;
+
+    &.last-item {
+      border: 0;
+    }
     .concept {
       width: 18%;
       &:not(.header) {
@@ -37,7 +47,13 @@
   }
   .typo-list--5 {
     @include createFlexBox(row, center, normal, nowrap);
-    padding: 0 80px 20px 0;
+    border-bottom: 1px solid #eaeff5;
+    margin: 20px 80px 10px 0;
+    padding: 0 80px 10px 0;
+
+    &.last-item {
+      border: 0;
+    }
     .concept {
       width: 18%;
       &:not(.header) {
@@ -73,6 +89,10 @@
     H1 {
       font-size: 2rem;
       font-weight: bold;
+
+      &:after {
+        content: none;
+      }
     }
     H2 {
       padding: 0;
