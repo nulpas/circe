@@ -33,9 +33,9 @@ export class SelectComponent implements OnInit, OnDestroy {
 
     this.select.valueChanges.pipe(
       takeUntil(this._componentDestroy$)
-    ).subscribe((value: string) => {
+    ).subscribe(() => {
       this.errorMessage = '';
-      if (this.select.invalid) {
+      if (this.select.invalid && this.select.dirty) {
         this.errorMessage = 'Required field. Write something';
       }
     });
