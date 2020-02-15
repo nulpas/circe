@@ -1,7 +1,7 @@
 <h1>Select</h1>
 <span class="subtitle mda-font--18">
   With a select box, users can select one item from a list of values. The selected item is visible when the select
-  box is closed.
+  box dropdown is closed.
 </span>
 
 <h2>Design & Behavior</h2>
@@ -9,6 +9,22 @@
   Use a select box for a list of items that a user does not need to see all the time. A common strategy is to combine
   an input field with a select box so that a user can enter a value and qualify it with a menu item. For example, the
   user might enter a number in an input field and select the units from the select box.
+</p>
+<p>
+  Two height sizes are available to adapt the Select to different situations.
+  Besides, the Select component includes a label and a help text to give some
+  details to the user about the content or the options available.
+</p>
+<p>
+  The same help text space is used to show error messages when needed.
+  However, if error, the text is red-colored as well as the outline of the text box.
+</p>
+<p>
+  The Select is highlighted when has the focus to guide the user visually to the component that owns the action.
+</p>
+<p>
+  The Select can be used with or without border depending on the purpose of use of the component.
+  Inside a form, always must have border. Outside instead, can use it or not.
 </p>
 
 <h2>Demo</h2>
@@ -22,7 +38,7 @@
         [ngClass]="{'mda-select--small': selectSize.value === 2}"
         [formControl]="select"
         ccFormBehavior [report]="helperText" [error]="errorMessage" [render]="true">
-        <option value="" selected>Placeholder</option>
+        <option value="" selected>Choose an option</option>
         <option value="1">Albert Einstein</option>
         <option value="2">Nikola Tesla</option>
         <option value="3">Edward Lorenz</option>
@@ -115,10 +131,20 @@
 
 <h2>Usage and Best Practices</h2>
 <p>
-  Don’t confuse a select box with a dropdown menu. Select boxes are for setting options and work best in forms.
-  Dropdown is for presenting actions and most appropriate in a header.
+  Below are the good practices that should guide the uses of the component to maintain coherence in the design
+  system and the spirit with which they were sustained.
 </p>
-<p>
-  Typically, a select box contains between 3 and 12 items. For fewer than 3 items or to present choices that are always
-  visible, consider a radio button.
-</p>
+<ul>
+  <li>
+    Don’t confuse a select box with a dropdown menu. Select boxes are for setting options and work best in forms.
+    Dropdown is for presenting actions and are most appropriate outside forms.
+  </li>
+  <li>
+    Typically, a select box contains between 3 and 12 items. For fewer than 3 items or to present choices that are always
+    visible, consider a radio button.
+  </li>
+  <li>The placeholder must use the text "Choose an option" as a general rule.</li>
+  <li>
+    Never must appear an error message if the user doesn't carry out any action over the Input.
+  </li>
+</ul>
