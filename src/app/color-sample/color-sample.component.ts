@@ -15,8 +15,8 @@ export class ColorSampleComponent implements OnInit, OnDestroy {
   public elementHeight: number;
   public colorRgb: string;
 
-  private readonly _defaultElementWidth: number = 125;
-  private readonly _defaultElementHeight: number = 80;
+  private readonly _defaultElementWidth: number = 140;
+  private readonly _defaultElementHeight: number = 100;
 
   constructor() {
     this.elementWidth = this._defaultElementWidth;

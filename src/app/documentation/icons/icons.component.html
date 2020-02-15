@@ -1,6 +1,6 @@
 <section class="icons-header" [ngClass]="{sticky: showStickyBox}">
-  <h1>Icons</h1>
-  <span>{{totalIcons}}</span>
+  <h1>Icons <span class="icons-total">({{totalIcons}} icons available)</span></h1>
+
   <div class="icons-search">
     <label for="icons-search"></label>
     <input
@@ -10,7 +10,7 @@
       ccFormBehavior>
   </div>
 </section>
-<section class="icons-content" *ngIf="sections && sections.length" ccGridColumns [numberOfColumns]="2">
+<section class="icons-content" *ngIf="sections && sections.length" ccGridColumns [numberOfColumns]="1">
   <section class="icons-container" *ngFor="let section of sections; trackBy: tools.identifier;">
     <h2>{{section.name}}</h2>
     <div class="icons-set">

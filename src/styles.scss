@@ -16,12 +16,28 @@ HTML {
         font-weight: lighter;
         font-size: 2.5rem;
         margin: 0 0 0.4em 0;
+
+        &:after {
+          border: 1px solid #cdd6df;
+          content: '';
+          display: block;
+          margin: 20px 0;
+          width: 40px;
+        }
       }
       H2 {
-        margin: 1.904761em 0 0 0;
+        margin: 1.904761em 0 10px 0;
       }
       H3 {
         margin: 1.6em 0 0.8em 0;
+      }
+      p,
+      li,
+      ol,
+      .subtitle,
+      .value {
+        line-height: 1.5;
+        max-width: 700px;
       }
 
       .one-line {
