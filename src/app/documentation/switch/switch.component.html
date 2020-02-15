@@ -1,0 +1,98 @@
+<h1>Switch</h1>
+<span class="subtitle mda-font--18">
+  A Switch changes the state of single setting between on and off.
+</span>
+
+<h2>Design & Behavior</h2>
+<p>
+  Switches are used for binary actions that occur immediately after the user “flips” the Switch. They are commonly used
+  for “On/Off”, “Activate/Deactivate” situations.
+</p>
+
+<h2>Demo</h2>
+<section class="switch-demo">
+  <section class="demo__stage">
+    <label class="mda-label" *ngIf="checkboxTitleLabel.value">Group of Options Label</label>
+
+    <input
+      id="demo-option-1"
+      type="checkbox"
+      name="options1"
+      class="mda-switch"
+      [ngClass]="{'mda-selection--no-label': !checkboxLabel.value, 'mda-selection--vertical': checkboxDistribution.value === 2}"
+      [formControl]="checkbox01">
+    <label for="demo-option-1">Parameter 1</label>
+
+    <input
+      id="demo-option-2"
+      type="checkbox"
+      name="options2"
+      class="mda-switch"
+      [ngClass]="{'mda-selection--no-label': !checkboxLabel.value, 'mda-selection--vertical': checkboxDistribution.value === 2}"
+      [formControl]="checkbox02">
+    <label for="demo-option-2">Parameter 2</label>
+
+    <input
+      id="demo-option-3"
+      type="checkbox"
+      name="options3"
+      class="mda-switch"
+      [ngClass]="{'mda-selection--no-label': !checkboxLabel.value, 'mda-selection--vertical': checkboxDistribution.value === 2}"
+      [formControl]="checkbox03">
+    <label for="demo-option-3">Parameter 3</label>
+  </section>
+  <section class="demo__controls">
+    <h4>Disposition</h4>
+    <input id="checkbox-horizontal" type="radio" name="disposition" [value]="1" [formControl]="checkboxDistribution">
+    <label for="checkbox-horizontal">Horizontal</label>
+
+    <input id="checkbox-vertical" type="radio" name="disposition" [value]="2" [formControl]="checkboxDistribution">
+    <label for="checkbox-vertical">Vertical</label>
+
+    <h4>Options</h4>
+    <input
+      id="radio-title-label"
+      class="mda-selection--vertical"
+      type="checkbox" name="option-title-label"
+      [formControl]="checkboxTitleLabel">
+    <label for="radio-title-label">Title Label</label>
+
+    <input
+      id="radio-label"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-label"
+      [formControl]="checkboxLabel">
+    <label for="radio-label">Label</label>
+
+    <input
+      id="radio-disabled"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-disabled"
+      [formControl]="checkboxDisabled">
+    <label for="radio-disabled">Disabled</label>
+  </section>
+</section>
+
+<h2>Usage and Best Practices</h2>
+<ul>
+  <li>
+    A heading may accompany a Switch to further clarify on the action the Switch will perform.
+  </li>
+  <li>
+    Use labels with a Switch so the action is clear. Labels should be three words or less and can appear on both sides
+    of a Switch although left part of the Switch it’s preferred.
+  </li>
+  <li>
+    Switches take up less space than an “on/off” radio button group and communicate their intended purpose better than
+    a checkbox that toggles functionality.
+  </li>
+  <li>
+    Switches should take immediate effect and should not require the user to click Save or Submit to apply the
+    new state.
+  </li>
+  <li>
+    Use a checkbox instead if the user would have to press a submit button to run the chosen option.
+  </li>
+</ul>

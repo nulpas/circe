@@ -12,6 +12,7 @@ import { TextareaComponent } from './textarea/textarea.component';
 import { UserInterfaceComponent } from './user-interface/user-interface.component';
 import { SelectComponent } from './select/select.component';
 import { ButtonComponent } from './button/button.component';
+import { SwitchComponent } from './switch/switch.component';
 
 const routes: Routes = [
   {
@@ -72,6 +73,11 @@ const routes: Routes = [
   {
     path: 'button',
     component: ButtonComponent,
+    canActivate: [SessionGuard]
+  },
+  {
+    path: 'switch',
+    component: SwitchComponent,
     canActivate: [SessionGuard]
   },
   {

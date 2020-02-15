@@ -69,6 +69,11 @@
         "id": "button",
         "name": "Button",
         "location": ["button"]
+      },
+      {
+        "id": "switch",
+        "name": "Switch",
+        "location": ["switch"]
       }
     ]
   }
