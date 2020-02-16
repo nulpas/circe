@@ -1,24 +1,17 @@
-# GridColumns
+# Circe :: Angular Grid Columns Directive
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+Directive that generates Masonry (Pinterest) style layouts.
 
-## Code scaffolding
+## Compatibility
 
-Run `ng generate component component-name --project grid-columns` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project grid-columns`.
-> Note: Don't forget to add `--project grid-columns` or else it will be added to the default project in your `angular.json` file. 
+Angular >= v.8.2.14
 
-## Build
+## Installation
 
-Run `ng build grid-columns` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `npm install @lunaeme/circe-grid-columns` or
 
-## Publishing
+run `yarn add @lunaeme/circe-grid-columns`.
 
-After building your library with `ng build grid-columns`, go to the dist folder `cd dist/grid-columns` and run `npm publish`.
+## Use
 
-## Running unit tests
-
-Run `ng test grid-columns` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ToDo ...

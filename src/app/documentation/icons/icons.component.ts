@@ -19,6 +19,7 @@ export class IconsComponent implements OnInit, OnDestroy {
   public sections: Array<IconSection> = [];
   public icons: {[section: string]: Array<Icon>} = {};
   public iconsFilter: FormControl = new FormControl('');
+  public showIconsContentCode: FormControl = new FormControl(false);
 
   private _sourceSections: Array<IconSection>;
   private _sourceIcons: Array<Icon>;
@@ -47,7 +48,12 @@ export class IconsComponent implements OnInit, OnDestroy {
     this.iconsFilter.valueChanges.pipe(
       takeUntil(this._componentDestroyed$)
     ).subscribe((r: string) => {
-      const _filteredSourceIcons: Array<Icon> = this._sourceIcons.filter((e: Icon) => e.code.includes(r));
+      let _searchTerm: string = r;
+      if (r.charAt(0) === '\\') {
+        _searchTerm = r.slice(1);
+      }
+      const _filteredSourceIcons: Array<Icon> = this._sourceIcons
+        .filter((e: Icon) => e.code.includes(_searchTerm) || e.content.includes(_searchTerm));
       this.iconsDataForRender(_filteredSourceIcons);
     });
   }

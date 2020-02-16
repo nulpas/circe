@@ -13,6 +13,7 @@ import { UserInterfaceComponent } from './user-interface/user-interface.componen
 import { SelectComponent } from './select/select.component';
 import { ButtonComponent } from './button/button.component';
 import { SwitchComponent } from './switch/switch.component';
+import { TagComponent } from './tag/tag.component';
 
 const routes: Routes = [
   {
@@ -78,6 +79,11 @@ const routes: Routes = [
   {
     path: 'switch',
     component: SwitchComponent,
+    canActivate: [SessionGuard]
+  },
+  {
+    path: 'tag',
+    component: TagComponent,
     canActivate: [SessionGuard]
   },
   {

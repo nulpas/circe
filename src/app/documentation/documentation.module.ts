@@ -20,6 +20,7 @@ import { UserInterfaceModule } from './user-interface/user-interface.module';
 import { SelectModule } from './select/select.module';
 import { ButtonModule } from './button/button.module';
 import { SwitchModule } from './switch/switch.module';
+import { TagModule } from './tag/tag.module';
 
 @NgModule({
   declarations: [DocumentationComponent],
@@ -41,6 +42,7 @@ import { SwitchModule } from './switch/switch.module';
     SelectModule,
     ButtonModule,
     SwitchModule,
+    TagModule,
     DataModule.forChild(),
     LoginServicesModule.forChild()
   ],

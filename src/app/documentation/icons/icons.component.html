@@ -5,13 +5,24 @@
   </div>
 
   <div class="icons-search">
-    <label for="icons-search"></label>
-    <input
-      id="icons-search"
-      class="mda-input mda-input--search mda-input--small"
-      placeholder="Search Icons"
-      [formControl]="iconsFilter"
-      ccFormBehavior>
+    <div class="control-show-content">
+      <input
+        id="show-content-code"
+        type="checkbox"
+        name="content-code"
+        [formControl]="showIconsContentCode">
+      <label for="show-content-code">Show content code</label>
+    </div>
+
+    <div class="control-search">
+      <label for="icons-search"></label>
+      <input
+        id="icons-search"
+        class="mda-input mda-input--search mda-input--small"
+        placeholder="Search Icons"
+        [formControl]="iconsFilter"
+        ccFormBehavior>
+    </div>
   </div>
 </section>
 <section class="icons-content" *ngIf="sections && sections.length">
@@ -23,7 +34,10 @@
           class="mda-icon"
           [ngClass]="icon.code"
           [title]="icon.code"></i>
-        <span class="icon-code mda-font--12">{{icon.code}}</span>
+        <span class="icon-code mda-font--12">
+          {{icon.code}}
+          <span class="icon-content-code mda-font--semi-bold" *ngIf="showIconsContentCode.value">\{{icon.content}}</span>
+        </span>
       </div>
     </div>
   </section>

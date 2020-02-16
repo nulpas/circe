@@ -20,6 +20,14 @@
       margin-right: 4px;
       transition: all .6s ease-in-out;
     }
+    .icons-search {
+      @include createFlexBox(row, normal, normal, nowrap);
+      .control-show-content {
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+      }
+    }
     &.sticky {
       border-bottom: 1px solid var(--mda-color-neutral-20);
       align-items: center;
@@ -56,6 +64,9 @@
           }
           .icon-code {
             display: inline-block;
+            .icon-content-code {
+              display: block;
+            }
           }
         }
       }
