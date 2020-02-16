@@ -1,0 +1,21 @@
+@import '../../../mixins';
+
+:host {
+  display: block;
+  padding: 25px 35px;
+  box-sizing: border-box;
+  @include scrollInElement();
+
+  P, .subtitle {
+    display: block;
+    padding-right: 20%;
+  }
+  .tag-demo {
+    @include demoElement();
+    .demo__controls {
+      .tag-text {
+        margin-top: 1.33em;
+      }
+    }
+  }
+}

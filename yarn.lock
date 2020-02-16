@@ -898,10 +898,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@lunaeme/medea@^3.0.11":
-  version "3.0.11"
-  resolved "https://registry.yarnpkg.com/@lunaeme/medea/-/medea-3.0.11.tgz#3f1209bddd3845a97f952b968d7ba1700f8a387b"
-  integrity sha512-TJuzs6tUzbvwkPBWYsKCOIopRciGsmNNd/HrwJMUOx5Podgmq7gkN+mPB8kEqtaF45zJeHsrpN2KDO5/1LAzFg==
+"@lunaeme/medea@^3.0.12":
+  version "3.0.12"
+  resolved "https://registry.yarnpkg.com/@lunaeme/medea/-/medea-3.0.12.tgz#2fda93ec2589c95a78c370d56ec44b38cff46902"
+  integrity sha512-jm0rNhQe9ogweyy31bcZre+vuN6eq838Vx4UiWvLBSRUMjgWaW4K1bjY3ICPk4uBHNu+FkD77FWw/ip1pP5KXg==
 
 "@ngtools/webpack@9.0.2":
   version "9.0.2"
@@ -3210,9 +3210,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.322, electron-to-chromium@^1.3.349:
-  version "1.3.351"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.351.tgz#78bcf8e9092013232b2fb72b9db423d96e92604c"
-  integrity sha512-L8zhV8k7Znp2q3wWXYDzCyfTBeGauEX0rX/FtgmnDgmvHRqwu9NVN614wOkXx9sDZmJZpNMBaEFMXTu/vbr+Kg==
+  version "1.3.352"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.352.tgz#f0fc1e561104dbfba55cb3d45cad3626dc75d7e9"
+  integrity sha512-dL/RyoueFG3UMhG0q3weAQvr+Tbqx/axAnOXYIIOsoYnV+2i+nRvX2S6msEo2+JARbBP8MFkkSYQ8AoY9Bh4Og==
 
 elliptic@^6.0.0:
   version "6.5.2"
