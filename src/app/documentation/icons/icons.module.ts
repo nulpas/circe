@@ -4,8 +4,7 @@ import { IconsComponent } from './icons.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToolService } from '@core/tool.service';
 import { OrderModule } from '@core/external.elements';
-import { GridColumnsModule } from '@grid-columns/grid-columns.module';
-import {FormBehaviorModule} from '@form-behavior/form-behavior.module';
+import { FormBehaviorModule } from '@form-behavior/form-behavior.module';
 import { DataModule } from '../../_services/data/data.module';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { DataModule } from '../../_services/data/data.module';
     ReactiveFormsModule,
     FormBehaviorModule,
     OrderModule,
-    GridColumnsModule,
     DataModule.forChild()
   ],
   providers: [

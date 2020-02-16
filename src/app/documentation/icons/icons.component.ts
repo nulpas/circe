@@ -55,7 +55,7 @@ export class IconsComponent implements OnInit, OnDestroy {
 
   @HostListener('scroll', ['$event']) onScroll(event: Event) {
     const _scrollElement: HTMLElement = event.target as HTMLElement;
-    this.showStickyBox = (_scrollElement.scrollTop > 10);
+    this.showStickyBox = (_scrollElement.scrollTop > 0);
   }
 
   ngOnInit(): void {}

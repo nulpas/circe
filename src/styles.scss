@@ -18,11 +18,12 @@ HTML {
         margin: 0 0 0.4em 0;
 
         &:after {
-          border: 1px solid #cdd6df;
+          border: 1px solid var(--mda-color-space-20);
           content: '';
           display: block;
           margin: 20px 0;
           width: 40px;
+          transition: all .4s ease-in-out;
         }
       }
       H2 {
