@@ -1,7 +1,14 @@
 <section class="icons-header" [ngClass]="{sticky: showStickyBox}">
   <div>
     <h1>Icons</h1>
-    <span class="mda-font--12">({{totalIcons}} icons available)</span>
+    <span class="mda-font--12" *ngIf="totalIcons">({{totalIcons}} icons available)</span>
+  </div>
+
+  <div class="search-filter" *ngIf="iconsFilter.value">
+    <div class="mda-tag mda-tag--medium">
+      Filter: &nbsp;<span class="mda-font--semi-bold">{{iconsFilter.value}}</span>
+      <i class="mda-icon icon-cross" (click)="cleanFilter($event)"></i>
+    </div>
   </div>
 
   <div class="icons-search">
@@ -19,7 +26,7 @@
       <input
         id="icons-search"
         class="mda-input mda-input--search mda-input--small"
-        placeholder="Search Icons"
+        placeholder="Search icons..."
         [formControl]="iconsFilter"
         ccFormBehavior>
     </div>

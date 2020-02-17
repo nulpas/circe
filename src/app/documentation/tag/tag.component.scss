@@ -12,6 +12,17 @@
   }
   .tag-demo {
     @include demoElement();
+    .demo__stage {
+      .trigger-marquee {
+        margin-top: 100px;
+        opacity: 0;
+        transition: opacity .5s ease-out;
+        &.show {
+          opacity: 1;
+          transition: opacity .3s ease-in;
+        }
+      }
+    }
     .demo__controls {
       .tag-text {
         margin-top: 1.33em;

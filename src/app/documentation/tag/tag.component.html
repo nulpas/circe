@@ -22,9 +22,15 @@
         'mda-tag--info': tagStyle.value === 2,
         'mda-tag--critical': tagStyle.value === 3,
         'mda-tag--warning': tagStyle.value === 4,
-        'mda-tag--success': tagStyle.value === 5
-      }">
+        'mda-tag--success': tagStyle.value === 5,
+        'mda-tag--interactive': tagType.value === 2
+      }"
+      (click)="actionTag($event)">
       {{tagText.value}}
+      <i class="mda-icon icon-cross" *ngIf="tagIconAction.value" (click)="actionIcon($event)"></i>
+    </div>
+    <div class="trigger-marquee mda-font--18 mda-font--extra-light">
+      {{triggerMarquee}}
     </div>
   </section>
   <section class="demo__controls">
@@ -43,21 +49,58 @@
       <input id="tag-text" class="mda-input" placeholder="Write something..." [formControl]="tagText" ccFormBehavior>
     </div>
 
-    <h4>Style</h4>
-    <input id="style-default" type="radio" name="style" [value]="1" [formControl]="tagStyle">
-    <label for="style-default">Default</label>
+    <h4>Type</h4>
+    <input id="type-informative" type="radio" name="type" [value]="1" [formControl]="tagType">
+    <label for="type-informative">Informative</label>
 
-    <input id="style-info" type="radio" name="style" [value]="2" [formControl]="tagStyle">
-    <label for="style-info">Info</label>
+    <input id="type-interactive" type="radio" name="type" [value]="2" [formControl]="tagType">
+    <label for="type-interactive">Interactive</label>
 
-    <input id="style-critical" type="radio" name="style" [value]="3" [formControl]="tagStyle">
-    <label for="style-critical">Critical</label>
+    <ng-container *ngIf="tagType.value === 1">
+      <h4>Style</h4>
+      <input id="style-default" type="radio" name="style" [value]="1" [formControl]="tagStyle">
+      <label for="style-default">Default</label>
 
-    <input id="style-warning" type="radio" name="style" [value]="4" [formControl]="tagStyle">
-    <label for="style-warning">Warning</label>
+      <input id="style-info" type="radio" name="style" [value]="2" [formControl]="tagStyle">
+      <label for="style-info">Info</label>
 
-    <input id="style-success" type="radio" name="style" [value]="5" [formControl]="tagStyle">
-    <label for="style-success">Success</label>
+      <input id="style-critical" type="radio" name="style" [value]="3" [formControl]="tagStyle">
+      <label for="style-critical">Critical</label>
+
+      <input id="style-warning" type="radio" name="style" [value]="4" [formControl]="tagStyle">
+      <label for="style-warning">Warning</label>
+
+      <input id="style-success" type="radio" name="style" [value]="5" [formControl]="tagStyle">
+      <label for="style-success">Success</label>
+    </ng-container>
+
+    <ng-container *ngIf="tagType.value === 2">
+      <h4>Interactive Mode</h4>
+      <input id="interactive-mode-trigger" type="radio" name="interactive-mode" [value]="1" [formControl]="tagInteractiveMode">
+      <label for="interactive-mode-trigger">Trigger</label>
+
+      <input id="interactive-mode-selection" type="radio" name="interactive-mode" [value]="2" [formControl]="tagInteractiveMode">
+      <label for="interactive-mode-selection">Selection</label>
+    </ng-container>
+
+    <h4>Options</h4>
+    <input
+      id="option-icon-action"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-icon-action"
+      [formControl]="tagIconAction">
+    <label for="option-icon-action">Icon Action</label>
+
+    <ng-container *ngIf="tagType.value === 2">
+      <input
+        id="option-disabled"
+        class="mda-selection--vertical"
+        type="checkbox"
+        name="option-disabled"
+        [formControl]="tagDisabled">
+      <label for="option-disabled">Disabled</label>
+    </ng-container>
   </section>
 </section>
 

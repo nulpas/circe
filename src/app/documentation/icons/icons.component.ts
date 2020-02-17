@@ -6,6 +6,7 @@ import { Icon, IconSection, IconSectionsRequest } from '../../_types/response.ty
 import { ToolService } from '@core/tool.service';
 import { OrderPipe } from '@core/external.elements';
 import { FormControl } from '@angular/forms';
+import { EventsService } from '@core/events.service';
 
 @Component({
   selector: 'app-icons',
@@ -29,7 +30,8 @@ export class IconsComponent implements OnInit, OnDestroy {
     public tools: ToolService,
     private _data: DataService,
     private _order: OrderPipe,
-    private _cd: ChangeDetectorRef
+    private _cd: ChangeDetectorRef,
+    private _ev: EventsService
   ) {
     concat(
       _data.getIconSections(),
@@ -78,6 +80,11 @@ export class IconsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {}
+
+  public cleanFilter(event: MouseEvent) {
+    this._ev.preventNoNeededEvent(event);
+    this.iconsFilter.setValue('');
+  }
 
   ngOnDestroy(): void {
     this._componentDestroyed$.next();

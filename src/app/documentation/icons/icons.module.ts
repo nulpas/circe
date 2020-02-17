@@ -6,6 +6,7 @@ import { ToolService } from '@core/tool.service';
 import { OrderModule } from '@core/external.elements';
 import { FormBehaviorModule } from '@form-behavior/form-behavior.module';
 import { DataModule } from '../../_services/data/data.module';
+import { EventsService } from '@core/events.service';
 
 @NgModule({
   declarations: [IconsComponent],
@@ -17,7 +18,8 @@ import { DataModule } from '../../_services/data/data.module';
     DataModule.forChild()
   ],
   providers: [
-    ToolService
+    ToolService,
+    EventsService
   ]
 })
 export class IconsModule {}
