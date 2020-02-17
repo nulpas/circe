@@ -1,6 +1,6 @@
 {
   "name": "circe",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Angular Components library",
   "scripts": {
     "ng": "ng",

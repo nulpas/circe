@@ -15,15 +15,12 @@ HTML {
       H1 {
         font-weight: lighter;
         font-size: 2.5rem;
-        margin: 0 0 0.4em 0;
-
-        &:after {
-          border: 1px solid var(--mda-color-space-20);
-          content: '';
-          display: block;
-          margin: 20px 0;
+        margin: 0;
+        & + HR {
+          border: none;
+          border-top: 1px solid var(--mda-color-space-20);
           width: 40px;
-          transition: all .4s ease-in-out;
+          margin: 25px 0 35px 0;
         }
       }
       H2 {
@@ -32,11 +29,7 @@ HTML {
       H3 {
         margin: 1.6em 0 0.8em 0;
       }
-      p,
-      li,
-      ol,
-      .subtitle,
-      .value {
+      P, LI, OL, .subtitle, .value {
         line-height: 1.5;
         max-width: 700px;
       }

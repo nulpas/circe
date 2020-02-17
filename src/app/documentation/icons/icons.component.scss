@@ -6,22 +6,23 @@
   box-sizing: border-box;
   @include scrollInElement();
   .icons-header {
-    @include createFlexBox(row, normal, space-between, nowrap);
+    @include createFlexBox(row, center, space-between, nowrap);
     position: sticky;
     top: 0;
-    padding: 5px 35px;
-    margin: 20px 0 0;
+    padding: 0 35px;
+    margin-top: 24px;
     z-index: 1;
     background-color: var(--mda-color-neutral-full);
-    border: 1px solid var(--mda-color-neutral-full);
+    border-bottom: 1px solid var(--mda-color-neutral-full);
     transition: all .6s ease-in-out;
+    box-sizing: border-box;
     H1 {
       display: inline-block;
       margin-right: 4px;
       transition: all .6s ease-in-out;
     }
     .icons-search {
-      @include createFlexBox(row, normal, normal, nowrap);
+      @include createFlexBox(row, center, normal, nowrap);
       .control-show-content {
         height: 32px;
         display: inline-flex;
@@ -29,23 +30,22 @@
       }
     }
     &.sticky {
+      margin: 0;
+      padding: 5px 35px;
       border-bottom: 1px solid var(--mda-color-neutral-20);
-      align-items: center;
       transition: all .6s ease-in-out;
-      H1 {
-        margin: 0 4px 0 0;
-        transition: all .6s ease-in-out;
-        &:after {
-          margin: 0;
-          border: none;
-          transition: all .6s ease-in-out;
-        }
-      }
     }
   }
 
   .icons-content {
     padding: 0 35px 25px 35px;
+    box-sizing: border-box;
+    HR {
+      border: none;
+      border-top: 1px solid var(--mda-color-space-20);
+      width: 40px;
+      margin: 25px 0 35px 0;
+    }
     H2 {
       margin-top: 0;
       margin-bottom: 0.952380em;

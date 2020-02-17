@@ -77,13 +77,10 @@
     display: block;
     padding-right: 20%;
   }
-  HR {
+  HR.separator {
     border: none;
     border-top: 1px solid var(--mda-color-neutral-20);
-    margin: 20px 0;
-    &:first-of-type {
-      margin: 40px 0;
-    }
+    margin: 25px 0;
   }
   .special-headers {
     H1 {
