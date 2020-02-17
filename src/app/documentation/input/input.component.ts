@@ -71,7 +71,7 @@ export class InputComponent implements OnInit, OnDestroy {
   private _getHelperText(iconRightValue: number): string {
     let _output: string = this._sourceHelperText;
     switch (iconRightValue) {
-      case 1: _output = 'This is required field';
+      case 1: _output = 'This is a required field';
         break;
       case 4: _output = 'Try to write an email to check validation';
         break;
