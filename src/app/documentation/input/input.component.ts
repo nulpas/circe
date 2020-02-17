@@ -21,7 +21,7 @@ export class InputComponent implements OnInit, OnDestroy {
   public errorMessage: string = '';
   public helperText: string;
 
-  private _sourceHelperText: string = 'This is helper text';
+  private _sourceHelperText: string = 'This is a helper text';
   private _componentDestroy$: Subject<undefined> = new Subject();
 
   constructor(private _renderer: Renderer2) {
@@ -34,7 +34,7 @@ export class InputComponent implements OnInit, OnDestroy {
     ).subscribe((value: string) => {
       this.errorMessage = '';
       if (this.inputIconRight.value === 1 && this.input.invalid && this.input.dirty) {
-        this.errorMessage = 'Required field. Write something';
+        this.errorMessage = 'Required field. Write something.';
       }
       if (this.inputIconRight.value === 4 && this.input.invalid) {
         this.errorMessage = 'Introduce a valid email';

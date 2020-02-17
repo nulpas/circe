@@ -25,14 +25,14 @@ export class TextareaComponent implements OnInit, OnDestroy {
 
   constructor(private _renderer: Renderer2) {
     this.label = 'Label';
-    this.helperText = 'This is helper text';
+    this.helperText = 'This is a helper text';
 
     this.textarea.valueChanges.pipe(
       takeUntil(this._componentDestroy$)
     ).subscribe((value: string) => {
       this.errorMessage = '';
       if (this.textarea.invalid) {
-        this.errorMessage = 'Required field. Write something';
+        this.errorMessage = 'Required field. Write something.';
       }
     });
 

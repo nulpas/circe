@@ -27,7 +27,7 @@ export class SelectComponent implements OnInit, OnDestroy {
 
   constructor(private _renderer: Renderer2) {
     this.label = 'Label';
-    this.helperText = 'This is helper text';
+    this.helperText = 'This is a helper text';
 
     this.selectType.disable({ emitEvent: false });
 
@@ -36,7 +36,7 @@ export class SelectComponent implements OnInit, OnDestroy {
     ).subscribe(() => {
       this.errorMessage = '';
       if (this.select.invalid && this.select.dirty) {
-        this.errorMessage = 'Required field. Write something';
+        this.errorMessage = 'Required field. Choose an option.';
       }
     });
 
