@@ -10,7 +10,7 @@
     position: sticky;
     top: 0;
     padding: 5px 35px;
-    margin: 20px 0;
+    margin: 20px 0 0;
     z-index: 1;
     background-color: var(--mda-color-neutral-full);
     border: 1px solid var(--mda-color-neutral-full);
@@ -47,6 +47,7 @@
   .icons-content {
     padding: 0 35px 25px 35px;
     H2 {
+      margin-top: 0;
       margin-bottom: 0.952380em;
     }
     .icons-container {
