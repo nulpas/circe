@@ -41,6 +41,12 @@ HTML {
         white-space: nowrap;
         text-overflow: ellipsis;
       }
+
+      .page-spacer {
+        height: 25px;
+        min-height: 25px;
+        max-height: 25px;
+      }
     }
   }
 }
