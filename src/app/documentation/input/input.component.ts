@@ -37,7 +37,7 @@ export class InputComponent implements OnInit, OnDestroy {
         this.errorMessage = 'Required field. Write something';
       }
       if (this.inputIconRight.value === 4 && this.input.invalid) {
-        this.errorMessage = 'Introduce valid email';
+        this.errorMessage = 'Introduce a valid email';
       }
     });
 

@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
     ).subscribe(() => {
       this.errorMessage = '';
       if (this.login.controls.email.invalid) {
-        this.errorMessage = 'Introduce valid email';
+        this.errorMessage = 'Introduce a valid email';
       }
     });
   }
