@@ -79,6 +79,11 @@
         "id": "tag",
         "name": "Tag",
         "location": ["tag"]
+      },
+      {
+        "id": "spinner",
+        "name": "Spinner",
+        "location": ["spinner"]
       }
     ]
   }
