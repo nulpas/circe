@@ -1,7 +1,7 @@
 <h1>Spinner</h1>
 <hr>
 <span class="subtitle mda-font--18">
-  Spinners are used when retrieving data or performing slow computations, and help to notify users that loading is
+  Spinners are used when retrieving data or performing slow computations and help to notify users that loading is
   underway. Spinners indicate that content will process for an indeterminate amount of time.
 </span>
 
@@ -69,26 +69,40 @@
 
 <h2>Design and Behavior</h2>
 <p>
-  Text inputs are designed to collect short free text from the user. Typical examples of use could be a name or address
-  request.
+  Spinners are used to give feedback to the users about some action it triggers clicking or acting on someplace
+  in the UI.
 </p>
 <p>
-  Inputs allow adding some icons at the right side as a configurable option.
-  These icons can be used to be more visual and explicit about the purpose of the input.
+  This type of feedback is mandatory when the user can suffer a potential long-wait process.
+  Keep in mind that server requests always are potential long-wait processes due to lag or connection problems.
 </p>
 <p>
-  Two height sizes are available to adapt the inputs to different situations.
-  Besides, the Input Text component includes a label and a help text to give some details to the user about
-  tips about how the content must be formatted (E.g. to define limits, non-valid characters, etc.).
+  With spinners, we avoid user doubts about if the action was triggered and, at the same time, avoid potential clicking retries.
 </p>
 <p>
-  The same help text space is used to show error messages when needed.
-  However, if error, the text is red-colored as well as the outline of the text box.
+  A spinner can be used in different places due to different situations along the app use lifecycle. So, must be flexible
+  and adaptable on its design.
 </p>
 <p>
-  The textbox is highlighted when has the focus to guide the user visually to the component that owns the action. The
-  textbox is highlighted when it has the focus to guide the user visually to the component that owns the action.
+  Some sample uses of the same spinners could be:
 </p>
+<ul>
+  <li>
+    Full-screen when the whole page must be blocked until the process ends.
+  </li>
+  <li>
+    Inside a button when the user triggers a long-wait action clicking on the button.
+  </li>
+  <li>
+    Inside a table row when the user triggers a long-wait action clicking somewhere on the table row.
+  </li>
+  <li>
+    Over a table when the user triggers a long-wait action that blocks the full table.
+  </li>
+  <li>
+    etc.
+  </li>
+</ul>
 
 <h2>Usage and Best Practices</h2>
 <p>
@@ -97,42 +111,17 @@
 </p>
 <ul>
   <li>
-    Inputs have many states and can have specific validation rules for the introduced data.
-    Therefore if the validation rules are not met an error message will appear.
-    The user should always know if specific rules are applied to that input that’s why we
-    should put clear hints about what the user should introduce.
-    This means that using the placeholder and the help text, the user should have enough information
-    to fill the field correctly.
+    Use the spinner always the user can potentially wait for long times waiting (more than 1 second).
   </li>
   <li>
-    The placeholder of the Input Text must show to the user a valid example of how it has to format its text.
-    Some samples could be "E.g. 32" (indicates a number), "E.g. my_field" (indicates uppercase and whitespaces are not
-    allowed), etc.
+    Combine the use of the spinner with disabled modes or overlay blockers to give the user the right feedback about
+    what items on your UI are blocked due to the action triggered.
   </li>
   <li>
-    By default, the inputs have a label and a placeholder text that shows or an example of the text that it should be
-    introduced or a call to action text. The label should be a clear statement of what the user is asked to respond on
-    the input field. Some samples could be "Disk space (in MB)".
+    Control potential connection problems to avoid eternal spinners, giving the user a message about the problem.
   </li>
   <li>
-    If some parts of the text have fixed parts, they must be visible but non-editable by the user.
-    E.g. an URL that must be always https. Ideally, the text input must show the string "https://" at the
-    beginning of the textbox with non-edit options. When the user starts writing, will do after the string.
-  </li>
-  <li>
-    When the user clicks on an input, the on focus state starts, the input gets blue and a blinking cursor appears at
-    the beginning of the input so the user know is there. While the user doesn’t write anything the placeholder text
-    remains. If the user starts to write, the placeholder disappears. If the user deletes the content, the placeholder
-    appears again.
-  </li>
-  <li>
-    If the input has validation rules, they should be clearly explained in the hint text that area which appears
-    immediately under the input and never disappears. Some samples could be "max. 20 chars" or "only words allowed"
-    When the user writes on this kind of inputs, an error message
-    should appear only when the validation rules are not met and the user clicks outside the input. In that case, an
-    error message appears explaining why the validation has failed immediately under the hint text.
-  </li>
-  <li>
-    Never must appear an error message if the user doesn't carry out any action over the Input.
+    When an action could take several minutes or more, it must include regular changing messages to give the user
+    the feeling that its process is running. Try always to complete messages with percentage information.
   </li>
 </ul>
