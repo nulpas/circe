@@ -1,17 +1,11 @@
 import { NgModule } from '@angular/core';
 import { SpinnerComponent } from './spinner.component';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  exports: [
-    SpinnerComponent
-  ],
-  declarations: [
-    SpinnerComponent
-  ],
-  imports: [
-    BrowserModule
-  ]
+  exports: [SpinnerComponent],
+  declarations: [SpinnerComponent],
+  imports: [CommonModule]
 })
 
 export class SpinnerModule {}

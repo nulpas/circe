@@ -21,6 +21,7 @@ import { SelectModule } from './select/select.module';
 import { ButtonModule } from './button/button.module';
 import { SwitchModule } from './switch/switch.module';
 import { TagModule } from './tag/tag.module';
+import { SpinnerModule } from './spinner/spinner.module';
 
 @NgModule({
   declarations: [DocumentationComponent],
@@ -43,6 +44,7 @@ import { TagModule } from './tag/tag.module';
     ButtonModule,
     SwitchModule,
     TagModule,
+    SpinnerModule,
     DataModule.forChild(),
     LoginServicesModule.forChild()
   ],

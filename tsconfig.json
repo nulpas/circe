@@ -43,11 +43,11 @@
       "on-dom-activity/*": [
         "dist/on-dom-activity/*"
       ],
-      "spinner": [
-        "dist/spinner"
+      "@spinner": [
+        "projects/spinner/src/lib"
       ],
-      "spinner/*": [
-        "dist/spinner/*"
+      "@spinner/*": [
+        "projects/spinner/src/lib/*"
       ],
       "table": [
         "dist/table"

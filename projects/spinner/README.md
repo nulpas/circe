@@ -4,7 +4,7 @@ Several css spinner elements width optional marquee texts.
 
 ## Compatibility
 
-Angular v.7.2.15
+Angular >= v.7.2.15
 
 ## Installation
 
@@ -14,67 +14,4 @@ run `yarn add @lunaeme/circe-spinner`.
 
 ## Use
 
-You need to import `SpinnerModule` into your module `imports` section.
-
-Then use this way:
-
-```html
-<cc-spinner></cc-spinner>
-```
-
-## Inputs
-
->```typescript
-> @Input() type: SpinnerType = 'default';
->```
-Defines different designs of spinners.
-
-All possible options are: 'none', 'default', 'grid', 'cube-grid', 'ellipsis', 'fading-circle', 'pulse'.
-
-DEFAULT: default
-
-
-&nbsp;
->```typescript
-> @Input() size: number = 100;
->```
-Set the spinner size in pixels (px). Applies to width and height in case that they are square. Otherwise skip height and makes it proportional.
-
-DEFAULT: 100
-
-* Types 'grid' and 'ellipsis' can not be resized. If size is set, it will be ignored.
-
-
-&nbsp;
->```typescript
-> @Input() tooltip: string;
->```
-Set tooltip with text defined on spinner layer MouseOn event.
-
-DEFAULT: undefined
-
-
-&nbsp;
->```typescript
-> @Input() textMarquee: string | Array<string>;
->```
-Phrase or array of phrases that will be shown under de spinner element. If it is array, a marquee appears with intermittent messages.
-
-DEFAULT: undefined
-
-
-&nbsp;
->```typescript
-> @Input() textMarqueeInterval: number = 3000;
->```
-Time interval in milliseconds to show marquee intermittent messages if previous input is array.
-
-DEFAULT: 3000
-
-## Outputs
-
-No outputs defined.
-
-## Repo
-
-<https://github.com/nulpas/circe/tree/master/projects/spinner>
+ToDo ...

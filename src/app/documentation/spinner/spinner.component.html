@@ -1,76 +1,69 @@
-<h1>Input Text</h1>
+<h1>Spinner</h1>
 <hr>
 <span class="subtitle mda-font--18">
-  Input Text component enables the user to interact with and input data. Use when the application requires short-form
-  free text content from the user.
+  Spinners are used when retrieving data or performing slow computations, and help to notify users that loading is
+  underway. Spinners indicate that content will process for an indeterminate amount of time.
 </span>
 
 <h2></h2>
-<section class="input-demo">
-  <section class="demo__stage">
-    <label *ngIf="inputLabel.value" class="mda-label" for="input-test">{{label}}</label>
-    <input
-      id="input-test"
-      class="mda-input"
-      placeholder="E.g. https://www.mysite.com"
+<section class="spinner-demo">
+  <section
+    class="demo__stage"
+    [ngClass]="{
+      'show-background': spinnerBackground.value,
+      'flex-container': spinnerDisplay.value === 3,
+      'inverse': spinnerColor.value === 2
+    }">
+    <cc-spinner
       [ngClass]="{
-        'mda-input--search': inputIconRight.value === 2,
-        'mda-input--user': inputIconRight.value === 3,
-        'mda-input--email': inputIconRight.value === 4,
-        'mda-input--password': inputIconRight.value === 5,
-        'mda-input--small': inputSize.value === 2
+        'mda-spinner--24': spinnerSize.value === 2,
+        'mda-spinner--16': spinnerSize.value === 3,
+        'mda-spinner--12': spinnerSize.value === 4,
+        'mda-spinner--inline': spinnerDisplay.value === 2,
+        'mda-spinner--inherit': spinnerDisplay.value === 3,
+        'mda-spinner--inverse': spinnerColor.value === 2
       }"
-      [formControl]="input"
-      ccFormBehavior [report]="helperText" [error]="errorMessage" [render]="true">
+      [render]="render"></cc-spinner>
   </section>
   <section class="demo__controls">
     <h4>Size</h4>
-    <input id="size-standard" type="radio" name="size" [value]="1" [formControl]="inputSize">
-    <label for="size-standard">Standard</label>
+    <input id="size-standard" type="radio" name="size" [value]="1" [formControl]="spinnerSize">
+    <label for="size-standard">Default</label>
 
-    <input id="size-small" type="radio" name="size" [value]="2" [formControl]="inputSize">
-    <label for="size-small">Small</label>
+    <input id="size-24" type="radio" name="size" [value]="2" [formControl]="spinnerSize">
+    <label for="size-24">Button Standard</label>
 
-    <h4>Icon Right</h4>
-    <input id="icon-right-none" type="radio" name="icon-right" [value]="1" [formControl]="inputIconRight">
-    <label for="icon-right-none">None</label>
+    <input id="size-16" type="radio" name="size" [value]="3" [formControl]="spinnerSize">
+    <label for="size-16">Button Small</label>
 
-    <input id="icon-right-search" type="radio" name="icon-right" [value]="2" [formControl]="inputIconRight">
-    <label for="icon-right-search">Search</label>
+    <input id="size-12" type="radio" name="size" [value]="4" [formControl]="spinnerSize">
+    <label for="size-12">Text</label>
 
-    <input id="icon-right-user" type="radio" name="icon-right" [value]="3" [formControl]="inputIconRight">
-    <label for="icon-right-user">User</label>
+    <h4>Display</h4>
+    <input id="display-block" type="radio" name="display" [value]="1" [formControl]="spinnerDisplay">
+    <label for="display-block">Block</label>
 
-    <input id="icon-right-email" type="radio" name="icon-right" [value]="4" [formControl]="inputIconRight">
-    <label for="icon-right-email">e-Mail</label>
+    <input id="display-inline" type="radio" name="display" [value]="2" [formControl]="spinnerDisplay">
+    <label for="display-inline">Inline</label>
 
-    <input id="icon-right-password" type="radio" name="icon-right" [value]="5" [formControl]="inputIconRight">
-    <label for="icon-right-password">Password</label>
+    <input id="display-container-display" type="radio" name="display" [value]="3" [formControl]="spinnerDisplay">
+    <label for="display-container-display">Container display</label>
+
+    <h4>Color</h4>
+    <input id="color-standard" type="radio" name="color" [value]="1" [formControl]="spinnerColor">
+    <label for="color-standard">Standard</label>
+
+    <input id="color-inverse" type="radio" name="color" [value]="2" [formControl]="spinnerColor">
+    <label for="color-inverse">Inverse</label>
 
     <h4>Options</h4>
     <input
-      id="option-label"
+      id="option-background"
       class="mda-selection--vertical"
       type="checkbox"
-      name="option-label"
-      [formControl]="inputLabel">
-    <label for="option-label">Label</label>
-
-    <input
-      id="option-disabled"
-      class="mda-selection--vertical"
-      type="checkbox"
-      name="option-disabled"
-      [formControl]="inputDisabled">
-    <label for="option-disabled">Disabled</label>
-
-    <input
-      id="option-helper-text"
-      class="mda-selection--vertical"
-      type="checkbox"
-      name="option-helper-text"
-      [formControl]="inputHelperText">
-    <label for="option-helper-text">Helper / Error text</label>
+      name="option-background"
+      [formControl]="spinnerBackground">
+    <label for="option-background">Background</label>
   </section>
 </section>
 

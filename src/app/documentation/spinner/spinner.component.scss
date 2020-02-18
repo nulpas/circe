@@ -1,0 +1,29 @@
+@import '../../../mixins';
+
+:host {
+  display: block;
+  padding: 25px 35px;
+  box-sizing: border-box;
+  @include scrollInElement();
+
+  P, .subtitle {
+    display: block;
+    padding-right: 20%;
+  }
+  .spinner-demo {
+    @include demoElement();
+    .demo__stage {
+      &.show-background {
+        background-color: var(--mda-color-neutral-4);
+        &.inverse {
+          background-color: var(--mda-color-action);
+        }
+      }
+      &.flex-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
