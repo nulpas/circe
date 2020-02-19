@@ -20,6 +20,11 @@
     "name": "Theme",
     "options": [
       {
+        "id": "overview",
+        "name": "Overview",
+        "location": ["overview"]
+      },
+      {
         "id": "color-schema",
         "name": "Color Schema",
         "location": ["color-schema"]
@@ -33,11 +38,6 @@
         "id": "icons",
         "name": "Icons",
         "location": ["icons"]
-      },
-      {
-        "id": "overview",
-        "name": "Overview",
-        "location": ["overview"]
       }
     ]
   },
