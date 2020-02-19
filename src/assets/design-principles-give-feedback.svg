@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="100px" viewBox="0 0 400 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>design-principles-give-feedback</title>
+    <desc>Created with Sketch.</desc>
+    <g id="design-principles-give-feedback" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#0F1E2C" x="0" y="0" width="400" height="100"></rect>
+        <g id="Group" transform="translate(126.000000, 8.000000)">
+            <rect id="Rectangle" fill="#38B5E4" x="0" y="1" width="149" height="12" rx="1"></rect>
+            <text id="x" font-family="NunitoSans-Regular, Nunito Sans" font-size="10" font-weight="normal" fill="#FFFFFF">
+                <tspan x="140" y="10">x</tspan>
+            </text>
+            <rect id="Rectangle" fill="#999999" x="4" y="4" width="105" height="6"></rect>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="100px" viewBox="0 0 400 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>design-principles-focus-on-details</title>
+    <desc>Created with Sketch.</desc>
+    <g id="design-principles-focus-on-details" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#0F1E2C" x="0" y="0" width="400" height="100"></rect>
+        <g id="Group" transform="translate(117.000000, 11.000000)">
+            <circle id="Oval" stroke="#979797" cx="127.5" cy="38.5" r="38.5"></circle>
+            <path d="M118,33 C120.209139,33 122,34.790861 122,37 L122,73 C122,74.3797338 121.301436,75.5963092 120.238699,76.3153345 C102.446988,72.9201003 89,57.2804063 89,38.5 C89,36.6323916 89.1329801,34.7958423 89.3899882,32.9993043 L118,33 Z" id="Combined-Shape" stroke="#979797" stroke-dasharray="5,4"></path>
+            <path d="M89,38.5 C89,57.8957007 103.342538,73.9415222 122.000304,76.6101547 L122,77 L-9.23705556e-14,77 L-9.23705556e-14,33 L89.3901004,32.9985201 C89.1330188,34.7953078 89,36.6321198 89,38.5 Z" id="Combined-Shape" fill="#37B5E4"></path>
+        </g>
+    </g>
+</svg>
