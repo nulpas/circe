@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="100px" viewBox="0 0 400 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>design-principles-design-for-error-prevention</title>
+    <desc>Created with Sketch.</desc>
+    <g id="design-principles-design-for-error-prevention" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#0F1E2C" x="0" y="0" width="400" height="100"></rect>
+        <g id="Group" transform="translate(121.000000, 23.000000)">
+            <rect id="Rectangle" fill="#999999" x="0" y="9" width="105" height="6"></rect>
+            <text id="waiting,-ellipsis---ico_stratio" font-family="ico_stratio" font-size="10" font-weight="normal" fill="#FFFFFF">
+                <tspan x="115" y="16"></tspan>
+            </text>
+            <rect id="Rectangle" fill="#FFFFFF" x="112" y="20" width="47" height="34"></rect>
+            <text id="trash---ico_stratio" font-family="ico_stratio" font-size="6" font-weight="normal" fill="#C9253C">
+                <tspan x="117" y="49"></tspan>
+            </text>
+            <rect id="Rectangle" fill="#D8D8D8" x="127" y="44" width="25" height="5"></rect>
+            <rect id="Rectangle" fill="#FFFFFF" x="14" y="0" width="85" height="43"></rect>
+            <text id="cross---ico_stratio" font-family="ico_stratio" font-size="6" font-weight="normal" fill="#0F1B27">
+                <tspan x="18" y="9"></tspan>
+            </text>
+        </g>
+    </g>
+</svg>
