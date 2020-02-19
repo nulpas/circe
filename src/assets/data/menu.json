@@ -10,7 +10,7 @@
       },
       {
         "id": "user-interface",
-        "name": "User Interface",
+        "name": "UI Bricks",
         "location": ["user-interface"]
       }
     ]
