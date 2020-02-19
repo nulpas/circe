@@ -23,6 +23,7 @@ export class InputComponent implements OnInit, OnDestroy {
 
   public errorMessage: string = '';
   public helperText: string;
+  public marquee: string;
 
   private _sourceHelperText: string = 'This is a helper text';
   private _componentDestroy$: Subject<undefined> = new Subject();
@@ -58,6 +59,14 @@ export class InputComponent implements OnInit, OnDestroy {
       takeUntil(this._componentDestroy$)
     ).subscribe((r: boolean) => {
       (r) ? this.input.disable({ emitEvent: false }) : this.input.enable({ emitEvent: false });
+    });
+
+    this.inputIconAction.valueChanges.pipe(
+      takeUntil(this._componentDestroy$)
+    ).subscribe((r: boolean) => {
+      if (r) {
+        this.marquee = 'Write something to see how icon action works';
+      }
     });
 
     this.inputHelperText.valueChanges.pipe(
