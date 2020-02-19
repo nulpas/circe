@@ -75,13 +75,13 @@ export class ButtonComponent implements OnInit, OnDestroy {
 
   private _whileCalling(disabledSwitch: boolean) {
     if (disabledSwitch) {
-      this.buttonSize.disable();
-      this.buttonText.disable();
-      this.buttonType.disable();
-      this.buttonDisabled.disable();
-      this.buttonIcon.disable();
-      this.buttonIconType.disable();
-      this.buttonSpinner.disable();
+      this.buttonSize.disable({ emitEvent: false });
+      this.buttonText.disable({ emitEvent: false });
+      this.buttonType.disable({ emitEvent: false });
+      this.buttonDisabled.disable({ emitEvent: false });
+      this.buttonIcon.disable({ emitEvent: false });
+      this.buttonIconType.disable({ emitEvent: false });
+      this.buttonSpinner.disable({ emitEvent: false });
     } else {
       this.buttonSize.enable();
       this.buttonText.enable();
