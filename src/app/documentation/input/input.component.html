@@ -19,7 +19,7 @@
         'mda-input--email': inputIconRight.value === 4,
         'mda-input--password': inputIconRight.value === 5,
         'mda-input--small': inputSize.value === 2,
-        'mda-input--action-clear': inputIconActionTypes.value === 1
+        'mda-input--action-clear': inputIconAction.value && inputIconActionTypes.value === 1
       }"
       [formControl]="input"
       ccFormBehavior [report]="helperText" [error]="errorMessage" [render]="true" (clickIcon)="clearInput($event)">

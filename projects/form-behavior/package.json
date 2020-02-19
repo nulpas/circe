@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-form-behavior",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Circe :: Angular Form-Behavior Directive",
   "repository": {
     "type": "git",
