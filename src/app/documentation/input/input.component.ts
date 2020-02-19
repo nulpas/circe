@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, Renderer2 } from
 import { FormControl, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { EventsService } from '@core/events.service';
 
 @Component({
   selector: 'app-input',
@@ -17,6 +18,8 @@ export class InputComponent implements OnInit, OnDestroy {
   public inputDisabled: FormControl = new FormControl(false);
   public inputLabel: FormControl = new FormControl(true);
   public inputHelperText: FormControl = new FormControl(true);
+  public inputIconAction: FormControl = new FormControl(false);
+  public inputIconActionTypes: FormControl = new FormControl(1);
 
   public errorMessage: string = '';
   public helperText: string;
@@ -24,8 +27,9 @@ export class InputComponent implements OnInit, OnDestroy {
   private _sourceHelperText: string = 'This is a helper text';
   private _componentDestroy$: Subject<undefined> = new Subject();
 
-  constructor(private _renderer: Renderer2) {
+  constructor(private _renderer: Renderer2, private _ev: EventsService) {
     this.label = 'Label';
+    this.inputIconActionTypes.disable();
     this.helperText = this._getHelperText(this.inputIconRight.value);
     this._setValidators(this.inputIconRight.value);
 
@@ -90,6 +94,11 @@ export class InputComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {}
+
+  public clearInput(event: MouseEvent): void {
+    this._ev.preventNoNeededEvent(event);
+    this.input.setValue('', { emitEvent: false });
+  }
 
   ngOnDestroy(): void {
     this._componentDestroy$.next();

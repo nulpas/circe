@@ -18,10 +18,11 @@
         'mda-input--user': inputIconRight.value === 3,
         'mda-input--email': inputIconRight.value === 4,
         'mda-input--password': inputIconRight.value === 5,
-        'mda-input--small': inputSize.value === 2
+        'mda-input--small': inputSize.value === 2,
+        'mda-input--action-clear': inputIconActionTypes.value === 1
       }"
       [formControl]="input"
-      ccFormBehavior [report]="helperText" [error]="errorMessage" [render]="true">
+      ccFormBehavior [report]="helperText" [error]="errorMessage" [render]="true" (clickIcon)="clearInput($event)">
   </section>
   <section class="demo__controls">
     <h4>Size</h4>
@@ -65,12 +66,26 @@
     <label for="option-disabled">Disabled</label>
 
     <input
+      id="option-icon-action"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-icon-action"
+      [formControl]="inputIconAction">
+    <label for="option-icon-action">Icon action</label>
+
+    <input
       id="option-helper-text"
       class="mda-selection--vertical"
       type="checkbox"
       name="option-helper-text"
       [formControl]="inputHelperText">
     <label for="option-helper-text">Helper / Error text</label>
+
+    <ng-container *ngIf="inputIconAction.value">
+      <h4>Icon Action Types</h4>
+      <input id="icon-action-clear" type="radio" name="icon-action" [value]="1" [formControl]="inputIconActionTypes">
+      <label for="icon-action-clear">Clear input</label>
+    </ng-container>
   </section>
 </section>
 

@@ -1,14 +1,14 @@
 import {
-  AfterViewChecked, AfterViewInit, Directive, ElementRef,
-  Input, OnChanges, OnDestroy, OnInit,
+  AfterViewChecked, AfterViewInit, Directive, ElementRef, EventEmitter,
+  Input, OnChanges, OnDestroy, OnInit, Output,
   Renderer2, SimpleChanges
 } from '@angular/core';
 import {
-  ADD, AssociateElementType, ClassAction, ClassEvent,
-  DISABLED, elementRules, elementStatuses, ERROR,
-  FOCUSED, FORCE_TO_DISABLED, FORCE_TO_SMALL, FormBehaviorTargetElement,
-  LABEL, LabelForceType, LabelRule, REMOVE,
-  REPORT, Rule, WRAPPER
+  ACTION, ADD, AssociateElementType, ClassAction,
+  ClassEvent, DISABLED, elementRules, elementStatuses,
+  ERROR, FOCUSED, FORCE_TO_DISABLED, FORCE_TO_SMALL,
+  FormBehaviorTargetElement, LABEL, LabelForceType, LabelRule,
+  REMOVE, REPORT, Rule, WRAPPER
 } from './form-behavior.types';
 import { ToolService } from '@lunaeme/circe-core';
 import { fromEvent, Subject } from 'rxjs';
@@ -21,6 +21,7 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
   @Input() report: string = '';
   @Input() error: string = '';
   @Input() render: boolean = false;
+  @Output() clickIcon: EventEmitter<MouseEvent> = new EventEmitter();
 
   public valid: boolean;
   public pristine: boolean;
@@ -54,6 +55,7 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
         if (!this._isAngularForm && this.pristine) {
           this.pristine = false;
         }
+        this._normalizeAction();
         this._getFormStatuses(Array.from(this._element.classList));
         this._errorFocusBehavior();
         this._setElementPlaceholder();
@@ -62,6 +64,7 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
       fromEvent(this._element, 'change').pipe(
         takeUntil(this._componentDestroyed$)
       ).subscribe((event: Event) => {
+        this._normalizeAction();
         this._getFormStatuses(Array.from(this._element.classList));
         if (!this._isAngularForm && !this.touched) {
           this.touched = true;
@@ -138,6 +141,10 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
   private _checkReport(element: HTMLElement): boolean {
     return this._elementRules.report.tags.some((tag: string) => element.tagName === tag) &&
       this._elementRules.report.classes.some((className: string) => element.classList.contains(className));
+  }
+
+  private _checkAction(element: HTMLElement): boolean {
+    return this._elementRules.action.classes.some((className: string) => element.classList.contains(className));
   }
 
   private _setElementPlaceholder(): void {
@@ -282,6 +289,9 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
       this._wrapper = undefined;
     }
 
+    // ###### Action
+    this._normalizeAction();
+
     // ###### Sizing
     const _elementSize: string = this._elementRules.sizes.find((className: string) => this._element.classList.contains(className)) || '';
     if (this._label) {
@@ -309,6 +319,18 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
         this._renderer.setAttribute(this._element, 'type', 'password');
       } else {
         this._renderer.setAttribute(this._element, 'type', this._elementOriginalType);
+      }
+    }
+  }
+
+  private _normalizeAction(): void {
+    if (this._checkAction(this._element)) {
+      if (this._element.value) {
+        this._renderer.addClass(this._element, ACTION);
+        this._renderAssociates(WRAPPER, ACTION, ADD);
+      } else {
+        this._renderer.removeClass(this._element, ACTION);
+        this._renderAssociates(WRAPPER, ACTION, REMOVE);
       }
     }
   }
@@ -352,9 +374,9 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
     switch (elementType) {
       case LABEL: _element = this._label;
         break;
-      case REPORT: _element = this._wrapper;
+      case REPORT: _element = this._report;
         break;
-      case WRAPPER: _element = this._report;
+      case WRAPPER: _element = this._wrapper;
         break;
     }
     if (!!_element ) {
@@ -387,6 +409,9 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
         takeUntil(this._componentDestroyed$)
       ).subscribe((event: MouseEvent) => {
         if (!this._element.disabled && this._checkWrapper(event.target as HTMLElement)) {
+          if (this._checkAction(this._element) && this._element.classList.contains(ACTION)) {
+            this.clickIcon.emit(event);
+          }
           // ## Doing this to set cursor on focus at the end of text:
           const _elementContent: string = this._element.value;
           this._element.value = '';

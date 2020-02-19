@@ -11,6 +11,7 @@ export interface Rule {
   placeholder?: PlaceholderRule;
   label: LabelRule;
   wrappers: WrapperRule;
+  action?: ActionRule;
   report?: ReportRule;
 }
 export interface PlaceholderRule {
@@ -31,6 +32,9 @@ export interface WrapperRule {
   tags: Array<string>;
   classes: Array<string>;
 }
+export interface ActionRule {
+  classes: Array<string>;
+}
 export interface ReportRule {
   tags: Array<string>;
   main: string;
@@ -40,7 +44,7 @@ export interface ReportRule {
 export type LabelForceType = 'forceToSmall' | 'forceToDisabled';
 export type AssociateElementType = 'label' | 'wrapper' | 'report';
 export type ClassAction = 'add' | 'remove';
-export type ClassEvent = 'disabled' | 'error' | 'focus';
+export type ClassEvent = 'disabled' | 'error' | 'focus' | 'action';
 
 /**
  * @description
@@ -75,12 +79,13 @@ export const REMOVE: ClassAction = 'remove';
 export const DISABLED: ClassEvent = 'disabled';
 export const ERROR: ClassEvent = 'error';
 export const FOCUSED: ClassEvent = 'focus';
+export const ACTION: ClassEvent = 'action';
 
 /**
  * @description
  * Model constant. Definition array of element statuses.
  */
-export const elementStatuses: Array<ClassEvent> = [FOCUSED, ERROR, DISABLED];
+export const elementStatuses: Array<ClassEvent> = [FOCUSED, ERROR, DISABLED, ACTION];
 
 /**
  * @description
@@ -111,7 +116,10 @@ export const elementRules: ElementRules = {
     label: labelCommon,
     wrappers: {
       tags: ['SPAN', 'DIV'],
-      classes: ['mda-input--search', 'mda-input--email', 'mda-input--user', 'mda-input--password']
+      classes: ['mda-input--search', 'mda-input--email', 'mda-input--user', 'mda-input--password', 'mda-input--action-clear']
+    },
+    action: {
+      classes: ['mda-input--action-clear']
     },
     report: reportCommon
   },
