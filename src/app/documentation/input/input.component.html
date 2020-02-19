@@ -8,12 +8,13 @@
 <h2></h2>
 <section class="input-demo">
   <section class="demo__stage">
-    <label *ngIf="inputLabel.value" class="mda-label" for="input-test">{{label}}</label>
-    <input
-      id="input-test"
-      class="mda-input"
-      placeholder="E.g. https://www.mysite.com"
-      [ngClass]="{
+    <div>
+      <label *ngIf="inputLabel.value" class="mda-label" for="input-test">{{label}}</label>
+      <input
+        id="input-test"
+        class="mda-input"
+        placeholder="E.g. https://www.mysite.com"
+        [ngClass]="{
         'mda-input--search': inputIconRight.value === 2,
         'mda-input--user': inputIconRight.value === 3,
         'mda-input--email': inputIconRight.value === 4,
@@ -21,8 +22,14 @@
         'mda-input--small': inputSize.value === 2,
         'mda-input--action-clear': inputIconAction.value && inputIconActionTypes.value === 1
       }"
-      [formControl]="input"
-      ccFormBehavior [report]="helperText" [error]="errorMessage" [render]="true" (clickIcon)="clearInput($event)">
+        [formControl]="input"
+        ccFormBehavior [report]="helperText" [error]="errorMessage" [render]="true" (clickIcon)="clearInput($event)">
+    </div>
+    <div
+      class="marquee mda-font--18 mda-font--extra-light"
+      [ngClass]="{'show': inputIconAction.value}">
+      {{marquee}}
+    </div>
   </section>
   <section class="demo__controls">
     <h4>Size</h4>

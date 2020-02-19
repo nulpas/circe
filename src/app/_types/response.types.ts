@@ -1,6 +1,7 @@
 export interface MenuGroup {
   id: string;
   name: string;
+  order: boolean;
   options: Array<MenuOption>;
 }
 

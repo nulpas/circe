@@ -23,6 +23,7 @@ import { SwitchModule } from './switch/switch.module';
 import { TagModule } from './tag/tag.module';
 import { SpinnerModule } from './spinner/spinner.module';
 import { OverviewModule } from './overview/overview.module';
+import { OrderConditionModule } from '../_pipes/order-condition/order-condition.module';
 
 @NgModule({
   declarations: [DocumentationComponent],
@@ -47,6 +48,7 @@ import { OverviewModule } from './overview/overview.module';
     TagModule,
     SpinnerModule,
     OverviewModule,
+    OrderConditionModule,
     DataModule.forChild(),
     LoginServicesModule.forChild()
   ],

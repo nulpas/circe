@@ -44,6 +44,7 @@
   {
     "id": "components",
     "name": "Components",
+    "order": true,
     "options": [
       {
         "id": "input",
