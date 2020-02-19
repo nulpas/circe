@@ -16,6 +16,8 @@ import { SwitchComponent } from './switch/switch.component';
 import { TagComponent } from './tag/tag.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { OverviewComponent } from './overview/overview.component';
+import { ThemesDemoComponent } from './themes-demo/themes-demo.component';
+import { SpaceBlueThemeOverviewComponent } from './space-blue-theme-overview/space-blue-theme-overview.component';
 
 const routes: Routes = [
   {
@@ -96,6 +98,16 @@ const routes: Routes = [
   {
     path: 'overview',
     component: OverviewComponent,
+    canActivate: [SessionGuard]
+  },
+  {
+    path: 'themes-demo',
+    component: ThemesDemoComponent,
+    canActivate: [SessionGuard]
+  },
+  {
+    path: 'space-blue-theme-overview',
+    component: SpaceBlueThemeOverviewComponent,
     canActivate: [SessionGuard]
   },
   {

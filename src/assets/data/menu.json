@@ -1,7 +1,7 @@
 [
   {
-    "id": "foundation",
-    "name": "Foundation",
+    "id": "foundations",
+    "name": "Foundations",
     "options": [
       {
         "id": "principles",
@@ -16,8 +16,8 @@
     ]
   },
   {
-    "id": "theme",
-    "name": "Theme",
+    "id": "themes",
+    "name": "Themes",
     "options": [
       {
         "id": "overview",
@@ -25,9 +25,25 @@
         "location": ["overview"]
       },
       {
-        "id": "color-schema",
-        "name": "Color Schema",
-        "location": ["color-schema"]
+        "id": "themes-demo",
+        "name": "Demo",
+        "location": ["themes-demo"]
+      }
+    ]
+  },
+  {
+    "id": "space-blue-theme",
+    "name": "Space Blue Theme",
+    "options": [
+      {
+        "id": "space-blue-theme-overview",
+        "name": "Overview",
+        "location": ["space-blue-theme-overview"]
+      },
+      {
+        "id": "colors",
+        "name": "Colors",
+        "location": ["colors"]
       },
       {
         "id": "typography",

@@ -898,10 +898,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@lunaeme/medea@^3.0.19":
-  version "3.0.19"
-  resolved "https://registry.yarnpkg.com/@lunaeme/medea/-/medea-3.0.19.tgz#42bf9a399a6d61e98dbf20b5ea0ffc667a80d38b"
-  integrity sha512-PpYT3yQeW/9MXY2fbMGpUo1mu0OOHHYz3KM0hnu1s4F1M9bAvp6sa5vKfAGdhLAuTgQbk8kBo18JK8H+ab/Ylw==
+"@lunaeme/medea@^3.0.20":
+  version "3.0.20"
+  resolved "https://registry.yarnpkg.com/@lunaeme/medea/-/medea-3.0.20.tgz#00a251559e02b171d0fbb32cff682af2f4987bab"
+  integrity sha512-K1zSkKx+cBmcKukrAtYje7bcgZLTBWLMbc81vYfko0piGwjufpF2xueJh8uoRjbJCevNsxKwqywCXK2Lvy6glg==
 
 "@ngtools/webpack@9.0.2":
   version "9.0.2"

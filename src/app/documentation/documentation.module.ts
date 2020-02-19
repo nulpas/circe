@@ -24,6 +24,8 @@ import { TagModule } from './tag/tag.module';
 import { SpinnerModule } from './spinner/spinner.module';
 import { OverviewModule } from './overview/overview.module';
 import { OrderConditionModule } from '../_pipes/order-condition/order-condition.module';
+import { ThemesDemoModule } from './themes-demo/themes-demo.module';
+import { SpaceBlueThemeOverviewModule } from './space-blue-theme-overview/space-blue-theme-overview.module';
 
 @NgModule({
   declarations: [DocumentationComponent],
@@ -49,6 +51,8 @@ import { OrderConditionModule } from '../_pipes/order-condition/order-condition.
     SpinnerModule,
     OverviewModule,
     OrderConditionModule,
+    ThemesDemoModule,
+    SpaceBlueThemeOverviewModule,
     DataModule.forChild(),
     LoginServicesModule.forChild()
   ],
