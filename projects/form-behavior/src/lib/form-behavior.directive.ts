@@ -144,7 +144,9 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
   }
 
   private _checkAction(element: HTMLElement): boolean {
-    return this._elementRules.action.classes.some((className: string) => element.classList.contains(className));
+    return (this._elementRules.action) ?
+      this._elementRules.action.classes.some((className: string) => element.classList.contains(className)) :
+      false ;
   }
 
   private _setElementPlaceholder(): void {
