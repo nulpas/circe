@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
 
   public errorMessage: string = '';
   public validationErrors: Array<ResponseError>;
+  public spinnerOn: boolean;
 
   private _componentDestroyed$: Subject<undefined> = new Subject();
 
@@ -40,6 +41,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
       password: new FormControl('')
     });
     this.sessionStore = new FormControl(false);
+    this.spinnerOn = false;
 
     this.login.valueChanges.pipe(
       takeUntil(this._componentDestroyed$)
@@ -76,13 +78,16 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   public doLogin(): void {
+    this.spinnerOn = true;
     this._data.login(this.login.value).pipe(
       takeUntil(this._componentDestroyed$)
     ).subscribe((r: Login) => {
+      this.spinnerOn = false;
       this._login.token = r.token;
       this._login.goRouter.next();
       console.log('SESSION', this.sessionStore.value);
     }, (error: HttpErrorResponse) => {
+      this.spinnerOn = false;
       this.validationErrors = (Array.isArray(error.error)) ? error.error : [error.error];
       this._cd.markForCheck();
       console.log('ERRORS', error);

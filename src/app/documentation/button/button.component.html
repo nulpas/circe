@@ -17,12 +17,31 @@
         'mda-button--critical': buttonType.value === 4,
         'mda-button--icon-only': buttonIcon.value && buttonIconType.value === 3
       }"
-      [disabled]="buttonDisabled.value">
-      <i class="mda-icon icon-cog mda-button--icon-left" *ngIf="buttonIcon.value && buttonIconType.value === 1"></i>
-      <ng-container *ngIf="!buttonIcon.value || buttonIconType.value !== 3">{{buttonText.value}}</ng-container>
-      <i class="mda-icon icon-arrow2_down mda-button--icon-right" *ngIf="buttonIcon.value && buttonIconType.value === 2"></i>
-      <i class="mda-icon icon-waiting" *ngIf="buttonIcon.value && buttonIconType.value === 3"></i>
+      [disabled]="buttonDisabled.value"
+      (click)="ev.preventNoNeededEvent($event); buttonAction();"
+      ccButtonSpinner [on]="showSpinner">
+      <ng-container *ngIf="!showSpinner">
+        <i class="mda-icon icon-cog mda-button--icon-left" *ngIf="buttonIcon.value && buttonIconType.value === 1"></i>
+        <ng-container *ngIf="!buttonIcon.value || buttonIconType.value !== 3">{{buttonText.value}}</ng-container>
+        <i class="mda-icon icon-arrow2_down mda-button--icon-right" *ngIf="buttonIcon.value && buttonIconType.value === 2"></i>
+        <i class="mda-icon icon-waiting" *ngIf="buttonIcon.value && buttonIconType.value === 3"></i>
+      </ng-container>
+      <ng-container *ngIf="showSpinner">
+        <cc-spinner
+          class="mda-spinner--20"
+          [ngClass]="{
+            'mda-spinner--20': buttonSize.value === 1,
+            'mda-spinner--16': buttonSize.value === 2,
+            'mda-spinner--inverse': buttonType.value === 1 || buttonType.value === 4
+          }"
+          [render]="render"></cc-spinner>
+      </ng-container>
     </button>
+    <div
+      class="trigger-marquee mda-font--18 mda-font--extra-light"
+      [ngClass]="{'show': buttonSpinner.value}">
+      {{marquee}}
+    </div>
   </section>
   <section class="demo__controls">
     <h4>Size</h4>
@@ -65,6 +84,13 @@
       name="option-icon"
       [formControl]="buttonIcon">
     <label for="option-icon">Icon</label>
+    <input
+      id="option-spinner"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-spinner"
+      [formControl]="buttonSpinner">
+    <label for="option-spinner">Spinner</label>
 
     <ng-container *ngIf="buttonIcon.value">
       <h4>Icon Type</h4>

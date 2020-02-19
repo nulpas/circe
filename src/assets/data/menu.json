@@ -33,6 +33,11 @@
         "id": "icons",
         "name": "Icons",
         "location": ["icons"]
+      },
+      {
+        "id": "overview",
+        "name": "Overview",
+        "location": ["overview"]
       }
     ]
   },

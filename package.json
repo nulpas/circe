@@ -1,6 +1,6 @@
 {
   "name": "circe",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "Angular Components library",
   "scripts": {
     "ng": "ng",
@@ -36,7 +36,7 @@
     "@angular/platform-browser": "~9.0.1",
     "@angular/platform-browser-dynamic": "~9.0.1",
     "@angular/router": "~9.0.1",
-    "@lunaeme/medea": "^3.0.17",
+    "@lunaeme/medea": "^3.0.18",
     "core-js": "^3.6.4",
     "lodash": "^4.17.15",
     "rxjs": "~6.5.4",

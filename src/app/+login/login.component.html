@@ -35,10 +35,24 @@
           (keypress)="keyHandler($event)"
           ccFormBehavior>
       </form>
-      <div class="validations">
-        <div class="message mda-font-12" *ngFor="let message of validationErrors; trackBy: tools.identifier;">
-          {{message['msg']}}
+      <div class="bottom-bar">
+        <div class="validations">
+          <div class="message mda-font-12" *ngFor="let message of validationErrors; trackBy: tools.identifier;">
+            {{message['msg']}}
+          </div>
         </div>
+        <button
+          class="mda-button"
+          [disabled]="!submitFormActive"
+          (click)="ev.preventNoNeededEvent($event); doLogin();"
+          ccButtonSpinner [on]="spinnerOn">
+          <ng-container *ngIf="!spinnerOn">
+            Access
+          </ng-container>
+          <ng-container *ngIf="spinnerOn">
+            <cc-spinner class="mda-spinner--20 mda-spinner--inverse"></cc-spinner>
+          </ng-container>
+        </button>
       </div>
     </div>
   </section>

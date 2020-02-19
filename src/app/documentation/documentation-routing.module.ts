@@ -15,6 +15,7 @@ import { ButtonComponent } from './button/button.component';
 import { SwitchComponent } from './switch/switch.component';
 import { TagComponent } from './tag/tag.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { OverviewComponent } from './overview/overview.component';
 
 const routes: Routes = [
   {
@@ -90,6 +91,11 @@ const routes: Routes = [
   {
     path: 'spinner',
     component: SpinnerComponent,
+    canActivate: [SessionGuard]
+  },
+  {
+    path: 'overview',
+    component: OverviewComponent,
     canActivate: [SessionGuard]
   },
   {

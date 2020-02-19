@@ -8,6 +8,7 @@ import { EventsService } from '@core/events.service';
 import { ToolService } from '@core/tool.service';
 import { DataModule } from '../_services/data/data.module';
 import { LoginModule as LoginServicesModule } from '../_services/login/login.module';
+import { SpinnerModule as SpinnerCirceModule } from '@spinner/spinner.module';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -16,6 +17,7 @@ import { LoginModule as LoginServicesModule } from '../_services/login/login.mod
     RouterModule,
     FormBehaviorModule,
     ReactiveFormsModule,
+    SpinnerCirceModule,
     DataModule.forChild(),
     LoginServicesModule.forChild()
   ],

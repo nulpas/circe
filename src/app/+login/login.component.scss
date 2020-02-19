@@ -32,10 +32,15 @@
         .mda-component:first-of-type {
           margin: 24px 0;
         }
-        .validations {
+        .bottom-bar {
+          @include createFlexBox(row, normal, space-between, nowrap);
+          width: var(--mda-component-width);
           margin-top: 24px;
-          .message {
-            color: var(--mda-color-critical);
+          .validations {
+            margin-right: 40px;
+            .message {
+              color: var(--mda-color-critical);
+            }
           }
         }
       }
