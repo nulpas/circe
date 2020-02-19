@@ -324,14 +324,12 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
   }
 
   private _normalizeAction(): void {
-    if (this._checkAction(this._element)) {
-      if (this._element.value) {
-        this._renderer.addClass(this._element, ACTION);
-        this._renderAssociates(WRAPPER, ACTION, ADD);
-      } else {
-        this._renderer.removeClass(this._element, ACTION);
-        this._renderAssociates(WRAPPER, ACTION, REMOVE);
-      }
+    if (this._checkAction(this._element) && this._element.value) {
+      this._renderer.addClass(this._element, ACTION);
+      this._renderAssociates(WRAPPER, ACTION, ADD);
+    } else {
+      this._renderer.removeClass(this._element, ACTION);
+      this._renderAssociates(WRAPPER, ACTION, REMOVE);
     }
   }
 
