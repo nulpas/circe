@@ -5,11 +5,13 @@
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
       "@lunaeme/circe-click-outside": "@lunaeme/circe-click-outside",
-      "@lunaeme/circe-core": "@lunaeme/circe-core"
+      "@lunaeme/circe-core": "@lunaeme/circe-core",
+      "rxjs": "rxjs"
     }
   },
   "whitelistedNonPeerDependencies": [
     "@lunaeme/circe-click-outside",
-    "@lunaeme/circe-core"
+    "@lunaeme/circe-core",
+    "rxjs"
   ]
 }

@@ -3,7 +3,6 @@ import { DocumentationComponent } from './documentation.component';
 import { CommonModule } from '@angular/common';
 import { ColorSchemaModule } from './color-schema/color-schema.module';
 import { RouterModule } from '@angular/router';
-import { OrderModule } from '@core/external.elements';
 import { ToolService } from '@core/tool.service';
 import { DocumentationRoutingModule } from './documentation-routing.module';
 import { TypographyModule } from './typography/typography.module';
@@ -23,9 +22,10 @@ import { SwitchModule } from './switch/switch.module';
 import { TagModule } from './tag/tag.module';
 import { SpinnerModule } from './spinner/spinner.module';
 import { OverviewModule } from './overview/overview.module';
-import { OrderConditionModule } from '../_pipes/order-condition/order-condition.module';
 import { ThemesDemoModule } from './themes-demo/themes-demo.module';
 import { SpaceBlueThemeOverviewModule } from './space-blue-theme-overview/space-blue-theme-overview.module';
+import { OrderConditionModule } from '@core/order-condition/order-condition.module';
+import { DropdownModule } from './dropdown/dropdown.module';
 
 @NgModule({
   declarations: [DocumentationComponent],
@@ -34,7 +34,6 @@ import { SpaceBlueThemeOverviewModule } from './space-blue-theme-overview/space-
     DocumentationRoutingModule,
     RouterModule,
     HeaderModule,
-    OrderModule,
     ColorSchemaModule,
     TypographyModule,
     IconsModule,
@@ -53,6 +52,7 @@ import { SpaceBlueThemeOverviewModule } from './space-blue-theme-overview/space-
     OrderConditionModule,
     ThemesDemoModule,
     SpaceBlueThemeOverviewModule,
+    DropdownModule,
     DataModule.forChild(),
     LoginServicesModule.forChild()
   ],

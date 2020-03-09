@@ -8,7 +8,7 @@ import {
   ChangeDetectorRef
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { EventsService, OptionDropdownIcon, OptionForSelect, ToolService } from '@lunaeme/circe-core';
+import { EventsService, OptionDropdownIcon, OptionForDropdown, ToolService } from '@lunaeme/circe-core';
 import { Subject, Subscription } from 'rxjs';
 import { InputSelectConfig } from './input-select.types';
 import { FromDropdownOption, keysToManageDropdown, keysToShowDropdown } from '@lunaeme/circe-dropdown';
@@ -23,7 +23,7 @@ export class InputSelectComponent implements OnInit, OnDestroy {
   /**
    * Required Inputs
    */
-  @Input() options: Array<OptionForSelect> = [];
+  @Input() options: Array<OptionForDropdown> = [];
   @Input() control: FormControl = new FormControl();
 
   /**
@@ -60,7 +60,7 @@ export class InputSelectComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.options = this.options.map((e: OptionForSelect) => {
+    this.options = this.options.map((e: OptionForDropdown) => {
       const _icon: {icon?: OptionDropdownIcon} = {};
       if (e.icon) {
         _icon.icon = e.icon;

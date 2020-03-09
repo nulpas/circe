@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { IconsComponent } from './icons.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToolService } from '@core/tool.service';
-import { OrderModule } from '@core/external.elements';
 import { FormBehaviorModule } from '@form-behavior/form-behavior.module';
 import { DataModule } from '../../_services/data/data.module';
 import { EventsService } from '@core/events.service';
+import { OrderConditionModule } from '@core/order-condition/order-condition.module';
 
 @NgModule({
   declarations: [IconsComponent],
@@ -14,7 +14,7 @@ import { EventsService } from '@core/events.service';
     CommonModule,
     ReactiveFormsModule,
     FormBehaviorModule,
-    OrderModule,
+    OrderConditionModule,
     DataModule.forChild()
   ],
   providers: [

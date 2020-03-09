@@ -1,0 +1,70 @@
+<h1>Dropdown</h1>
+<hr>
+<span class="subtitle mda-font--18">
+  Dropdown present a list of options that can be used to filter existing content or to navigate through.
+</span>
+
+<h2></h2>
+<section class="dropdown-demo">
+  <section class="demo__stage">
+    <cc-dropdown
+      class="mda-dropdown--demo"
+      [options]="dropdownOptions"
+      [config]="dropdownConfig"
+      (optionSelected)="selectOption($event)"
+      (closeDropdown)="clickOutside()">
+    </cc-dropdown>
+
+    <cc-dropdown
+      *ngIf="showSecondaryDropdown"
+      [options]="secondaryDropdownOptions"
+      [config]="secondaryDropdownConfig">
+    </cc-dropdown>
+  </section>
+  <section class="demo__controls">
+    <h4>Icon</h4>
+    <input id="icon-left" type="checkbox" name="icon-left" [formControl]="dropdownOptionIconsLeft">
+    <label for="icon-left">Icons Left</label>
+
+    <input id="icon-right" type="checkbox" name="icon-right" [formControl]="dropdownOptionIconsRight">
+    <label for="icon-right">Icons Right</label>
+
+    <h4>Trigger Action on Click Event</h4>
+    <input id="trigger-option-selected" type="radio" name="trigger" [value]="1" [formControl]="dropdownTriggerAction">
+    <label for="trigger-option-selected">Just Option Selected</label>
+
+    <input id="trigger-modal-window" type="radio" name="trigger" [value]="2" [formControl]="dropdownTriggerAction" disabled>
+    <label for="trigger-modal-window">Modal Window</label>
+
+    <input id="trigger-other-dropdown" type="radio" name="trigger" [value]="3" [formControl]="dropdownTriggerAction">
+    <label for="trigger-other-dropdown">Other Dropdown</label>
+
+    <h4>Options</h4>
+    <input
+      id="option-separator"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-separator"
+      [formControl]="dropdownSeparators">
+    <label for="option-separator">Separators</label>
+
+    <input
+      id="option-color"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-color"
+      [formControl]="dropdownOptionColor">
+    <label for="option-color">Option Color</label>
+  </section>
+</section>
+
+<h2>Design & Behavior</h2>
+<p>
+  By default, selecting a menu item or clicking outside the menu dismisses the menu. You can change this behavior to
+  keep the menu open on when it’s possible to have multiple items selected.
+</p>
+
+<h2>Usage and Best Practices</h2>
+<p>
+  Always use clear and concise labels.
+</p>

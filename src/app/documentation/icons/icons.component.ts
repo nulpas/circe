@@ -4,9 +4,9 @@ import { takeUntil} from 'rxjs/operators';
 import { concat, Subject } from 'rxjs';
 import { Icon, IconSection, IconSectionsRequest } from '../../_types/response.types';
 import { ToolService } from '@core/tool.service';
-import { OrderPipe } from '@core/external.elements';
 import { FormControl } from '@angular/forms';
 import { EventsService } from '@core/events.service';
+import { OrderConditionPipe } from '@core/order-condition/order-condition.pipe';
 
 @Component({
   selector: 'app-icons',
@@ -29,7 +29,7 @@ export class IconsComponent implements OnInit, OnDestroy {
   constructor(
     public tools: ToolService,
     private _data: DataService,
-    private _order: OrderPipe,
+    private _order: OrderConditionPipe,
     private _cd: ChangeDetectorRef,
     private _ev: EventsService
   ) {
@@ -40,9 +40,9 @@ export class IconsComponent implements OnInit, OnDestroy {
       takeUntil(this._componentDestroyed$)
     ).subscribe((r: IconSectionsRequest | Array<Icon>) => {
       if ((r as IconSectionsRequest).isIconSections) {
-        this._sourceSections = _order.transform((r as IconSectionsRequest).iconSections, 'name');
+        this._sourceSections = _order.transform((r as IconSectionsRequest).iconSections, 'name', true);
       } else {
-        this._sourceIcons = _order.transform(r, 'code');
+        this._sourceIcons = _order.transform(r, 'code', true);
         this.iconsDataForRender(this._sourceIcons);
       }
     });

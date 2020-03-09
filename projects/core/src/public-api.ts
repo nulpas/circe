@@ -8,5 +8,7 @@ export * from './lib/events.service';
 export * from './lib/tool.service';
 
 export * from './lib/_types/data.types';
+export * from './lib/_types/element.types';
 
-export * from './lib/external.elements';
+export * from './lib/order-condition/order-condition.module';
+export * from './lib/order-condition/order-condition.pipe';

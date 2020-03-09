@@ -4,6 +4,7 @@ import { EventsService } from '@lunaeme/circe-core';
 @Directive({
   selector: '[ccClickOutside]'
 })
+
 export class ClickOutsideDirective {
   @Input() apply: boolean = true;
   @Input() exceptions: Array<string> = [];
@@ -12,10 +13,12 @@ export class ClickOutsideDirective {
   private readonly _element: HTMLElement;
 
   @HostListener('document:click', ['$event']) onMouseEnter(event: Event) {
-    this._ev.preventNoNeededEvent(event);
-    const _eventTarget: HTMLElement = event.target as HTMLElement;
-    if (this.apply && !this._element.contains(_eventTarget) && (this.exceptions.indexOf(_eventTarget.id) < 0)) {
-      this.clickOutside.emit();
+    if (this.apply) {
+      this._ev.preventNoNeededEvent(event);
+      const _eventTarget: HTMLElement = event.target as HTMLElement;
+      if (!this._element.contains(_eventTarget) && (this.exceptions.indexOf(_eventTarget.id) < 0)) {
+        this.clickOutside.emit();
+      }
     }
   }
 

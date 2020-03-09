@@ -61,11 +61,11 @@
       "input-select/*": [
         "dist/input-select/*"
       ],
-      "dropdown": [
-        "dist/dropdown"
+      "@dropdown": [
+        "projects/dropdown/src/lib"
       ],
-      "dropdown/*": [
-        "dist/dropdown/*"
+      "@dropdown/*": [
+        "projects/dropdown/src/lib/*"
       ],
       "keyboard-events-emitter": [
         "dist/keyboard-events-emitter"

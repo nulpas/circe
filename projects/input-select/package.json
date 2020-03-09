@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@lunaeme/circe-click-outside": "^0.1.10",
-    "@lunaeme/circe-core": "^0.2.26",
+    "@lunaeme/circe-core": "^0.3.12",
     "@lunaeme/circe-dropdown": "^0.1.8",
     "@lunaeme/circe-keyboard-events-emitter": "^0.1.1"
   }

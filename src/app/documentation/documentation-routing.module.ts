@@ -18,6 +18,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { OverviewComponent } from './overview/overview.component';
 import { ThemesDemoComponent } from './themes-demo/themes-demo.component';
 import { SpaceBlueThemeOverviewComponent } from './space-blue-theme-overview/space-blue-theme-overview.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 const routes: Routes = [
   {
@@ -108,6 +109,11 @@ const routes: Routes = [
   {
     path: 'space-blue-theme-overview',
     component: SpaceBlueThemeOverviewComponent,
+    canActivate: [SessionGuard]
+  },
+  {
+    path: 'dropdown',
+    component: DropdownComponent,
     canActivate: [SessionGuard]
   },
   {

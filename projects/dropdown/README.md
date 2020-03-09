@@ -1,24 +1,17 @@
-# Dropdown
+# Circe :: Angular Dropdown
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+Several css spinner elements width optional marquee texts.
 
-## Code scaffolding
+## Compatibility
 
-Run `ng generate component component-name --project dropdown` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project dropdown`.
-> Note: Don't forget to add `--project dropdown` or else it will be added to the default project in your `angular.json` file. 
+Angular >= v.7.2.15
 
-## Build
+## Installation
 
-Run `ng build dropdown` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `npm install @lunaeme/circe-dropdown` or
 
-## Publishing
+run `yarn add @lunaeme/circe-dropdown`.
 
-After building your library with `ng build dropdown`, go to the dist folder `cd dist/dropdown` and run `npm publish`.
+## Use
 
-## Running unit tests
-
-Run `ng test dropdown` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ToDo ...

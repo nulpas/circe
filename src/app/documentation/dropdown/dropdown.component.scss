@@ -1,0 +1,21 @@
+@import '../../../mixins';
+
+:host {
+  display: block;
+  padding: 25px 35px;
+  box-sizing: border-box;
+  @include scrollInElement();
+
+  P, .subtitle {
+    display: block;
+    padding-right: 20%;
+  }
+  .dropdown-demo {
+    @include demoElement();
+    .demo__stage {
+      & > .mda-dropdown--demo {
+        --mda-dropdown-position: relative;
+      }
+    }
+  }
+}

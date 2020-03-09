@@ -4,7 +4,6 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { ToolService } from '@core/tool.service';
 import { DataService } from '../_services/data/data.service';
 import { ActivatedRoute } from '@angular/router';
-import { OrderPipe } from '@core/external.elements';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
@@ -25,8 +24,7 @@ export class DocumentationComponent implements OnInit, OnDestroy {
     public tools: ToolService,
     private _data: DataService,
     private _cd: ChangeDetectorRef,
-    private _route: ActivatedRoute,
-    private _order: OrderPipe
+    private _route: ActivatedRoute
   ) {
     this.toSelectOption$.pipe(
       takeUntil(this._componentDestroyed$)

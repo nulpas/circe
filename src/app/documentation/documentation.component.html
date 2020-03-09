@@ -6,7 +6,7 @@
         {{group.name}}
         <a
           class="menu__option"
-          *ngFor="let option of group.options | orderCondition : 'name' : group.order; trackBy: tools.identifier;"
+          *ngFor="let option of group.options | orderCondition : 'name' : !!group.order; trackBy: tools.identifier;"
           [ngClass]="{selected: option.id === optionSelected}"
           [routerLink]="option.location">
           {{option.name}}

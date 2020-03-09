@@ -11,5 +11,5 @@ export class DataModule {
         ngModule: DataModule,
         providers: [DataService]
     };
-}
+  }
 }

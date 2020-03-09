@@ -13,6 +13,8 @@ export class ThemesDemoComponent implements OnInit, OnDestroy {
   public themesDemoTemplate: FormControl = new FormControl(undefined);
 
   private readonly _bodyElement: HTMLBodyElement;
+  private SPACE_BLUE_TEMPLATE: string = 'medea-tpl';
+  private MARTINA_TEMPLATE: string = 'mda-martina-tpl';
   private _componentDestroyed$: Subject<undefined> = new Subject();
 
   constructor(private _renderer: Renderer2) {
@@ -23,18 +25,18 @@ export class ThemesDemoComponent implements OnInit, OnDestroy {
       takeUntil(this._componentDestroyed$)
     ).subscribe((r: number) => {
       if (r === 1) {
-        _renderer.removeClass(this._bodyElement, 'mda-ey-tpl');
-        _renderer.addClass(this._bodyElement, 'medea-tpl');
+        _renderer.removeClass(this._bodyElement, this.MARTINA_TEMPLATE);
+        _renderer.addClass(this._bodyElement, this.SPACE_BLUE_TEMPLATE);
       } else if (r === 2) {
-        _renderer.removeClass(this._bodyElement, 'medea-tpl');
-        _renderer.addClass(this._bodyElement, 'mda-ey-tpl');
+        _renderer.removeClass(this._bodyElement, this.SPACE_BLUE_TEMPLATE);
+        _renderer.addClass(this._bodyElement, this.MARTINA_TEMPLATE);
       }
     });
   }
 
   private _checkTemplate(): number {
     const _classList: DOMTokenList = this._bodyElement.classList;
-    if (_classList.contains('mda-ey-tpl')) {
+    if (_classList.contains(this.MARTINA_TEMPLATE)) {
       return 2;
     }
     return 1;

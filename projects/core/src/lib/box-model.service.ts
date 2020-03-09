@@ -7,6 +7,13 @@ import {
   SelectDomElementHashDefinition,
   selectDomElementHashDefinitionConstants
 } from './_types/data.types';
+import {
+  ElementDefinition,
+  elementFieldsConstants,
+  ElementHash, ElementHashComplex, ElementHashType,
+  elementHashTypeDefinitionConstants,
+  ElementQuery, ElementQueryComplex
+} from '@core/_types/element.types';
 
 export interface SizeObject {
   with: ProcessedUnitObject;
@@ -57,6 +64,9 @@ export const boxModelTypeConstants = {
 
   private readonly _defaultBoxModelType: BoxModelType;
   private readonly _defaultSelectDomType: SelectDomElementHashType;
+
+  private readonly _defaultElementHashType: ElementHashType;
+
   private readonly _defaultComputedStylePropertyProcessed: boolean;
 
   private readonly _allowCssUnits: Array<string>;
@@ -74,6 +84,9 @@ export const boxModelTypeConstants = {
 
     this._defaultBoxModelType = boxModelTypeConstants.VERTICAL;
     this._defaultSelectDomType = this._selectDomElementTypeConstants.CLASS;
+
+    this._defaultElementHashType = elementHashTypeDefinitionConstants.CLASS;
+
     this._defaultComputedStylePropertyProcessed = false;
 
     this._allowCssUnits = ['px', '%'];
@@ -81,7 +94,7 @@ export const boxModelTypeConstants = {
     this._additionHorizontalOutsideClasses = ['margin-left', 'margin-right'];
     this._additionVerticalInsideClasses = ['padding-top', 'padding-bottom', 'border-top-width', 'border-bottom-width'];
     this._additionVerticalOutsideClasses = ['margin-top', 'margin-bottom'];
-    this._nativeDomElementParamsToCheck = ['getBoundingClientRect', 'getElementsByClassName', 'getElementsByTagName'];
+    this._nativeDomElementParamsToCheck = ['getBoundingClientRect', 'getElementsByClassName', 'getElementsByTagName', 'querySelector'];
 
     this._fontSizeRule = { applyOnElements: ['i'], boxModelType: boxModelTypeConstants.HORIZONTAL };
   }
@@ -96,6 +109,41 @@ export const boxModelTypeConstants = {
     return (_hasTwoParameters || _hasThreeParameters);
   }
 
+  /**
+   * _isElementHash
+   *
+   * @description
+   * Checks if element given param is ElementHash type.
+   */
+  private _isElementHash(element: ElementDefinition): boolean {
+    return !!(
+      typeof element === 'object' &&
+      elementFieldsConstants.TYPE in element &&
+      elementFieldsConstants.NAME in element &&
+      (Object.keys(element).length === 2 || Object.keys(element).length === 3)
+    );
+  }
+
+  /**
+   * _isElementQuery
+   *
+   * @description
+   * Checks if element given param is ElementQuery type.
+   */
+  private _isElementQuery(element: ElementDefinition): boolean {
+    return !!(
+      typeof element === 'object' &&
+      elementFieldsConstants.QUERY in element &&
+      (Object.keys(element).length === 2 || Object.keys(element).length === 3)
+    );
+  }
+
+  /**
+   * _isNativeDomElement
+   *
+   * @description
+   * Checks if element given param is a native DOM element.
+   */
   private _isNativeDomElement(param: any): param is Element {
     return (this._nativeDomElementParamsToCheck.map((e: string) => e in param)).every((el) => !!el);
   }
@@ -214,6 +262,56 @@ export const boxModelTypeConstants = {
       }
     }
     return (_output.with && _output.height) ? _output : null;
+  }
+
+  /**
+   * _getElement
+   *
+   * @description
+   * Returns an element dom native object from different types of given params.
+   */
+  private _getElement(element: ElementDefinition, shadowElement?: Element): Element {
+    let _output: Element = element as Element;
+    const _shadowElement: Element | Document = shadowElement || document;
+    let _element: ElementDefinition = element;
+    if (typeof element === 'string') {
+      _element = { type: this._defaultElementHashType, name: element };
+    }
+    if (!this._isNativeDomElement(_element)) {
+      if (this._isElementHash(_element)) {
+        switch ((_element as ElementHash).type) {
+          case elementHashTypeDefinitionConstants.CLASS:
+            _output = _shadowElement.getElementsByClassName((_element as ElementHash).name).item(0);
+            break;
+          case elementHashTypeDefinitionConstants.TAG:
+            _output = _shadowElement.getElementsByTagName((_element as ElementHash).name).item(0);
+            break;
+          case elementHashTypeDefinitionConstants.ID:
+            _output = document.getElementById((_element as ElementHash).name);
+            break;
+        }
+      } else if (this._isElementQuery(_element)) {
+        _output = _shadowElement.querySelector((_element as ElementQuery).query);
+      }
+    }
+    return (this._isNativeDomElement(_output)) ? _output : null;
+  }
+
+  /**
+   * getElementTest
+   *
+   * @description
+   * Public method to return an element dom native object from different types of given params.
+   */
+  public getElementTest(element: ElementDefinition): Element {
+    let _shadowElement: Element;
+    if (
+      (this._isElementHash(element) || this._isElementQuery(element)) &&
+      elementFieldsConstants.SHADOW_ELEMENT in (element as ElementHashComplex | ElementQueryComplex)
+    ) {
+      _shadowElement = this._getElement((element as ElementHashComplex | ElementQueryComplex).shadowElement);
+    }
+    return this._getElement(element, _shadowElement);
   }
 
   public getElement(element: string | SelectDomElementHash): Element {

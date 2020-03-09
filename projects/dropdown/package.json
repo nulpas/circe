@@ -21,12 +21,11 @@
   "homepage": "https://github.com/nulpas/circe/tree/master/projects/dropdown#readme",
   "peerDependencies": {
     "@angular/common": ">=7.2.15",
-    "@angular/core": ">=7.2.15",
-    "@angular/platform-browser": ">=7.2.15",
-    "@angular/platform-browser-dynamic": ">=7.2.15"
+    "@angular/core": ">=7.2.15"
   },
   "dependencies": {
-    "@lunaeme/circe-click-outside": "^0.1.10",
-    "@lunaeme/circe-core": "^0.2.26"
+    "@lunaeme/circe-click-outside": "^0.1.14",
+    "@lunaeme/circe-core": "^0.3.13",
+    "rxjs": "^6.5.4"
   }
 }

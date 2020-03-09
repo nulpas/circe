@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { SpinnerComponent } from './spinner.component';
 import { CommonModule } from '@angular/common';
 import { ButtonSpinnerModule } from './button-spinner/button-spinner.module';
-import {ButtonSpinnerDirective} from './button-spinner/button-spinner.directive';
+import { ButtonSpinnerDirective } from './button-spinner/button-spinner.directive';
 
 @NgModule({
   exports: [SpinnerComponent, ButtonSpinnerDirective],

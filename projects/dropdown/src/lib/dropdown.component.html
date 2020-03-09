@@ -1,32 +1,35 @@
 <div
-  class="medea-tpl__layer mda dropdown"
-  [ngClass]="{menu: isMenu}"
-  [ngStyle]="{
-    width: (width) ? width : 'var(--d-width-default)',
-    'min-width': (width) ? width : 'var(--d-width-default)',
-    left: (isMenu && left) ? left : 'var(--d-left-default)',
-    right: (isMenu && right) ? right : 'var(--d-right-default)'
-  }"
+  class="mda-dropdown"
   (mouseenter)="ev.preventNoNeededEvent($event); mouseGlobalAction($event);"
   (mouseout)="ev.preventNoNeededEvent($event); mouseGlobalAction($event);"
-  ccClickOutside (clickOutside)="closeDropdown.emit()">
-  <div
-    class="dropdown__option"
-    tabindex="1"
-    *ngFor="let option of optionsInside; trackBy: tools.identifier"
-    (mousedown)="ev.preventNoNeededEvent($event); optionSelected.emit(option);"
-    (mouseenter)="ev.preventNoNeededEvent($event); mouseEnterAction($event);"
-    (mousemove)="ev.preventNoNeededEvent($event); mouseEnterAction($event);"
-    (mouseout)="ev.preventNoNeededEvent($event); mouseOutAction($event);">
-    <i
-      *ngIf="option.icon"
-      class="{{(option.icon.iconFontClass) ? option.icon.iconFontClass : 'mda-icon'}} {{option.icon.class}}"
-      [attr.data-style-temp]="'color: ' + (option.icon.color || 'inherit')"
-      [ngStyle]="{color: (option.icon.color) ? option.icon.color : 'inherit'}"></i>
-    <span
-      [attr.data-style-temp]="'color: ' + (option.color || 'inherit')"
-      [ngStyle]="{color: (option.color) ? option.color : 'inherit'}">
-      {{option.label}}
-    </span>
-  </div>
+  ccClickOutside [apply]="clickOutsideApply" (clickOutside)="closeDropdown.emit()">
+  <ng-container *ngFor="let option of optionsInside; trackBy: tools.identifier; let i = index;">
+    <div
+      class="mda-dropdown__option mda-dropdown__option-{{i + 1}}"
+      tabindex="1"
+      (mousedown)="ev.preventNoNeededEvent($event); optionSelected.emit(option);"
+      (mouseenter)="ev.preventNoNeededEvent($event); mouseEnterAction($event);"
+      (mousemove)="ev.preventNoNeededEvent($event); mouseEnterAction($event);"
+      (mouseout)="ev.preventNoNeededEvent($event); mouseOutAction($event);">
+      <div class="mda-dropdown--left">
+        <i
+          *ngIf="option.icon"
+          class="{{(option.icon['iconFontClass']) ? option.icon['iconFontClass'] : 'mda-icon'}} {{option.icon['class']}}"
+          [attr.data-style-temp]="'color: ' + (option.icon.color || 'inherit')"
+          [ngStyle]="{color: (option.icon.color) ? option.icon.color : 'inherit'}"></i>
+        <span
+          [attr.data-style-temp]="'color: ' + (option.color || 'inherit')"
+          [ngStyle]="{color: (option.color) ? option.color : 'inherit'}">
+          {{option.label}}
+        </span>
+      </div>
+      <div class="mda-dropdown--right" *ngIf="option['iconRight']">
+        <i
+          class="{{(option['iconRight']['iconFontClass']) ? option['iconRight']['iconFontClass'] : 'mda-icon'}} {{option['iconRight']['class']}}"
+          [attr.data-style-temp]="'color: ' + (option['iconRight'].color || 'inherit')"
+          [ngStyle]="{color: (option['iconRight'].color) ? option['iconRight'].color : 'inherit'}"></i>
+      </div>
+    </div>
+    <hr class="dropdown__separator" *ngIf="separators[i]">
+  </ng-container>
 </div>

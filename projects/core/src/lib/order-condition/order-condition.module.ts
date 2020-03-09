@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OrderConditionPipe } from './order-condition.pipe';
-import { OrderModule } from '@core/external.elements';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
-  declarations: [OrderConditionPipe],
   exports: [
     OrderConditionPipe
   ],
+  declarations: [OrderConditionPipe],
   imports: [
     CommonModule,
     OrderModule
-  ]
+  ],
+  providers: [OrderConditionPipe]
 })
 export class OrderConditionModule {}

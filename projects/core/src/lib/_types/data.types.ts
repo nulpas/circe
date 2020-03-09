@@ -84,17 +84,12 @@ export const selectDomElementHashDefinitionConstants: SelectDomElementHashDefini
  * @description
  * Interfaces for definition of options inputs in several components.
  */
-export interface OptionForSelect {
+export interface OptionForDropdown {
   value: string | number;
   label?: string;
   color?: string;
   icon?: OptionDropdownIcon;
-}
-export interface OptionForMenu {
-  key: string | number;
-  label?: string;
-  color?: string;
-  icon?: OptionDropdownIcon;
+  iconRight?: OptionDropdownIcon;
 }
 export interface OptionDropdownIcon {
   class: string;

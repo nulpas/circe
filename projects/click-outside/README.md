@@ -6,7 +6,7 @@ The `$event` emitted is `undefined`.
 
 ## Compatibility
 
-Angular v.7.2.15
+Angular >+ v.8.2.10
 
 ## Installation
 
