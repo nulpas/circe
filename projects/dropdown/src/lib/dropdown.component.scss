@@ -4,6 +4,9 @@
   --mda-dropdown-default-min-width: var(--mda-dropdown-default-width);
   --mda-dropdown-default-left: 0;
   --mda-dropdown-default-right: 0;
+
+  --mda-dropdown-default-top: 0;
+
   --mda-dropdown-default-border: 1px solid;
   --mda-dropdown-default-border-radius: 4px;
   --mda-dropdown-default-padding: 8px;
@@ -33,7 +36,8 @@
     // width: var(--mda-dropdown-default-width);
     min-width: var(--mda-dropdown-default-min-width);
     left: var(--mda-dropdown-default-left);
-    right: var(--mda-dropdown-default-right);
+    // right: var(--mda-dropdown-default-right);
+    top: var(--mda-dropdown-default-top);
     z-index: 1;
     color: var(--mda-dropdown-default-text-color);
     border: var(--mda-dropdown-default-border);

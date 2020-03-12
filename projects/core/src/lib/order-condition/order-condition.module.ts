@@ -4,9 +4,7 @@ import { OrderConditionPipe } from './order-condition.pipe';
 import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
-  exports: [
-    OrderConditionPipe
-  ],
+  exports: [OrderConditionPipe],
   declarations: [OrderConditionPipe],
   imports: [
     CommonModule,

@@ -15,10 +15,10 @@ import { DropdownConfig, FromDropdownOption } from './dropdown.types';
 import { Subject, Subscription } from 'rxjs';
 import {
   BoxModelService,
+  ElementDefinition,
   EventsService,
   OptionDropdownIcon,
   OptionForDropdown,
-  SelectDomElementHash,
   ToolService
 } from '@lunaeme/circe-core';
 import { takeUntil } from 'rxjs/operators';
@@ -40,6 +40,7 @@ export class DropdownComponent implements OnInit, OnDestroy, OnChanges {
    */
   @Input() config: DropdownConfig;
   @Input() keyboardControl: Subject<KeyboardEvent> = new Subject();
+  @Input() render: boolean = false;
 
   @Output() optionSelected: EventEmitter<FromDropdownOption> = new EventEmitter();
   @Output() closeDropdown: EventEmitter<undefined> = new EventEmitter();
@@ -51,7 +52,9 @@ export class DropdownComponent implements OnInit, OnDestroy, OnChanges {
 
   private _width: string;
   private _left: string;
-  public right: string;
+  private _right: string;
+  private _top: string;
+  private _bottom: string;
   public separators: Array<boolean>;
   public clickOutsideApply: boolean;
 
@@ -71,8 +74,6 @@ export class DropdownComponent implements OnInit, OnDestroy, OnChanges {
   private _optionRemoveStyle: Subject<HTMLElement> = new Subject();
   private _optionAddStyle: Subject<HTMLElement> = new Subject();
   private _componentDestroyed$: Subject<undefined> = new Subject();
-
-  // @HostBinding('style.position') position: string = 'relative';
 
   constructor(
     public tools: ToolService,
@@ -117,18 +118,13 @@ export class DropdownComponent implements OnInit, OnDestroy, OnChanges {
   private _initializeConfiguration(): void {
     this._width = 'var(--mda-dropdown-default-width)';
     this._left = 'var(--mda-dropdown-default-left)';
+    this._top = 'var(--mda-dropdown-default-top)';
   }
 
   private _getElementReference(config: DropdownConfig): Element {
-    const _element: string | SelectDomElementHash = config.elementReferenceTest as string | SelectDomElementHash;
-    let _output: Element = config.elementReferenceTest as Element || null;
-    const _isSelectDomElementHash: boolean = (
-      typeof _element === 'object' &&
-      (Object.keys(_element).length === 2 || Object.keys(_element).length === 3) &&
-      'name' in _element &&
-      'type' in _element
-    );
-    if (typeof _element === 'string' || _isSelectDomElementHash) {
+    let _output: Element;
+    const _element: ElementDefinition = config.elementReference;
+    if (!!_element) {
       _output = this._bm.getElement(_element);
     }
     return (_output) ? this._bm.processElementForSpecialRules(_output): _output;
@@ -142,11 +138,6 @@ export class DropdownComponent implements OnInit, OnDestroy, OnChanges {
     const _hasWith: boolean = !!(this.config && 'width' in this.config && (this.config.width || this.config.width === 0));
     const _hasPosition: boolean = !!(this.config && 'position' in this.config && Object.keys(this.config.position).length);
 
-    const _hasElementReference: boolean = !!(this.config && 'elementReference' in this.config && this.config.elementReference);
-    // const _elementReference: Element = (_hasElementReference) ?
-    //   this._bm.processElementForSpecialRules(this.config.elementReference) : null;
-
-
     if (_hasWith) {
       if (typeof this.config.width === 'string') {
         if (this.config.width[0] === '-' && this.config.width[1] === '-') {
@@ -157,55 +148,115 @@ export class DropdownComponent implements OnInit, OnDestroy, OnChanges {
       } else {
         this._width = `${this.config.width}px`;
       }
-    } else if (_hasElementReference && _elementReferenceRect) {
+    } else if (!!_elementReferenceRect) {
       this._width = `${_elementReferenceRect.width}px`;
     }
 
     if (_hasPosition) {
+      let _elementCorrectionScroll: Element;
+      let _elementCorrectionHorizontalRect: ClientRect | DOMRect;
+      let _elementCorrectionVerticalRect: ClientRect | DOMRect;
+      let _hasHorizontalCorrection: boolean = false;
+      let _hasVerticalCorrection: boolean = false;
+      if (this.config.position.corrections && Object.keys(this.config.position.corrections).length) {
+        if (this.config.position.corrections.elementReferenceScroll) {
+          _elementCorrectionScroll = this._bm.getElement(this.config.position.corrections.elementReferenceScroll);
+        }
+        if (this.config.position.corrections.elementReferenceHorizontal) {
+          const _elementCorrectionH: Element = this._bm.getElement(this.config.position.corrections.elementReferenceHorizontal);
+          _elementCorrectionHorizontalRect = (!!_elementCorrectionH) ? _elementCorrectionH.getBoundingClientRect() : null;
+        }
+        if (this.config.position.corrections.elementReferenceVertical) {
+          const _elementCorrectionV: Element = this._bm.getElement(this.config.position.corrections.elementReferenceVertical);
+          _elementCorrectionVerticalRect = (!!_elementCorrectionV) ? _elementCorrectionV.getBoundingClientRect() : null;
+        }
+        _hasHorizontalCorrection = !!(this.config.position.corrections.horizontal || this.config.position.corrections.horizontal === 0);
+        _hasVerticalCorrection = !!(this.config.position.corrections.vertical || this.config.position.corrections.vertical === 0);
+      }
+
+      let _textHorizontalPosition: string = '';
       if (this.config.position.left || this.config.position.left === 0) {
-        if (typeof this.config.position.left === 'string') {
-          if (this.config.position.left[0] === '-' && this.config.position.left[1] === '-') {
-            this._left = `var(${this.config.position.left})`;
+        _textHorizontalPosition = 'left';
+      } else if (this.config.position.right || this.config.position.right === 0) {
+        _textHorizontalPosition = 'right';
+      }
+      if (_textHorizontalPosition) {
+        if (typeof this.config.position[_textHorizontalPosition] === 'string') {
+          if (this.config.position[_textHorizontalPosition][0] === '-' && this.config.position[_textHorizontalPosition][1] === '-') {
+            this._left = `var(${this.config.position[_textHorizontalPosition]})`;
           } else {
-            this._left = this.config.position.left;
+            this._left = this.config.position[_textHorizontalPosition];
           }
-        } else {
-          this._left = `${this.config.position.left}px`;
+          if (!!_elementReferenceRect) {
+            this._left = `${this._left} + ${_elementReferenceRect[_textHorizontalPosition]}px`;
+          }
+        } else if (typeof this.config.position[_textHorizontalPosition] === 'number') {
+          this._left = (!!_elementReferenceRect) ?
+            `${this.config.position[_textHorizontalPosition] + _elementReferenceRect[_textHorizontalPosition]}px` :
+            `${this.config.position[_textHorizontalPosition]}px`;
+        } else if (typeof this.config.position[_textHorizontalPosition] === 'boolean' && !!_elementReferenceRect) {
+          this._left = `${_elementReferenceRect[_textHorizontalPosition]}px`;
         }
       }
-    } else if (_hasElementReference && _elementReferenceRect) {
-      this._left = `${_elementReferenceRect.left}px`;
+
+      let _textVerticalPosition: string = '';
+      if (this.config.position.top || this.config.position.top === 0) {
+        _textVerticalPosition = 'top';
+      } else if (this.config.position.bottom || this.config.position.bottom === 0) {
+        _textVerticalPosition = 'bottom';
+      }
+      if (_textVerticalPosition) {
+        if (typeof this.config.position[_textVerticalPosition] === 'string') {
+          if (this.config.position[_textVerticalPosition][0] === '-' && this.config.position[_textVerticalPosition][1] === '-') {
+            this._top = `var(${this.config.position[_textVerticalPosition]})`;
+          } else {
+            this._top = this.config.position[_textVerticalPosition];
+          }
+          if (!!_elementReferenceRect) {
+            this._top = `${this._top} + ${_elementReferenceRect[_textVerticalPosition]}px`;
+          }
+        } else if (typeof this.config.position[_textVerticalPosition] === 'number') {
+          this._top = (!!_elementReferenceRect) ?
+            `${this.config.position[_textVerticalPosition] + _elementReferenceRect[_textVerticalPosition]}px` :
+            `${this.config.position[_textVerticalPosition]}px`;
+        } else if (typeof this.config.position[_textVerticalPosition] === 'boolean' && !!_elementReferenceRect) {
+          this._top = `${_elementReferenceRect[_textVerticalPosition]}px`;
+        }
+      }
+
+      let _correctionHorizontal: string = '0px';
+      if (_hasHorizontalCorrection) {
+        if (typeof this.config.position.corrections.horizontal === 'string') {
+          _correctionHorizontal = this.config.position.corrections.horizontal;
+        } else if (typeof this.config.position.corrections.horizontal === 'number') {
+          _correctionHorizontal = `${this.config.position.corrections.horizontal}px`;
+        }
+      }
+      let _correctionVertical: string = '0px';
+      if (_hasVerticalCorrection) {
+        if (typeof this.config.position.corrections.vertical === 'string') {
+          _correctionVertical = this.config.position.corrections.vertical;
+        } else if (typeof this.config.position.corrections.vertical === 'number') {
+          _correctionVertical = `${this.config.position.corrections.vertical}px`;
+        }
+      }
+
+      const _correctionElementH: string = (!!_elementCorrectionHorizontalRect) ? `${_elementCorrectionHorizontalRect.width}px` : '0px';
+      const _correctionElementV: string = (!!_elementCorrectionVerticalRect) ? `${_elementCorrectionVerticalRect.height}px` : '0px';
+      const _correctionElementS: string = (!!_elementCorrectionScroll) ? `${_elementCorrectionScroll.scrollTop}px` : '0px';
+
+      this._left = `calc(${this._left} - ${_correctionElementH} + ${_correctionHorizontal})`;
+      this._top = `calc(${this._top} - ${_correctionElementV} + ${_correctionVertical} + ${_correctionElementS})`;
+
+      if (_textHorizontalPosition === 'right' && !_elementReferenceRect) {
+        this._right = this._left;
+        this._left = 'unset';
+      }
+      if (_textVerticalPosition === 'bottom' && !_elementReferenceRect) {
+        this._bottom = this._top;
+        this._top = 'unset';
+      }
     }
-
-    // if (_hasWith) {
-    //   this.width = (typeof this.config.width === 'string') ? this.config.width : `${this.config.width}px`;
-    // } else if (_hasElementReference && _elementReferenceRect) {
-    //   this.width = `${_elementReferenceRect.width}px`;
-    // }
-
-    // if (_hasElementReference && _elementReferenceRect) {
-    //   const _hostRect: ClientRect | DOMRect = this._host.getBoundingClientRect();
-    //   const _left = `${_elementReferenceRect.left - _hostRect.left}px`;
-    //   const _right = `${_hostRect.right - _elementReferenceRect.right}px`;
-    //   if (typeof this.config.menu === 'object') {
-    //     if ('left' in this.config.menu) {
-    //       this.left = (typeof this.config.menu.left === 'boolean') ?
-    //         (this.config.menu.left) ? _left : null :
-    //         (typeof this.config.menu.left === 'string') ? this.config.menu.left : `${this.config.menu.left}px`;
-    //     }
-    //     if ('right' in this.config.menu) {
-    //       this.right = (typeof this.config.menu.right === 'boolean') ?
-    //         (this.config.menu.right) ? _right : null :
-    //         (typeof this.config.menu.right === 'string') ? this.config.menu.right : `${this.config.menu.right}px`;
-    //     }
-    //     this.left = (this.left && this.right) ? null : this.left;
-    //     if (!this.left && !this.right) {
-    //       this.left = _left;
-    //     }
-    //   } else {
-    //     this.left = _left;
-    //   }
-    // }
 
     const _configSeparators = (this._checkConfigArray('separators')) ? this.config.separators : [];
     this.separators = this.options.map((e: unknown, i: number) => _configSeparators.includes(i + 1));
@@ -214,19 +265,16 @@ export class DropdownComponent implements OnInit, OnDestroy, OnChanges {
 
     this._autoPretty = ('autoPrettyLabels' in this.config) ? this.config.autoPrettyLabels : false;
 
-    // const width: string = (this.width) ? this.width : 'var(--mda-dropdown-default-width)';
-    // const left: string = (this.left) ? this.left : 'var(--mda-dropdown-default-left)';
-    // const right: string = (this.right) ? this.right : 'var(--mda-dropdown-default-right)';
-    // this._renderer.setStyle(this._host, 'width', width);
-    // this._renderer.setStyle(this._host, 'min-width', width);
-    // this._renderer.setStyle(this._host, 'left', left);
-    // this._renderer.setStyle(this._host, 'right', right);
-
     const _dropdownElement: HTMLElement = this._host.getElementsByClassName('mda-dropdown').item(0) as HTMLElement;
     _dropdownElement.style.width = this._width;
     _dropdownElement.style.left = this._left;
-
-    console.log('POLLO LOCO', _elementReferenceRect);
+    if (this._right) {
+      _dropdownElement.style.right = this._right;
+    }
+    _dropdownElement.style.top = this._top;
+    if (this._bottom) {
+      _dropdownElement.style.bottom = this._bottom;
+    }
   }
 
   private _deleteSelectedInHtmlCollection(htmlCollection: HTMLCollection): void {
@@ -342,18 +390,20 @@ export class DropdownComponent implements OnInit, OnDestroy, OnChanges {
         this._renderer.setAttribute(_optionText, 'style', _textStyle);
       }
       if (_optionIconRight) {
-        const _iconRightStyle: string = _optionText.getAttribute('data-style-temp');
+        const _iconRightStyle: string = _optionIconRight.getAttribute('data-style-temp');
         this._renderer.setAttribute(_optionIconRight, 'style', _iconRightStyle);
       }
     });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.options) {
-      this._generateOptionsInside();
-    }
-    if (changes.config) {
-      this._processConfiguration();
+    if (this.render) {
+      if (changes.options) {
+        this._generateOptionsInside();
+      }
+      if (changes.config) {
+        this._processConfiguration();
+      }
     }
   }
 

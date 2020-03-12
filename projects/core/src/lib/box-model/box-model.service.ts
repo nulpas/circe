@@ -1,19 +1,11 @@
 import { Injectable } from '@angular/core';
 import {
-  SelectDomElementHash,
-  SelectDomElementHashType,
-  SelectDomElementHashTypeDefinition,
-  selectDomElementHashTypeDefinitionConstants,
-  SelectDomElementHashDefinition,
-  selectDomElementHashDefinitionConstants
-} from './_types/data.types';
-import {
-  ElementDefinition,
+  ElementDefinition, ElementDefinitionComplex,
   elementFieldsConstants,
   ElementHash, ElementHashComplex, ElementHashType,
   elementHashTypeDefinitionConstants,
   ElementQuery, ElementQueryComplex
-} from '@core/_types/element.types';
+} from '../_types/element.types';
 
 export interface SizeObject {
   with: ProcessedUnitObject;
@@ -25,8 +17,7 @@ export interface ProcessedUnitObject {
   unit: string;
 }
 
-export type ElementIdSimple = string | SelectDomElementHash | Element;
-export type ElementId = ElementIdSimple | Array<ElementIdSimple>;
+export type ElementId = ElementDefinitionComplex | Array<ElementDefinitionComplex>;
 
 export type BoxModelType = 'horizontal' | 'vertical';
 export interface BoxModelSwapObject {
@@ -59,11 +50,7 @@ export const boxModelTypeConstants = {
 };
 
 @Injectable() export class BoxModelService {
-  private readonly _selectDomElementTypeConstants: SelectDomElementHashTypeDefinition;
-  private readonly _selectDomElementConstants: SelectDomElementHashDefinition;
-
   private readonly _defaultBoxModelType: BoxModelType;
-  private readonly _defaultSelectDomType: SelectDomElementHashType;
 
   private readonly _defaultElementHashType: ElementHashType;
 
@@ -79,11 +66,7 @@ export const boxModelTypeConstants = {
   private readonly _fontSizeRule: SpecialRuleObject;
 
   constructor() {
-    this._selectDomElementTypeConstants = selectDomElementHashTypeDefinitionConstants;
-    this._selectDomElementConstants = selectDomElementHashDefinitionConstants;
-
     this._defaultBoxModelType = boxModelTypeConstants.VERTICAL;
-    this._defaultSelectDomType = this._selectDomElementTypeConstants.CLASS;
 
     this._defaultElementHashType = elementHashTypeDefinitionConstants.CLASS;
 
@@ -97,16 +80,6 @@ export const boxModelTypeConstants = {
     this._nativeDomElementParamsToCheck = ['getBoundingClientRect', 'getElementsByClassName', 'getElementsByTagName', 'querySelector'];
 
     this._fontSizeRule = { applyOnElements: ['i'], boxModelType: boxModelTypeConstants.HORIZONTAL };
-  }
-
-  private _isSelectDomElementObject(param: any): param is SelectDomElementHash {
-    const _hasTwoParameters: boolean = (
-      Object.keys(param).length === 2 &&
-      this._selectDomElementConstants.NAME in param &&
-      this._selectDomElementConstants.TYPE in param
-    );
-    const _hasThreeParameters: boolean = (Object.keys(param).length === 3 && this._selectDomElementConstants.SHADOW_ELEMENT in param);
-    return (_hasTwoParameters || _hasThreeParameters);
   }
 
   /**
@@ -145,31 +118,53 @@ export const boxModelTypeConstants = {
    * Checks if element given param is a native DOM element.
    */
   private _isNativeDomElement(param: any): param is Element {
-    return (this._nativeDomElementParamsToCheck.map((e: string) => e in param)).every((el) => !!el);
+    return (!!param) ? (this._nativeDomElementParamsToCheck.map((e: string) => e in param)).every((el) => !!el) : false;
   }
 
-  private _transformElementIdentificationArgument(elementId: ElementId): Array<Element> {
-    const _auxArgument: Array<Element> = [];
-    if (Array.isArray(elementId)) {
-      (elementId as Array<ElementIdSimple>).forEach((e: ElementIdSimple) => {
-        if (typeof e === 'string') {
-          _auxArgument.push(this.getElement({name: e, type: this._defaultSelectDomType}));
-        } else if (this._isSelectDomElementObject(e)) {
-          _auxArgument.push(this.getElement(e));
-        } else if (this._isNativeDomElement(e)) {
-          _auxArgument.push(e);
-        } else {
-          throw new TypeError(`Element ${e} in Array is not SelectDomElementHash type.`);
+  /**
+   * _getElement
+   *
+   * @description
+   * Returns an element dom native object from different types of given params.
+   */
+  private _getElement(element: ElementDefinition, shadowElement?: Element): Element {
+    let _output: Element = element as Element;
+    const _shadowElement: Element | Document = shadowElement || document;
+    let _element: ElementDefinition = element;
+    if (typeof element === 'string') {
+      _element = { type: this._defaultElementHashType, name: element };
+    }
+    if (!this._isNativeDomElement(_element)) {
+      if (this._isElementHash(_element)) {
+        switch ((_element as ElementHash).type) {
+          case elementHashTypeDefinitionConstants.CLASS:
+            _output = _shadowElement.getElementsByClassName((_element as ElementHash).name).item(0);
+            break;
+          case elementHashTypeDefinitionConstants.TAG:
+            _output = _shadowElement.getElementsByTagName((_element as ElementHash).name).item(0);
+            break;
+          case elementHashTypeDefinitionConstants.ID:
+            _output = document.getElementById((_element as ElementHash).name);
+            break;
         }
-      });
-    } else if (typeof elementId === 'string') {
-      _auxArgument.push(this.getElement({ name: elementId, type: this._defaultSelectDomType }));
-    } else if (this._isSelectDomElementObject(elementId)) {
-      _auxArgument.push(this.getElement(elementId));
-    } else if (this._isNativeDomElement(elementId)) {
-      _auxArgument.push(elementId);
-    } else {
-      throw new TypeError(`Argument ${elementId} is not SelectDomElementHash type.`);
+      } else if (this._isElementQuery(_element)) {
+        _output = _shadowElement.querySelector((_element as ElementQuery).query);
+      }
+    }
+    return (this._isNativeDomElement(_output)) ? _output : null;
+  }
+
+  /**
+   * _convertToElementIdArray
+   *
+   * @description
+   * Transform elementId type to array of Dom elements.
+   */
+  private _convertToElementIdArray(elementId: ElementId): Array<Element> {
+    const _auxArgument: Array<Element> = [];
+    const _elementId: Array<ElementDefinitionComplex> = (Array.isArray(elementId)) ? elementId : [elementId];
+    for (const element of _elementId) {
+      _auxArgument.push(this.getElement(element));
     }
     return _auxArgument;
   }
@@ -265,45 +260,12 @@ export const boxModelTypeConstants = {
   }
 
   /**
-   * _getElement
-   *
-   * @description
-   * Returns an element dom native object from different types of given params.
-   */
-  private _getElement(element: ElementDefinition, shadowElement?: Element): Element {
-    let _output: Element = element as Element;
-    const _shadowElement: Element | Document = shadowElement || document;
-    let _element: ElementDefinition = element;
-    if (typeof element === 'string') {
-      _element = { type: this._defaultElementHashType, name: element };
-    }
-    if (!this._isNativeDomElement(_element)) {
-      if (this._isElementHash(_element)) {
-        switch ((_element as ElementHash).type) {
-          case elementHashTypeDefinitionConstants.CLASS:
-            _output = _shadowElement.getElementsByClassName((_element as ElementHash).name).item(0);
-            break;
-          case elementHashTypeDefinitionConstants.TAG:
-            _output = _shadowElement.getElementsByTagName((_element as ElementHash).name).item(0);
-            break;
-          case elementHashTypeDefinitionConstants.ID:
-            _output = document.getElementById((_element as ElementHash).name);
-            break;
-        }
-      } else if (this._isElementQuery(_element)) {
-        _output = _shadowElement.querySelector((_element as ElementQuery).query);
-      }
-    }
-    return (this._isNativeDomElement(_output)) ? _output : null;
-  }
-
-  /**
-   * getElementTest
+   * getElement
    *
    * @description
    * Public method to return an element dom native object from different types of given params.
    */
-  public getElementTest(element: ElementDefinition): Element {
+  public getElement(element: ElementDefinitionComplex): Element {
     let _shadowElement: Element;
     if (
       (this._isElementHash(element) || this._isElementQuery(element)) &&
@@ -312,23 +274,6 @@ export const boxModelTypeConstants = {
       _shadowElement = this._getElement((element as ElementHashComplex | ElementQueryComplex).shadowElement);
     }
     return this._getElement(element, _shadowElement);
-  }
-
-  public getElement(element: string | SelectDomElementHash): Element {
-    const _element: SelectDomElementHash = (typeof element === 'string') ?
-      { name: element, type: this._defaultSelectDomType } :
-      element;
-    let _output: Element;
-    const _shadowElement: Element | Document = (this._selectDomElementConstants.SHADOW_ELEMENT in _element) ?
-      _element.shadowElement : document;
-    if (_element.type === this._selectDomElementTypeConstants.CLASS) {
-      _output = _shadowElement.getElementsByClassName(_element.name).item(0);
-    } else if (_element.type === this._selectDomElementTypeConstants.TAG) {
-      _output = _shadowElement.getElementsByTagName(_element.name).item(0);
-    } else if (_element.type === this._selectDomElementTypeConstants.ID) {
-      _output = document.getElementById(_element.name);
-    }
-    return _output;
   }
 
   public getBoxModel(elementId: ElementId, boxModelType?: BoxModelType): BoxModelSwapObject {
@@ -345,7 +290,7 @@ export const boxModelTypeConstants = {
       boxModelExtractedInside: 0,
       boxModelExtractedOutside: 0
     };
-    const _elementId: Array<Element> = this._transformElementIdentificationArgument(elementId);
+    const _elementId: Array<Element> = this._convertToElementIdArray(elementId);
     _elementId.forEach((e: Element) => {
       const _elementRect: DOMRect | ClientRect = e.getBoundingClientRect();
       const _additions: BoxModelAdditionObject = this._getElementAdditions(e, _output.type);

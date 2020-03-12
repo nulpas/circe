@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { ToolService } from '@core/tool.service';
+import { ToolService } from '@core/tool/tool.service';
 
 @Component({
   selector: 'app-color-sample',

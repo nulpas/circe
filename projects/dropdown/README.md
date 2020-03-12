@@ -1,6 +1,6 @@
 # Circe :: Angular Dropdown
 
-Several css spinner elements width optional marquee texts.
+Dropdown component for use as floating menus and other uses.
 
 ## Compatibility
 

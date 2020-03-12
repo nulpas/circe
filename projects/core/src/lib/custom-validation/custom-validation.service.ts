@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormArray } from '@angular/forms';
-import { ToolService } from './tool.service';
-import { SimpleData } from './_types/data.types';
+import { ToolService } from '../tool/tool.service';
+import { SimpleData } from '../_types/data.types';
 
 export type CustomErrorKeys = 'repeated';
 export interface CustomErrorMessages {

@@ -3,9 +3,9 @@ import { DataService } from '../../_services/data/data.service';
 import { takeUntil} from 'rxjs/operators';
 import { concat, Subject } from 'rxjs';
 import { Icon, IconSection, IconSectionsRequest } from '../../_types/response.types';
-import { ToolService } from '@core/tool.service';
+import { ToolService } from '@core/tool/tool.service';
 import { FormControl } from '@angular/forms';
-import { EventsService } from '@core/events.service';
+import { EventsService } from '@core/events/events.service';
 import { OrderConditionPipe } from '@core/order-condition/order-condition.pipe';
 
 @Component({

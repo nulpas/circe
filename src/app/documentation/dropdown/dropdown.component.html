@@ -7,19 +7,29 @@
 <h2></h2>
 <section class="dropdown-demo">
   <section class="demo__stage">
-    <cc-dropdown
-      class="mda-dropdown--demo"
-      [options]="dropdownOptions"
-      [config]="dropdownConfig"
-      (optionSelected)="selectOption($event)"
-      (closeDropdown)="clickOutside()">
-    </cc-dropdown>
+    <div class="dropdown-set">
+      <cc-dropdown
+        class="mda-dropdown--demo"
+        [options]="dropdownOptions"
+        [config]="dropdownConfig"
+        [render]="true"
+        (optionSelected)="selectOption($event)">
+      </cc-dropdown>
 
-    <cc-dropdown
-      *ngIf="showSecondaryDropdown"
-      [options]="secondaryDropdownOptions"
-      [config]="secondaryDropdownConfig">
-    </cc-dropdown>
+      <cc-dropdown
+        *ngIf="showSecondaryDropdown"
+        [options]="secondaryDropdownOptions"
+        [config]="secondaryDropdownConfig"
+        (optionSelected)="selectOption($event)"
+        (closeDropdown)="closeDropdown()">
+      </cc-dropdown>
+    </div>
+
+    <div
+      class="trigger-marquee mda-font--extra-light"
+      [ngClass]="{'show': showOptionSelected}">
+      {{marquee}}
+    </div>
   </section>
   <section class="demo__controls">
     <h4>Icon</h4>
@@ -39,6 +49,15 @@
     <input id="trigger-other-dropdown" type="radio" name="trigger" [value]="3" [formControl]="dropdownTriggerAction">
     <label for="trigger-other-dropdown">Other Dropdown</label>
 
+    <ng-container *ngIf="dropdownTriggerAction.value === 3">
+      <h4>How Closes New Dropdown</h4>
+      <input id="close-mode-toggle" type="radio" name="close-mode" [value]="1" [formControl]="dropdownCloseMode">
+      <label for="close-mode-toggle">Only Toggle Option</label>
+
+      <input id="close-mode-click-outside" type="radio" name="close-mode" [value]="2" [formControl]="dropdownCloseMode">
+      <label for="close-mode-click-outside">Click Outside Event</label>
+    </ng-container>
+
     <h4>Options</h4>
     <input
       id="option-separator"
@@ -55,6 +74,14 @@
       name="option-color"
       [formControl]="dropdownOptionColor">
     <label for="option-color">Option Color</label>
+
+    <input
+      id="icon-color"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="option-color"
+      [formControl]="dropdownIconColor">
+    <label for="icon-color">Icon Color</label>
   </section>
 </section>
 

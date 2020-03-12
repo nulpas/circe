@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-grid-columns",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Circe :: Angular Grid-Columns Directive",
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
     "@angular/core": ">=8.2.14"
   },
   "dependencies": {
-    "@lunaeme/circe-core": "^0.3.10",
+    "@lunaeme/circe-core": "^0.4.2",
     "rxjs": "^6.5.4"
   }
 }

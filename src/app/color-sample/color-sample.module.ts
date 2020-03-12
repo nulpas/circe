@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ColorSampleComponent } from './color-sample.component';
-import { ToolService } from '@core/tool.service';
+import { ToolService } from '@core/tool/tool.service';
 
 @NgModule({
   exports: [ColorSampleComponent],

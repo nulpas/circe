@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, Renderer2 } from
 import { FormControl, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { EventsService } from '@core/events.service';
+import { EventsService } from '@core/events/events.service';
 
 @Component({
   selector: 'app-input',

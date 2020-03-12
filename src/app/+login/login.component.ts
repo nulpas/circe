@@ -1,14 +1,14 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginElement } from './login.types';
-import { EventsService } from '@core/events.service';
+import { EventsService } from '@core/events/events.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Login, ResponseError } from '../_types/response.types';
 import { DataService } from '../_services/data/data.service';
 import { LoginService } from '../_services/login/login.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ToolService } from '@core/tool.service';
+import { ToolService } from '@core/tool/tool.service';
 
 @Component({
   selector: 'app-login',

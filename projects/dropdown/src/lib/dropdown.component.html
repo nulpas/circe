@@ -7,7 +7,7 @@
     <div
       class="mda-dropdown__option mda-dropdown__option-{{i + 1}}"
       tabindex="1"
-      (mousedown)="ev.preventNoNeededEvent($event); optionSelected.emit(option);"
+      (click)="ev.preventNoNeededEvent($event); optionSelected.emit(option);"
       (mouseenter)="ev.preventNoNeededEvent($event); mouseEnterAction($event);"
       (mousemove)="ev.preventNoNeededEvent($event); mouseEnterAction($event);"
       (mouseout)="ev.preventNoNeededEvent($event); mouseOutAction($event);">
@@ -30,6 +30,6 @@
           [ngStyle]="{color: (option['iconRight'].color) ? option['iconRight'].color : 'inherit'}"></i>
       </div>
     </div>
-    <hr class="dropdown__separator" *ngIf="separators[i]">
+    <hr class="dropdown__separator" *ngIf="separators && separators[i]">
   </ng-container>
 </div>

@@ -8,8 +8,8 @@ import { DataService } from './data.service';
 export class DataModule {
   public static forChild(): ModuleWithProviders<DataModule> {
     return {
-        ngModule: DataModule,
-        providers: [DataService]
+      ngModule: DataModule,
+      providers: [DataService]
     };
   }
 }

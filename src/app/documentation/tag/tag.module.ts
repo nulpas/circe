@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TagComponent } from './tag.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormBehaviorModule } from '@form-behavior/form-behavior.module';
-import { EventsService } from '@core/events.service';
+import { EventsService } from '@core/events/events.service';
 
 @NgModule({
   declarations: [TagComponent],

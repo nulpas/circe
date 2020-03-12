@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestro
 import { FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { EventsService } from '@core/events.service';
+import { EventsService } from '@core/events/events.service';
 
 @Component({
   selector: 'app-tag',

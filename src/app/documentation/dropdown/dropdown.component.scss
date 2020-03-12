@@ -13,8 +13,19 @@
   .dropdown-demo {
     @include demoElement();
     .demo__stage {
-      & > .mda-dropdown--demo {
-        --mda-dropdown-position: relative;
+      @include createFlexBox(row, normal, space-between, nowrap);
+      & > .dropdown-set {
+        & > .mda-dropdown--demo {
+          --mda-dropdown-position: relative;
+        }
+      }
+      & > .trigger-marquee {
+        opacity: 0;
+        transition: opacity .5s ease-out;
+        &.show {
+          opacity: 1;
+          transition: opacity .3s ease-in;
+        }
       }
     }
   }

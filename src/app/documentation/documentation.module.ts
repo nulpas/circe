@@ -3,7 +3,7 @@ import { DocumentationComponent } from './documentation.component';
 import { CommonModule } from '@angular/common';
 import { ColorSchemaModule } from './color-schema/color-schema.module';
 import { RouterModule } from '@angular/router';
-import { ToolService } from '@core/tool.service';
+import { ToolService } from '@core/tool/tool.service';
 import { DocumentationRoutingModule } from './documentation-routing.module';
 import { TypographyModule } from './typography/typography.module';
 import { IconsModule } from './icons/icons.module';

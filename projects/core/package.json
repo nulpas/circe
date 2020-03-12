@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-core",
-  "version": "0.3.13",
+  "version": "0.4.2",
   "description": "Circe :: Angular Core Services and Tools",
   "repository": {
     "type": "git",
