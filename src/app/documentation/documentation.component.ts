@@ -14,7 +14,6 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class DocumentationComponent implements OnInit, OnDestroy {
   public menu: Array<MenuGroup>;
-  public menuOptions: Array<MenuOption> = [];
   public optionSelected: string;
   public toSelectOption$: BehaviorSubject<undefined> = new BehaviorSubject(undefined);
 
@@ -36,13 +35,6 @@ export class DocumentationComponent implements OnInit, OnDestroy {
       takeUntil(this._componentDestroyed$)
     ).subscribe((r: Array<MenuGroup>) => {
       this.menu = r;
-
-      // ###### Provisional: Refactor menu array for template
-      // for (const group of r) {
-      //   this.menuOptions = [...this.menuOptions, ...group.options.map((e: MenuOption) => ({ ...e, parent: group.id }))];
-      // }
-      // this.menuOptions = _order.transform(this.menuOptions, 'name');
-
       _cd.markForCheck();
     });
   }

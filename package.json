@@ -36,7 +36,7 @@
     "@angular/platform-browser": "~9.0.5",
     "@angular/platform-browser-dynamic": "~9.0.5",
     "@angular/router": "~9.0.5",
-    "@lunaeme/medea": "^3.0.23",
+    "@lunaeme/medea": "^3.0.24",
     "core-js": "^3.6.4",
     "lodash": "^4.17.15",
     "rxjs": "~6.5.4",

@@ -32,12 +32,10 @@ export class DropdownComponent implements OnInit, OnDestroy {
   private readonly _host: HTMLElement;
   private readonly _dropdownOptionsIcons: Array<{ class: string; color?: string; }>;
   private _timeout: NodeJS.Timeout;
-  private _clickOutsideApply: boolean;
   private _componentDestroyed$: Subject<undefined> = new Subject();
 
   constructor(private _el: ElementRef<HTMLElement>, private _cd: ChangeDetectorRef) {
     this._host = _el.nativeElement;
-    this._clickOutsideApply = false;
 
     this.dropdownOptions = [
       { value: 1, label: 'Edit' },
@@ -64,7 +62,7 @@ export class DropdownComponent implements OnInit, OnDestroy {
       { value: 72, label: 'One by One' }
     ];
     this.secondaryDropdownConfig = {
-      clickOutsideApply: this._clickOutsideApply,
+      clickOutsideApply: false,
       elementReference: {
         type: 'class',
         name: 'mda-dropdown__option-3',
