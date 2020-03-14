@@ -104,7 +104,7 @@ export class DropdownComponent implements OnInit, OnDestroy {
         this.dropdownOptions = [
           ...this.dropdownOptions.map((e: OptionForDropdown) => {
             if (e.value === 6 || e.value === 7) {
-              const _color: string = (e.value === 6) ? 'var(--mda-color-critical)' : 'var(--mda-color-action)';
+              const _color: string = (e.value === 6) ? 'var(--mda-color-critical)' : 'var(--color-main)';
               return { ...e, color: _color };
             }
             return e;
@@ -140,7 +140,7 @@ export class DropdownComponent implements OnInit, OnDestroy {
         this.dropdownOptionIconsLeft.disable({ emitEvent: false });
         this.dropdownOptions = this.dropdownOptions.map((e: OptionForDropdown) => {
           if (e.value === 6 || e.value === 7) {
-            const _color: string = (e.value === 6) ? 'var(--mda-color-critical)' : 'var(--mda-color-action)';
+            const _color: string = (e.value === 6) ? 'var(--mda-color-critical)' : 'var(--color-main)';
             return { ...e, icon: { ...e.icon, color: _color } };
           }
           return e;
@@ -217,7 +217,7 @@ export class DropdownComponent implements OnInit, OnDestroy {
     } else {
       clearTimeout(this._timeout);
       this.showOptionSelected = true;
-      this.marquee = `Selected option ${event.label} (ID: ${event.id})`;
+      this.marquee = `Selected option ${event.label}<br> (ID: ${event.id})`;
       this._timeout = setTimeout(() => {
         this.showOptionSelected = false;
         this._cd.markForCheck();

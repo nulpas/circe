@@ -27,8 +27,8 @@
 
     <div
       class="trigger-marquee mda-font--extra-light"
-      [ngClass]="{'show': showOptionSelected}">
-      {{marquee}}
+      [ngClass]="{'show': showOptionSelected}"
+      [innerHTML]="marquee">
     </div>
   </section>
   <section class="demo__controls">

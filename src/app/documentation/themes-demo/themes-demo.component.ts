@@ -12,32 +12,40 @@ import { Subject } from 'rxjs';
 export class ThemesDemoComponent implements OnInit, OnDestroy {
   public themesDemoTemplate: FormControl = new FormControl(undefined);
 
-  private readonly _bodyElement: HTMLBodyElement;
+  private readonly _htmlElement: HTMLHtmlElement;
   private SPACE_BLUE_TEMPLATE: string = 'medea-tpl';
+  private STRATIO_WEB_TEMPLATE: string = 'mda-stratio-web-tpl';
   private MARTINA_TEMPLATE: string = 'mda-martina-tpl';
   private _componentDestroyed$: Subject<undefined> = new Subject();
 
   constructor(private _renderer: Renderer2) {
-    this._bodyElement = document.getElementsByTagName('body').item(0);
+    this._htmlElement = document.getElementsByTagName('html').item(0);
     this.themesDemoTemplate.setValue(this._checkTemplate());
 
     this.themesDemoTemplate.valueChanges.pipe(
       takeUntil(this._componentDestroyed$)
     ).subscribe((r: number) => {
-      if (r === 1) {
-        _renderer.removeClass(this._bodyElement, this.MARTINA_TEMPLATE);
-        _renderer.addClass(this._bodyElement, this.SPACE_BLUE_TEMPLATE);
-      } else if (r === 2) {
-        _renderer.removeClass(this._bodyElement, this.SPACE_BLUE_TEMPLATE);
-        _renderer.addClass(this._bodyElement, this.MARTINA_TEMPLATE);
+      _renderer.removeAttribute(this._htmlElement, 'class');
+      switch (r) {
+        case 1:
+          _renderer.addClass(this._htmlElement, this.SPACE_BLUE_TEMPLATE);
+          break;
+        case 2:
+          _renderer.addClass(this._htmlElement, this.STRATIO_WEB_TEMPLATE);
+          break;
+        case 3:
+          _renderer.addClass(this._htmlElement, this.MARTINA_TEMPLATE);
+          break;
       }
     });
   }
 
   private _checkTemplate(): number {
-    const _classList: DOMTokenList = this._bodyElement.classList;
-    if (_classList.contains(this.MARTINA_TEMPLATE)) {
+    const _classList: DOMTokenList = this._htmlElement.classList;
+    if (_classList.contains(this.STRATIO_WEB_TEMPLATE)) {
       return 2;
+    } else if (_classList.contains(this.MARTINA_TEMPLATE)) {
+      return 3;
     }
     return 1;
   }

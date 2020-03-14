@@ -12,5 +12,8 @@
   }
   .themes-demo-demo {
     @include demoElement();
+    .demo__stage {
+      width: 100%;
+    }
   }
 }

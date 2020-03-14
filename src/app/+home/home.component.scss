@@ -43,7 +43,7 @@
           display: table;
           margin-top: 12px;
           text-decoration: underline;
-          color: var(--mda-color-action);
+          color: var(--color-main);
           &:hover {
             text-decoration: none;
           }
@@ -86,7 +86,7 @@
             margin-right: 16px;
             &:before {
               padding: 16px;
-              background-color: var(--mda-color-misc-coral);
+              background-color: var(--color-misc-01);
               border-radius: 100%;
               color: var(--mda-color-neutral-full);
             }

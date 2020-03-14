@@ -43,7 +43,7 @@ testem.log
 package-lock.json
 travis-ci_rsa
 travis-ci
-/**/yarn.lock
+/projects/**/yarn.lock
 
 # System Files
 .DS_Store

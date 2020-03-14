@@ -20,6 +20,8 @@
         }
       }
       & > .trigger-marquee {
+        margin-left: 24px;
+        text-align: right;
         opacity: 0;
         transition: opacity .5s ease-out;
         &.show {
