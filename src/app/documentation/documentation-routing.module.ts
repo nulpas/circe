@@ -107,7 +107,7 @@ const routes: Routes = [
     canActivate: [SessionGuard]
   },
   {
-    path: 'space-blue-theme-overview',
+    path: 'platform-theme-overview',
     component: SpaceBlueThemeOverviewComponent,
     canActivate: [SessionGuard]
   },

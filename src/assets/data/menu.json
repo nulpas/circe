@@ -32,13 +32,13 @@
     ]
   },
   {
-    "id": "space-blue-theme",
-    "name": "Space Blue Theme",
+    "id": "platform-theme",
+    "name": "Platform Theme",
     "options": [
       {
-        "id": "space-blue-theme-overview",
+        "id": "platform-theme-overview",
         "name": "Overview",
-        "location": ["space-blue-theme-overview"]
+        "location": ["platform-theme-overview"]
       },
       {
         "id": "colors",
