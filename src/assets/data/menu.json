@@ -32,13 +32,13 @@
     ]
   },
   {
-    "id": "platform-theme",
-    "name": "Platform Theme",
+    "id": "stratio-platform-theme",
+    "name": "Stratio Platform Theme",
     "options": [
       {
-        "id": "platform-theme-overview",
+        "id": "stratio-platform-overview",
         "name": "Overview",
-        "location": ["platform-theme-overview"]
+        "location": ["stratio-platform-overview"]
       },
       {
         "id": "colors",

@@ -107,7 +107,7 @@ const routes: Routes = [
     canActivate: [SessionGuard]
   },
   {
-    path: 'platform-theme-overview',
+    path: 'stratio-platform-overview',
     component: SpaceBlueThemeOverviewComponent,
     canActivate: [SessionGuard]
   },
