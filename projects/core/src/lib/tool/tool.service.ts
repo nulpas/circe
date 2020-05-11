@@ -98,6 +98,21 @@ import { v4 } from 'uuid';
   }
 
   /**
+   * checkArray
+   * @description
+   * Returns true if parameter given "array" is an array, otherwise returns false;
+   * If optional parameter "filled" is given, then this method checks the array is not empty.
+   * Default value for "filled" is true.
+   */
+  public static checkArray(array: Array<any>, filled: boolean = true): boolean {
+    const _checkStructure: boolean = (!!array && Array.isArray(array));
+    if (filled) {
+      return (_checkStructure && !!array.length);
+    }
+    return _checkStructure;
+  }
+
+  /**
    * @deprecated
    */
   public static getValueFromDotedKey(object: any, dotedKey: string, separator?: string): any {

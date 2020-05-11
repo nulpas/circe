@@ -1,6 +1,6 @@
 # Circe :: Angular Form Behavior Directive
 
-Directive that manages statuses on several form elements.
+Directive manages statuses on several form elements.
 
 ## Compatibility
 

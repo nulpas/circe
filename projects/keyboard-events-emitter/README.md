@@ -1,24 +1,17 @@
-# KeyboardEventsEmitter
+# Circe :: Keyboard Events Emitter Directive
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+Directive to emit keyboard events from the element or globally.
 
-## Code scaffolding
+## Compatibility
 
-Run `ng generate component component-name --project keyboard-events-emitter` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project keyboard-events-emitter`.
-> Note: Don't forget to add `--project keyboard-events-emitter` or else it will be added to the default project in your `angular.json` file. 
+Angular >= v.7.2.15
 
-## Build
+## Installation
 
-Run `ng build keyboard-events-emitter` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `npm install @lunaeme/circe-keyboard-events-emitter` or
 
-## Publishing
+run `yarn add @lunaeme/circe-keyboard-events-emitter`.
 
-After building your library with `ng build keyboard-events-emitter`, go to the dist folder `cd dist/keyboard-events-emitter` and run `npm publish`.
+## Use
 
-## Running unit tests
-
-Run `ng test keyboard-events-emitter` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ToDo ...
