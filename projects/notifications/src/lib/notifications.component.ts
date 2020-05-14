@@ -22,7 +22,7 @@ export class NotificationsComponent implements OnInit, OnChanges, OnDestroy {
   @Input() disabled: boolean = false;
   @Input() config: NotificationsConfig;
 
-  @Output() close: EventEmitter<undefined> = new EventEmitter();
+  @Output() closed: EventEmitter<undefined> = new EventEmitter();
   @Output() autoClose: EventEmitter<undefined> = new EventEmitter();
 
   public set triggerNotification(launch: boolean) {
@@ -124,7 +124,7 @@ export class NotificationsComponent implements OnInit, OnChanges, OnDestroy {
           _top = this._elementReferenceRect.top + _center - _middleNot;
           break;
         case notificationVertical.bottom:
-          let _heightForBottom: number = (this._elementReferenceRect.height > window.innerHeight) ?
+          const _heightForBottom: number = (this._elementReferenceRect.height > window.innerHeight) ?
             window.innerHeight : this._elementReferenceRect.height;
           _top = this._elementReferenceRect.top + _heightForBottom - this._notificationElementRect.height - this._margin;
           break;
@@ -244,7 +244,7 @@ export class NotificationsComponent implements OnInit, OnChanges, OnDestroy {
       clearTimeout(this._visibilityDurationTimeout);
       this.showNotification = false;
     }
-    this.close.emit();
+    this.closed.emit();
   }
 
   ngOnDestroy() {

@@ -372,11 +372,14 @@ export class FormBehaviorDirective implements OnInit, OnDestroy, AfterViewInit, 
   private _renderAssociates(elementType: AssociateElementType, className: ClassEvent, action: ClassAction): void {
     let _element: HTMLElement = null;
     switch (elementType) {
-      case LABEL: _element = this._label;
+      case LABEL:
+        _element = this._label;
         break;
-      case REPORT: _element = this._report;
+      case REPORT:
+        _element = this._report;
         break;
-      case WRAPPER: _element = this._wrapper;
+      case WRAPPER:
+        _element = this._wrapper;
         break;
     }
     if (!!_element ) {

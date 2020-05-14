@@ -62,11 +62,11 @@ import { v4 } from 'uuid';
     return (_unique) ? Array.from(new Set(values)) : values.filter((e: SimpleData, i: number) => values.indexOf(e) !== i);
   }
 
-  public static checkLastChar(string: string, char: string): string {
-    if (string && string[string.length - 1] !== char) {
-      return `${string}${char}`;
+  public static checkLastChar(text: string, char: string): string {
+    if (text && text[text.length - 1] !== char) {
+      return `${text}${char}`;
     }
-    return string;
+    return text;
   }
 
   public static hexToRgb(hex: string): Array<number> {
@@ -137,11 +137,11 @@ import { v4 } from 'uuid';
   /**
    * @deprecated
    */
-  public static formatString(string: string): string {
-    if (isNaN(Number(string))) {
-      return _startCase(string);
+  public static formatString(text: string): string {
+    if (isNaN(Number(text))) {
+      return _startCase(text);
     } else {
-      return string;
+      return text;
     }
   }
 
@@ -156,19 +156,19 @@ import { v4 } from 'uuid';
     return _output;
   }
 
-  public stringTransform(string: string, transformType?: StringTransformMethods): string {
+  public stringTransform(text: string, transformType?: StringTransformMethods): string {
     const _transformType: StringTransformMethods = transformType || this.stringTransformTypes.START;
-    let _output: string = string;
-    if (isNaN(Number(string))) {
+    let _output: string = text;
+    if (isNaN(Number(text))) {
       switch (_transformType) {
         case this.stringTransformTypes.START:
-          _output = _startCase(string);
+          _output = _startCase(text);
           break;
         case this.stringTransformTypes.CAMEL:
-          _output = _camelCase(string);
+          _output = _camelCase(text);
           break;
         case this.stringTransformTypes.KEBAB:
-          _output = _kebabCase(string);
+          _output = _kebabCase(text);
           break;
       }
     }

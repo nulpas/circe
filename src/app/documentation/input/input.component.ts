@@ -36,7 +36,7 @@ export class InputComponent implements OnInit, OnDestroy {
 
     this.input.valueChanges.pipe(
       takeUntil(this._componentDestroy$)
-    ).subscribe((value: string) => {
+    ).subscribe(() => {
       this.errorMessage = '';
       if (this.inputIconRight.value === 1 && this.input.invalid && this.input.dirty) {
         this.errorMessage = 'Required field. Write something.';
@@ -84,9 +84,11 @@ export class InputComponent implements OnInit, OnDestroy {
   private _getHelperText(iconRightValue: number): string {
     let _output: string = this._sourceHelperText;
     switch (iconRightValue) {
-      case 1: _output = 'This is a required field';
+      case 1:
+        _output = 'This is a required field';
         break;
-      case 4: _output = 'Try to write an email to check validation';
+      case 4:
+        _output = 'Try to write an email to check validation';
         break;
     }
     return _output;
@@ -95,9 +97,11 @@ export class InputComponent implements OnInit, OnDestroy {
   private _setValidators(iconRightValue: number): void {
     this.input.clearValidators();
     switch (iconRightValue) {
-      case 1: this.input.setValidators(Validators.required);
+      case 1:
+        this.input.setValidators(Validators.required);
         break;
-      case 4: this.input.setValidators(Validators.email);
+      case 4:
+        this.input.setValidators(Validators.email);
         break;
     }
   }

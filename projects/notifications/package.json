@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-notifications",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Circe :: Angular Notifications Component",
   "repository": {
     "type": "git",

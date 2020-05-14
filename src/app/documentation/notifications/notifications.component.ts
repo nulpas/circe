@@ -215,7 +215,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
     ).subscribe(() => {
       this.timeoutError = '';
       if (this.notificationsTimeout.invalid) {
-        this.timeoutError = 'No negative values.'
+        this.timeoutError = 'No negative values.';
       }
     });
 
@@ -224,7 +224,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
     ).subscribe(() => {
       this.timeoutError = '';
       if (this.notificationsMargin.invalid) {
-        this.marginError = 'No negative values.'
+        this.marginError = 'No negative values.';
       }
     });
   }
@@ -232,7 +232,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {}
 
   public closeClicked(): void {
-    this.marquee = 'Close control pressed...'
+    this.marquee = 'Close control pressed...';
   }
 
   public triggerNotification() {

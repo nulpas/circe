@@ -127,7 +127,7 @@ export class DropdownComponent implements OnInit, OnDestroy, OnChanges {
     if (!!_element) {
       _output = this._bm.getElement(_element);
     }
-    return (_output) ? this._bm.processElementForSpecialRules(_output): _output;
+    return (_output) ? this._bm.processElementForSpecialRules(_output) : _output;
   }
 
   private _processConfiguration(): void {
