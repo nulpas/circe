@@ -1,0 +1,13 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/notifications",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "@lunaeme/circe-core": "@lunaeme/circe-core"
+    }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@lunaeme/circe-core"
+  ]
+}

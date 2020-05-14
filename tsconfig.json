@@ -5,25 +5,23 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "target": "es2015",
     "lib": [
       "es2018",
       "dom"
     ],
     "paths": {
-      "modal": [
-        "dist/modal"
+      "@lunaeme/*": [
+        "./node_modules/@lunaeme/*"
       ],
-      "modal/*": [
-        "dist/modal/*"
+      "core": [
+        "dist/core/core",
+        "dist/core"
       ],
       "@core": [
         "projects/core/src/lib"
@@ -32,16 +30,18 @@
         "projects/core/src/lib/*"
       ],
       "click-outside": [
+        "dist/click-outside/click-outside",
         "dist/click-outside"
       ],
-      "click-outside/*": [
-        "dist/click-outside/*"
+      "@click-outside": [
+        "projects/click-outside/src/lib"
       ],
-      "on-dom-activity": [
-        "dist/on-dom-activity"
+      "@click-outside/*": [
+        "projects/click-outside/src/lib/*"
       ],
-      "on-dom-activity/*": [
-        "dist/on-dom-activity/*"
+      "spinner": [
+        "dist/spinner/spinner",
+        "dist/spinner"
       ],
       "@spinner": [
         "projects/spinner/src/lib"
@@ -49,17 +49,9 @@
       "@spinner/*": [
         "projects/spinner/src/lib/*"
       ],
-      "table": [
-        "dist/table"
-      ],
-      "table/*": [
-        "dist/table/*"
-      ],
-      "input-select": [
-        "dist/input-select"
-      ],
-      "input-select/*": [
-        "dist/input-select/*"
+      "dropdown": [
+        "dist/dropdown/dropdown",
+        "dist/dropdown"
       ],
       "@dropdown": [
         "projects/dropdown/src/lib"
@@ -67,11 +59,9 @@
       "@dropdown/*": [
         "projects/dropdown/src/lib/*"
       ],
-      "keyboard-events-emitter": [
-        "dist/keyboard-events-emitter"
-      ],
-      "keyboard-events-emitter/*": [
-        "dist/keyboard-events-emitter/*"
+      "grid-columns": [
+        "dist/grid-columns/grid-columns",
+        "dist/grid-columns"
       ],
       "@grid-columns": [
         "projects/grid-columns/src/lib"
@@ -79,12 +69,30 @@
       "@grid-columns/*": [
         "projects/grid-columns/src/lib/*"
       ],
+      "form-behavior": [
+        "dist/form-behavior/form-behavior",
+        "dist/form-behavior"
+      ],
       "@form-behavior": [
         "projects/form-behavior/src/lib"
       ],
       "@form-behavior/*": [
         "projects/form-behavior/src/lib/*"
+      ],
+      "notifications": [
+        "dist/notifications/notifications",
+        "dist/notifications"
+      ],
+      "@notifications": [
+        "projects/notifications/src/lib"
+      ],
+      "@notifications/*": [
+        "projects/notifications/src/lib/*"
       ]
     }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }

@@ -111,6 +111,11 @@
         "id": "dropdown",
         "name": "Dropdown",
         "location": ["dropdown"]
+      },
+      {
+        "id": "notifications",
+        "name": "Notifications",
+        "location": ["notifications"]
       }
     ]
   }

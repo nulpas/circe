@@ -19,6 +19,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { ThemesDemoComponent } from './themes-demo/themes-demo.component';
 import { SpaceBlueThemeOverviewComponent } from './space-blue-theme-overview/space-blue-theme-overview.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import {NotificationsComponent} from './notifications/notifications.component';
 
 const routes: Routes = [
   {
@@ -114,6 +115,11 @@ const routes: Routes = [
   {
     path: 'dropdown',
     component: DropdownComponent,
+    canActivate: [SessionGuard]
+  },
+  {
+    path: 'notifications',
+    component: NotificationsComponent,
     canActivate: [SessionGuard]
   },
   {

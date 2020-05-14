@@ -1,0 +1,77 @@
+:host {
+  --mda-notifications-default-position: fixed;
+  --mda-notifications-default-padding: 10px 15px;
+  --mda-notifications-default-width: 400px;
+  --mda-notifications-default-min-width: var(--mda-notifications-default-width);
+  --mda-notifications-default-max-width: 700px;
+  --mda-notifications-default-top: 0;
+  --mda-notifications-default-left: 0;
+
+  --mda-notifications-default-border: 1px solid;
+  --mda-notifications-default-border-radius: 0;
+  --mda-notifications-default-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+
+  --mda-notifications-default-text-color: black;
+  --mda-notifications-default-border-color: black;
+  --mda-notifications-default-background-color: white;
+
+  --mda-notifications-default-success-text-color: white;
+  --mda-notifications-default-success-border-color: green;
+  --mda-notifications-default-success-background-color: green;
+
+  --mda-notifications-default-warning-text-color: white;
+  --mda-notifications-default-warning-border-color: orange;
+  --mda-notifications-default-warning-background-color: orange;
+
+  --mda-notifications-default-critical-text-color: white;
+  --mda-notifications-default-critical-border-color: red;
+  --mda-notifications-default-critical-background-color: red;
+
+  --mda-notifications-default-icon-separation: 10px;
+  --mda-notifications-default-close-control-separation: 10px;
+
+  .mda-notifications {
+    position: var(--mda-notifications-default-position);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--mda-notifications-default-width);
+    min-width: var(--mda-notifications-default-min-width);
+    max-width: var(--mda-notifications-default-max-width);
+    top: var(--mda-notifications-default-top);
+    left: var(--mda-notifications-default-left);
+    padding: var(--mda-notifications-default-padding);
+    box-sizing: border-box;
+    z-index: 2;
+    background-color: var(--mda-notifications-default-background-color);
+    border: var(--mda-notifications-default-border);
+    border-color: var(--mda-notifications-default-border-color);
+    border-radius: var(--mda-notifications-default-border-radius);
+    box-shadow: var(--mda-notifications-default-box-shadow);
+    color: var(--mda-notifications-default-text-color);
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+    &.show {
+      opacity: 1;
+    }
+    .mda-notifications--message {
+      display: flex;
+      align-items: center;
+      color: inherit;
+      I {
+        font-size: 18px;
+        margin-right: var(--mda-notifications-default-icon-separation);
+        color: inherit;
+      }
+      SPAN {
+        color: inherit;
+      }
+    }
+    .mda-notifications--close {
+      font-size: 16px;
+      margin-left: var(--mda-notifications-default-close-control-separation);
+      color: inherit;
+      cursor: pointer;
+    }
+  }
+}

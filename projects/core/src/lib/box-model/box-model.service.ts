@@ -107,7 +107,7 @@ export const boxModelTypeConstants = {
     return !!(
       typeof element === 'object' &&
       elementFieldsConstants.QUERY in element &&
-      (Object.keys(element).length === 2 || Object.keys(element).length === 3)
+      (Object.keys(element).length === 1 || Object.keys(element).length === 2)
     );
   }
 

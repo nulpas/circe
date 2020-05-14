@@ -1,0 +1,56 @@
+@import '../../../mixins';
+
+:host {
+  display: block;
+  padding: 25px 35px;
+  box-sizing: border-box;
+  @include scrollInElement();
+
+  P, .subtitle {
+    display: block;
+    padding-right: 20%;
+  }
+  .notifications-demo {
+    @include demoElement();
+    .demo__stage {
+      .mda-notifications--demo {
+        --mda-notifications-position: relative;
+      }
+      BUTTON {
+        margin-top: 50px;
+      }
+      .trigger-marquee {
+        margin-top: 50px;
+        opacity: 0;
+        transition: opacity .5s ease-out;
+        &.show {
+          opacity: 1;
+        }
+      }
+    }
+
+    .demo__controls {
+      .notification-text {
+        margin-top: 1.33em;
+      }
+      .input-marquee__container {
+        --mda-component-width: 200px;
+
+        display: flex;
+        align-items: center;
+        .input-marquee {
+          margin-top: 1.33em;
+        }
+        .input-marquee__message {
+          margin: 20px 0 0 20px;
+          color: var(--mda-color-action);
+          opacity: 0;
+          transition: opacity .5s ease-out;
+          &.show {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

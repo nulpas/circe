@@ -1,0 +1,31 @@
+{
+  "name": "@lunaeme/circe-notifications",
+  "version": "0.0.9",
+  "description": "Circe :: Angular Notifications Component",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nulpas/circe.git"
+  },
+  "keywords": [
+    "circe",
+    "angular",
+    "component",
+    "notifications",
+    "alerts",
+    "feedback"
+  ],
+  "author": "Nul Pàs <manu@lunaeme.com> (https://github.com/nulpas)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nulpas/circe/issues"
+  },
+  "homepage": "https://github.com/nulpas/circe/tree/master/projects/notificatios#readme",
+  "peerDependencies": {
+    "@angular/common": ">=9.1.6",
+    "@angular/core": ">=9.1.6",
+    "tslib": ">=1.10.0"
+  },
+  "dependencies": {
+    "@lunaeme/circe-core": "^0.4.11"
+  }
+}

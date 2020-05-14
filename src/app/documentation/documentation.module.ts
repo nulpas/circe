@@ -26,6 +26,7 @@ import { ThemesDemoModule } from './themes-demo/themes-demo.module';
 import { SpaceBlueThemeOverviewModule } from './space-blue-theme-overview/space-blue-theme-overview.module';
 import { OrderConditionModule } from '@core/order-condition/order-condition.module';
 import { DropdownModule } from './dropdown/dropdown.module';
+import {NotificationsModule} from './notifications/notifications.module';
 
 @NgModule({
   declarations: [DocumentationComponent],
@@ -53,6 +54,7 @@ import { DropdownModule } from './dropdown/dropdown.module';
     ThemesDemoModule,
     SpaceBlueThemeOverviewModule,
     DropdownModule,
+    NotificationsModule,
     DataModule.forChild(),
     LoginServicesModule.forChild()
   ],

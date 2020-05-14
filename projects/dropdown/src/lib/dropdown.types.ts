@@ -1,4 +1,4 @@
-import {ElementDefinition, ElementDefinitionComplex, OptionDropdownIcon} from '@lunaeme/circe-core';
+import { ElementDefinitionComplex, OptionDropdownIcon } from '@lunaeme/circe-core';
 
 export interface FromDropdownOption {
   id: string | number;

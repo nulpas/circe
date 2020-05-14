@@ -1,10 +1,11 @@
 @import '~@lunaeme/medea/dist/sass/mixins';
+@import '../../variables';
 
 :host {
   HEADER {
     @include createFlexBox(row, center, normal, nowrap);
-    height: 50px;
-    min-height: 50px;
+    height: $headerHeight;
+    min-height: $headerHeight;
     background-color: var(--mda-color-space);
     padding-left: 25px;
     A {

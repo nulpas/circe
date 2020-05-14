@@ -1,0 +1,13 @@
+<div
+  class="mda-notifications mda-notifications--{{type.type}}"
+  *ngIf="triggerNotification"
+  [ngClass]="{show: showNotification}">
+  <div class="mda-notifications--message">
+    <i class="mda-icon" [ngClass]="icon" *ngIf="!!icon"></i>
+    <span>{{message}}</span>
+  </div>
+  <i
+    class="mda-notifications--close mda-icon icon-cross"
+    *ngIf="closeControl"
+    (click)="ev.preventNoNeededEvent($event); clickOnCloseControl();"></i>
+</div>

@@ -1,8 +1,14 @@
+@import '../../variables';
+
 :host {
+  MAIN {
+    height: calc(100% - #{$headerHeight});
+  }
+
   .documentation-sidebar {
     position: absolute;
     overflow-y: scroll;
-    top: 50px;
+    top: $headerHeight;
     bottom: 0;
     transition: all .3s ease-out;
     box-sizing: border-box;

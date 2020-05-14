@@ -1,0 +1,211 @@
+<h1>Notifications</h1>
+<hr>
+<span class="subtitle mda-font--18">
+  Notifications are feedback boxes that communicate a message from a user action. They inform and guide the user and
+  provide critical information necessary in context. They appear at the top of the page under the header allowing the
+  user to continue with their work.
+</span>
+
+<h2></h2>
+<section class="notifications-demo">
+  <section class="demo__stage">
+    <cc-notifications
+      class="mda-notifications--demo"
+      [hotRender]="true"
+      [disabled]="true"
+      [config]="notificationsConfig"
+      (close)="closeClicked()">
+    </cc-notifications>
+    <button class="mda-button" (click)="ev.preventNoNeededEvent($event); triggerNotification();">
+      Trigger one notification
+    </button>
+    <div
+      class="trigger-marquee mda-font--18 mda-font--extra-light"
+      *ngIf="!!marquee"
+      [ngClass]="{'show': showMarquee}">
+      {{marquee}}
+    </div>
+  </section>
+  <section class="demo__controls">
+    <h4>Type</h4>
+    <input id="type-default" type="radio" name="types" [value]="1" [formControl]="notificationsType">
+    <label for="type-default">Info (default)</label>
+
+    <input id="type-success" type="radio" name="types" [value]="2" [formControl]="notificationsType">
+    <label for="type-success">Success</label>
+
+    <input id="type-warning" type="radio" name="types" [value]="3" [formControl]="notificationsType">
+    <label for="type-warning">Warning</label>
+
+    <input id="type-critical" type="radio" name="types" [value]="4" [formControl]="notificationsType">
+    <label for="type-critical">Critical</label>
+
+    <div class="notification-text">
+      <label class="mda-label" for="notification-text">Notification message</label>
+      <input
+        id="notification-text"
+        class="mda-input"
+        placeholder="Write some notification message..."
+        [formControl]="notificationText" ccFormBehavior>
+    </div>
+
+    <h4>Icon</h4>
+    <input id="default-icon" type="radio" name="icon" [value]="1" [formControl]="notificationsIcon">
+    <label for="default-icon">Default icon</label>
+
+    <input id="custom-icon" type="radio" name="icon" [value]="2" [formControl]="notificationsIcon">
+    <label for="custom-icon">Custom icon</label>
+
+    <input id="no-icon" type="radio" name="icon" [value]="3" [formControl]="notificationsIcon">
+    <label for="no-icon">No icon</label>
+
+    <ng-container *ngIf="notificationsIcon.value === 2">
+      <h4>Custom Icons</h4>
+      <input id="custom-icon-1" type="radio" name="custom-icons" [value]="1" [formControl]="notificationsCustomIconExamples">
+      <label for="custom-icon-1">Example 1</label>
+
+      <input id="custom-icon-2" type="radio" name="custom-icons" [value]="2" [formControl]="notificationsCustomIconExamples">
+      <label for="custom-icon-2">Example 2</label>
+
+      <input id="custom-icon-3" type="radio" name="custom-icons" [value]="3" [formControl]="notificationsCustomIconExamples">
+      <label for="custom-icon-3">Example 3</label>
+
+      <input id="custom-icon-4" type="radio" name="custom-icons" [value]="4" [formControl]="notificationsCustomIconExamples">
+      <label for="custom-icon-4">Example 4</label>
+    </ng-container>
+
+    <h4>Options</h4>
+    <input
+      id="close-control"
+      class="mda-selection--vertical"
+      type="checkbox"
+      name="close-control"
+      [formControl]="notificationsCloseControl">
+    <label for="close-control">Close control</label>
+
+    <h3>Trigger to see</h3>
+
+    <h4>Position</h4>
+    <div>
+      <input id="top-left" type="radio" name="position" [value]="notificationPositions.topLeft" [formControl]="notificationsPositionForm">
+      <label for="top-left">{{notificationPositions.topLeft}}</label>
+
+      <input id="top-center" type="radio" name="position" [value]="notificationPositions.topCenter" [formControl]="notificationsPositionForm">
+      <label for="top-center">{{notificationPositions.topCenter}}</label>
+
+      <input id="top-right" type="radio" name="position" [value]="notificationPositions.topRight" [formControl]="notificationsPositionForm">
+      <label for="top-right">{{notificationPositions.topRight}}</label>
+    </div>
+    <div>
+      <input id="center-left" type="radio" name="position" [value]="notificationPositions.centerLeft" [formControl]="notificationsPositionForm">
+      <label for="center-left">{{notificationPositions.centerLeft}}</label>
+
+      <input id="center-center" type="radio" name="position" [value]="notificationPositions.centerCenter" [formControl]="notificationsPositionForm">
+      <label for="center-center">{{notificationPositions.centerCenter}}</label>
+
+      <input id="center-right" type="radio" name="position" [value]="notificationPositions.centerRight" [formControl]="notificationsPositionForm">
+      <label for="center-right">{{notificationPositions.centerRight}}</label>
+    </div>
+    <div>
+      <input id="bottom-left" type="radio" name="position" [value]="notificationPositions.bottomLeft" [formControl]="notificationsPositionForm">
+      <label for="bottom-left">{{notificationPositions.bottomLeft}}</label>
+
+      <input id="bottom-center" type="radio" name="position" [value]="notificationPositions.bottomCenter" [formControl]="notificationsPositionForm">
+      <label for="bottom-center">{{notificationPositions.bottomCenter}}</label>
+
+      <input id="bottom-right" type="radio" name="position" [value]="notificationPositions.bottomRight" [formControl]="notificationsPositionForm">
+      <label for="bottom-right">{{notificationPositions.bottomRight}}</label>
+    </div>
+
+    <h4>Reference (examples)</h4>
+    <input id="main-tag" type="radio" name="reference" [value]="1" [formControl]="notificationsReference">
+    <label for="main-tag">Main tag element</label>
+
+    <input id="content-component" type="radio" name="reference" [value]="2" [formControl]="notificationsReference">
+    <label for="content-component">Content component element</label>
+
+    <input id="window" type="radio" name="reference" [value]="3" [formControl]="notificationsReference">
+    <label for="window">Window</label>
+
+    <div class="input-marquee__container">
+      <div class="input-marquee">
+        <label class="mda-label" for="notifications-timeout">Timeout</label>
+        <input
+          id="notifications-timeout"
+          type="number"
+          class="mda-input"
+          placeholder="Define timeout..."
+          (keypress)="timeoutKeyPress($event)"
+          [formControl]="notificationsTimeout" ccFormBehavior [report]="timeoutReport" [error]="timeoutError" [render]="true">
+      </div>
+      <div
+        class="input-marquee__message"
+        *ngIf="timeoutMarquee"
+        [ngClass]="{show: showTimeoutMarquee}">
+        Changed!
+      </div>
+    </div>
+
+    <div class="input-marquee__container">
+      <div class="input-marquee">
+        <label class="mda-label" for="notifications-margin">Margin</label>
+        <input
+          id="notifications-margin"
+          type="number"
+          class="mda-input"
+          placeholder="Define margin..."
+          (keypress)="marginKeyPress($event)"
+          [formControl]="notificationsMargin" ccFormBehavior [report]="marginReport" [error]="marginError" [render]="true">
+      </div>
+      <div
+        class="input-marquee__message"
+        *ngIf="marginMarquee"
+        [ngClass]="{show: showMarginMarquee}">
+        Changed!
+      </div>
+    </div>
+  </section>
+</section>
+
+<h2>Design & Behavior</h2>
+<p>
+  Notification’s width is 100% of the grid. The content aligns to the center. A close icon is located always on the
+  right part of the notification. Notifications can include a link if needed. Notifications should always have an
+  icon on the left part so makes them more understandable to the user and allows a better experience in case the user
+  has some kind of color blindness. That icon should reflect the nature of the notification, that can be an error, a
+  warning, a success or completed action or an information.
+</p>
+
+<h2>Usage and Best Practices</h2>
+<ul>
+  <li>
+    Notifications are used when the user has made some interaction with the system and the system respond to them by
+    giving feedback about the action taken by the user. In case the user haven’t interacted, but the system needs to
+    send any message use Alerts.
+  </li>
+  <li>
+    Notification’s message should be clear, short, concise and technically understandable by the user.
+  </li>
+  <li>
+    Keep the message in one line.
+  </li>
+  <li>
+    We recommend that notifications disappear automatically after five / eight seconds. In any case, the user can
+    discard the notification by clicking on the close icon
+  </li>
+  <li>
+    If you need to introduce more text add a link with the ‘…More’ text. Then the box will grow in height to fit the
+    content. Limit the lines of the message to a maximum of 5.
+  </li>
+  <li>
+    The message has to be related to the context that triggered its appereance so use terms that were used when the
+    user started the action.
+  </li>
+  <li>
+    If there is only one notification text is aligned to the center. In case there two or more and pagination
+    component appears align messages to the left to avoid eye movement. The separation between the icon and the
+    pagination box is 20px.
+  </li>
+</ul>
+
+<cc-notifications [hotRender]="true" [config]="notificationsConfig" (autoClose)="closedItself()"></cc-notifications>

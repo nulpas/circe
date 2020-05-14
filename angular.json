@@ -4,25 +4,25 @@
   "newProjectRoot": "projects",
   "projects": {
     "circe": {
-      "root": "",
-      "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/circe",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "tsConfig": "tsconfig.app.json",
+            "aot": true,
             "assets": [
               "src/favicon.png",
               "src/assets"
@@ -30,8 +30,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -46,7 +45,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -58,7 +56,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -86,37 +85,31 @@
           "options": {
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.png",
+              "src/assets"
+            ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
+            "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
           }
-        }
-      }
-    },
-    "circe-e2e": {
-      "root": "e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
+        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -128,62 +121,13 @@
               "devServerTarget": "circe:serve:production"
             }
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "modal": {
-      "root": "projects/modal",
-      "sourceRoot": "projects/modal/src",
-      "projectType": "library",
-      "prefix": "cc",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/modal/tsconfig.lib.json",
-            "project": "projects/modal/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/modal/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/modal/src/test.ts",
-            "tsConfig": "projects/modal/tsconfig.spec.json",
-            "karmaConfig": "projects/modal/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/modal/tsconfig.lib.json",
-              "projects/modal/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     },
     "core": {
+      "projectType": "library",
       "root": "projects/core",
       "sourceRoot": "projects/core/src",
-      "projectType": "library",
       "prefix": "cc",
       "architect": {
         "build": {
@@ -221,9 +165,9 @@
       }
     },
     "click-outside": {
+      "projectType": "library",
       "root": "projects/click-outside",
       "sourceRoot": "projects/click-outside/src",
-      "projectType": "library",
       "prefix": "cc",
       "architect": {
         "build": {
@@ -260,50 +204,10 @@
         }
       }
     },
-    "on-dom-activity": {
-      "root": "projects/on-dom-activity",
-      "sourceRoot": "projects/on-dom-activity/src",
-      "projectType": "library",
-      "prefix": "cc",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/on-dom-activity/tsconfig.lib.json",
-            "project": "projects/on-dom-activity/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/on-dom-activity/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/on-dom-activity/src/test.ts",
-            "tsConfig": "projects/on-dom-activity/tsconfig.spec.json",
-            "karmaConfig": "projects/on-dom-activity/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/on-dom-activity/tsconfig.lib.json",
-              "projects/on-dom-activity/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "spinner": {
+      "projectType": "library",
       "root": "projects/spinner",
       "sourceRoot": "projects/spinner/src",
-      "projectType": "library",
       "prefix": "cc",
       "architect": {
         "build": {
@@ -340,90 +244,10 @@
         }
       }
     },
-    "table": {
-      "root": "projects/table",
-      "sourceRoot": "projects/table/src",
-      "projectType": "library",
-      "prefix": "cc",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/table/tsconfig.lib.json",
-            "project": "projects/table/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/table/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/table/src/test.ts",
-            "tsConfig": "projects/table/tsconfig.spec.json",
-            "karmaConfig": "projects/table/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/table/tsconfig.lib.json",
-              "projects/table/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "input-select": {
-      "root": "projects/input-select",
-      "sourceRoot": "projects/input-select/src",
-      "projectType": "library",
-      "prefix": "cc",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/input-select/tsconfig.lib.json",
-            "project": "projects/input-select/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/input-select/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/input-select/src/test.ts",
-            "tsConfig": "projects/input-select/tsconfig.spec.json",
-            "karmaConfig": "projects/input-select/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/input-select/tsconfig.lib.json",
-              "projects/input-select/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "dropdown": {
+      "projectType": "library",
       "root": "projects/dropdown",
       "sourceRoot": "projects/dropdown/src",
-      "projectType": "library",
       "prefix": "cc",
       "architect": {
         "build": {
@@ -452,46 +276,6 @@
             "tsConfig": [
               "projects/dropdown/tsconfig.lib.json",
               "projects/dropdown/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "keyboard-events-emitter": {
-      "root": "projects/keyboard-events-emitter",
-      "sourceRoot": "projects/keyboard-events-emitter/src",
-      "projectType": "library",
-      "prefix": "cc",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/keyboard-events-emitter/tsconfig.lib.json",
-            "project": "projects/keyboard-events-emitter/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/keyboard-events-emitter/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/keyboard-events-emitter/src/test.ts",
-            "tsConfig": "projects/keyboard-events-emitter/tsconfig.spec.json",
-            "karmaConfig": "projects/keyboard-events-emitter/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/keyboard-events-emitter/tsconfig.lib.json",
-              "projects/keyboard-events-emitter/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -572,6 +356,46 @@
             "tsConfig": [
               "projects/form-behavior/tsconfig.lib.json",
               "projects/form-behavior/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "notifications": {
+      "projectType": "library",
+      "root": "projects/notifications",
+      "sourceRoot": "projects/notifications/src",
+      "prefix": "cc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/notifications/tsconfig.lib.json",
+            "project": "projects/notifications/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/notifications/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/notifications/src/test.ts",
+            "tsConfig": "projects/notifications/tsconfig.spec.json",
+            "karmaConfig": "projects/notifications/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/notifications/tsconfig.lib.json",
+              "projects/notifications/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
