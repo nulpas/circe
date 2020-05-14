@@ -14,7 +14,7 @@
       [hotRender]="true"
       [disabled]="true"
       [config]="notificationsConfig"
-      (close)="closeClicked()">
+      (closed)="closeClicked()">
     </cc-notifications>
     <button class="mda-button" (click)="ev.preventNoNeededEvent($event); triggerNotification();">
       Trigger one notification
