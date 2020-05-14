@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@lunaeme/circe-core@^0.4.9":
-  version "0.4.9"
-  resolved "https://registry.yarnpkg.com/@lunaeme/circe-core/-/circe-core-0.4.9.tgz#ef1b82b2591597f217bc7574785bcbaceec5fad5"
-  integrity sha512-qiPlRRQpiFkpdevZ8qVdSKu5bTurImZy6xhISj42Do6O4nUUVjXdYxzfSmAWZnuJxpIC+5jpIEjbuQDmdpfU5Q==
+"@lunaeme/circe-core@^0.4.11":
+  version "0.4.11"
+  resolved "https://registry.yarnpkg.com/@lunaeme/circe-core/-/circe-core-0.4.11.tgz#23e746ea43fb279488084cff5ecddb35e7b49561"
+  integrity sha512-qZvXuEm+xIBNhQssLnkmPbRmR5R0RTgysb/VyPY+S9ER0bDJ6YEMxkO2bMOTbNgMcjQE8SZoWEAROAj9NiOyTw==
   dependencies:
     lodash "^4.17.15"
     ngx-order-pipe "^2.0.4"

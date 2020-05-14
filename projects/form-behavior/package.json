@@ -1,6 +1,6 @@
 {
   "name": "@lunaeme/circe-form-behavior",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Circe :: Angular Form-Behavior Directive",
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "@angular/core": ">=8.2.14"
   },
   "dependencies": {
-    "@lunaeme/circe-core": "^0.4.9",
+    "@lunaeme/circe-core": "^0.4.11",
     "rxjs": "^6.5.5"
   }
 }
