@@ -4,7 +4,7 @@ Directive manages statuses on several form elements.
 
 ## Compatibility
 
-Angular >= v.8.2.14
+Angular >= v.9.1.6
 
 ## Installation
 
