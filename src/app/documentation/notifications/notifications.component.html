@@ -170,41 +170,40 @@
 <h2>Design & Behavior</h2>
 <p>
   Notification’s width is 100% of the grid. The content aligns to the center. A close icon is located always on the
-  right part of the notification. Notifications can include a link if needed. Notifications should always have an
-  icon on the left part so makes them more understandable to the user and allows a better experience in case the user
-  has some kind of color blindness. That icon should reflect the nature of the notification, that can be an error, a
-  warning, a success or completed action or an information.
+  right part of the notification. Notifications can include a link if needed. Notifications can use an icon on the
+  left part so it makes them more understandable to the user and allows a better experience in case the user has some
+  kind of color blindness. That icon should reflect the nature of the notification, which can be an error, a warning,
+  a successful or completed action, or an information one.
 </p>
 
 <h2>Usage and Best Practices</h2>
 <ul>
   <li>
-    Notifications are used when the user has made some interaction with the system and the system respond to them by
-    giving feedback about the action taken by the user. In case the user haven’t interacted, but the system needs to
-    send any message use Alerts.
+    Notifications are used when the user has made some interaction with the system and the system reacts to them by giving
+    feedback about the action taken by the user.
+    <br /><br />
+    <b>Note: </b>If the user hasn’t interacted, but the system needs to send
+    any message, use Alerts instead.
   </li>
   <li>
-    Notification’s message should be clear, short, concise and technically understandable by the user.
+    Notification’s message should be clear, short, concise, and technically understandable by the user.
   </li>
   <li>
-    Keep the message in one line.
+    Messages must be one-line only.
   </li>
   <li>
-    We recommend that notifications disappear automatically after five / eight seconds. In any case, the user can
-    discard the notification by clicking on the close icon
+    We recommend that notifications disappear automatically after three seconds. However, keep in mind that the average
+    English language reader will read about 250-300 words per minute, with an average of 5.8 characters per word (including
+    spaces). At a "safe" estimate for a notice of 200wpm, that yields about 1 character every 50 milliseconds. In any case,
+    the user can discard the notification by clicking on the close icon.
   </li>
   <li>
     If you need to introduce more text add a link with the ‘…More’ text. Then the box will grow in height to fit the
     content. Limit the lines of the message to a maximum of 5.
   </li>
   <li>
-    The message has to be related to the context that triggered its appereance so use terms that were used when the
-    user started the action.
-  </li>
-  <li>
-    If there is only one notification text is aligned to the center. In case there two or more and pagination
-    component appears align messages to the left to avoid eye movement. The separation between the icon and the
-    pagination box is 20px.
+    The message has to be related to the context that triggered its appearance so use terms that were used when the user
+    started the action.
   </li>
 </ul>
 
